@@ -27,6 +27,7 @@
 
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
+#import "GamePlayScene.h"
 
 @implementation AppController
 
@@ -59,7 +60,9 @@
 
 - (CCScene*) startScene
 {
-    return [CCBReader loadAsScene:@"MainScene"];
+    GamePlayScene *gamePlayScene = [[GamePlayScene alloc] init];
+
+    return gamePlayScene;
 }
 
 @end

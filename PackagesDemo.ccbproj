@@ -82,8 +82,21 @@
 		<dict/>
 		<key>Sprites/Backgrounds/stars.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Controls/DPad_BG.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Controls/Firebutton_default.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Controls/Firebutton_pressed.png</key>
+		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
