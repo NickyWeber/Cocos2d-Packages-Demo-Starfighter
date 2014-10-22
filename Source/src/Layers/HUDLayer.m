@@ -66,17 +66,19 @@
 
 	// DPad
 	self.joystick = [[SneakyJoystickSkinnedDPadExample alloc] init];
-	[_joystick setPosition:CGPointMake(_joystick.contentSize.width / 2, _joystick.contentSize.height / 2)];
+    _joystick.anchorPoint = ccp(0.0, 0.0);
+    _joystick.position = ccp(62.0, 62.0);
 	[self addChild:_joystick];
 
 	// Fire button
 	self.fireButton = [[SneakyButtonSkinnedBase alloc] init];
-	_fireButton.position = CGPointMake((CGFloat) (displaySize.width - 42.0), 42.0);
 	_fireButton.defaultSprite = [CCSprite spriteWithImageNamed:@"Sprites/Controls/Firebutton_default.png"];
 	_fireButton.pressSprite = [CCSprite spriteWithImageNamed:@"Sprites/Controls/Firebutton_pressed.png"];
 	_fireButton.button = [[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 64)];
 	_fireButton.button.isToggleable = NO;
 	_fireButton.button.isHoldable = YES;
+	_fireButton.position = ccp((CGFloat) (displaySize.width - 56.0), 56.0);
+    _fireButton.anchorPoint = ccp(0.0, 0.0);
 
 	[self addChild:_fireButton];
 }
