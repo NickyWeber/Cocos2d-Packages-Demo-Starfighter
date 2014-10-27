@@ -29,7 +29,7 @@
     CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
 
     self.shieldBar = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0 green:1.0 blue:1.0]];
-    _shieldBar.contentSize = CGSizeMake(160.0, 3.0);
+    _shieldBar.contentSize = CGSizeMake(displaySize.width, 3.0);
     _shieldBar.position = CGPointMake(0.0, (CGFloat) (displaySize.height - 7.0));
     _shieldBar.anchorPoint = CGPointMake(0.0, 0.0);
     [self addChild:_shieldBar];
@@ -40,7 +40,7 @@
     CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
 
     self.healthBar = [CCNodeColor nodeWithColor:[CCColor colorWithRed:1.0 green:0.0 blue:0.0]];
-    _healthBar.contentSize = CGSizeMake(160.0, 3.0);
+    _healthBar.contentSize = CGSizeMake(displaySize.width, 3.0);
     _healthBar.position = CGPointMake(0.0, (CGFloat) (displaySize.height - 3.0));
     _healthBar.anchorPoint = CGPointMake(0.0, 0.0);
     [self addChild:_healthBar];
@@ -50,9 +50,9 @@
 {
     CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
 
-    self.scoreLabel = [CCLabelTTF labelWithString:@"1000"
-                                             fontName:@"Courier-Bold"
-                                             fontSize:24.0];
+    self.scoreLabel = [CCLabelTTF labelWithString:@"0"
+                                         fontName:@"Courier-Bold"
+                                         fontSize:24.0];
 
     _scoreLabel.horizontalAlignment = CCTextAlignmentRight;
     _scoreLabel.anchorPoint = CGPointMake(0.0, 0.0);
@@ -90,18 +90,22 @@
 
 - (void)updateHealthBarWithHealthInPercent:(float)healthInPercent
 {
+    CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
+
 	float newHealthInPercent = MAX(0, MIN(healthInPercent, 1.0));
 
 	// _healthBar.position = CGPointMake(0.0, 239.0);
-	_healthBar.contentSize = CGSizeMake((CGFloat) (160.0 * newHealthInPercent), _shieldBar.contentSize.height);
+	_healthBar.contentSize = CGSizeMake((CGFloat) (displaySize.width * newHealthInPercent), _shieldBar.contentSize.height);
 }
 
 - (void)updateShieldBarWithShieldInPercent:(float)shieldInPercent
 {
+    CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
+
 	float newShieldInPercent = MAX(0, MIN(shieldInPercent, 1.0));
 
 	// _shieldBar.position = CGPointMake(0.0, 237.0);
-	_shieldBar.contentSize = CGSizeMake((CGFloat) (160.0 * newShieldInPercent), _shieldBar.contentSize.height);
+	_shieldBar.contentSize = CGSizeMake((CGFloat) (displaySize.width * newShieldInPercent), _shieldBar.contentSize.height);
 }
 
 @end
