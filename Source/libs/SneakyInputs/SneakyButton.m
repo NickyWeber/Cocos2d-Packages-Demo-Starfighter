@@ -7,6 +7,7 @@
 //
 
 #import "SneakyButton.h"
+#import "SneakyJoystick.h"
 
 @implementation SneakyButton
 

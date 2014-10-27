@@ -89,37 +89,58 @@
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		B78A0B10198AF87200C63841 /* Published-Android in Resources */ = {isa = PBXBuildFile; fileRef = B78A0B0F198AF87200C63841 /* Published-Android */; };
+		E525F0777B4F33503F6B4926 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF0966AAF612B68ED038 /* GameObject.m */; };
 		E525F0880539B2BBDFB57DD2 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* HUDLayer.m */; };
 		E525F0DD5564A85DB6B6469C /* GamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* GamePlayLayer.m */; };
+		E525F1518223A6F9ECBF25FE /* LaserBeam.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */; };
 		E525F16941679F3A70C1AA53 /* GamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* GamePlayScene.m */; };
 		E525F179272E03CA7BB0C55D /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
+		E525F1793D1FB8A7936A1D3A /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCBEBAEA40A459BB2A39 /* Spaceship.m */; };
+		E525F180B144E5AE1DBC2C9F /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F57C24B73E6B954C2DD2 /* Enemy.m */; };
+		E525F183AE074F1F2CEC05A5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* Constants.m */; };
 		E525F22B8EFBD6AC1BA91522 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
+		E525F2A7C9CC26DCE17D5CD7 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF0966AAF612B68ED038 /* GameObject.m */; };
 		E525F32927DEBFD224D4EBF7 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F4D64549931E5C8FF8D7 /* MainScene.m */; };
+		E525F378294D183345E4BE16 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F57C24B73E6B954C2DD2 /* Enemy.m */; };
+		E525F3E21256195BD05F636C /* LaserCannon.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FD191D8AB3E57C4085A1 /* LaserCannon.m */; };
+		E525F3FA9DB6FC100A5242BF /* LaserCannon.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FD191D8AB3E57C4085A1 /* LaserCannon.m */; };
 		E525F42BB170E68DF95B4DC2 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
 		E525F4671A45E6860549E9D4 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F4D64549931E5C8FF8D7 /* MainScene.m */; };
 		E525F472711FA48C285F2AF5 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* BackgroundLayer.m */; };
 		E525F48350928832D8A75402 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
 		E525F5056396262B97612CD5 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
 		E525F5762EEB3EC2D5EA49B5 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* HUDLayer.m */; };
+		E525F5A8892F0C6178AA4F54 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* Constants.m */; };
 		E525F5BDBBFED07AF765329B /* GamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* GamePlayLayer.m */; };
 		E525F5FF86D2CA3CD2CBBFE6 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
 		E525F628D9A8149FA2B769F7 /* Debris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F12448B0F02F118A3A4F /* Debris.m */; };
+		E525F6A17F020275AF409DAC /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF0966AAF612B68ED038 /* GameObject.m */; };
 		E525F6AA313E1D35E5CC61A8 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F4D64549931E5C8FF8D7 /* MainScene.m */; };
+		E525F6AB4D80AC77BA9612F6 /* LaserBeam.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */; };
 		E525F6C696DC140BA215DD38 /* GamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* GamePlayScene.m */; };
 		E525F6D0166D5449DEA47719 /* GamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* GamePlayScene.m */; };
+		E525F6FAB7DC50DD5D162BDF /* BoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* BoundingBox.m */; };
 		E525F725DF52F0CBF9403292 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
+		E525F78D4B5E7CC96671DBF4 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* Constants.m */; };
 		E525F7DFE1857D0A640D7649 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* BackgroundLayer.m */; };
 		E525F7E8A2D5BCD0152CF639 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
 		E525F8358043B4837F4339CB /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
 		E525F83A18836EFB63E6CF99 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
 		E525F989219BB060773E3B26 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* HUDLayer.m */; };
+		E525F9A7C6F65A969E2482E3 /* LaserBeam.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */; };
+		E525FA07F082296C2F44F217 /* BoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* BoundingBox.m */; };
+		E525FA50339C622043F22558 /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCBEBAEA40A459BB2A39 /* Spaceship.m */; };
 		E525FB14099B44905CA712D5 /* Debris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F12448B0F02F118A3A4F /* Debris.m */; };
+		E525FB3C34AE49251723E03A /* BoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* BoundingBox.m */; };
+		E525FBE98B96C74201D24CC0 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F57C24B73E6B954C2DD2 /* Enemy.m */; };
 		E525FC12690A3503D700D748 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
 		E525FC603553E6AF012C3F4D /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
+		E525FCAC1AD9F89A09559255 /* LaserCannon.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FD191D8AB3E57C4085A1 /* LaserCannon.m */; };
 		E525FCBCDF27434575DD6DC5 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
 		E525FD70756CF3D85B0F48B2 /* GamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* GamePlayLayer.m */; };
 		E525FE34C3D10272FE0F74E2 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* BackgroundLayer.m */; };
 		E525FF41F1D681A45C5FEF68 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
+		E525FF724CCD1C9ABE1FCD6C /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCBEBAEA40A459BB2A39 /* Spaceship.m */; };
 		E525FF733821E1C9165D3D04 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
 		E525FFCE77418EBB616E156C /* Debris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F12448B0F02F118A3A4F /* Debris.m */; };
 /* End PBXBuildFile section */
@@ -259,24 +280,40 @@
 		E525F0CE1205AFC5DD796077 /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
 		E525F12448B0F02F118A3A4F /* Debris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debris.m; sourceTree = "<group>"; };
 		E525F1977383887308B4098D /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
+		E525F1A1A2AD62D6DBC4A854 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
 		E525F29CF485434C548AFB09 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
+		E525F3D51EA67127222D6A96 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		E525F403B739C47888FA5590 /* BoundingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoundingBox.h; sourceTree = "<group>"; };
 		E525F480911E20C345715C5E /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
 		E525F4D64549931E5C8FF8D7 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		E525F504441FEA7B27C69919 /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
+		E525F57C24B73E6B954C2DD2 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		E525F60E1AF9B040DB8D85F9 /* LaserBeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserBeam.h; sourceTree = "<group>"; };
 		E525F6237FDAA87E8CD0E445 /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		E525F62AC1970AEAF5231859 /* Spaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spaceship.h; sourceTree = "<group>"; };
 		E525F6DE925B6A53CBF3AB3C /* GamePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayScene.m; sourceTree = "<group>"; };
 		E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedDPadExample.m; sourceTree = "<group>"; };
 		E525F750DAFE0458BBE64709 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		E525F756193F6B802D6BDFB0 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		E525F7E9973048779F98F0E2 /* BoundingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundingBox.m; sourceTree = "<group>"; };
 		E525F7EB5DA3CCAECD61449E /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
 		E525F7F6BACC943D680305F7 /* GamePlaySceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePlaySceneDelegate.h; path = Source/src/Layers/GamePlaySceneDelegate.h; sourceTree = SOURCE_ROOT; };
 		E525F970C8EC31FACC7152C4 /* GamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayScene.h; sourceTree = "<group>"; };
+		E525F99E82751857FC49EA56 /* WeaponSystemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSystemProtocol.h; sourceTree = "<group>"; };
+		E525F9A80E349EDFEF2B5BF0 /* LaserCannon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserCannon.h; sourceTree = "<group>"; };
+		E525FAD67B800AC6B5F53C38 /* WeaponProjectileProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponProjectileProtocol.h; sourceTree = "<group>"; };
 		E525FB428FCC9A5C4C3170D7 /* GamePlayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayLayer.m; sourceTree = "<group>"; };
 		E525FBA078C043671FE7CFA6 /* SneakyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
 		E525FC191827BE76F6B72BA2 /* GamePlayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayLayer.h; sourceTree = "<group>"; };
 		E525FC3A373A719F19484BB3 /* Debris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debris.h; sourceTree = "<group>"; };
+		E525FC586ED5124FE0B2817B /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		E525FC658E8822105FAB2FD5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E525FCBEBAEA40A459BB2A39 /* Spaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spaceship.m; sourceTree = "<group>"; };
+		E525FD191D8AB3E57C4085A1 /* LaserCannon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserCannon.m; sourceTree = "<group>"; };
 		E525FDAF02C6A82B0D8CFD46 /* SneakyJoystickSkinnedDPadExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedDPadExample.h; sourceTree = "<group>"; };
+		E525FF0966AAF612B68ED038 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
+		E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserBeam.m; sourceTree = "<group>"; };
 		E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
 		E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButtonSkinnedBase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -512,6 +549,7 @@
 				E525FC59FE5FE09A7206C0AD /* Layers */,
 				E525FB96732E64F8E288C374 /* Scenes */,
 				E525F3511134E1900DD64751 /* GameObjects */,
+				E525F4C9264B5452ED47B86A /* Misc */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -630,9 +668,41 @@
 			children = (
 				E525FC3A373A719F19484BB3 /* Debris.h */,
 				E525F12448B0F02F118A3A4F /* Debris.m */,
+				E525F1A1A2AD62D6DBC4A854 /* GameObject.h */,
+				E525FF0966AAF612B68ED038 /* GameObject.m */,
+				E525F57C24B73E6B954C2DD2 /* Enemy.m */,
+				E525FC586ED5124FE0B2817B /* Enemy.h */,
+				E525F62AC1970AEAF5231859 /* Spaceship.h */,
+				E525FAD67B800AC6B5F53C38 /* WeaponProjectileProtocol.h */,
+				E525FCBEBAEA40A459BB2A39 /* Spaceship.m */,
+				E525F99E82751857FC49EA56 /* WeaponSystemProtocol.h */,
+				E525FA14950E1FAC40D7D531 /* Weapons */,
 			);
 			name = GameObjects;
 			path = Source/src/GameObjects;
+			sourceTree = "<group>";
+		};
+		E525F4C9264B5452ED47B86A /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				E525F403B739C47888FA5590 /* BoundingBox.h */,
+				E525F7E9973048779F98F0E2 /* BoundingBox.m */,
+				E525F3D51EA67127222D6A96 /* Constants.m */,
+				E525FC658E8822105FAB2FD5 /* Constants.h */,
+			);
+			name = Misc;
+			path = Source/src/Misc;
+			sourceTree = "<group>";
+		};
+		E525FA14950E1FAC40D7D531 /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				E525F9A80E349EDFEF2B5BF0 /* LaserCannon.h */,
+				E525FD191D8AB3E57C4085A1 /* LaserCannon.m */,
+				E525F60E1AF9B040DB8D85F9 /* LaserBeam.h */,
+				E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */,
+			);
+			path = Weapons;
 			sourceTree = "<group>";
 		};
 		E525FB96732E64F8E288C374 /* Scenes */ = {
@@ -947,6 +1017,13 @@
 				E525F16941679F3A70C1AA53 /* GamePlayScene.m in Sources */,
 				E525FFCE77418EBB616E156C /* Debris.m in Sources */,
 				E525FD70756CF3D85B0F48B2 /* GamePlayLayer.m in Sources */,
+				E525F2A7C9CC26DCE17D5CD7 /* GameObject.m in Sources */,
+				E525F6FAB7DC50DD5D162BDF /* BoundingBox.m in Sources */,
+				E525F5A8892F0C6178AA4F54 /* Constants.m in Sources */,
+				E525F378294D183345E4BE16 /* Enemy.m in Sources */,
+				E525FA50339C622043F22558 /* Spaceship.m in Sources */,
+				E525F3FA9DB6FC100A5242BF /* LaserCannon.m in Sources */,
+				E525F6AB4D80AC77BA9612F6 /* LaserBeam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -966,6 +1043,13 @@
 				E525F6D0166D5449DEA47719 /* GamePlayScene.m in Sources */,
 				E525FB14099B44905CA712D5 /* Debris.m in Sources */,
 				E525F5BDBBFED07AF765329B /* GamePlayLayer.m in Sources */,
+				E525F0777B4F33503F6B4926 /* GameObject.m in Sources */,
+				E525FB3C34AE49251723E03A /* BoundingBox.m in Sources */,
+				E525F78D4B5E7CC96671DBF4 /* Constants.m in Sources */,
+				E525F180B144E5AE1DBC2C9F /* Enemy.m in Sources */,
+				E525FF724CCD1C9ABE1FCD6C /* Spaceship.m in Sources */,
+				E525F3E21256195BD05F636C /* LaserCannon.m in Sources */,
+				E525F9A7C6F65A969E2482E3 /* LaserBeam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -986,6 +1070,13 @@
 				E525F6C696DC140BA215DD38 /* GamePlayScene.m in Sources */,
 				E525F628D9A8149FA2B769F7 /* Debris.m in Sources */,
 				E525F0DD5564A85DB6B6469C /* GamePlayLayer.m in Sources */,
+				E525F6A17F020275AF409DAC /* GameObject.m in Sources */,
+				E525FA07F082296C2F44F217 /* BoundingBox.m in Sources */,
+				E525F183AE074F1F2CEC05A5 /* Constants.m in Sources */,
+				E525FBE98B96C74201D24CC0 /* Enemy.m in Sources */,
+				E525F1793D1FB8A7936A1D3A /* Spaceship.m in Sources */,
+				E525FCAC1AD9F89A09559255 /* LaserCannon.m in Sources */,
+				E525F1518223A6F9ECBF25FE /* LaserBeam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

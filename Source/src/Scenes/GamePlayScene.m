@@ -2,6 +2,14 @@
 #import "BackgroundLayer.h"
 #import "HUDLayer.h"
 #import "GamePlayLayer.h"
+#import "SneakyButton.h"
+#import "SneakyJoystick.h"
+#import "SneakyButtonSkinnedBase.h"
+#import "SneakyJoystickSkinnedDPadExample.h"
+
+@interface GamePlayScene ()
+@property (nonatomic) int gameScore;
+@end
 
 @implementation GamePlayScene
 
@@ -22,6 +30,51 @@
     }
 
     return self;
+}
+
+#pragma mark -
+#pragma mark - GamePlaySceneDelegateProtocolMethods
+
+- (void)addPoints:(int)pointsToAdd
+{
+	self.gameScore += pointsToAdd;
+
+	[_hudLayer gameScoreChanged:_gameScore];
+}
+
+- (void)updateHealthBarWithHealthInPercent:(float)healthInPercent
+{
+	[_hudLayer updateHealthBarWithHealthInPercent:healthInPercent];
+}
+
+- (void)updateShieldBarWithShieldInPercent:(float)shieldInPercent
+{
+	[_hudLayer updateShieldBarWithShieldInPercent:shieldInPercent];
+}
+
+- (void)addGameEntity:(CCNode *)aGameEntity
+{
+	[_gamePlayLayer addGameEntity:aGameEntity];
+}
+
+- (Spaceship *)spaceship
+{
+	return [_gamePlayLayer spaceship];
+}
+
+- (NSArray *)gameObjects
+{
+	return [_gamePlayLayer children];
+}
+
+- (SneakyButton *)fireButton
+{
+    return _hudLayer.fireButton.button;
+}
+
+- (SneakyJoystick *)joystick
+{
+    return _hudLayer.joystick.joystick;
 }
 
 @end

@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>21</integer>
+	<integer>26</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -446,29 +446,11 @@
 						<key>type</key>
 						<string>EffectControl</string>
 						<key>value</key>
-						<array>
-							<dict>
-								<key>UUID</key>
-								<integer>5</integer>
-								<key>baseClass</key>
-								<string>CCEffectPixellate</string>
-								<key>className</key>
-								<string>CCBPEffectPixelate</string>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>blockSize</string>
-										<key>type</key>
-										<string>Float</string>
-										<key>value</key>
-										<real>4</real>
-									</dict>
-								</array>
-							</dict>
-						</array>
+						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

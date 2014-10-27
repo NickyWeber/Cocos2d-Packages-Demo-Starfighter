@@ -92,18 +92,16 @@
 {
 	float newHealthInPercent = MAX(0, MIN(healthInPercent, 1.0));
 
-	_healthBar.position = CGPointMake(0.0, 239.0);
-
-	_healthBar.contentSize = CGSizeMake((CGFloat) (160.0 * newHealthInPercent), 1.0);
+	// _healthBar.position = CGPointMake(0.0, 239.0);
+	_healthBar.contentSize = CGSizeMake((CGFloat) (160.0 * newHealthInPercent), _shieldBar.contentSize.height);
 }
 
 - (void)updateShieldBarWithShieldInPercent:(float)shieldInPercent
 {
 	float newShieldInPercent = MAX(0, MIN(shieldInPercent, 1.0));
 
-	_shieldBar.position = CGPointMake(0.0, 237.0);
-
-	_shieldBar.contentSize = CGSizeMake((CGFloat) (160.0 * newShieldInPercent), 1.0);
+	// _shieldBar.position = CGPointMake(0.0, 237.0);
+	_shieldBar.contentSize = CGSizeMake((CGFloat) (160.0 * newShieldInPercent), _shieldBar.contentSize.height);
 }
 
 @end
