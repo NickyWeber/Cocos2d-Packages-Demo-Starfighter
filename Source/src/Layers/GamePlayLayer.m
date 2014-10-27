@@ -3,14 +3,19 @@
 #import "GamePlaySceneDelegate.h"
 #import "Spaceship.h"
 #import "HUDLayer.h"
+#import "MonsterSpawner.h"
+#import "LaserBeam.h"
+#import "Enemy.h"
 
 
 @interface GamePlayLayer ()
 
+@property (nonatomic, strong) MonsterSpawner *monsterSpawner;
 @property (nonatomic, strong) NSMutableArray *gameObjectRemovalPool;
 @property (nonatomic) int enemyCount;
 @property (nonatomic) int points;
 
+@property (nonatomic) double timeSinceLastStatusUpdate;
 @end
 
 
@@ -29,10 +34,8 @@
 		self.delegate = aDelegate;
 		self.gameObjectRemovalPool = [NSMutableArray array];
         
-/*
-		self.monserSpawner = [[[MonsterSpawner alloc] initWithDelegate:delegate] autorelease];
+		self.monsterSpawner = [[MonsterSpawner alloc] initWithDelegate:_delegate];
 
-*/
 		[self initializeSpaceship];
 
 		self.enemyCount = 0;
@@ -43,9 +46,9 @@
 
 - (void)update:(CCTime)delta
 {
-    // [monserSpawner update:deltaTime andGameObjects:[self children]];
+    [_monsterSpawner update:delta andGameObjects:[self children]];
 
-   	for (GameObject *gameObject in [self children])
+   	for (GameObject *gameObject in [[self children] copy])
    	{
    		if ([gameObject isKindOfClass:[GameObject class]]
    			&& gameObject.isActive)
@@ -98,13 +101,15 @@
 	[self addChild:aGameEntity z:zOrder];
 }
 
-/*
-- (void)debugStatusWithDeltaTime:(ccTime)aTimeDelta
+- (void)gameOver
 {
-	if (timeSinceLastStatusUpdate >= 1.0)
+    NSAssert(NO, @"Implement me!!!");
+}
+
+- (void)debugStatusWithDeltaTime:(CCTime)aTimeDelta
+{
+	if (_timeSinceLastStatusUpdate >= 1.0)
 	{
-		*/
-/*
 		int shots = 0;
 		int enemies = 0;
 
@@ -115,17 +120,16 @@
 			if ([gameObject isKindOfClass:[Enemy class]]) {
 				enemies++;
 			}
-		}*//*
+		}
 
 
 		// NSLog(@"Status update - Enemies: %d, Shots: %d", enemies, shots);
 		NSLog(@"Status update - game objects: %d", [[self children] count]);
 
-		timeSinceLastStatusUpdate = 0.0;
+		self.timeSinceLastStatusUpdate = 0.0;
 	}
 
-	timeSinceLastStatusUpdate += aTimeDelta;
+	self.timeSinceLastStatusUpdate += aTimeDelta;
 }
-*/
 
 @end

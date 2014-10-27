@@ -10,18 +10,19 @@
 
 @interface SneakyButton : CCNode
 {
+/*
 	CGPoint center;
 
 	float radius;
 	float radiusSq;
 
 	CGRect bounds;
-	BOOL active;
 	BOOL status;
 	BOOL value;
 	BOOL isHoldable;
 	BOOL isToggleable;
 	float rateLimit;
+*/
 }
 
 @property (nonatomic, assign) BOOL status;

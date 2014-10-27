@@ -9,6 +9,20 @@
 #import "SneakyButton.h"
 #import "SneakyJoystick.h"
 
+@interface SneakyButton()
+
+@property (nonatomic, readwrite) BOOL value;
+@property (nonatomic, readwrite) BOOL active;
+
+@property (nonatomic) CGRect bounds;
+@property (nonatomic) CGPoint center;
+
+
+@property (nonatomic) float radiusSq;
+
+@end
+
+
 @implementation SneakyButton
 
 - (id)initWithRect:(CGRect)rect
@@ -17,15 +31,15 @@
     if (self)
     {
 
-        bounds = CGRectMake(0, 0, rect.size.width, rect.size.height);
-        center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
-        status = 1; //defaults to enabled
-        active = NO;
-        value = 0;
-        isHoldable = 0;
-        isToggleable = 0;
-        radius = 32.0f;
-        rateLimit = 1.0f / 120.0f;
+        self.bounds = CGRectMake(0, 0, rect.size.width, rect.size.height);
+        self.center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
+        self.status = 1; //defaults to enabled
+        self.active = NO;
+        self.value = NO;
+        self.isHoldable = YES;
+        self.isToggleable = 0;
+        self.radius = 32.0f;
+        self.rateLimit = 1.0f / 120.0f;
 
         self.userInteractionEnabled = YES;
 
@@ -36,15 +50,15 @@
 
 - (void)limiter:(float)delta
 {
-    value = 0;
+    self.value = NO;
     [self unschedule:@selector(limiter:)];
-    active = NO;
+    self.active = NO;
 }
 
 - (void)setRadius:(float)r
 {
-    radius = r;
-    radiusSq = r * r;
+    _radius = r;
+    self.radiusSq = r * r;
 }
 
 
@@ -55,14 +69,14 @@
     // CGPoint location = [[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]];
     CGPoint location = [self convertToNodeSpace:pos];
     //Do a fast rect check before doing a circle hit check:
-    if (location.x < -radius || location.x > radius || location.y < -radius || location.y > radius)
+    if (location.x < -_radius || location.x > _radius || location.y < -_radius || location.y > _radius)
     {
         return NO;
     }
     else
     {
         float dSq = location.x * location.x + location.y * location.y;
-        if (radiusSq > dSq)
+        if (_radiusSq > dSq)
         {
             return YES;
         }
@@ -74,30 +88,30 @@
 {
     NSLog(@"FIRE!");
 
-    if (active)
+    if (_active)
     {
         return;
     }
 
-    active = YES;
-    if (!isHoldable && !isToggleable)
+    self.active = YES;
+    if (!_isHoldable && !_isToggleable)
     {
-        value = 1;
-        [self schedule:@selector(limiter:) interval:rateLimit];
+        self.value = YES;
+        [self schedule:@selector(limiter:) interval:_rateLimit];
     }
-    if (isHoldable)
+    if (_isHoldable)
     {
-        value = 1;
+        self.value = NO;
     }
-    if (isToggleable)
+    if (_isToggleable)
     {
-        value = !value;
+        self.value = !_value;
     }
 }
 
 - (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    if (!active)
+    if (!_active)
     {
         return;
     }
@@ -105,44 +119,44 @@
     CGPoint location = [[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]];
     location = [self convertToNodeSpace:location];
     //Do a fast rect check before doing a circle hit check:
-    if (location.x < -radius || location.x > radius || location.y < -radius || location.y > radius)
+    if (location.x < -_radius || location.x > _radius || location.y < -_radius || location.y > _radius)
     {
         return;
     }
     else
     {
         float dSq = location.x * location.x + location.y * location.y;
-        if (radiusSq > dSq)
+        if (_radiusSq > dSq)
         {
-            if (isHoldable)
+            if (_isHoldable)
             {
-                value = 1;
+                self.value = YES;
             }
         }
         else
         {
-            if (isHoldable)
+            if (_isHoldable)
             {
-                value = 0;
+                self.value = NO;
             }
-            active = NO;
+            self.active = NO;
         }
     }
 }
 
 - (void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    if (!active)
+    if (!_active)
     {
         return;
     }
-    if (isHoldable)
+    if (_isHoldable)
     {
-        value = 0;
+        self.value = NO;
     }
-    if (isHoldable || isToggleable)
+    if (_isHoldable || _isToggleable)
     {
-        active = NO;
+        self.active = NO;
     }
 }
 

@@ -33,7 +33,7 @@
 }
 
 #pragma mark -
-#pragma mark - GamePlaySceneDelegateProtocolMethods
+#pragma mark - GamePlaySceneDelegateMethods
 
 - (void)addPoints:(int)pointsToAdd
 {

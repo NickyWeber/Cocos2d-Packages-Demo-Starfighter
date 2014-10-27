@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol GamePlaySceneDelegate;
+@class Spaceship;
 
 
 @interface GamePlayLayer : CCNode
