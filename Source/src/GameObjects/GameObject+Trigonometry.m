@@ -5,10 +5,10 @@
 //
 
 
-#import "GameObject+Trigonemetry.h"
+#import "GameObject+Trigonometry.h"
 
 
-@implementation GameObject (Trigonemetry)
+@implementation GameObject (Trigonometry)
 
 - (CGPoint)calcNormalizedShotVector:(CGPoint)startPosition andTargetPosition:(CGPoint)targetPosition
 {
@@ -39,7 +39,7 @@
 - (CGPoint)rotateVector:(CGPoint)vector byDegrees:(float)degrees
 {
 	float x_, y_;
-	float rad = degrees * M_PI / 180.0;
+	float rad = (float) (degrees * M_PI / 180.0);
 
 	x_ = vector.x * cosf(rad) - vector.y * sinf(rad);
 	y_ = vector.y * cosf(rad) + vector.x * sinf(rad);
@@ -55,14 +55,14 @@
 	float tmp = aVectorA.x * aVectorB.x + aVectorA.y * aVectorB.y;
 	float tmp2 = [GameObject lengthOfVector:aVectorA] * [GameObject lengthOfVector:aVectorB];
 
-	float angleRad = acos(tmp / tmp2);
-	float angleDeg = angleRad * 180.0 / M_PI;
+	float angleRad = (float) acos(tmp / tmp2);
+	float angleDeg = (float) (angleRad * 180.0 / M_PI);
 
 	float crossProduct = aVectorA.x * aVectorB.y - aVectorA.y * aVectorB.x;
 
-	return (crossProduct > 0.0)
-		? angleDeg
-		: angleDeg * -1.0;
+	return (float) ((crossProduct > 0.0)
+        ? angleDeg
+        : angleDeg * -1.0);
 }
 
 - (float)distanceToPoint:(CGPoint)aPoint

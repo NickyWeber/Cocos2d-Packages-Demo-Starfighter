@@ -21,6 +21,7 @@
 #import "MonsterSpawner.h"
 #import "GamePlaySceneDelegate.h"
 #import "AIMovementDebug.h"
+#import "EnemyShot.h"
 
 /*
 #import "AIMovementProtocol.h"
@@ -197,18 +198,13 @@
 
 - (void)fireAtPlayer
 {
-/*
 	if ([self areCannonsReady])
 	{
-		EnemyShot *aShot = [[EnemyShot alloc] initEnemyShotWithStartPosition:self.position
-																 andTarget:[delegate spaceship]];
-
+        EnemyShot *aShot = [[EnemyShot alloc] initEnemyShotWithStartPosition:self.position
+                                                                   andTarget:[_delegate spaceship]];
 		// NSLog(@"*********** FIRING FROM %f.2 %f.2 !!! ***************", aShot.position.x, aShot.position.y);
-
-		[delegate addGameEntity:aShot];
-		[aShot release];
+		[_delegate addGameEntity:aShot];
 	}
-*/
 
 /*
     if ([self areCannonsReady])

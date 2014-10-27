@@ -90,6 +90,7 @@
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		B78A0B10198AF87200C63841 /* Published-Android in Resources */ = {isa = PBXBuildFile; fileRef = B78A0B0F198AF87200C63841 /* Published-Android */; };
 		E525F0777B4F33503F6B4926 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF0966AAF612B68ED038 /* GameObject.m */; };
+		E525F07F3B867D0350741EA7 /* GameObject+Trigonometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2D4CECE59E212DA0879 /* GameObject+Trigonometry.m */; };
 		E525F0880539B2BBDFB57DD2 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* HUDLayer.m */; };
 		E525F0DD5564A85DB6B6469C /* GamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* GamePlayLayer.m */; };
 		E525F1518223A6F9ECBF25FE /* LaserBeam.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */; };
@@ -98,6 +99,7 @@
 		E525F1793D1FB8A7936A1D3A /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCBEBAEA40A459BB2A39 /* Spaceship.m */; };
 		E525F180B144E5AE1DBC2C9F /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F57C24B73E6B954C2DD2 /* Enemy.m */; };
 		E525F183AE074F1F2CEC05A5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* Constants.m */; };
+		E525F1D1CB02B80D59C25198 /* EnemyShot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F873D55AD2AC7F4898A1 /* EnemyShot.m */; };
 		E525F22B8EFBD6AC1BA91522 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
 		E525F2A7C9CC26DCE17D5CD7 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF0966AAF612B68ED038 /* GameObject.m */; };
 		E525F32927DEBFD224D4EBF7 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F4D64549931E5C8FF8D7 /* MainScene.m */; };
@@ -111,7 +113,9 @@
 		E525F48350928832D8A75402 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
 		E525F4A10CED0F9FFE8765CC /* AIMovementDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F086A56B83AF79727A53 /* AIMovementDebug.m */; };
 		E525F5056396262B97612CD5 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
+		E525F53A1D230B96107CB8F9 /* EnemyShot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F873D55AD2AC7F4898A1 /* EnemyShot.m */; };
 		E525F5762EEB3EC2D5EA49B5 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* HUDLayer.m */; };
+		E525F5763540613EAF3CB18E /* EnemyShot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F873D55AD2AC7F4898A1 /* EnemyShot.m */; };
 		E525F5A8892F0C6178AA4F54 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* Constants.m */; };
 		E525F5BDBBFED07AF765329B /* GamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* GamePlayLayer.m */; };
 		E525F5FF86D2CA3CD2CBBFE6 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
@@ -134,6 +138,7 @@
 		E525F989219BB060773E3B26 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* HUDLayer.m */; };
 		E525F9A7C6F65A969E2482E3 /* LaserBeam.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */; };
 		E525F9D8111A63E5AEB12AB5 /* AIMovementDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F086A56B83AF79727A53 /* AIMovementDebug.m */; };
+		E525F9E2A8D9623F1BB4F73C /* GameObject+Trigonometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2D4CECE59E212DA0879 /* GameObject+Trigonometry.m */; };
 		E525FA07F082296C2F44F217 /* BoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* BoundingBox.m */; };
 		E525FA50339C622043F22558 /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCBEBAEA40A459BB2A39 /* Spaceship.m */; };
 		E525FAAFA4F98D87E6DCF6CD /* AIMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F34BF55EF3A50753D544 /* AIMovement.m */; };
@@ -144,6 +149,7 @@
 		E525FC603553E6AF012C3F4D /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
 		E525FCAC1AD9F89A09559255 /* LaserCannon.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FD191D8AB3E57C4085A1 /* LaserCannon.m */; };
 		E525FCBCDF27434575DD6DC5 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
+		E525FD1173930982CB186D1B /* GameObject+Trigonometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2D4CECE59E212DA0879 /* GameObject+Trigonometry.m */; };
 		E525FD59762E512B5F1C9611 /* MonsterSpawner.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBB355E9F0C7DCD609EE /* MonsterSpawner.m */; };
 		E525FD70756CF3D85B0F48B2 /* GamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* GamePlayLayer.m */; };
 		E525FE34C3D10272FE0F74E2 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* BackgroundLayer.m */; };
@@ -293,11 +299,14 @@
 		E525F1977383887308B4098D /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
 		E525F1A1A2AD62D6DBC4A854 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
 		E525F29CF485434C548AFB09 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
+		E525F2D4CECE59E212DA0879 /* GameObject+Trigonometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GameObject+Trigonometry.m"; sourceTree = "<group>"; };
 		E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
 		E525F34BF55EF3A50753D544 /* AIMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMovement.m; sourceTree = "<group>"; };
 		E525F3D51EA67127222D6A96 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		E525F403B739C47888FA5590 /* BoundingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoundingBox.h; sourceTree = "<group>"; };
+		E525F407B46AEAA8302ED01E /* EnemyShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyShot.h; sourceTree = "<group>"; };
 		E525F480911E20C345715C5E /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		E525F4B62211489AEF1DCDA2 /* GameObject+Trigonometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameObject+Trigonometry.h"; sourceTree = "<group>"; };
 		E525F4D64549931E5C8FF8D7 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		E525F504441FEA7B27C69919 /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
 		E525F57C24B73E6B954C2DD2 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
@@ -311,6 +320,7 @@
 		E525F7E9973048779F98F0E2 /* BoundingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundingBox.m; sourceTree = "<group>"; };
 		E525F7EB5DA3CCAECD61449E /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
 		E525F7F6BACC943D680305F7 /* GamePlaySceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePlaySceneDelegate.h; path = Source/src/Layers/GamePlaySceneDelegate.h; sourceTree = SOURCE_ROOT; };
+		E525F873D55AD2AC7F4898A1 /* EnemyShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyShot.m; sourceTree = "<group>"; };
 		E525F970C8EC31FACC7152C4 /* GamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayScene.h; sourceTree = "<group>"; };
 		E525F99E82751857FC49EA56 /* WeaponSystemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSystemProtocol.h; sourceTree = "<group>"; };
 		E525F9A80E349EDFEF2B5BF0 /* LaserCannon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserCannon.h; sourceTree = "<group>"; };
@@ -693,6 +703,8 @@
 				E525FCBEBAEA40A459BB2A39 /* Spaceship.m */,
 				E525F99E82751857FC49EA56 /* WeaponSystemProtocol.h */,
 				E525FA14950E1FAC40D7D531 /* Weapons */,
+				E525F4B62211489AEF1DCDA2 /* GameObject+Trigonometry.h */,
+				E525F2D4CECE59E212DA0879 /* GameObject+Trigonometry.m */,
 			);
 			name = GameObjects;
 			path = Source/src/GameObjects;
@@ -724,6 +736,8 @@
 				E525FD191D8AB3E57C4085A1 /* LaserCannon.m */,
 				E525F60E1AF9B040DB8D85F9 /* LaserBeam.h */,
 				E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */,
+				E525F407B46AEAA8302ED01E /* EnemyShot.h */,
+				E525F873D55AD2AC7F4898A1 /* EnemyShot.m */,
 			);
 			path = Weapons;
 			sourceTree = "<group>";
@@ -1050,6 +1064,8 @@
 				E525F46C361900888F89423B /* MonsterSpawner.m in Sources */,
 				E525F4A10CED0F9FFE8765CC /* AIMovementDebug.m in Sources */,
 				E525FAAFA4F98D87E6DCF6CD /* AIMovement.m in Sources */,
+				E525F53A1D230B96107CB8F9 /* EnemyShot.m in Sources */,
+				E525FD1173930982CB186D1B /* GameObject+Trigonometry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1079,6 +1095,8 @@
 				E525FD59762E512B5F1C9611 /* MonsterSpawner.m in Sources */,
 				E525F64F7F3F441208039FE9 /* AIMovementDebug.m in Sources */,
 				E525F8EA99B7433914ADE7B7 /* AIMovement.m in Sources */,
+				E525F1D1CB02B80D59C25198 /* EnemyShot.m in Sources */,
+				E525F07F3B867D0350741EA7 /* GameObject+Trigonometry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1109,6 +1127,8 @@
 				E525FF663095AEFBFA8A15AF /* MonsterSpawner.m in Sources */,
 				E525F9D8111A63E5AEB12AB5 /* AIMovementDebug.m in Sources */,
 				E525F74BBE4B2CDE937D90E6 /* AIMovement.m in Sources */,
+				E525F5763540613EAF3CB18E /* EnemyShot.m in Sources */,
+				E525F9E2A8D9623F1BB4F73C /* GameObject+Trigonometry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

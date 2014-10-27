@@ -7,86 +7,48 @@
 
 #import "EnemyShot.h"
 #import "CCAnimation.h"
-#import "CCActionInterval.h"
-#import "GameConfig.h"
-#import "CCActionTween.h"
-#import "GamePlaySceneDelegateProtocol.h"
-#import "Spaceship.h"
-#import "GamePlayLayer.h"
-#import "CCLine.h"
-#import "GameObject+Trigonemetry.h"
-
-
-@interface EnemyShot ()
-
-- (BOOL)isBeyondScreen;
-
-@end
+#import "GameObject+Trigonometry.h"
+#import "Constants.h"
 
 
 @implementation EnemyShot
 
-
-@synthesize speedFactor;
-@synthesize power;
-@synthesize standardAnimation;
-@synthesize shotVector;
-@synthesize target;
-
-
-#pragma mark -
-#pragma mark - memory management
-
-- (void)dealloc
-{
-	[standardAnimation release];
-
-	[super dealloc];
-}
-
-
-#pragma mark -
-#pragma mark - initialization
-
 - (id)initEnemyShotWithStartPosition:(CGPoint)startPosition andTarget:(GameObject *)aTarget
 {
-	self = [super initWithFile:@"EnemyShot_1.png"];
+	self = [super initWithImageNamed:@"Sprites/Shots/EnemyShot_2.png"];
 
 	if (self)
 	{
 		self.target = aTarget;
 		self.position = startPosition;
 
-		speedFactor = 120;
-		power = 25;
+		self.speedFactor = 120;
+		self.power = 25;
 
 		self.shotVector = [self calcNormalizedShotVector:startPosition
-									   andTargetPosition:CGPointMake(target.position.x - 100.0, target.position.y)];
+									   andTargetPosition:_target.position];
 
-		CCAnimation *shotAnimation= [CCAnimation animation];
+        CCAnimation *spaceshipAnimation = [CCAnimation animation];
+        [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Shots/EnemyShot_1.png"];
+        [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Shots/EnemyShot_2.png"];
+        spaceshipAnimation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 2.0);
 
-		[shotAnimation addSpriteFrameWithFilename:@"EnemyShot_1.png"];
-		[shotAnimation addSpriteFrameWithFilename:@"EnemyShot_2.png"];
-		[shotAnimation addSpriteFrameWithFilename:@"EnemyShot_2.png"];
-		id shotAnimationAction = [CCAnimate actionWithDuration:2.0 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER
-		                                             animation:shotAnimation
-									      restoreOriginalFrame:YES];
+        CCActionAnimate *spaceshipAnimationAction = [CCActionAnimate actionWithAnimation:spaceshipAnimation];
+        spaceshipAnimationAction.duration = 1.0 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
+        spaceshipAnimation.restoreOriginalFrame = YES;
+        self.standardAnimation = [CCActionRepeatForever actionWithAction:spaceshipAnimationAction];
 
-		self.standardAnimation = [CCRepeatForever actionWithAction:shotAnimationAction];
-
-		[self runAction:self.standardAnimation];
-
-
+        [self runAction:self.standardAnimation];
 		[self addBoundingBoxWithRect:CGRectMake(0.0, 0.0, 15.0, 15.0)];
 	}
 
 	return self;
 }
 
-- (void)updateStateWithTimeDelta:(ccTime)aTimeDelta andGameObjects:(CCArray *)gameObjects
+- (void)updateStateWithTimeDelta:(CCTime)aTimeDelta andGameObjects:(NSArray *)gameObjects
 {
-	CGPoint newPosition = CGPointMake(self.position.x + aTimeDelta * shotVector.x * speedFactor,
-									  self.position.y + aTimeDelta * shotVector.y * speedFactor);
+	CGPoint newPosition = ccp((CGFloat) (self.position.x + aTimeDelta * _shotVector.x * _speedFactor),
+                              (CGFloat) (self.position.y + aTimeDelta * _shotVector.y * _speedFactor));
 
 	[self setPosition:newPosition];
 
@@ -99,12 +61,12 @@
 
 - (BOOL)isBeyondScreen
 {
-	float graceBuffer = 20.0;
+	float margin = 20.0;
 
-	return    self.position.x > 320.0 + graceBuffer
-		   || self.position.x < 0.0 - graceBuffer
-		   || self.position.y > 480.0 + graceBuffer
-		   || self.position.y < 0.0 - graceBuffer;
+	return    self.position.x > [CCDirector sharedDirector].view.frame.size.width + margin
+		   || self.position.x < 0.0 - margin
+		   || self.position.y > [CCDirector sharedDirector].view.frame.size.height + margin
+		   || self.position.y < 0.0 - margin;
 }
 
 
@@ -113,7 +75,7 @@
 
 - (int)damage
 {
-	return isActive
+	return self.isActive
 		? self.power
 		: 0;
 }

@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "GameObject.h"
 
-@interface GameObject (Trigonemetry)
+@interface GameObject (Trigonometry)
 
 - (CGPoint)calcNormalizedShotVector:(CGPoint)startPosition andTargetPosition:(CGPoint)targetPosition;
 - (CGPoint)rotateVector:(CGPoint)vector byDegrees:(float)degrees;

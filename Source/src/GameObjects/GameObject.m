@@ -44,6 +44,7 @@
 				return YES;
 			}
 		}
+        return YES;
 	}
 	return NO;
 }
@@ -57,12 +58,12 @@
 {
 	for (BoundingBox *aBoundingBox in _boundingBoxes)
 	{
-		if (CGRectIntersectsRect([self absoluteCollisionRectWithRect:[aBoundingBox rect]], aCollisionRect))
+        CGRect fii = [self absoluteCollisionRectWithRect:[aBoundingBox rect]];
+		if (CGRectIntersectsRect(fii, aCollisionRect))
 		{
 			return YES;
 		}
 	}
-
 	return NO;
 }
 

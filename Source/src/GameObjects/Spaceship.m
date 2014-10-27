@@ -100,7 +100,7 @@ static float HIT_ANIMATION_DURATION = 0.1f;
                 [self testOnEnemyShipCollisionAndApplyDamageWithEnemy:((Enemy *) gameObject)];
             }
 
-            GameObject <WeaponProjectileProtocol> *weapon = (GameObject <WeaponProjectileProtocol> *) gameObject;
+            GameObject <WeaponProjectileProtocol> *weapon = (GameObject <WeaponProjectileProtocol>*) gameObject;
             if ([weapon conformsToProtocol:@protocol(WeaponProjectileProtocol)]
                 && [weapon damagesSpaceship]
                 && weapon.isActive)
@@ -158,9 +158,10 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 		CCAnimation *hitAnimation = [CCAnimation animation];
 		[hitAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_hit.png"];
         hitAnimation.restoreOriginalFrame = YES;
+        hitAnimation.delayPerUnit = HIT_ANIMATION_DURATION;
 
         CCActionAnimate *hitAnimationAction = [CCActionAnimate actionWithAnimation:hitAnimation];
-        hitAnimationAction.duration = HIT_ANIMATION_DURATION;
+        hitAnimationAction.duration = HIT_ANIMATION_DURATION * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
 
 		[self runAction:hitAnimationAction];
 	}

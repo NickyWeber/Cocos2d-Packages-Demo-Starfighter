@@ -10,12 +10,13 @@
 #import "CCAction.h"
 
 @class Spaceship;
-@protocol GamePlaySceneDelegateProtocol;
-@class CCLine;
+@protocol GamePlaySceneDelegate;
+// @class CCLine;
 
 
 @interface EnemyShot : GameObject <WeaponProjectileProtocol>
 {
+/*
 	GameObject *target;
 
 	CGPoint shotVector;
@@ -24,17 +25,16 @@
 	int power;
 
 	CCRepeatForever *standardAnimation;
+*/
 }
 
 @property (nonatomic, assign) GameObject *target;
 
 @property (nonatomic) float speedFactor;
 @property (nonatomic) int power;
-@property (nonatomic, retain) CCRepeatForever *standardAnimation;
+@property (nonatomic, strong) CCActionRepeatForever *standardAnimation;
 @property (nonatomic) CGPoint shotVector;
 
-
 - (id)initEnemyShotWithStartPosition:(CGPoint)startPosition andTarget:(GameObject *)aTarget;
-
 
 @end
