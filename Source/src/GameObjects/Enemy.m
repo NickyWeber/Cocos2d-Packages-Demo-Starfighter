@@ -18,10 +18,11 @@
 #import "Spaceship.h"
 #import "Constants.h"
 #import "CCAnimationCache.h"
-#import "MonsterSpawner.h"
+#import "LevelController.h"
 #import "GamePlaySceneDelegate.h"
 #import "AIMovementDebug.h"
 #import "EnemyShot.h"
+#import "AIMovement.h"
 
 /*
 #import "AIMovementProtocol.h"
@@ -44,7 +45,7 @@
 
 @implementation Enemy
 
-- (id)initEnemyWithDelegate:(id<GamePlaySceneDelegate>)aDelegate
+- (id)initEnemyWithDelegate:(id <GamePlaySceneDelegate>)aDelegate level:(NSUInteger)level
 {
 	self = [super initWithImageNamed:@"Sprites/Enemy/Enemy_1.png"];
 	if (self)
@@ -54,9 +55,11 @@
 
 		self.delegate = aDelegate;
 
-		self.aiMovement = [[AIMovementDebug alloc] init];
+		self.aiMovement = [[AIMovement alloc] init];
 
 		self.state = EnemyStateNormal;
+
+        self.color = [self colorForLevel:level];
 
 		[self addBoundingBoxWithRect:CGRectMake(0.0, 0.0, 64.0, 44.0)];
 
@@ -102,6 +105,21 @@
 	}
 
 	return self;
+}
+
+- (CCColor *)colorForLevel:(NSUInteger)level
+{
+    switch (level)
+    {
+        case 1 : return [CCColor whiteColor];
+        case 2 : return [CCColor blueColor ];
+        case 3 : return [CCColor cyanColor];
+        case 4 : return [CCColor greenColor];
+        case 5 : return [CCColor yellowColor];
+        case 6 : return [CCColor orangeColor];
+        case 7 : return [CCColor purpleColor];
+        default: return [CCColor whiteColor];
+    }
 }
 
 - (void)updateStateWithTimeDelta:(CCTime)aTimeDelta andGameObjects:(NSArray *)gameObjects

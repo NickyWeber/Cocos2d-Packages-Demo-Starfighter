@@ -56,7 +56,7 @@ typedef enum {
 @property (nonatomic, strong) GameObject *loot;
 @property (nonatomic, strong) id <AIMovementProtocol> aiMovement;
 
-- (id)initEnemyWithDelegate:(id<GamePlaySceneDelegate>)aDelegate;
+- (id)initEnemyWithDelegate:(id <GamePlaySceneDelegate>)aDelegate level:(NSUInteger)level;
 
 - (void)takeDamage:(int)damageTaken;
 

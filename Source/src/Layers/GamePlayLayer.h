@@ -14,4 +14,6 @@
 - (void)addGameEntity:(CCNode *)aGameEntity;
 - (void)addGameEntity:(CCNode *)aGameEntity z:(int)zOrder;
 
+- (void)advanceToLevel:(NSUInteger)level;
+
 @end

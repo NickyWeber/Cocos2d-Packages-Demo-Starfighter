@@ -10,13 +10,12 @@
 
 @protocol GamePlaySceneDelegate;
 
-@class CCArray;
 
-
-
-@interface MonsterSpawner : NSObject
+@interface LevelController : NSObject
 
 @property (nonatomic, weak) id<GamePlaySceneDelegate> delegate;
+@property (nonatomic) NSUInteger level;
+@property (nonatomic) NSUInteger totalEnemies;
 
 - (id)initWithDelegate:(id<GamePlaySceneDelegate>)aDelegate;
 

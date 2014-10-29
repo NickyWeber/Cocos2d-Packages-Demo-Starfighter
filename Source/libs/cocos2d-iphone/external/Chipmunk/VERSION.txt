@@ -244,7 +244,7 @@ What's new in 5.3.0:
  * FIX: Fixed the source so it can compile as C, C++, Objective-C, and Objective-C++.
  * FIX: Fixed cp_contact_persistence. It was broken so that it would forget collision solutions after 1 frame instead of respecting the value set.
  * OPTIMIZATION: Several minor optimizations have been added. Though performance should only differ by a few percent.
- * OPTIMIZATION: Chipmunk now supports putting bodies to sleep when they become inactive.
+ * OPTIMIZATION: Chipmunk now supports putting bodies to sleep when they become complete.
  * API: Elastic iterations are now deprecated as they should no longer be necessary.
  * API: Added API elements to support body sleeping.
  * API: Added a statically allocated static body to each space for attaching static shapes to.

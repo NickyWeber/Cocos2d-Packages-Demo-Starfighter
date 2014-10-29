@@ -5,7 +5,8 @@
 //
 
 
-#import "MonsterSpawner.h"
+#include <SSZipArchive/unzip.h>
+#import "LevelController.h"
 #import "ccTypes.h"
 #import "Enemy.h"
 #import "ccMacros.h"
@@ -13,11 +14,15 @@
 #import "GamePlayLayer.h"
 // #import "CashLoot.h"
 
+@interface LevelController()
 
-@implementation MonsterSpawner
+@property (nonatomic) NSUInteger totalSpawned;
 
-#pragma mark -
-#pragma mark - initialization
+@property (nonatomic) BOOL complete;
+@end
+
+
+@implementation LevelController
 
 - (id)init
 {
@@ -33,10 +38,29 @@
 		NSAssert([aDelegate conformsToProtocol:@protocol(GamePlaySceneDelegate)],
 		         @"Delegate has to conform to GamePlaySceneDelegateProtocol!");
 
+        self.totalSpawned = 0;
 		self.delegate = aDelegate;
+        self.level = 1;
 	}
 
 	return self;
+}
+
+- (NSUInteger)totalEnemiesForLevel:(NSUInteger)level
+{
+    return (NSUInteger) (3 + 3 * (level - 1));
+}
+
+- (void)setLevel:(NSUInteger)level
+{
+    self.complete = NO;
+    self.totalSpawned = 0;
+
+    _level = level;
+    self.totalEnemies = [self totalEnemiesForLevel:_level];
+
+    NSLog(@"*** New Level: %u - total enemies %u", level, _totalEnemies);
+    // NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 
@@ -45,6 +69,11 @@
 
 - (void)update:(CCTime)deltaTime andGameObjects:(NSArray *)someGameObjects
 {
+    if (_complete)
+    {
+        return;
+    }
+
 	int enemyCount = 0;
 
 	for (id gameObject in someGameObjects)
@@ -56,28 +85,22 @@
 		}
 	}
 
-	if (enemyCount <= 0)
+	if (enemyCount <= 0 && (_totalSpawned < _totalEnemies))
 	{
-		Enemy *enemy = [[Enemy alloc] initEnemyWithDelegate:_delegate];
+        self.totalSpawned += 1;
+
+		Enemy *enemy = [[Enemy alloc] initEnemyWithDelegate:_delegate level:_level];
 		enemy.position = CGPointMake((CGFloat) (([CCDirector sharedDirector].view.frame.size.width - 20.0) * CCRANDOM_0_1() + 20),
-                                     // (CGFloat) (([CCDirector sharedDirector].view.frame.size.height) + enemy.contentSize.height / 2));
                                      (CGFloat) (([CCDirector sharedDirector].view.frame.size.height - 50.0) + enemy.contentSize.height / 2));
-
-
-/*
-		enemy.position = CGPointMake(20.0,
-                                     (CGFloat) ([CCDirector sharedDirector].view.frame.size.height - 20.0 + enemy.contentSize.height / 2));
-
-*/
-
-/*
-		CashLoot *loot = [[CashLoot alloc] initWithDelegate:delegate];
-		enemy.loot = loot;
-*/
 
 		[_delegate addGameEntity:enemy];
 	}
-	// END OF TODO create monster spawner class, which can read XML and so on... :)
+
+    if (_totalEnemies == _totalSpawned)
+    {
+        self.complete = YES;
+        [_delegate levelCompleted:_level];
+    }
 }
 
 @end

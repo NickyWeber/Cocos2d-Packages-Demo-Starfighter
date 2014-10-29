@@ -3,19 +3,20 @@
 #import "GamePlaySceneDelegate.h"
 #import "Spaceship.h"
 #import "HUDLayer.h"
-#import "MonsterSpawner.h"
+#import "LevelController.h"
 #import "LaserBeam.h"
 #import "Enemy.h"
 
 
 @interface GamePlayLayer ()
 
-@property (nonatomic, strong) MonsterSpawner *monsterSpawner;
+@property (nonatomic, strong) LevelController *levelController;
 @property (nonatomic, strong) NSMutableArray *gameObjectRemovalPool;
 @property (nonatomic) int enemyCount;
 @property (nonatomic) int points;
 
 @property (nonatomic) double timeSinceLastStatusUpdate;
+@property (nonatomic) NSUInteger level;
 @end
 
 
@@ -34,7 +35,7 @@
 		self.delegate = aDelegate;
 		self.gameObjectRemovalPool = [NSMutableArray array];
         
-		self.monsterSpawner = [[MonsterSpawner alloc] initWithDelegate:_delegate];
+		self.levelController = [[LevelController alloc] initWithDelegate:_delegate];
 
 		[self initializeSpaceship];
 
@@ -46,7 +47,7 @@
 
 - (void)update:(CCTime)delta
 {
-    [_monsterSpawner update:delta andGameObjects:[self children]];
+    [_levelController update:delta andGameObjects:[self children]];
 
    	for (GameObject *gameObject in [[self children] copy])
    	{
@@ -68,7 +69,6 @@
 - (void)initializeSpaceship
 {
 	self.spaceship = [[Spaceship alloc] initWithDelegate:_delegate];
-
     _spaceship.position = CGPointMake(160, 160);
 	[self addChild:_spaceship];
 }
@@ -125,6 +125,12 @@
 	}
 
 	self.timeSinceLastStatusUpdate += aTimeDelta;
+}
+
+- (void)advanceToLevel:(NSUInteger)level
+{
+    _levelController.level = level;
+    self.level = level;
 }
 
 @end

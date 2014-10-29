@@ -61,7 +61,7 @@
 
 - (BOOL)isBeyondScreen
 {
-	float margin = 20.0;
+	float margin = 100.0;
 
 	return    self.position.x > [CCDirector sharedDirector].view.frame.size.width + margin
 		   || self.position.x < 0.0 - margin

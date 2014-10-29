@@ -21,4 +21,6 @@
 - (SneakyButton *)fireButton;
 - (SneakyJoystick *)joystick;
 
+- (void)levelCompleted:(NSUInteger)level;
+
 @end
