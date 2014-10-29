@@ -6,6 +6,8 @@
 #import "SneakyJoystick.h"
 #import "SneakyButtonSkinnedBase.h"
 #import "SneakyJoystickSkinnedDPadExample.h"
+#import "CCEffectInvert.h"
+#import "CCLabelTTF+GameFont.h"
 
 @interface GamePlayScene ()
 @property (nonatomic) int gameScore;
@@ -75,6 +77,18 @@
 - (SneakyJoystick *)joystick
 {
     return _hudLayer.joystick.joystick;
+}
+
+- (void)gameOver
+{
+    CCLabelTTF *label = [CCLabelTTF gameLabelWithSize:48.0];
+    label.string = @"Game Over";
+
+    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
+
+    [_hudLayer addChild:label];
+    label.position = ccp((CGFloat) (screenSize.width / 2.0),
+                         (CGFloat) (screenSize.height * 0.6666));
 }
 
 @end

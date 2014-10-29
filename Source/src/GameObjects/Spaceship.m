@@ -9,6 +9,7 @@
 #import "SneakyButton.h"
 #import "WeaponSystemProtocol.h"
 #import "LaserCannon.h"
+#import "CCEffectInvert.h"
 
 
 static float EXPLOSION_ANIMATION_DURATION = 1.3f;
@@ -22,6 +23,8 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 @property (nonatomic) double missilesPerSecond;
 @property (nonatomic) double timeSinceLastShotFired;
 @property (nonatomic) double timeSinceLastMissileLaunched;
+@property (nonatomic, strong) id spaceshipAnimationAction;
+@property (nonatomic, strong) id repeatedSpaceshipAnimation;
 @end
 
 @implementation Spaceship
@@ -39,10 +42,10 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         self.delegate = delegate;
         [self setIsActive:YES];
 
-        self.health = 100;
+        self.health = 1;
         self.healthMax = 100;
 
-        self.shield = 100;
+        self.shield = 0;
         self.shieldMax = 100;
 
         self.weaponSystems = [NSMutableArray array];
@@ -69,8 +72,8 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_3.png"];
         [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_2.png"];
         
-        id spaceshipAnimationAction = [CCActionAnimate actionWithAnimation:spaceshipAnimation];
-        id repeatedSpaceshipAnimation = [CCActionRepeatForever actionWithAction:spaceshipAnimationAction];
+        self.spaceshipAnimationAction = [CCActionAnimate actionWithAnimation:spaceshipAnimation];
+        self.repeatedSpaceshipAnimation = [CCActionRepeatForever actionWithAction:_spaceshipAnimationAction];
 
         self.speedfactor = 0.75;
         self.shotsPerSecond = 5.0;
@@ -78,7 +81,7 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         self.timeSinceLastShotFired = 0.0;
         self.timeSinceLastMissileLaunched = 0.0;
 
-        [self runAction:repeatedSpaceshipAnimation];
+        [self runAction:_repeatedSpaceshipAnimation];
 
         [_delegate updateHealthBarWithHealthInPercent:[self healthInPercent]];
         [_delegate updateShieldBarWithShieldInPercent:[self shieldInPercent]];
@@ -175,12 +178,17 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 	self.isActive = NO;
 
     CCActionAnimate *explosionAnimationAction = [CCActionAnimate actionWithAnimation:[[CCAnimationCache sharedAnimationCache] animationByName:@"Explosion"]];
-    explosionAnimationAction.duration = EXPLOSION_ANIMATION_DURATION;
+    explosionAnimationAction.animation.restoreOriginalFrame = NO;
 
-	id sequence = [CCActionSequence actions:explosionAnimationAction,
-    								  [CCActionCallFunc actionWithTarget:_delegate
-														  selector:@selector(gameOver)],
-									  nil];
+    [self stopAction:_repeatedSpaceshipAnimation];
+
+    id sequence = [CCActionSequence actions:explosionAnimationAction,
+                                    [CCActionCallBlock actionWithBlock:^{
+                                        self.visible = NO;
+                                    }],
+                                    [CCActionDelay actionWithDuration:1.0],
+                                    [CCActionCallFunc actionWithTarget:_delegate selector:@selector(gameOver)],
+                                    nil];
 
 	[self runAction:sequence];
 }

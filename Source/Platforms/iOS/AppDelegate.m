@@ -28,6 +28,7 @@
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 #import "GamePlayScene.h"
+#import "GameMenuScene.h"
 
 @implementation AppController
 
@@ -60,9 +61,15 @@
 
 - (CCScene*) startScene
 {
+    GameMenuScene *gameMenuScene = [[GameMenuScene alloc] init];
+    return gameMenuScene;
+
+
+/*
     GamePlayScene *gamePlayScene = [[GamePlayScene alloc] init];
 
     return gamePlayScene;
+*/
 }
 
 @end

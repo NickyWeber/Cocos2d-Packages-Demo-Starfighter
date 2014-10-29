@@ -101,11 +101,6 @@
 	[self addChild:aGameEntity z:zOrder];
 }
 
-- (void)gameOver
-{
-    NSAssert(NO, @"Implement me!!!");
-}
-
 - (void)debugStatusWithDeltaTime:(CCTime)aTimeDelta
 {
 	if (_timeSinceLastStatusUpdate >= 1.0)

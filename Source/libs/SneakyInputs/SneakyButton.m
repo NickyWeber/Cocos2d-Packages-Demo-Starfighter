@@ -30,7 +30,6 @@
     self = [super init];
     if (self)
     {
-
         self.bounds = CGRectMake(0, 0, rect.size.width, rect.size.height);
         self.center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
         self.status = 1; //defaults to enabled
@@ -86,8 +85,6 @@
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    NSLog(@"FIRE!");
-
     if (_active)
     {
         return;
