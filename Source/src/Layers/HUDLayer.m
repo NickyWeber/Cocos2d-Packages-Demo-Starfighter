@@ -1,8 +1,14 @@
+#import <Foundation/Foundation.h>
 #import "HUDLayer.h"
 #import "SneakyJoystickSkinnedDPadExample.h"
 #import "SneakyButtonSkinnedBase.h"
 #import "SneakyButton.h"
+#import "CCBSequence.h"
 
+
+@interface HUDLayer ()
+@property (nonatomic, strong) CCActionRepeatForever *healthFlickerAction;
+@end
 
 @implementation HUDLayer
 
@@ -44,6 +50,9 @@
     _healthBar.position = CGPointMake(0.0, (CGFloat) (displaySize.height - 3.0));
     _healthBar.anchorPoint = CGPointMake(0.0, 0.0);
     [self addChild:_healthBar];
+
+    self.healthFlickerAction = [CCActionRepeatForever actionWithAction:[CCActionBlink actionWithDuration:0.2 blinks:1]];
+    _healthFlickerAction.tag = 1000;
 }
 
 - (void)setupScoreLabel
@@ -90,6 +99,17 @@
 
 - (void)updateHealthBarWithHealthInPercent:(float)healthInPercent
 {
+    id action = [_healthBar getActionByTag:1000];
+
+    if (healthInPercent <= 0.2 && !action)
+    {
+        [_healthBar runAction:_healthFlickerAction];
+    }
+    else if (healthInPercent > 0.2 && action)
+    {
+        [_healthBar stopAction:_healthFlickerAction];
+    }
+
     CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
 
 	float newHealthInPercent = MAX(0, MIN(healthInPercent, 1.0));

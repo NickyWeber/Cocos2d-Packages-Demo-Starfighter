@@ -11,6 +11,7 @@
 #import "Helper.h"
 #import "GameMenuScene.h"
 #import "CCAnimation.h"
+#import "CCBSequence.h"
 
 
 @interface SFTouchNode : CCNode
@@ -117,11 +118,36 @@
     label.string = @"Game Over";
     label.opacity = 0.0;
 
+    CCLabelTTF *label2 = [CCLabelTTF gameLabelWithSize:20.0 blockSize:2.0];
+    label2.string = @"(tap to continue)";
+    label2.opacity = 0.0;
+
+
+    CCActionFadeIn *actionFadeIn2 = [[CCActionFadeIn alloc] initWithDuration:0.3];
+
+    CCActionFadeTo *actionFadeTo = [[CCActionFadeTo alloc] initWithDuration:1.0 opacity:0.2];
+    CCActionEaseBackIn *actionEaseBackIn = [[CCActionEaseBackIn alloc] initWithAction:actionFadeTo];
+
+    CCActionFadeTo *actionFadeTo2 = [[CCActionFadeTo alloc] initWithDuration:1.0 opacity:0.60];
+    CCActionEaseBackOut *actionEaseBackOut2 = [[CCActionEaseBackOut alloc] initWithAction:actionFadeTo2];
+
+    CCActionSequence *sequence = [CCActionSequence actions:actionEaseBackIn, actionEaseBackOut2, nil];
+    CCActionRepeatForever *actionRepeatForever = [[CCActionRepeatForever alloc] initWithAction:sequence];
+
+    CCActionSequence *sequence2 = [CCActionSequence actions:actionFadeIn2, [CCActionCallBlock actionWithBlock:^{
+        [label2 runAction:actionRepeatForever];
+    }], nil];
+
+
     CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
 
     [_hudLayer addChild:label];
+    [_hudLayer addChild:label2];
     label.position = ccp((CGFloat) (screenSize.width / 2.0),
                          (CGFloat) (screenSize.height * 0.6666));
+
+    label2.position = ccp((CGFloat) (screenSize.width / 2.0),
+                         (CGFloat) (screenSize.height * 0.6666 - 40.0));
 
     SFTouchNode *touchNode = [[SFTouchNode alloc] init];
     touchNode.delegate = self;
@@ -134,6 +160,7 @@
 
     CCActionFadeIn *actionFadeIn = [CCActionFadeIn actionWithDuration:0.5];
     [label runAction:actionFadeIn];
+    [label2 runAction:sequence2];
 }
 
 - (void)touchBegan:(CCTouch *)touch event:(CCTouchEvent *)event

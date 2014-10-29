@@ -42,7 +42,7 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         self.delegate = delegate;
         [self setIsActive:YES];
 
-        self.health = 1;
+        self.health = 19;
         self.healthMax = 100;
 
         self.shield = 0;
