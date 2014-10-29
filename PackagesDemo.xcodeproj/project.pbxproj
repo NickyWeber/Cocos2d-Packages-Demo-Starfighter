@@ -104,6 +104,7 @@
 		E525F1E279AF6554F5DB68E3 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FDDBE171C661E737C6AD /* CCEffectInvert.m */; };
 		E525F22B8EFBD6AC1BA91522 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
 		E525F2A7C9CC26DCE17D5CD7 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF0966AAF612B68ED038 /* GameObject.m */; };
+		E525F30742E581BCA53AEFBA /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* Helper.m */; };
 		E525F32927DEBFD224D4EBF7 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F4D64549931E5C8FF8D7 /* MainScene.m */; };
 		E525F378294D183345E4BE16 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F57C24B73E6B954C2DD2 /* Enemy.m */; };
 		E525F3E21256195BD05F636C /* LaserCannon.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FD191D8AB3E57C4085A1 /* LaserCannon.m */; };
@@ -125,6 +126,7 @@
 		E525F5FF86D2CA3CD2CBBFE6 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
 		E525F628D9A8149FA2B769F7 /* Debris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F12448B0F02F118A3A4F /* Debris.m */; };
 		E525F64F7F3F441208039FE9 /* AIMovementDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F086A56B83AF79727A53 /* AIMovementDebug.m */; };
+		E525F66EBDBF3C6D10723368 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* Helper.m */; };
 		E525F6A17F020275AF409DAC /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF0966AAF612B68ED038 /* GameObject.m */; };
 		E525F6AA313E1D35E5CC61A8 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F4D64549931E5C8FF8D7 /* MainScene.m */; };
 		E525F6AB4D80AC77BA9612F6 /* LaserBeam.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */; };
@@ -169,6 +171,7 @@
 		E525FF663095AEFBFA8A15AF /* MonsterSpawner.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBB355E9F0C7DCD609EE /* MonsterSpawner.m */; };
 		E525FF724CCD1C9ABE1FCD6C /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCBEBAEA40A459BB2A39 /* Spaceship.m */; };
 		E525FF733821E1C9165D3D04 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
+		E525FFA64C063CBDABA3FC47 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* Helper.m */; };
 		E525FFCE77418EBB616E156C /* Debris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F12448B0F02F118A3A4F /* Debris.m */; };
 /* End PBXBuildFile section */
 
@@ -356,6 +359,8 @@
 		E525FDADD351EF750CD513E0 /* CCLabelTTF+GameFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCLabelTTF+GameFont.h"; sourceTree = "<group>"; };
 		E525FDAF02C6A82B0D8CFD46 /* SneakyJoystickSkinnedDPadExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedDPadExample.h; sourceTree = "<group>"; };
 		E525FDDBE171C661E737C6AD /* CCEffectInvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCEffectInvert.m; path = "Source/libs/cocos2d-iphone/cocos2d/CCEffectInvert.m"; sourceTree = "<group>"; };
+		E525FDFB7930A07737730573 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		E525FE3B5223A61311EDD4E6 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		E525FF06B8B7CC8AFD08F3F4 /* MonsterSpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterSpawner.h; sourceTree = "<group>"; };
 		E525FF0966AAF612B68ED038 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserBeam.m; sourceTree = "<group>"; };
@@ -747,6 +752,8 @@
 				E525FFFABA4DA3A6F6CFF196 /* AIMovement.h */,
 				E525F086A56B83AF79727A53 /* AIMovementDebug.m */,
 				E525F34BF55EF3A50753D544 /* AIMovement.m */,
+				E525FE3B5223A61311EDD4E6 /* Helper.m */,
+				E525FDFB7930A07737730573 /* Helper.h */,
 			);
 			name = Misc;
 			path = Source/src/Misc;
@@ -1074,6 +1081,7 @@
 				E525F1E279AF6554F5DB68E3 /* CCEffectInvert.m in Sources */,
 				E525F6E07106EB0D9EFCEA8B /* CCLabelTTF+GameFont.m in Sources */,
 				E525FB93DDA49B1B66808E2E /* GameMenuScene.m in Sources */,
+				E525F66EBDBF3C6D10723368 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1118,7 @@
 				E525F9BDE59C9F410B716346 /* CCEffectInvert.m in Sources */,
 				E525FA3B2FE8EAEBE19B6617 /* CCLabelTTF+GameFont.m in Sources */,
 				E525FB559E36E287A8230E1D /* GameMenuScene.m in Sources */,
+				E525F30742E581BCA53AEFBA /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,6 +1186,7 @@
 				E525F7D9C8B8DBA1995B66E2 /* CCEffectInvert.m in Sources */,
 				E525FEC721CD410DE6625619 /* CCLabelTTF+GameFont.m in Sources */,
 				E525F050684B700D1200840C /* GameMenuScene.m in Sources */,
+				E525FFA64C063CBDABA3FC47 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

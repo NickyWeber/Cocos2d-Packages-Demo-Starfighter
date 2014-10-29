@@ -186,7 +186,6 @@ static float HIT_ANIMATION_DURATION = 0.1f;
                                     [CCActionCallBlock actionWithBlock:^{
                                         self.visible = NO;
                                     }],
-                                    [CCActionDelay actionWithDuration:1.0],
                                     [CCActionCallFunc actionWithTarget:_delegate selector:@selector(gameOver)],
                                     nil];
 
