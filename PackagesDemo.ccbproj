@@ -195,6 +195,16 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>Sprites/Loot/HealthLoot_1.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/HealthLoot_2.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>Sprites/Shots/EnemyShot_1.png</key>
 		<dict>
 			<key>scaleFrom</key>

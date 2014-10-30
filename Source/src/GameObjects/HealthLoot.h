@@ -1,8 +1,10 @@
 #import <Foundation/Foundation.h>
+#import "Loot.h"
 
 
-@interface HealthLoot : NSObject
+@interface HealthLoot : Loot
 {
 
 }
+
 @end

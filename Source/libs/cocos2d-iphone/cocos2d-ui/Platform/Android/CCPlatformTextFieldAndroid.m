@@ -13,6 +13,7 @@
 #import "CCControl.h"
 #import "CCDirector.h"
 #import "CCEditText.h"
+#import "Loot.h"
 
 
 @implementation CCPlatformTextFieldAndroid {

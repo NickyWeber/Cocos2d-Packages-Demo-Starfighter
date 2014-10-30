@@ -44,7 +44,9 @@
 
 
 @interface GamePlayScene ()
+
 @property (nonatomic) int gameScore;
+
 @end
 
 @implementation GamePlayScene

@@ -6,43 +6,29 @@
 
 
 #import "CCAction.h"
-#import "CCAnimation.h"
 #import "CCActionInterval.h"
 #import "Spaceship.h"
-#import "GamePlayLayer.h"
 #import "PointLoot.h"
+#import "CCAnimationCache.h"
+#import "CCAnimation.h"
 #import "Constants.h"
 #import "GamePlaySceneDelegate.h"
-#import "CCAnimationCache.h"
 
-
-static float LIFETIME_OF_LOOT = 5.0;
-static float FADEOUT_TIME = 2.0;
 static int AWARD_POINTS = 100;
 
 
 @interface PointLoot()
 
-@property (nonatomic, strong) CCActionRepeatForever *standardAnimation;
-
 @end
 
 @implementation PointLoot
 
+
 - (id)initWithDelegate:(id)aDelegate
 {
-	self = [super initWithImageNamed:@"Sprites/Loot/CashLoot_1.png"];
-
-	if (self)
-	{
-		NSAssert(aDelegate != nil, @"Delegate has to be set!");
-		NSAssert([aDelegate conformsToProtocol:@protocol(GamePlaySceneDelegate)], @"Delegate has to conform to GamePlaySceneDelegateProtocol!");
-
-		self.delegate = aDelegate;
-
-		timeSinceSpawning = 0.0;
-		fadingOut = NO;
-
+    self = [super initWithDelegate:aDelegate];
+    if (self)
+    {
         CCAnimation *spaceshipAnimation = [CCAnimation animation];
 
         [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_1.png"];
@@ -60,54 +46,22 @@ static int AWARD_POINTS = 100;
         CCActionAnimate *spaceshipAnimationAction = [CCActionAnimate actionWithAnimation:spaceshipAnimation];
         spaceshipAnimationAction.duration = 1.0 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
         spaceshipAnimation.restoreOriginalFrame = YES;
-        self.standardAnimation = [CCActionRepeatForever actionWithAction:spaceshipAnimationAction];
 
-        [self runAction:self.standardAnimation];
+        [self runAction:[CCActionRepeatForever actionWithAction:spaceshipAnimationAction]];
 
-		[self addBoundingBoxWithRect:CGRectMake(0.0, 0.0, 22.0, 28.0)];
-	}
+        self.fadeoutTime = 2.0;
+        self.lifeTime = 5.0;
 
-	return self;
+        [self addBoundingBoxWithRect:CGRectMake(0.0, 0.0, 22.0, 28.0)];
+    }
+
+    return self;
 }
 
-- (void)updateStateWithTimeDelta:(CCTime)aTimeDelta andGameObjects:(NSArray *)gameObjects
+- (void)applyReward
 {
-	Spaceship *spaceship = [_delegate spaceship];
-	
-	if ([self detectCollisionWithGameObject:spaceship])
-	{
-		[_delegate addPoints:AWARD_POINTS];
-		[self collectedByPlayer];
-	}
-	else if (timeSinceSpawning >= LIFETIME_OF_LOOT - FADEOUT_TIME)
-	{
-		if ( ! fadingOut)
-		{
-			[self fadeOut];
-		}
-	}
-
-	timeSinceSpawning += aTimeDelta;
+    [self.delegate addPoints:AWARD_POINTS];
 }
 
-- (void)fadeOut
-{
-	fadingOut = YES;
-
-    CCActionFadeOut *actionFadeOut = [[CCActionFadeOut alloc] initWithDuration:FADEOUT_TIME];
-
-	id sequence = [CCActionSequence actions:actionFadeOut,
-									  [CCActionCallFunc actionWithTarget:self selector:@selector(despawn)],
-									  nil];
-
-	[self runAction:sequence];
-}
-
-- (void)collectedByPlayer
-{
-	self.isActive = NO;
-
-    [self removeFromParentAndCleanup:YES];
-}
 
 @end

@@ -15,4 +15,7 @@
 
 - (id)initWithDelegate:(id <GamePlaySceneDelegate>)delegate;
 
+- (void)addHealth:(int)health;
+
+- (void)addShield:(int)shield;
 @end

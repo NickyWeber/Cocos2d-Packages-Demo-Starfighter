@@ -137,6 +137,34 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 	}
 }
 
+- (void)addHealth:(int)health
+{
+    if (health + _health > _healthMax)
+    {
+        self.health = _healthMax;
+    }
+    else
+    {
+        self.health += health;
+    }
+
+    [_delegate updateHealthBarWithHealthInPercent:[self healthInPercent]];
+}
+
+- (void)addShield:(int)shield
+{
+    if (shield + _shield > _shieldMax)
+    {
+        self.shield = _shieldMax;
+    }
+    else
+    {
+        self.shield += shield;
+    }
+
+    [_delegate updateShieldBarWithShieldInPercent:[self shieldInPercent]];
+}
+
 - (void)playerTakesDamage:(int)damageTaken
 {
 	if (PLAYER_IS_INVULNERABLE)

@@ -7,22 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "GameObject.h"
+#import "Loot.h"
 
 @class CCRepeatForever;
 
 
-@interface PointLoot : GameObject
-{
-	id delegate;
-	BOOL fadingOut;
-
-	CCRepeatForever  *standardAnimation;
-
-	float timeSinceSpawning;
-}
-
-@property (nonatomic, weak) id delegate;
-
-- (id)initWithDelegate:(id)aDelegate;
+@interface PointLoot : Loot
 
 @end

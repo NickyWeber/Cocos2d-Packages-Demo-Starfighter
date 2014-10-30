@@ -9,6 +9,7 @@
 #import "SneakyButton.h"
 #import "SneakyJoystick.h"
 #import "PointLoot.h"
+#import "HealthLoot.h"
 
 
 @interface GamePlayLayer ()
@@ -79,7 +80,7 @@
 
 - (void)initializeSpaceship
 {
-    PointLoot *loot = [[PointLoot alloc] initWithDelegate:_delegate];
+    HealthLoot *loot = [[HealthLoot alloc] initWithDelegate:_delegate];
     loot.position = ccp(160.0, 240.0);
     [self addChild:loot];
 

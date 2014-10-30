@@ -96,6 +96,7 @@
 		E525F0805C773B08D5796254 /* PointLoot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F4D42FADAC36823F939A /* PointLoot.m */; };
 		E525F0880539B2BBDFB57DD2 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* HUDLayer.m */; };
 		E525F0DD5564A85DB6B6469C /* GamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* GamePlayLayer.m */; };
+		E525F127F756D91FEF93E8EC /* Loot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FA949D2DBDCC658196DC /* Loot.m */; };
 		E525F1518223A6F9ECBF25FE /* LaserBeam.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFB8963EFEA42CCAE2A4 /* LaserBeam.m */; };
 		E525F16941679F3A70C1AA53 /* GamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* GamePlayScene.m */; };
 		E525F179272E03CA7BB0C55D /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
@@ -120,6 +121,8 @@
 		E525F4A10CED0F9FFE8765CC /* AIMovementDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F086A56B83AF79727A53 /* AIMovementDebug.m */; };
 		E525F4F983970FC43ABF3D96 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */; };
 		E525F5056396262B97612CD5 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
+		E525F5246668D541DDFB5F5F /* Loot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FA949D2DBDCC658196DC /* Loot.m */; };
+		E525F533BA4BF5F4AF5C936C /* Loot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FA949D2DBDCC658196DC /* Loot.m */; };
 		E525F53A1D230B96107CB8F9 /* EnemyShot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F873D55AD2AC7F4898A1 /* EnemyShot.m */; };
 		E525F5762EEB3EC2D5EA49B5 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* HUDLayer.m */; };
 		E525F5763540613EAF3CB18E /* EnemyShot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F873D55AD2AC7F4898A1 /* EnemyShot.m */; };
@@ -347,6 +350,7 @@
 		E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedDPadExample.m; sourceTree = "<group>"; };
 		E525F750DAFE0458BBE64709 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		E525F756193F6B802D6BDFB0 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		E525F7B72FA99EE2C28AA656 /* Loot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loot.h; sourceTree = "<group>"; };
 		E525F7E9973048779F98F0E2 /* BoundingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundingBox.m; sourceTree = "<group>"; };
 		E525F7EB5DA3CCAECD61449E /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
 		E525F7F6BACC943D680305F7 /* GamePlaySceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePlaySceneDelegate.h; path = Source/src/Layers/GamePlaySceneDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -357,6 +361,7 @@
 		E525F99E82751857FC49EA56 /* WeaponSystemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSystemProtocol.h; sourceTree = "<group>"; };
 		E525F9A80E349EDFEF2B5BF0 /* LaserCannon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserCannon.h; sourceTree = "<group>"; };
 		E525FA42F0AD12B38C3E71D5 /* CCDirector_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCDirector_Private.h; path = "Source/libs/cocos2d-iphone/cocos2d/CCDirector_Private.h"; sourceTree = SOURCE_ROOT; };
+		E525FA949D2DBDCC658196DC /* Loot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loot.m; sourceTree = "<group>"; };
 		E525FAA887DE99A891D398F1 /* ShieldLoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldLoot.h; sourceTree = "<group>"; };
 		E525FAD67B800AC6B5F53C38 /* WeaponProjectileProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponProjectileProtocol.h; sourceTree = "<group>"; };
 		E525FB428FCC9A5C4C3170D7 /* GamePlayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayLayer.m; sourceTree = "<group>"; };
@@ -763,6 +768,8 @@
 				E525F2B7EB22960AECDA0270 /* HealthLoot.h */,
 				E525FD426566F99DA91BD46F /* ShieldLoot.m */,
 				E525FAA887DE99A891D398F1 /* ShieldLoot.h */,
+				E525FA949D2DBDCC658196DC /* Loot.m */,
+				E525F7B72FA99EE2C28AA656 /* Loot.h */,
 			);
 			name = Loot;
 			sourceTree = "<group>";
@@ -1114,6 +1121,7 @@
 				E525F68333DFDB5F4657B5FA /* PointLoot.m in Sources */,
 				E525FC39CAEF80579AA61BBE /* HealthLoot.m in Sources */,
 				E525F95C853C55BCD21B9CFC /* ShieldLoot.m in Sources */,
+				E525F5246668D541DDFB5F5F /* Loot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,6 +1162,7 @@
 				E525FFB0C3DD16CDEF5C1BDA /* PointLoot.m in Sources */,
 				E525FF5EAC0E0E44CE81DE7D /* HealthLoot.m in Sources */,
 				E525F42B15E4B518FF79517B /* ShieldLoot.m in Sources */,
+				E525F127F756D91FEF93E8EC /* Loot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1225,6 +1234,7 @@
 				E525F0805C773B08D5796254 /* PointLoot.m in Sources */,
 				E525FA08743CA7EC70061468 /* HealthLoot.m in Sources */,
 				E525F060B8C7511630952C09 /* ShieldLoot.m in Sources */,
+				E525F533BA4BF5F4AF5C936C /* Loot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
