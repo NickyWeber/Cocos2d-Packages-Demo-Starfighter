@@ -23,9 +23,8 @@
 @property (nonatomic) float shotsPerSecond;
 @property (nonatomic) int points;
 @property (nonatomic) float speedfactor;
-
-
 @property (nonatomic) NSUInteger level;
+
 @end
 
 @implementation Enemy
@@ -241,8 +240,10 @@
 {
 	if ([self areCannonsReady])
 	{
-        EnemyShot *aShot = [[EnemyShot alloc] initEnemyShotWithStartPosition:self.position
-                                                                   andTarget:[_delegate spaceship]];
+        EnemyShot *aShot = [[EnemyShot alloc] initEnemyShotWithStartPosition:self.position andTarget:[_delegate spaceship] level:NULL];
+
+
+
 		// NSLog(@"*********** FIRING FROM %f.2 %f.2 !!! ***************", aShot.position.x, aShot.position.y);
 		[_delegate addGameEntity:aShot];
 	}

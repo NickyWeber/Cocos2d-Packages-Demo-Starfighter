@@ -41,6 +41,7 @@
         self.totalSpawned = 0;
 		self.delegate = aDelegate;
         self.level = 1;
+        self.enabled = YES;
 	}
 
 	return self;
@@ -48,8 +49,7 @@
 
 - (NSUInteger)totalEnemiesForLevel:(NSUInteger)level
 {
-    // return (NSUInteger) (3 + 3 * (level - 1));
-    return 1;
+    return (NSUInteger) (3 + 3 * (level - 1));
 }
 
 - (void)setLevel:(NSUInteger)level
@@ -70,7 +70,7 @@
 
 - (void)update:(CCTime)deltaTime andGameObjects:(NSArray *)someGameObjects
 {
-    if (_complete)
+    if (_complete || !_enabled)
     {
         return;
     }

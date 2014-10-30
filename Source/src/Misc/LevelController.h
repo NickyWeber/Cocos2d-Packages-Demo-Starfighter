@@ -16,6 +16,7 @@
 @property (nonatomic, weak) id<GamePlaySceneDelegate> delegate;
 @property (nonatomic) NSUInteger level;
 @property (nonatomic) NSUInteger totalEnemies;
+@property (nonatomic) BOOL enabled;
 
 - (id)initWithDelegate:(id<GamePlaySceneDelegate>)aDelegate;
 

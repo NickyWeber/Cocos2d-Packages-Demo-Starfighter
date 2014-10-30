@@ -13,7 +13,7 @@
 
 @implementation EnemyShot
 
-- (id)initEnemyShotWithStartPosition:(CGPoint)startPosition andTarget:(GameObject *)aTarget
+- (id)initEnemyShotWithStartPosition:(CGPoint)startPosition andTarget:(GameObject *)aTarget level:(NSUInteger)level
 {
 	self = [super initWithImageNamed:@"Sprites/Shots/EnemyShot_2.png"];
 
@@ -21,9 +21,10 @@
 	{
 		self.target = aTarget;
 		self.position = startPosition;
+        self.level = level;
 
-		self.speedFactor = 120;
-		self.power = 25;
+		self.speedFactor = 110 + (10 * level);
+		self.power = 20 + (5 * level);
 
 		self.shotVector = [self calcNormalizedShotVector:startPosition
 									   andTargetPosition:_target.position];

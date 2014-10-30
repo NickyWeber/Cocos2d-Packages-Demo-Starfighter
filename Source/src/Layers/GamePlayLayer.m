@@ -53,6 +53,8 @@
    	{
         gameObject.isActive = NO;
     }
+    
+    _levelController.enabled = NO;
 
     [[_delegate fireButton] setEnabled:NO];
     [[_delegate joystick] setEnabled:NO];

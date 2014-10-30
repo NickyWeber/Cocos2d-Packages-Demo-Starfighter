@@ -15,26 +15,15 @@
 
 
 @interface EnemyShot : GameObject <WeaponProjectileProtocol>
-{
-/*
-	GameObject *target;
-
-	CGPoint shotVector;
-	float speedFactor;
-
-	int power;
-
-	CCRepeatForever *standardAnimation;
-*/
-}
 
 @property (nonatomic, assign) GameObject *target;
 
 @property (nonatomic) float speedFactor;
 @property (nonatomic) int power;
+@property (nonatomic) NSUInteger level;
 @property (nonatomic, strong) CCActionRepeatForever *standardAnimation;
 @property (nonatomic) CGPoint shotVector;
 
-- (id)initEnemyShotWithStartPosition:(CGPoint)startPosition andTarget:(GameObject *)aTarget;
+- (id)initEnemyShotWithStartPosition:(CGPoint)startPosition andTarget:(GameObject *)aTarget level:(NSUInteger)level;
 
 @end
