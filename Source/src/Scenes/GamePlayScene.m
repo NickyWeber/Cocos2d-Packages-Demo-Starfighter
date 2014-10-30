@@ -12,6 +12,7 @@
 #import "GameMenuScene.h"
 #import "CCAnimation.h"
 #import "CCBSequence.h"
+#import "Constants.h"
 
 
 @interface SFTouchNode : CCNode
@@ -114,39 +115,18 @@
 
 - (void)gameOver
 {
+    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
+
     CCLabelTTF *label = [CCLabelTTF gameLabelWithSize:48.0];
     label.string = @"Game Over";
     label.opacity = 0.0;
 
-    CCLabelTTF *label2 = [CCLabelTTF gameLabelWithSize:20.0 blockSize:2.0];
-    label2.string = @"(tap to continue)";
-    label2.opacity = 0.0;
-
-    CCActionFadeIn *actionFadeIn2 = [[CCActionFadeIn alloc] initWithDuration:0.3];
-
-    CCActionFadeTo *actionFadeTo = [[CCActionFadeTo alloc] initWithDuration:1.0 opacity:0.2];
-    CCActionEaseBackIn *actionEaseBackIn = [[CCActionEaseBackIn alloc] initWithAction:actionFadeTo];
-
-    CCActionFadeTo *actionFadeTo2 = [[CCActionFadeTo alloc] initWithDuration:1.0 opacity:0.60];
-    CCActionEaseBackOut *actionEaseBackOut2 = [[CCActionEaseBackOut alloc] initWithAction:actionFadeTo2];
-
-    CCActionSequence *sequence = [CCActionSequence actions:actionEaseBackIn, actionEaseBackOut2, nil];
-    CCActionRepeatForever *actionRepeatForever = [[CCActionRepeatForever alloc] initWithAction:sequence];
-
-    CCActionSequence *sequence2 = [CCActionSequence actions:actionFadeIn2, [CCActionCallBlock actionWithBlock:^{
-        [label2 runAction:actionRepeatForever];
-    }], nil];
-
-
-    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
 
     [_hudLayer addChild:label];
-    [_hudLayer addChild:label2];
+
     label.position = ccp((CGFloat) (screenSize.width / 2.0),
                          (CGFloat) (screenSize.height * 0.6666));
 
-    label2.position = ccp((CGFloat) (screenSize.width / 2.0),
-                         (CGFloat) (screenSize.height * 0.6666 - 40.0));
 
     SFTouchNode *touchNode = [[SFTouchNode alloc] init];
     touchNode.delegate = self;
@@ -159,39 +139,109 @@
 
     CCActionFadeIn *actionFadeIn = [CCActionFadeIn actionWithDuration:0.5];
     [label runAction:actionFadeIn];
-    [label2 runAction:sequence2];
+
+    [self showTapToContinueLabel];
+}
+
+- (void)showTapToContinueLabel
+{
+    CCLabelTTF *label2 = [self tapToContinueLabel];
+
+    [_hudLayer addChild:label2];
+
+    [label2 runAction:[self actionShowAfterDelayAndPulse:label2]];
+}
+
+- (CCLabelTTF *)tapToContinueLabel
+{
+    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
+
+    CCLabelTTF *label2 = [CCLabelTTF gameLabelWithSize:20.0 blockSize:2.0];
+    label2.string = @"(tap to continue)";
+    label2.opacity = 0.0;
+    label2.position = ccp((CGFloat) (screenSize.width / 2.0),
+                         (CGFloat) (screenSize.height * 0.6666 - 40.0));
+
+    return label2;
+}
+
+- (id)actionShowAfterDelayAndPulse:(id)label
+{
+    CCActionFadeIn *actionFadeIn2 = [[CCActionFadeIn alloc] initWithDuration:0.3];
+
+    CCActionFadeTo *actionFadeTo = [[CCActionFadeTo alloc] initWithDuration:1.0 opacity:0.2];
+    CCActionEaseBackIn *actionEaseBackIn = [[CCActionEaseBackIn alloc] initWithAction:actionFadeTo];
+
+    CCActionFadeTo *actionFadeTo2 = [[CCActionFadeTo alloc] initWithDuration:1.0 opacity:0.60];
+    CCActionEaseBackOut *actionEaseBackOut2 = [[CCActionEaseBackOut alloc] initWithAction:actionFadeTo2];
+
+    CCActionSequence *sequence = [CCActionSequence actions:actionEaseBackIn, actionEaseBackOut2, nil];
+    CCActionRepeatForever *actionRepeatForever = [[CCActionRepeatForever alloc] initWithAction:sequence];
+
+
+    CCActionSequence *sequence2 = [CCActionSequence actions:actionFadeIn2, [CCActionCallBlock actionWithBlock:^{
+        [label runAction:actionRepeatForever];
+    }], nil];
+
+    return sequence2;
 }
 
 - (void)levelCompleted:(NSUInteger)level
 {
-    CCLabelTTF *label = [CCLabelTTF gameLabelWithSize:48.0];
-    label.opacity = 0.0;
+    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
 
-    if (level == 7)
+    CCLabelTTF *label;
+
+    CCActionFadeIn *actionFadeIn = [CCActionFadeIn actionWithDuration:0.5];
+    CCActionSequence *sequence;
+
+    if (level == GAME_LEVEL_MAX)
     {
-        label.string = @"Congratulation!!!";
+        label = [CCLabelTTF gameLabelWithSize:24.0 blockSize:2.0];
+        label.string = @"Congratulations!!!\nYou won!";
+        label.position = ccp((CGFloat) (screenSize.width / 2.0),
+                             (CGFloat) (screenSize.height * 0.75));
+
+        sequence = [CCActionSequence actions:actionFadeIn,
+                                             [CCActionDelay actionWithDuration:5.0],
+                                             [CCActionCallBlock actionWithBlock:^{
+                                                 SFTouchNode *touchNode = [[SFTouchNode alloc] init];
+                                                 touchNode.delegate = self;
+
+                                                 touchNode.contentSize = screenSize;
+                                                 touchNode.anchorPoint = ccp(0.0, 0.0);
+                                                 touchNode.position = ccp(0.0, 0.0);
+
+                                                 [self addChild:touchNode z:100];
+                                             }], nil];
+
+        [self showTapToContinueLabel];
     }
     else
     {
-        label.string = [NSString stringWithFormat:@"Level %u", level + 1];
-
-        CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
-
-        [_hudLayer addChild:label];
+        label = [CCLabelTTF gameLabelWithSize:36.0];
         label.position = ccp((CGFloat) (screenSize.width / 2.0),
                              (CGFloat) (screenSize.height * 0.6666));
 
-        CCActionFadeIn *actionFadeIn = [CCActionFadeIn actionWithDuration:0.5];
-        CCActionSequence *sequence = [CCActionSequence actions:actionFadeIn,
-                                                               [CCActionDelay actionWithDuration:5.0],
-                                                               [CCActionCallBlock actionWithBlock:^{
-                                                                   [label removeFromParentAndCleanup:YES];
-                                                               }],
-                                                               [CCActionCallBlock actionWithBlock:^{
-                                                                    [_gamePlayLayer advanceToLevel:level+1];
-                                                               }], nil];
-        [label runAction:sequence];
+        label.string = [NSString stringWithFormat:@"Level %u", level + 1];
+
+        sequence = [CCActionSequence actions:actionFadeIn,
+                                             [CCActionDelay actionWithDuration:5.0],
+                                             [label runAction:[CCActionFadeOut actionWithDuration:0.3]],
+                                             [CCActionCallBlock actionWithBlock:^{
+                                                 [label removeFromParentAndCleanup:YES];
+                                             }],
+                                             [CCActionCallBlock actionWithBlock:^{
+                                                 [_gamePlayLayer advanceToLevel:level + 1];
+                                             }], nil];
     }
+
+    label.opacity = 0.0;
+    label.anchorPoint = ccp(0.5, 0.5);
+    label.horizontalAlignment = CCTextAlignmentCenter;
+
+    [_hudLayer addChild:label];
+    [label runAction:sequence];
 }
 
 - (void)touchBegan:(CCTouch *)touch event:(CCTouchEvent *)event

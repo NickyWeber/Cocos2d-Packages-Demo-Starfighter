@@ -24,25 +24,6 @@ typedef enum {
 
 
 @interface Enemy : GameObject
-{
-/*	id delegate;
-	id aiMovement;
-
-	CCAnimation *hitAnimation;
-	CCAnimate  *hitAnimationAction;
-	CCRepeatForever *standardAnimation;
-
-	GameObject *loot;
-
-	int health;
-	int points;
-	float speedfactor;
-
-	EnemyStates state;
-
-	float timeSinceLastShot;
-	float shotsPerSecond;*/
-}
 
 @property (nonatomic, weak) id<GamePlaySceneDelegate> delegate;
 

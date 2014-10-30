@@ -7,30 +7,14 @@
 
 #import "Enemy.h"
 #import "CCAnimation.h"
-#import "CCActionInterval.h"
-#import "SneakyJoystick.h"
 #import "LaserBeam.h"
-/*
-#import "GameConfig.h"
-#import "EnemyShot.h"
-*/
-#import "GamePlayLayer.h"
 #import "Spaceship.h"
 #import "Constants.h"
 #import "CCAnimationCache.h"
-#import "LevelController.h"
 #import "GamePlaySceneDelegate.h"
 #import "AIMovementDebug.h"
 #import "EnemyShot.h"
 #import "AIMovement.h"
-
-/*
-#import "AIMovementProtocol.h"
-#import "AIMovement.h"
-#import "AIMovementDebug.h"
-#import "HomingMissile.h"
-*/
-
 
 @interface Enemy()
 
@@ -41,6 +25,7 @@
 @property (nonatomic) float speedfactor;
 
 
+@property (nonatomic) NSUInteger level;
 @end
 
 @implementation Enemy
@@ -54,57 +39,74 @@
 		NSAssert([aDelegate conformsToProtocol:@protocol(GamePlaySceneDelegate)], @"Delegate has to conform to GamePlaySceneDelegateProtocol!");
 
 		self.delegate = aDelegate;
-
-		self.aiMovement = [[AIMovement alloc] init];
-
 		self.state = EnemyStateNormal;
-
-        self.color = [self colorForLevel:level];
+        self.level = level;
 
 		[self addBoundingBoxWithRect:CGRectMake(0.0, 0.0, 64.0, 44.0)];
 
-		// self.timeSinceLastShot = 2.0 * CCRANDOM_0_1();
-        self.timeSinceLastShot = 100.0;
-		self.shotsPerSecond = 0.2;
+        [self setupStats];
 
-		CCAnimation *spaceshipAnimation = [CCAnimation animation];
+        [self generateLoot];
 
-		[spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_1.png"];
-		[spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_2.png"];
-		[spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_3.png"];
-		[spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_2.png"];
-        spaceshipAnimation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 5.0);
-
-        CCActionAnimate *spaceshipAnimationAction = [CCActionAnimate actionWithAnimation:spaceshipAnimation];
-        spaceshipAnimationAction.duration = 1.0 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
-        spaceshipAnimation.restoreOriginalFrame = YES;
-		self.standardAnimation = [CCActionRepeatForever actionWithAction:spaceshipAnimationAction];
-
-		[self runAction:self.standardAnimation];
-
-		CCAnimation *explosionAnimation = [CCAnimation animation];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_1.png"];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_2.png"];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_3.png"];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_4.png"];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_5.png"];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_6.png"];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_7.png"];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_8.png"];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_9.png"];
-		[explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_10.png"];
-        explosionAnimation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 1.3 / explosionAnimation.frames.count);
-
-		[[CCAnimationCache sharedAnimationCache] addAnimation:explosionAnimation name:@"Explosion"];
-
-        self.explosionAnimationAction = [CCActionAnimate actionWithAnimation:explosionAnimation];
-
-		self.speedfactor = (float) (0.5 * [CCDirector sharedDirector].view.frame.size.width);
-		self.points = 75;
-		self.health = 50;
+        [self setupAnimations];
 	}
 
 	return self;
+}
+
+- (void)setupStats
+{
+    self.aiMovement = [[AIMovement alloc] init];
+
+    self.color = [self colorForLevel:_level];
+
+    // self.timeSinceLastShot = 2.0 * CCRANDOM_0_1();
+    self.timeSinceLastShot = 100.0;
+    self.shotsPerSecond = 0.2;
+
+    self.speedfactor = (float) (0.5 * [CCDirector sharedDirector].view.frame.size.width);
+    self.points = 75;
+    self.health = 50;
+}
+
+- (void)setupAnimations
+{
+    CCAnimation *spaceshipAnimation = [CCAnimation animation];
+
+    [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_1.png"];
+    [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_2.png"];
+    [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_3.png"];
+    [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_2.png"];
+    spaceshipAnimation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 5.0);
+
+    CCActionAnimate *spaceshipAnimationAction = [CCActionAnimate actionWithAnimation:spaceshipAnimation];
+    spaceshipAnimationAction.duration = 1.0 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
+    spaceshipAnimation.restoreOriginalFrame = YES;
+    self.standardAnimation = [CCActionRepeatForever actionWithAction:spaceshipAnimationAction];
+
+    [self runAction:self.standardAnimation];
+
+    CCAnimation *explosionAnimation = [CCAnimation animation];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_1.png"];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_2.png"];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_3.png"];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_4.png"];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_5.png"];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_6.png"];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_7.png"];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_8.png"];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_9.png"];
+    [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_10.png"];
+    explosionAnimation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 1.3 / explosionAnimation.frames.count);
+
+    [[CCAnimationCache sharedAnimationCache] addAnimation:explosionAnimation name:@"Explosion"];
+
+    self.explosionAnimationAction = [CCActionAnimate actionWithAnimation:explosionAnimation];
+}
+
+- (void)generateLoot
+{
+
 }
 
 - (CCColor *)colorForLevel:(NSUInteger)level
@@ -152,7 +154,7 @@
     CGPoint newPosition = [_aiMovement positionWithTimeDelta:aTimeDelta
                                                 oldPoisition:self.position
                                                  speedfactor:_speedfactor];
-	if (newPosition.y <= -30.0)
+	if (newPosition.y <= -50.0)
 	{
 		[self despawn];
 	}
@@ -180,13 +182,11 @@
 
 - (void)dropLoot
 {
-/*
-	if (loot)
+	if (_loot)
 	{
-		loot.position = self.position;
-		[delegate addGameEntity:loot];
+		_loot.position = self.position;
+		[_delegate addGameEntity:_loot];
 	}
-*/
 }
 
 - (void)takeDamage:(int)damageTaken
