@@ -15,6 +15,7 @@
 #import "AIMovementDebug.h"
 #import "EnemyShot.h"
 #import "AIMovement.h"
+#import "PointLoot.h"
 
 @interface Enemy()
 
@@ -128,7 +129,7 @@
 
 - (void)generateLoot
 {
-
+    self.loot = [[PointLoot alloc] initWithDelegate:_delegate];
 }
 
 - (CCColor *)colorForLevel:(NSUInteger)level
@@ -208,6 +209,7 @@
 	{
 		_loot.position = self.position;
 		[_delegate addGameEntity:_loot];
+        self.loot = nil;
 	}
 }
 

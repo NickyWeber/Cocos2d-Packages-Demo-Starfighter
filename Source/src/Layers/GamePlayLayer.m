@@ -8,6 +8,7 @@
 #import "Enemy.h"
 #import "SneakyButton.h"
 #import "SneakyJoystick.h"
+#import "PointLoot.h"
 
 
 @interface GamePlayLayer ()
@@ -78,6 +79,10 @@
 
 - (void)initializeSpaceship
 {
+    PointLoot *loot = [[PointLoot alloc] initWithDelegate:_delegate];
+    loot.position = ccp(160.0, 240.0);
+    [self addChild:loot];
+
 	self.spaceship = [[Spaceship alloc] initWithDelegate:_delegate];
     _spaceship.position = CGPointMake(160, 160);
 	[self addChild:_spaceship];

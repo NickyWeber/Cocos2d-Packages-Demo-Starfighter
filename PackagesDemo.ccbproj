@@ -170,6 +170,31 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>Sprites/Loot/CashLoot_1.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/CashLoot_2.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/CashLoot_3.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/CashLoot_4.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/CashLoot_5.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>Sprites/Shots/EnemyShot_1.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -289,11 +314,9 @@
 		</dict>
 	</dict>
 	<key>versionStr</key>
-	<string>dcf_hash : undefined
-revision : d7ee735e0a
-version : 1.3
-dcf_tag : undefined
+	<string>revision : d0b98d68c9
 sku : default
+version : 1.3
 </string>
 </dict>
 </plist>
