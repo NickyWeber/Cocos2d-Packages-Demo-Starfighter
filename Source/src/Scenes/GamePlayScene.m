@@ -115,6 +115,8 @@
 
 - (void)gameOver
 {
+    [_gamePlayLayer disableGameObjectsAndControls];
+
     CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
 
     CCLabelTTF *label = [CCLabelTTF gameLabelWithSize:48.0];
@@ -197,21 +199,20 @@
 
     if (level == GAME_LEVEL_MAX)
     {
+        [_gamePlayLayer disableGameObjectsAndControls];
+
         label = [CCLabelTTF gameLabelWithSize:24.0 blockSize:2.0];
         label.string = @"Congratulations!!!\nYou won!";
         label.position = ccp((CGFloat) (screenSize.width / 2.0),
                              (CGFloat) (screenSize.height * 0.75));
 
         sequence = [CCActionSequence actions:actionFadeIn,
-                                             [CCActionDelay actionWithDuration:5.0],
                                              [CCActionCallBlock actionWithBlock:^{
                                                  SFTouchNode *touchNode = [[SFTouchNode alloc] init];
                                                  touchNode.delegate = self;
-
                                                  touchNode.contentSize = screenSize;
                                                  touchNode.anchorPoint = ccp(0.0, 0.0);
                                                  touchNode.position = ccp(0.0, 0.0);
-
                                                  [self addChild:touchNode z:100];
                                              }], nil];
 

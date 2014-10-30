@@ -31,6 +31,8 @@
 @property (nonatomic, assign) BOOL isHoldable;
 @property (nonatomic, assign) BOOL isToggleable;
 @property (nonatomic, assign) float rateLimit;
+@property (nonatomic) BOOL enabled;
+
 
 //Optimizations (keep Squared values of all radii for faster calculations) (updated internally when changing radii)
 @property (nonatomic, assign) float radius;

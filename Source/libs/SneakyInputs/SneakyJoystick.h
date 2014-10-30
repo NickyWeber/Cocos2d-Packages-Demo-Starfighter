@@ -36,6 +36,7 @@
 @property (nonatomic, readonly) CGPoint velocity;
 @property (nonatomic, assign) BOOL autoCenter;
 @property (nonatomic, assign) BOOL isDPad;
+@property (nonatomic) BOOL enabled;
 @property (nonatomic, assign) NSUInteger numberOfDirections;
 
 @property (nonatomic, assign) float joystickRadius;

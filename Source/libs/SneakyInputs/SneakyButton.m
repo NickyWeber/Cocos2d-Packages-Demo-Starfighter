@@ -39,6 +39,7 @@
         self.isToggleable = 0;
         self.radius = 32.0f;
         self.rateLimit = 1.0f / 120.0f;
+        self.enabled = YES;
 
         self.userInteractionEnabled = YES;
 
@@ -85,7 +86,7 @@
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    if (_active)
+    if (_active || !_enabled)
     {
         return;
     }
@@ -108,7 +109,7 @@
 
 - (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    if (!_active)
+    if (!_active || !_enabled)
     {
         return;
     }
@@ -143,7 +144,7 @@
 
 - (void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    if (!_active)
+    if (!_active || !_enabled)
     {
         return;
     }

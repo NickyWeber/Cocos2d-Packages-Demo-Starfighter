@@ -6,6 +6,8 @@
 #import "LevelController.h"
 #import "LaserBeam.h"
 #import "Enemy.h"
+#import "SneakyButton.h"
+#import "SneakyJoystick.h"
 
 
 @interface GamePlayLayer ()
@@ -43,6 +45,17 @@
 		self.points = 0;
 	}
 	return self;
+}
+
+- (void)disableGameObjectsAndControls
+{
+    for (GameObject *gameObject in [self children])
+   	{
+        gameObject.isActive = NO;
+    }
+
+    [[_delegate fireButton] setEnabled:NO];
+    [[_delegate joystick] setEnabled:NO];
 }
 
 - (void)update:(CCTime)delta

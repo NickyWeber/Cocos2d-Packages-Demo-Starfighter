@@ -32,6 +32,7 @@
     self = [super init];
     if (self)
     {
+        self.enabled = YES;
         stickPosition = CGPointZero;
         degrees = 0.0f;
         velocity = CGPointZero;
@@ -140,6 +141,11 @@
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
+    if (!_enabled)
+    {
+        return;
+    }
+
     CGPoint location = [[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]];
 
     location = [self convertToNodeSpace:location];
@@ -149,6 +155,11 @@
 
 - (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
+    if (!_enabled)
+    {
+        return;
+    }
+
     CGPoint location = [[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]];
     location = [self convertToNodeSpace:location];
     [self updateVelocity:location];
@@ -156,6 +167,11 @@
 
 - (void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
+    if (!_enabled)
+    {
+        return;
+    }
+
     CGPoint location = CGPointZero;
     if (!autoCenter)
     {

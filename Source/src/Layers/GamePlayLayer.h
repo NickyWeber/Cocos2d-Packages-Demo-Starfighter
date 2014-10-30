@@ -11,6 +11,8 @@
 
 - (id)initWithDelegate:(id<GamePlaySceneDelegate>)aDelegate;
 
+- (void)disableGameObjectsAndControls;
+
 - (void)addGameEntity:(CCNode *)aGameEntity;
 - (void)addGameEntity:(CCNode *)aGameEntity z:(int)zOrder;
 
