@@ -1,4 +1,4 @@
-int const GAME_LEVEL_MAX = 2;
+int const GAME_LEVEL_MAX = 7;
 
 double const TIME_CONSTANT = 1.0;
 

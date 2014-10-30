@@ -11,8 +11,10 @@
 
 
 @interface AIMovement : NSObject <AIMovementProtocol>
-{
 
-}
+@property (nonatomic) NSUInteger level;
+
+- (instancetype)initWithLevel:(NSUInteger)level;
+
 
 @end

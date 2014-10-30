@@ -58,16 +58,16 @@
 {
     double factor = 1.0 / GAME_LEVEL_MAX * _level;
 
-    self.aiMovement = [[AIMovement alloc] init];
+    self.aiMovement = [[AIMovement alloc] initWithLevel:_level];
 
     self.timeSinceLastShot = 100.0; //(float) (3.0 * CCRANDOM_0_1());
     self.shotsPerSecond = [self shotsPerSecondForLevel];
 
-    self.speedfactor = (float) (50.0 + 25.0 * factor);
+    self.speedfactor = (float) (50.0 + 50.0 * factor);
     self.points = (int) (75 + 200 * factor);
     self.health = (int) (50 + 15 * factor);
 
-    NSLog(@"Level: %d, p: %d, h: %d, s: %.2f, sps: %.2f, f: %.2f", _level, _points, _health, _speedfactor, _shotsPerSecond, factor);
+    // NSLog(@"Level: %d, p: %d, h: %d, s: %.2f, sps: %.2f, f: %.2f", _level, _points, _health, _speedfactor, _shotsPerSecond, factor);
 }
 
 - (float)shotsPerSecondForLevel
@@ -263,7 +263,7 @@
 
 - (BOOL)areCannonsReady
 {
-    NSLog(@"-> %.2f / %.2f", _timeSinceLastShot, (1.0 / _shotsPerSecond) );
+    // NSLog(@"-> %.2f / %.2f", _timeSinceLastShot, (1.0 / _shotsPerSecond) );
 
 	if (_timeSinceLastShot >= (1.0 / _shotsPerSecond))
 	{
