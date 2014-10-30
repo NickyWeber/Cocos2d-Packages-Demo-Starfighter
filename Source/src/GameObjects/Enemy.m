@@ -56,17 +56,40 @@
 
 - (void)setupStats
 {
+    double factor = 1.0 / GAME_LEVEL_MAX * _level;
+
     self.aiMovement = [[AIMovement alloc] init];
 
-    self.color = [self colorForLevel:_level];
+    self.timeSinceLastShot = 100.0; //(float) (3.0 * CCRANDOM_0_1());
+    self.shotsPerSecond = [self shotsPerSecondForLevel];
 
-    // self.timeSinceLastShot = 2.0 * CCRANDOM_0_1();
-    self.timeSinceLastShot = 100.0;
-    self.shotsPerSecond = 0.2;
+    self.speedfactor = (float) (50.0 + 25.0 * factor);
+    self.points = (int) (75 + 200 * factor);
+    self.health = (int) (50 + 15 * factor);
 
-    self.speedfactor = (float) (0.5 * [CCDirector sharedDirector].view.frame.size.width);
-    self.points = 75;
-    self.health = 50;
+    NSLog(@"Level: %d, p: %d, h: %d, s: %.2f, sps: %.2f, f: %.2f", _level, _points, _health, _speedfactor, _shotsPerSecond, factor);
+}
+
+- (float)shotsPerSecondForLevel
+{
+    switch (_level)
+    {
+        case 1 :
+            return 0.333;
+        case 2 :
+            return 0.5;
+        case 3 :
+            return 0.75;
+        case 4 :
+            return 1.0;
+        case 5 :
+            return 1.5;
+        case 6 :
+            return 2.0;
+        case 7 :
+            return 3.0;
+        default: return 0.5;
+    }
 }
 
 - (void)setupAnimations
@@ -240,7 +263,9 @@
 
 - (BOOL)areCannonsReady
 {
-	if (_timeSinceLastShot >= 1.0 / _shotsPerSecond)
+    NSLog(@"-> %.2f / %.2f", _timeSinceLastShot, (1.0 / _shotsPerSecond) );
+
+	if (_timeSinceLastShot >= (1.0 / _shotsPerSecond))
 	{
 		self.timeSinceLastShot = 0.0;
 		return YES;
