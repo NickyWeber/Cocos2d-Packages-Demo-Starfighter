@@ -123,12 +123,12 @@
     label.string = @"Game Over";
     label.opacity = 0.0;
 
+    [self saveHighscore];
 
     [_hudLayer addChild:label];
 
     label.position = ccp((CGFloat) (screenSize.width / 2.0),
                          (CGFloat) (screenSize.height * 0.6666));
-
 
     SFTouchNode *touchNode = [[SFTouchNode alloc] init];
     touchNode.delegate = self;
@@ -143,6 +143,17 @@
     [label runAction:actionFadeIn];
 
     [self showTapToContinueLabel];
+}
+
+- (void)saveHighscore
+{
+    int highscore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"] intValue];
+
+    if (_gameScore > highscore)
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:@(_gameScore) forKey:@"highscore"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 - (void)showTapToContinueLabel
@@ -200,6 +211,8 @@
     if (level == GAME_LEVEL_MAX)
     {
         [_gamePlayLayer disableGameObjectsAndControls];
+
+        [self saveHighscore];
 
         label = [CCLabelTTF gameLabelWithSize:24.0 blockSize:2.0];
         label.string = @"Congratulations!!!\nYou won!";

@@ -14,8 +14,6 @@
 
 @property (nonatomic, strong) LevelController *levelController;
 @property (nonatomic, strong) NSMutableArray *gameObjectRemovalPool;
-@property (nonatomic) int enemyCount;
-@property (nonatomic) int points;
 
 @property (nonatomic) double timeSinceLastStatusUpdate;
 @property (nonatomic) NSUInteger level;
@@ -40,9 +38,6 @@
 		self.levelController = [[LevelController alloc] initWithDelegate:_delegate];
 
 		[self initializeSpaceship];
-
-		self.enemyCount = 0;
-		self.points = 0;
 	}
 	return self;
 }

@@ -32,13 +32,23 @@
         title.position = ccp(0.5, 0.8);
         [self addChild:title];
 
+        int highscore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"] intValue];
+
+        CCLabelTTF *highscoreLabel = [CCLabelTTF gameLabelWithSize:24.0 blockSize:2.0];
+        highscoreLabel.string = [NSString stringWithFormat:@"Highscore: %d", highscore];
+        highscoreLabel.horizontalAlignment = CCTextAlignmentCenter;
+        highscoreLabel.positionType = CCPositionTypeNormalized;
+        highscoreLabel.position = ccp(0.5, 0.6);
+        [self addChild:highscoreLabel];
+
+
         CCEffectPixellate *effectPixellate = [[CCEffectPixellate alloc] initWithBlockSize:3.0];
         CCEffectNode *effectNode = [[CCEffectNode alloc] initWithWidth:(int) button.contentSize.width
                                                                 height:(int) button.contentSize.height];
         effectNode.effect = effectPixellate;
         effectNode.positionType = CCPositionTypeNormalized;
         effectNode.position = ccp(0.5, 0.5);
-        effectNode.anchorPoint = ccp(0.5, 0.5);
+        effectNode.anchorPoint = ccp(0.5, 0.4);
         [effectNode addChild:button];
         [self addChild:effectNode];
     }
