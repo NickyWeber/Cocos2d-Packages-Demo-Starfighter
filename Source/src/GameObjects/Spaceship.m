@@ -29,10 +29,6 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 
 @implementation Spaceship
 
-- (id)init
-{
-}
-
 - (id)initWithDelegate:(id <GamePlaySceneDelegate>)delegate
 {
     self = [super init];
@@ -223,13 +219,19 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 - (void)applyJoystickWithTimeDelta:(CCTime)aTimeDelta andGameObjects:(NSArray *)someGameObjects
 {
     CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
-
-	CGPoint scaledVelocity = ccpMult(_delegate.joystick.velocity, (CGFloat const) (displaySize.width * _speedfactor));
+	CGPoint scaledVelocity = ccpMult(_delegate.dPadVelocity, (CGFloat const) (displaySize.width * _speedfactor));
+//    NSLog(@"*** %@", [NSValue valueWithCGPoint:scaledVelocity]);
 
 	CGPoint newPosition = CGPointMake(MAX(0, MIN(self.position.x + scaledVelocity.x * aTimeDelta, displaySize.width)),
 			                          MAX(0, MIN(self.position.y + scaledVelocity.y * aTimeDelta, displaySize.height)));
 
-	// NSLog(@"xs: %f, x:%f, dt:%f, new:%f", scaledVelocity.x, self.position.x, aTimeDelta,self.position.x + scaledVelocity.x * aTimeDelta);
+
+    if ([_delegate dPadVelocity].x != 0 || [_delegate dPadVelocity].y != 0)
+    {
+        // NSLog(@"%.2f", _delegate.degrees);
+        NSLog(@"xv: %f, xs: %.4f, x:%f, dt:%f, new x:%f", [_delegate dPadVelocity].x, scaledVelocity.x, self.position.x, aTimeDelta,self.position.x + scaledVelocity.x * aTimeDelta);
+        NSLog(@"yv: %f, ys: %.4f, y:%f, dt:%f, new y:%f", [_delegate dPadVelocity].y, scaledVelocity.y, self.position.y, aTimeDelta,self.position.y + scaledVelocity.y * aTimeDelta);
+    }
 
 	if (self.isActive)
 	{
@@ -244,7 +246,7 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 
 - (void)addLaserShotsIfButtonPressedToDelegateWithPosition:(CGPoint)aPosition andGameObjects:(NSArray *)someGameObjects
 {
-	if (_delegate.fireButton.active)
+	if (_delegate.firing && self.isActive)
 	{
 		for (id <WeaponSystemProtocol> weaponSystem in _weaponSystems)
 		{

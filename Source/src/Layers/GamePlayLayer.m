@@ -54,8 +54,7 @@
     
     _levelController.enabled = NO;
 
-    [[_delegate fireButton] setEnabled:NO];
-    [[_delegate joystick] setEnabled:NO];
+    [_delegate spaceship].isActive = NO;
 }
 
 - (void)update:(CCTime)delta
@@ -81,10 +80,6 @@
 
 - (void)initializeSpaceship
 {
-    ShieldLoot *loot = [[ShieldLoot alloc] initWithDelegate:_delegate];
-    loot.position = ccp(160.0, 240.0);
-    [self addChild:loot];
-
 	self.spaceship = [[Spaceship alloc] initWithDelegate:_delegate];
     _spaceship.position = CGPointMake(160, 160);
 	[self addChild:_spaceship];

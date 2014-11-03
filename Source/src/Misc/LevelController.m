@@ -5,7 +5,6 @@
 //
 
 
-#include <SSZipArchive/unzip.h>
 #import "LevelController.h"
 #import "ccTypes.h"
 #import "Enemy.h"
@@ -49,7 +48,7 @@
 
 - (NSUInteger)totalEnemiesForLevel:(NSUInteger)level
 {
-    return (NSUInteger) (3 + 3 * (level - 1));
+    return (NSUInteger) (300 + 3 * (level - 1));
 }
 
 - (void)setLevel:(NSUInteger)level

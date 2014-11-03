@@ -105,6 +105,7 @@
 		E525F183AE074F1F2CEC05A5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* Constants.m */; };
 		E525F1D1CB02B80D59C25198 /* EnemyShot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F873D55AD2AC7F4898A1 /* EnemyShot.m */; };
 		E525F1E279AF6554F5DB68E3 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FDDBE171C661E737C6AD /* CCEffectInvert.m */; };
+		E525F207B37CEEA504ABDA7D /* KeyEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F64F87491E1473EA7ECA /* KeyEventHandler.m */; };
 		E525F22B8EFBD6AC1BA91522 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
 		E525F2A7C9CC26DCE17D5CD7 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF0966AAF612B68ED038 /* GameObject.m */; };
 		E525F30742E581BCA53AEFBA /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* Helper.m */; };
@@ -162,6 +163,7 @@
 		E525FA3B2FE8EAEBE19B6617 /* CCLabelTTF+GameFont.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB5CBBD2CF718283C6B1 /* CCLabelTTF+GameFont.m */; };
 		E525FA50339C622043F22558 /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCBEBAEA40A459BB2A39 /* Spaceship.m */; };
 		E525FAAFA4F98D87E6DCF6CD /* AIMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F34BF55EF3A50753D544 /* AIMovement.m */; };
+		E525FAB8FB858BF827286DAE /* SFGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2BC72D5C5DA54BCD70E /* SFGLView.m */; };
 		E525FB14099B44905CA712D5 /* Debris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F12448B0F02F118A3A4F /* Debris.m */; };
 		E525FB3C34AE49251723E03A /* BoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* BoundingBox.m */; };
 		E525FB559E36E287A8230E1D /* GameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F930FFA18F370C7EC140 /* GameMenuScene.m */; };
@@ -327,8 +329,10 @@
 		E525F12448B0F02F118A3A4F /* Debris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debris.m; sourceTree = "<group>"; };
 		E525F1977383887308B4098D /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
 		E525F1A1A2AD62D6DBC4A854 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		E525F208E9A2DDA921911441 /* SFGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGLView.h; sourceTree = "<group>"; };
 		E525F29CF485434C548AFB09 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		E525F2B7EB22960AECDA0270 /* HealthLoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthLoot.h; sourceTree = "<group>"; };
+		E525F2BC72D5C5DA54BCD70E /* SFGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGLView.m; sourceTree = "<group>"; };
 		E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCDirector.m; path = "Source/libs/cocos2d-iphone/cocos2d/CCDirector.m"; sourceTree = SOURCE_ROOT; };
 		E525F2D4CECE59E212DA0879 /* GameObject+Trigonometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GameObject+Trigonometry.m"; sourceTree = "<group>"; };
 		E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
@@ -346,8 +350,10 @@
 		E525F60E1AF9B040DB8D85F9 /* LaserBeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserBeam.h; sourceTree = "<group>"; };
 		E525F6237FDAA87E8CD0E445 /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
 		E525F62AC1970AEAF5231859 /* Spaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spaceship.h; sourceTree = "<group>"; };
+		E525F64F87491E1473EA7ECA /* KeyEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyEventHandler.m; sourceTree = "<group>"; };
 		E525F6DE925B6A53CBF3AB3C /* GamePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayScene.m; sourceTree = "<group>"; };
 		E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedDPadExample.m; sourceTree = "<group>"; };
+		E525F725EB2055FCA744E4DE /* SFKeyEventHandlingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFKeyEventHandlingDelegate.h; path = Source/Platforms/Mac/SFKeyEventHandlingDelegate.h; sourceTree = "<group>"; };
 		E525F750DAFE0458BBE64709 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		E525F756193F6B802D6BDFB0 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		E525F7B72FA99EE2C28AA656 /* Loot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loot.h; sourceTree = "<group>"; };
@@ -356,6 +362,7 @@
 		E525F7F6BACC943D680305F7 /* GamePlaySceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePlaySceneDelegate.h; path = Source/src/Layers/GamePlaySceneDelegate.h; sourceTree = SOURCE_ROOT; };
 		E525F873D55AD2AC7F4898A1 /* EnemyShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyShot.m; sourceTree = "<group>"; };
 		E525F8F50CDB79070E9AC30C /* HealthLoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthLoot.m; sourceTree = "<group>"; };
+		E525F8FA9DC128277B43DEBB /* KeyEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyEventHandler.h; sourceTree = "<group>"; };
 		E525F930FFA18F370C7EC140 /* GameMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameMenuScene.m; path = Source/Platforms/iOS/GameMenuScene.m; sourceTree = SOURCE_ROOT; };
 		E525F970C8EC31FACC7152C4 /* GamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayScene.h; sourceTree = "<group>"; };
 		E525F99E82751857FC49EA56 /* WeaponSystemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSystemProtocol.h; sourceTree = "<group>"; };
@@ -600,6 +607,11 @@
 			children = (
 				7A40360519DDEE84007B6E8F /* AppDelegate.h */,
 				7A40360619DDEE84007B6E8F /* AppDelegate.m */,
+				E525F725EB2055FCA744E4DE /* SFKeyEventHandlingDelegate.h */,
+				E525F64F87491E1473EA7ECA /* KeyEventHandler.m */,
+				E525F8FA9DC128277B43DEBB /* KeyEventHandler.h */,
+				E525F2BC72D5C5DA54BCD70E /* SFGLView.m */,
+				E525F208E9A2DDA921911441 /* SFGLView.h */,
 			);
 			name = Mac;
 			sourceTree = "<group>";
@@ -1163,6 +1175,8 @@
 				E525FF5EAC0E0E44CE81DE7D /* HealthLoot.m in Sources */,
 				E525F42B15E4B518FF79517B /* ShieldLoot.m in Sources */,
 				E525F127F756D91FEF93E8EC /* Loot.m in Sources */,
+				E525F207B37CEEA504ABDA7D /* KeyEventHandler.m in Sources */,
+				E525FAB8FB858BF827286DAE /* SFGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

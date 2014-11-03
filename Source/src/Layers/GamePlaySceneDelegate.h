@@ -18,8 +18,8 @@
 
 - (Spaceship *)spaceship;
 
-- (SneakyButton *)fireButton;
-- (SneakyJoystick *)joystick;
+- (CGPoint)dPadVelocity;
+- (BOOL)firing;
 
 - (void)levelCompleted:(NSUInteger)level;
 

@@ -16,6 +16,8 @@
 #import "EnemyShot.h"
 #import "AIMovement.h"
 #import "PointLoot.h"
+#import "HealthLoot.h"
+#import "ShieldLoot.h"
 
 @interface Enemy()
 
@@ -45,8 +47,6 @@
 		[self addBoundingBoxWithRect:CGRectMake(0.0, 0.0, 64.0, 44.0)];
 
         [self setupStats];
-
-        [self generateLoot];
 
         [self setupAnimations];
 	}
@@ -127,36 +127,12 @@
     self.explosionAnimationAction = [CCActionAnimate actionWithAnimation:explosionAnimation];
 }
 
-- (void)generateLoot
-{
-    self.loot = [[PointLoot alloc] initWithDelegate:_delegate];
-}
-
-- (CCColor *)colorForLevel:(NSUInteger)level
-{
-    switch (level)
-    {
-        case 1 : return [CCColor whiteColor];
-        case 2 : return [CCColor blueColor ];
-        case 3 : return [CCColor cyanColor];
-        case 4 : return [CCColor greenColor];
-        case 5 : return [CCColor yellowColor];
-        case 6 : return [CCColor orangeColor];
-        case 7 : return [CCColor purpleColor];
-        default: return [CCColor whiteColor];
-    }
-}
-
 - (void)updateStateWithTimeDelta:(CCTime)aTimeDelta andGameObjects:(NSArray *)gameObjects
 {
-	// relPosHeight = 1.0 - MIN(1.0, MAX(0, (1.0 / 480.0) * newPosition.y));
-
 	for (GameObject <WeaponProjectileProtocol> *gameObject in gameObjects)
 	{
-		// if ([gameObject isKindOfClass:[LaserBeam class]])
 		if ([gameObject conformsToProtocol:@protocol(WeaponProjectileProtocol)])
 		{
-//			LaserBeam *laserBeam = (LaserBeam *)gameObject;
 //			NSLog(@"1: %f.1 %f.1 %f.1 %f.1", rect1.origin.x, rect1.origin.y, rect1.size.width, rect1.size.height);
 //			NSLog(@"2: %f.1 %f.1 %f.1 %f.1", rect2.origin.x, rect2.origin.y, rect2.size.width, rect2.size.height);
 
@@ -205,12 +181,25 @@
 
 - (void)dropLoot
 {
-	if (_loot)
-	{
-		_loot.position = self.position;
-		[_delegate addGameEntity:_loot];
-        self.loot = nil;
-	}
+    int rng = arc4random() % 1000 + 1;
+    NSLog(@"RNG: %d", rng);
+    if (rng <= 200);
+    {
+        GameObject *loot;
+
+        int lootType = arc4random()  % 3 +1;
+        switch (lootType)
+        {
+            case 1: loot = [[HealthLoot alloc] initWithDelegate:_delegate]; break;
+            case 2: loot = [[ShieldLoot alloc] initWithDelegate:_delegate]; break;
+            default: loot = [[PointLoot alloc] initWithDelegate:_delegate]; break;
+        }
+
+        NSLog(@"Dropping: %@", [loot class]);
+
+        loot.position = self.position;
+        [_delegate addGameEntity:loot];
+    }
 }
 
 - (void)takeDamage:(int)damageTaken

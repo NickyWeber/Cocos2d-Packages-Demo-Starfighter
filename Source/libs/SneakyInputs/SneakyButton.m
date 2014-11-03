@@ -12,11 +12,9 @@
 @interface SneakyButton()
 
 @property (nonatomic, readwrite) BOOL value;
-@property (nonatomic, readwrite) BOOL active;
 
 @property (nonatomic) CGRect bounds;
 @property (nonatomic) CGPoint center;
-
 
 @property (nonatomic) float radiusSq;
 

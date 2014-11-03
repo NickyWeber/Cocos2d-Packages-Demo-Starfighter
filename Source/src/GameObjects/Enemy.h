@@ -34,7 +34,6 @@ typedef enum {
 @property (nonatomic, strong) CCActionAnimate *explosionAnimationAction;
 
 @property (nonatomic) int health;
-@property (nonatomic, strong) GameObject *loot;
 @property (nonatomic, strong) id <AIMovementProtocol> aiMovement;
 
 - (id)initEnemyWithDelegate:(id <GamePlaySceneDelegate>)aDelegate level:(NSUInteger)level;

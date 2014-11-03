@@ -27,7 +27,7 @@
 
 @property (nonatomic, assign) BOOL status;
 @property (nonatomic, readonly) BOOL value;
-@property (nonatomic, readonly) BOOL active;
+@property (nonatomic) BOOL active;
 @property (nonatomic, assign) BOOL isHoldable;
 @property (nonatomic, assign) BOOL isToggleable;
 @property (nonatomic, assign) float rateLimit;

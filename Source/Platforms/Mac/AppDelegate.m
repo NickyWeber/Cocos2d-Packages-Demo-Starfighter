@@ -1,4 +1,8 @@
 #import "AppDelegate.h"
+#import "GameMenuScene.h"
+#import "CCFileUtils.h"
+#import "Helper.h"
+#import "SFKeyEventHandlingDelegate.h"
 
 @interface AppDelegate ()
 
@@ -31,7 +35,16 @@
     // Configure CCFileUtils to work with SpriteBuilder
     [CCBReader configureCCFileUtils];
 
-    [director runWithScene:[CCBReader loadAsScene:@"MainScene"]];
+    [CCFileUtils sharedFileUtils].directoriesDict =
+        [@{ CCFileUtilsSuffixMac : @"resources-tablet",
+            CCFileUtilsSuffixMacHD : @"resources-tablethd",
+            CCFileUtilsSuffixDefault : @""} mutableCopy];
+
+    [[CCFileUtils sharedFileUtils] setMacContentScaleFactor:2.0];
+
+    GameMenuScene *gameMenuScene = [[GameMenuScene alloc] init];
+
+    [director runWithScene:gameMenuScene];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

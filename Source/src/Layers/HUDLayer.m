@@ -24,7 +24,9 @@
 
         [self setupShieldBar];
 
+        #if !__CC_PLATFORM_MAC
         [self initialiseUserControls];
+        #endif
     }
 
     return self;

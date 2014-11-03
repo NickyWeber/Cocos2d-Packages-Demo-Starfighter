@@ -14,6 +14,12 @@
 #import "CCBSequence.h"
 #import "Constants.h"
 
+#if __CC_PLATFORM_MAC
+#import "SFKeyEventHandlingDelegate.h"
+#import "KeyEventHandler.h"
+#import "SFGLView.h"
+#endif
+
 
 @interface SFTouchNode : CCNode
 
@@ -47,6 +53,12 @@
 
 @property (nonatomic) int gameScore;
 
+
+#if __CC_PLATFORM_MAC
+@property (nonatomic, strong) KeyEventHandler <SFKeyEventHandlingDelegate>* keyEventHandler;
+#endif
+
+
 @end
 
 @implementation GamePlayScene
@@ -65,6 +77,13 @@
 
         self.backgroundLayer = [BackgroundLayer node];
         [self addChild:_backgroundLayer z:0];
+
+#if __CC_PLATFORM_MAC
+        self.keyEventHandler = [[KeyEventHandler alloc] init];
+        SFGLView *glview = (id) [CCDirector sharedDirector].view;
+        glview.keyHandler = _keyEventHandler;
+#endif
+
     }
 
     return self;
@@ -105,14 +124,22 @@
 	return [_gamePlayLayer children];
 }
 
-- (SneakyButton *)fireButton
+- (CGPoint)dPadVelocity;
 {
-    return _hudLayer.fireButton.button;
+    #if __CC_PLATFORM_MAC
+    return [_keyEventHandler velocity];
+    #else
+    return _hudLayer.joystick.joystick.velocity;
+    #endif
 }
 
-- (SneakyJoystick *)joystick
+- (BOOL)firing
 {
-    return _hudLayer.joystick.joystick;
+    #if __CC_PLATFORM_MAC
+    return [_keyEventHandler firing];
+    #else
+    return _hudLayer.fireButton.button.active;
+    #endif
 }
 
 - (void)gameOver
