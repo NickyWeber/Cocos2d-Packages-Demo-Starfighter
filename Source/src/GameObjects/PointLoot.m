@@ -26,7 +26,7 @@ static int AWARD_POINTS = 100;
 
 - (id)initWithDelegate:(id)aDelegate
 {
-    self = [super initWithDelegate:aDelegate];
+    self = [super initWithBaseFrameName:@"Sprites/Loot/CashLoot_1.png" delegate:aDelegate];
     if (self)
     {
         CCAnimation *spaceshipAnimation = [CCAnimation animation];

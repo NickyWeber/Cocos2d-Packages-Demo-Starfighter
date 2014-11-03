@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
+#import "Loot.h"
 
+@interface ShieldLoot : Loot
 
-@interface ShieldLoot : NSObject
-{
+- (id)initWithDelegate:(id)aDelegate;
 
-}
 @end

@@ -7,4 +7,5 @@
 
 }
 
+- (id)initWithDelegate:(id)aDelegate;
 @end

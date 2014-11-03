@@ -9,7 +9,7 @@
 
 - (id)initWithDelegate:(id)aDelegate
 {
-    self = [super initWithDelegate:aDelegate];
+    self = [super initWithBaseFrameName:@"Sprites/Loot/HealthLoot_1.png" delegate:aDelegate];
 
     if (self)
     {

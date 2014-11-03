@@ -14,4 +14,6 @@
 
 @interface PointLoot : Loot
 
+- (id)initWithDelegate:(id)aDelegate;
+
 @end

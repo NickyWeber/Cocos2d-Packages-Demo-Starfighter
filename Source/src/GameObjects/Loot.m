@@ -19,9 +19,9 @@
 @implementation Loot
 
 
-- (id)initWithDelegate:(id)aDelegate
+- (id)initWithBaseFrameName:(NSString *)baseFrameName delegate:(id)aDelegate
 {
-	self = [super initWithImageNamed:@"Sprites/Loot/CashLoot_1.png"];
+	self = [super initWithImageNamed:baseFrameName];
 
 	if (self)
 	{

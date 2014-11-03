@@ -205,6 +205,36 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>Sprites/Loot/ShieldLoot_1.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/ShieldLoot_2.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/ShieldLoot_3.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/ShieldLoot_4.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/ShieldLoot_5.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Loot/ShieldLoot_6.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>Sprites/Shots/EnemyShot_1.png</key>
 		<dict>
 			<key>scaleFrom</key>

@@ -11,7 +11,7 @@
 @property (nonatomic) float lifeTime;
 @property (nonatomic) float fadeoutTime;
 
-- (id)initWithDelegate:(id)aDelegate;
+- (id)initWithBaseFrameName:(NSString *)baseFrameName delegate:(id)aDelegate;
 
 - (void)applyReward;
 
