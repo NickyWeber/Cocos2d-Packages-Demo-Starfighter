@@ -10,4 +10,6 @@
 
 - (instancetype)initWithHealth:(NSUInteger)health healthMax:(NSUInteger)healthMax;
 
+- (double)healthInPercent;
+
 @end

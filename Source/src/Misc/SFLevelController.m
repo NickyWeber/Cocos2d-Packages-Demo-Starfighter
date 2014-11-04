@@ -8,6 +8,8 @@
 #import "SFLevelController.h"
 #import "SFEnemy.h"
 #import "SFGamePlaySceneDelegate.h"
+#import "SFRenderComponent.h"
+#import "SFEntityManager.h"
 
 
 @interface SFLevelController ()
@@ -89,6 +91,7 @@
     if (timePassedSinceLastShot >= _spawTime
         && (_totalSpawned < _totalEnemies))
 	{
+/*
         self.totalSpawned += 1;
 
 		SFEnemy *enemy = [[SFEnemy alloc] initEnemyWithDelegate:_delegate level:_level];
@@ -100,6 +103,7 @@
         self.lastSpawnTime = [[NSDate date] timeIntervalSince1970];
 
         enemyCount++;
+*/
 
         // NSLog(@"Enemies left for next level: %u", _totalEnemies - _totalSpawned);
 	}

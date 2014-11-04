@@ -9,7 +9,7 @@
 @required
 - (void)addPoints:(int)pointsToAdd;
 
-- (void)updateHealthBarWithHealthInPercent:(float)healthInPercent;
+- (void)updateHealthBarWithHealthInPercent:(double)healthInPercent;
 - (void)updateShieldBarWithShieldInPercent:(float)shieldInPercent;
 
 - (void)addGameEntity:(CCNode *)aGameEntity;

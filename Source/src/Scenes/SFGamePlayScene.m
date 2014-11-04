@@ -99,7 +99,7 @@
 	[_hudLayer gameScoreChanged:_gameScore];
 }
 
-- (void)updateHealthBarWithHealthInPercent:(float)healthInPercent
+- (void)updateHealthBarWithHealthInPercent:(double)healthInPercent
 {
 	[_hudLayer updateHealthBarWithHealthInPercent:healthInPercent];
 }

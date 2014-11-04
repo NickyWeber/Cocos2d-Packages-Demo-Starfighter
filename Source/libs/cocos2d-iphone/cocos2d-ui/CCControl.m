@@ -160,7 +160,7 @@
 
 - (void) mouseDragged:(NSEvent *)event
 {
-    if ([self hitTestWithWorldPos:[event locationInWorld]])
+    if ([event respondsToSelector:@selector(locationInWorld)] && [self hitTestWithWorldPos:[event locationInWorld]])
     {
         if (!_touchInside)
         {

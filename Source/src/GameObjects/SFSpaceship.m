@@ -13,6 +13,10 @@
 #import "SFHealthComponent.h"
 #import "SFEntityManager.h"
 #import "SFEntity.h"
+#import "SFTagComponent.h"
+#import "SFCollisionDamageComponent.h"
+#import "SFCollisionComponent.h"
+#import "SFRenderComponent.h"
 
 
 static float EXPLOSION_ANIMATION_DURATION = 1.3f;
@@ -45,9 +49,19 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         [[SFEntityManager sharedManager] addComponent:[[SFHealthComponent alloc] initWithHealth:100 healthMax:100] toEntity:_entity];
 
 /*
-        self.health = 100;
-        self.healthMax = 100;
+        SFTagComponent *tagComponent = [[SFTagComponent alloc] init];
+        [tagComponent addTag:@"Spaceship"];
+        [[SFEntityManager sharedManager] addComponent:tagComponent toEntity:_entity];
 */
+
+        SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] init];
+        [[SFEntityManager sharedManager] addComponent:collisionComponent toEntity:_entity];
+
+        SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:10000000];
+        [[SFEntityManager sharedManager] addComponent:collisionDamageComponent toEntity:_entity];
+
+        SFRenderComponent *renderComponent = [[SFRenderComponent alloc] initWithSprite:[CCSprite spriteWithImageNamed:@"Sprites/Spaceship/Spaceship_1.png"]];
+        [[SFEntityManager sharedManager] addComponent:renderComponent toEntity:_entity];
 
         self.shield = 100;
         self.shieldMax = 100;
@@ -56,8 +70,8 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 
         SFLaserCannon *laserCannon = [[SFLaserCannon alloc] initWithDelegate:self.delegate];
         [_weaponSystems addObject:laserCannon];
-/*
 
+/*
         MissileLauncher *missileLauncher = [[[MissileLauncher alloc] initWithDelegate:self.delegate
                                                                         andDatasource:self] autorelease];
         // TODO: missile launcher still not working as expected :)
@@ -234,6 +248,7 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 			                          MAX(0, MIN(self.position.y + scaledVelocity.y * aTimeDelta, displaySize.height)));
 
 
+
     if ([_delegate dPadVelocity].x != 0 || [_delegate dPadVelocity].y != 0)
     {
         // NSLog(@"%.2f", _delegate.degrees);
@@ -245,6 +260,9 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 
 	if (self.isActive)
 	{
+        SFRenderComponent *renderComponent = [[SFEntityManager sharedManager] componentOfClass:[SFRenderComponent class] forEntity:_entity];
+        renderComponent.node.position = newPosition;
+
 		[self setPosition:newPosition];
 	}
 

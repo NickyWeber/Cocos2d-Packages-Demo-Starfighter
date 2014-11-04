@@ -2,6 +2,7 @@
 
 @protocol SFGamePlaySceneDelegate;
 @class SFSpaceship;
+@class SFMoveSystem;
 
 
 @interface SFGamePlayLayer : CCNode

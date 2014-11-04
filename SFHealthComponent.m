@@ -20,4 +20,14 @@
     _health = (NSInteger) MIN(MAX(0, health), _healthMax);
 }
 
+- (double)healthInPercent
+{
+    return 1.0 / _healthMax * _health;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"health: %lu / %lu", _health, _healthMax];
+}
+
 @end

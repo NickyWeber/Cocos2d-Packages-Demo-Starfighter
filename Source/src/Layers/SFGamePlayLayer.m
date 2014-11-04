@@ -9,10 +9,16 @@
 #import "SneakyButton.h"
 #import "SneakyJoystick.h"
 #import "SFPointLoot.h"
+#import "SFMoveSystem.h"
 #import "SFHealthLoot.h"
 #import "SFShieldLoot.h"
 #import "SFEntityManager.h"
 #import "SFHealthSystem.h"
+#import "SFRenderComponent.h"
+#import "SFHealthComponent.h"
+#import "SFEntityFactory.h"
+#import "SFMoveSystem.h"
+#import "SFCollisionSystem.h"
 
 
 @interface SFGamePlayLayer ()
@@ -24,6 +30,9 @@
 
 @property (nonatomic, strong) SFEntityManager *entityManager;
 @property (nonatomic, strong) SFHealthSystem *healthSystem;
+@property (nonatomic, strong) SFMoveSystem *moveSystem;
+
+@property (nonatomic, strong) NSMutableArray *systems;
 
 @end
 
@@ -41,14 +50,20 @@
 		         @"Delegate has to conform to SFGamePlaySceneDelegate!");
 
         self.entityManager = [SFEntityManager sharedManager];
-        self.healthSystem = [[SFHealthSystem alloc] initWithEntityManager:_entityManager];
-
 		self.delegate = aDelegate;
 		self.gameObjectRemovalPool = [NSMutableArray array];
         
 		self.levelController = [[SFLevelController alloc] initWithDelegate:_delegate];
 
+        [SFEntityFactory sharedFactory].delegate = aDelegate;
+        [SFEntityFactory sharedFactory].entityManager = _entityManager;
+
 		[self initializeSpaceship];
+
+        self.systems = [NSMutableArray array];
+        [_systems addObject:[[SFMoveSystem alloc] initWithEntityManager:_entityManager]];
+        [_systems addObject:[[SFCollisionSystem alloc] initWithEntityManager:_entityManager]];
+        [_systems addObject:[[SFHealthSystem alloc] initWithEntityManager:_entityManager]];
 	}
 	return self;
 }
@@ -67,7 +82,10 @@
 
 - (void)update:(CCTime)delta
 {
-    [_healthSystem update:delta];
+    for (SFEntitySystem *entitySystem in _systems)
+    {
+        [entitySystem update:delta];
+    }
 
     [_levelController update:delta andGameObjects:[self children]];
 
@@ -92,12 +110,38 @@
 {
 	self.spaceship = [[SFSpaceship alloc] initWithDelegate:_delegate];
     _spaceship.position = CGPointMake(160, 160);
+    SFRenderComponent *renderComponentA = [[SFEntityManager sharedManager] componentOfClass:[SFRenderComponent class] forEntity:_spaceship.entity];
+    renderComponentA.node.position = _spaceship.position;
 	[self addChild:_spaceship];
+
+    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_spaceship.entity];
+    [healthComponent addObserver:self
+                      forKeyPath:@"health"
+                         options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld
+                         context:NULL];
+
+
+
+    // Only for debugging and dev
+    SFEntity *entity = [[SFEntityFactory sharedFactory] addEnemy];
+    SFRenderComponent *renderComponent = [_entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
+    renderComponent.node.position = ccp(160.0, 160.0);
+    [self addChild:renderComponent.node];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"health"])
+    {
+        SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_spaceship.entity];
+        [_delegate updateHealthBarWithHealthInPercent:[healthComponent healthInPercent]];
+    }
 }
 
 - (void)addGameObjectToRemovalPoolIfMarkedWithGameObject:(SFGameObject *)aGameObject
 {
-	if (aGameObject.removeInSeparateLoop)
+	if ([aGameObject respondsToSelector:@selector(removeInSeparateLoop)]
+        && aGameObject.removeInSeparateLoop)
 	{
 		[_gameObjectRemovalPool addObject:aGameObject];
 	}
