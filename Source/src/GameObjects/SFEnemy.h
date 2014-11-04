@@ -16,6 +16,7 @@
 @protocol SFAIMovementProtocol;
 @protocol SFGamePlaySceneDelegate;
 @class SFLoot;
+@class SFEntity;
 
 
 typedef enum {
@@ -34,13 +35,14 @@ typedef enum {
 @property (nonatomic, strong) CCAnimation *explosionAnimation;
 @property (nonatomic, strong) CCActionAnimate *explosionAnimationAction;
 
-@property (nonatomic) int health;
+// @property (nonatomic) int health;
 @property (nonatomic, strong) id <SFAIMovementProtocol> aiMovement;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic, strong) SFEntity *entity;
 
 - (id)initEnemyWithDelegate:(id <SFGamePlaySceneDelegate>)aDelegate level:(NSUInteger)level;
 
 - (void)takeDamage:(int)damageTaken;
 
-@property (nonatomic) BOOL isActive;
 
 @end

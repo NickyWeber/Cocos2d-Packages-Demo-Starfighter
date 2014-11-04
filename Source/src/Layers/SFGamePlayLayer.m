@@ -11,15 +11,20 @@
 #import "SFPointLoot.h"
 #import "SFHealthLoot.h"
 #import "SFShieldLoot.h"
+#import "SFEntityManager.h"
+#import "SFHealthSystem.h"
 
 
 @interface SFGamePlayLayer ()
 
 @property (nonatomic, strong) SFLevelController *levelController;
 @property (nonatomic, strong) NSMutableArray *gameObjectRemovalPool;
-
 @property (nonatomic) double timeSinceLastStatusUpdate;
 @property (nonatomic) NSUInteger level;
+
+@property (nonatomic, strong) SFEntityManager *entityManager;
+@property (nonatomic, strong) SFHealthSystem *healthSystem;
+
 @end
 
 
@@ -34,6 +39,9 @@
 		NSAssert(aDelegate != nil, @"Delegate has to be set!");
 		NSAssert([aDelegate conformsToProtocol:@protocol(SFGamePlaySceneDelegate)],
 		         @"Delegate has to conform to SFGamePlaySceneDelegate!");
+
+        self.entityManager = [SFEntityManager sharedManager];
+        self.healthSystem = [[SFHealthSystem alloc] initWithEntityManager:_entityManager];
 
 		self.delegate = aDelegate;
 		self.gameObjectRemovalPool = [NSMutableArray array];
@@ -59,6 +67,8 @@
 
 - (void)update:(CCTime)delta
 {
+    [_healthSystem update:delta];
+
     [_levelController update:delta andGameObjects:[self children]];
 
    	for (SFGameObject *gameObject in [[self children] copy])

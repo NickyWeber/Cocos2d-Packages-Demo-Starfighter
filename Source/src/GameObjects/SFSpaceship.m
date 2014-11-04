@@ -10,6 +10,9 @@
 #import "SFWeaponSystemProtocol.h"
 #import "SFLaserCannon.h"
 #import "CCEffectInvert.h"
+#import "SFHealthComponent.h"
+#import "SFEntityManager.h"
+#import "SFEntity.h"
 
 
 static float EXPLOSION_ANIMATION_DURATION = 1.3f;
@@ -37,9 +40,14 @@ static float HIT_ANIMATION_DURATION = 0.1f;
     {
         self.delegate = delegate;
         [self setIsActive:YES];
+        
+        self.entity = [[SFEntityManager sharedManager] createEntity];
+        [[SFEntityManager sharedManager] addComponent:[[SFHealthComponent alloc] initWithHealth:100 healthMax:100] toEntity:_entity];
 
+/*
         self.health = 100;
         self.healthMax = 100;
+*/
 
         self.shield = 100;
         self.shieldMax = 100;
@@ -88,7 +96,9 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 
 - (void)updateStateWithTimeDelta:(CCTime)aTimeDelta andGameObjects:(NSArray *)gameObjects
 {
-    if (![self isPlayerDead])
+    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_entity];
+
+    if (healthComponent.isAlive)
     {
         [self applyJoystickWithTimeDelta:aTimeDelta andGameObjects:gameObjects];
 
@@ -125,24 +135,20 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 
 - (void)testOnEnemyShipCollisionAndApplyDamageWithEnemy:(SFEnemy *)anEnemy
 {
+    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:anEnemy.entity];
+
 	if ([self detectCollisionWithGameObject:anEnemy]
-		&& anEnemy.isActive)
+		&& healthComponent.isAlive)
 	{
-		[self playerTakesDamage:anEnemy.health];
+		[self playerTakesDamage:healthComponent.health];
 		[anEnemy takeDamage:100];
 	}
 }
 
 - (void)addHealth:(int)health
 {
-    if (health + _health > _healthMax)
-    {
-        self.health = _healthMax;
-    }
-    else
-    {
-        self.health += health;
-    }
+    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_entity];
+    healthComponent.health += health;
 
     [_delegate updateHealthBarWithHealthInPercent:[self healthInPercent]];
 }
@@ -171,12 +177,14 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 	int newShield = _shield - damageTaken;
 	self.shield = MAX(newShield, 0);
 
+    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_entity];
+
 	if (newShield < 0)
 	{
-		self.health = _health - newShield * -1;
+        healthComponent.health = healthComponent.health - newShield * -1;
 	}
 
-	if ([self isPlayerDead])
+	if (![healthComponent isAlive])
 	{
 		[self playerDies];
 	}
@@ -293,17 +301,14 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 
 - (float)healthInPercent
 {
-	return (float) (1.0 / (float) _healthMax * (float) _health);
+    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_entity];
+
+	return (float) (1.0 / (float) healthComponent.healthMax * (float) healthComponent.health);
 }
 
 - (float)shieldInPercent
 {
 	return (float) (1.0 / (float) _shieldMax * (float) _shield);
-}
-
-- (BOOL)isPlayerDead
-{
-	return (_health <= 0);
 }
 
 - (BOOL)canShoot

@@ -19,6 +19,9 @@
 #import "SFHealthLoot.h"
 #import "SFShieldLoot.h"
 #import "SFLoot.h"
+#import "SFEntityManager.h"
+#import "SFEntity.h"
+#import "SFHealthComponent.h"
 
 @interface SFEnemy ()
 
@@ -44,6 +47,9 @@
 		self.delegate = aDelegate;
 		self.state = EnemyStateNormal;
         self.level = level;
+        
+        self.entity = [[SFEntityManager sharedManager] createEntity];
+        [[SFEntityManager sharedManager] addComponent:[[SFHealthComponent alloc] initWithHealth:55 healthMax:55]toEntity:_entity];
 
 		[self addBoundingBoxWithRect:CGRectMake(0.0, 0.0, 64.0, 44.0)];
 
@@ -66,7 +72,8 @@
 
     self.speedfactor = (float) (50.0 + 50.0 * factor);
     self.points = (int) (75 + 200 * factor);
-    self.health = (int) (50 + 15 * factor);
+
+    // self.health = (int) (50 + 15 * factor);
 
     // NSLog(@"Level: %d, p: %d, h: %d, s: %.2f, sps: %.2f, f: %.2f", _level, _points, _health, _speedfactor, _shotsPerSecond, factor);
 }
@@ -130,6 +137,8 @@
 
 - (void)updateStateWithTimeDelta:(CCTime)aTimeDelta andGameObjects:(NSArray *)gameObjects
 {
+    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_entity];
+
 	for (SFGameObject <SFWeaponProjectileProtocol> *gameObject in gameObjects)
 	{
 		if ([gameObject conformsToProtocol:@protocol(SFWeaponProjectileProtocol)])
@@ -138,7 +147,7 @@
 //			NSLog(@"2: %f.1 %f.1 %f.1 %f.1", rect2.origin.x, rect2.origin.y, rect2.size.width, rect2.size.height);
 
 			if ([self detectCollisionWithGameObject:gameObject]
-				&& gameObject.isActive
+				&& healthComponent.isAlive
 				&& ! [gameObject damagesSpaceship])
 			{
 				[self takeDamage:[gameObject damage]];
@@ -166,7 +175,7 @@
 
 - (void)explode
 {
-	self.isActive = NO;
+
 
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"TargetDestroyed"
 														object:self];
@@ -213,9 +222,12 @@
 
 - (void)takeDamage:(int)damageTaken
 {
-	self.health -= damageTaken;
+    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_entity];
+    healthComponent.health -= damageTaken;
 
-	if (_health <= 0)
+	// self.health -= damageTaken;
+
+	if (healthComponent.health <= 0)
 	{
 		[self explode];
 
@@ -240,7 +252,7 @@
 {
 	if ([self areCannonsReady])
 	{
-        SFEnemyShot *aShot = [[SFEnemyShot alloc] initEnemyShotWithStartPosition:self.position andTarget:[_delegate spaceship] level:NULL];
+        SFEnemyShot *aShot = [[SFEnemyShot alloc] initEnemyShotWithStartPosition:self.position andTarget:[_delegate spaceship] level:_level];
 
 
 
