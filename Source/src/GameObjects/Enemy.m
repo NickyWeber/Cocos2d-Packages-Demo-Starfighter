@@ -18,6 +18,7 @@
 #import "PointLoot.h"
 #import "HealthLoot.h"
 #import "ShieldLoot.h"
+#import "Loot.h"
 
 @interface Enemy()
 
@@ -181,25 +182,33 @@
 
 - (void)dropLoot
 {
-    int rng = arc4random() % 1000 + 1;
-    NSLog(@"RNG: %d", rng);
-    if (rng <= 200);
+    Loot *loot = [self randomLoot];
+
+    if (loot)
     {
-        GameObject *loot;
-
-        int lootType = arc4random()  % 3 +1;
-        switch (lootType)
-        {
-            case 1: loot = [[HealthLoot alloc] initWithDelegate:_delegate]; break;
-            case 2: loot = [[ShieldLoot alloc] initWithDelegate:_delegate]; break;
-            default: loot = [[PointLoot alloc] initWithDelegate:_delegate]; break;
-        }
-
-        NSLog(@"Dropping: %@", [loot class]);
-
         loot.position = self.position;
         [_delegate addGameEntity:loot];
     }
+}
+
+- (Loot *)randomLoot
+{
+    int rng = arc4random() % 1000 + 1;
+
+    if (rng <= 200)
+    {
+        int lootType = arc4random() % 3 + 1;
+        switch (lootType)
+        {
+            case 1:
+                return [[HealthLoot alloc] initWithDelegate:_delegate];
+            case 2:
+                return [[ShieldLoot alloc] initWithDelegate:_delegate];
+            default:
+                return [[PointLoot alloc] initWithDelegate:_delegate];
+        }
+    }
+    return nil;
 }
 
 - (void)takeDamage:(int)damageTaken

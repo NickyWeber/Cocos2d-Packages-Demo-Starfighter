@@ -89,7 +89,7 @@
         && (_totalSpawned < _totalEnemies))
 	{
         self.totalSpawned += 1;
-        NSLog(@"Enemies left for next level: %u", _totalEnemies - _totalSpawned);
+        // NSLog(@"Enemies left for next level: %u", _totalEnemies - _totalSpawned);
 
 		Enemy *enemy = [[Enemy alloc] initEnemyWithDelegate:_delegate level:_level];
 		enemy.position = CGPointMake((CGFloat) (([CCDirector sharedDirector].view.frame.size.width - 20.0) * CCRANDOM_0_1() + 20),

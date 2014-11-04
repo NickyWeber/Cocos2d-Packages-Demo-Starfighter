@@ -229,8 +229,10 @@ static float HIT_ANIMATION_DURATION = 0.1f;
     if ([_delegate dPadVelocity].x != 0 || [_delegate dPadVelocity].y != 0)
     {
         // NSLog(@"%.2f", _delegate.degrees);
+/*
         NSLog(@"xv: %f, xs: %.4f, x:%f, dt:%f, new x:%f", [_delegate dPadVelocity].x, scaledVelocity.x, self.position.x, aTimeDelta,self.position.x + scaledVelocity.x * aTimeDelta);
         NSLog(@"yv: %f, ys: %.4f, y:%f, dt:%f, new y:%f", [_delegate dPadVelocity].y, scaledVelocity.y, self.position.y, aTimeDelta,self.position.y + scaledVelocity.y * aTimeDelta);
+*/
     }
 
 	if (self.isActive)

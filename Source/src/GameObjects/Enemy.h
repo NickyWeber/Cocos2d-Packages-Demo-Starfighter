@@ -15,6 +15,7 @@
 @class GamePlayLayer;
 @protocol AIMovementProtocol;
 @protocol GamePlaySceneDelegate;
+@class Loot;
 
 
 typedef enum {
