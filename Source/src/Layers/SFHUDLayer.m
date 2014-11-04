@@ -4,6 +4,7 @@
 #import "SneakyButtonSkinnedBase.h"
 #import "SneakyButton.h"
 #import "CCBSequence.h"
+#import "CCEffectInvert.h"
 
 
 @interface SFHUDLayer ()
@@ -61,13 +62,18 @@
 {
     CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
 
-    self.scoreLabel = [CCLabelTTF labelWithString:@"0"
+    self.scoreLabel = [CCLabelTTF labelWithString:@"1234"
                                          fontName:@"Courier-Bold"
                                          fontSize:24.0];
+
+
+    CCEffectStack *effectStack = [[CCEffectStack alloc] initWithEffects:[[CCEffectInvert alloc] init], [CCEffectPixellate effectWithBlockSize:2.0], nil];
+    _scoreLabel.effect = effectStack;
 
     _scoreLabel.horizontalAlignment = CCTextAlignmentRight;
     _scoreLabel.anchorPoint = CGPointMake(0.0, 0.0);
     _scoreLabel.position = CGPointMake(0.0, (CGFloat) (displaySize.height - _scoreLabel.contentSize.height - 2.0));
+
     [self addChild:self.scoreLabel];
 }
 
