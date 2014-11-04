@@ -16,8 +16,10 @@
 @interface LevelController()
 
 @property (nonatomic) NSUInteger totalSpawned;
-
 @property (nonatomic) BOOL complete;
+@property (nonatomic) NSTimeInterval lastSpawnTime;
+@property (nonatomic) double spawTime;
+
 @end
 
 
@@ -41,6 +43,8 @@
 		self.delegate = aDelegate;
         self.level = 1;
         self.enabled = YES;
+        self.lastSpawnTime = [[NSDate date] timeIntervalSince1970] - 10000000;
+        self.spawTime = 3.0;
 	}
 
 	return self;
@@ -59,7 +63,7 @@
     _level = level;
     self.totalEnemies = [self totalEnemiesForLevel:_level];
 
-    NSLog(@"*** New Level: %u - total enemies %u", level, _totalEnemies);
+    // NSLog(@"*** New Level: %u - total enemies %u", level, _totalEnemies);
     // NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
@@ -74,9 +78,52 @@
         return;
     }
 
-	int enemyCount = 0;
+    int enemyCount = [self countEnemies:someGameObjects];
 
-	for (id gameObject in someGameObjects)
+    enemyCount = [self spawnEnemy:enemyCount];
+
+    [self completeLevel:enemyCount];
+}
+
+- (int)spawnEnemy:(int)enemyCount
+{
+    NSTimeInterval timePassedSinceLastShot = [[NSDate date] timeIntervalSince1970] - _lastSpawnTime;
+
+    if (timePassedSinceLastShot >= _spawTime
+        && (_totalSpawned < _totalEnemies))
+	{
+        self.totalSpawned += 1;
+
+		Enemy *enemy = [[Enemy alloc] initEnemyWithDelegate:_delegate level:_level];
+		enemy.position = CGPointMake((CGFloat) (([CCDirector sharedDirector].view.frame.size.width - 20.0) * CCRANDOM_0_1() + 20),
+                                     (CGFloat) (([CCDirector sharedDirector].view.frame.size.height + 25.0) + enemy.contentSize.height / 2));
+
+		[_delegate addGameEntity:enemy];
+
+        self.lastSpawnTime = [[NSDate date] timeIntervalSince1970];
+
+        enemyCount++;
+
+        // NSLog(@"Enemies left for next level: %u", _totalEnemies - _totalSpawned);
+	}
+    return enemyCount;
+}
+
+- (void)completeLevel:(int)enemyCount
+{
+    if (_totalEnemies == _totalSpawned
+        && enemyCount == 0)
+    {
+        self.complete = YES;
+        [_delegate levelCompleted:_level];
+    }
+}
+
+- (int)countEnemies:(NSArray *)someGameObjects
+{
+    int enemyCount = 0;
+
+    for (id gameObject in someGameObjects)
 	{
 		if ([gameObject isKindOfClass:[Enemy class]]
 			&& [gameObject isActive])
@@ -84,28 +131,7 @@
 			enemyCount++;
 		}
 	}
-
-	if (enemyCount == 0
-        && (_totalSpawned < _totalEnemies))
-	{
-        self.totalSpawned += 1;
-        // NSLog(@"Enemies left for next level: %u", _totalEnemies - _totalSpawned);
-
-		Enemy *enemy = [[Enemy alloc] initEnemyWithDelegate:_delegate level:_level];
-		enemy.position = CGPointMake((CGFloat) (([CCDirector sharedDirector].view.frame.size.width - 20.0) * CCRANDOM_0_1() + 20),
-                                     (CGFloat) (([CCDirector sharedDirector].view.frame.size.height - 50.0) + enemy.contentSize.height / 2));
-
-		[_delegate addGameEntity:enemy];
-
-        enemyCount++;
-	}
-
-    if (_totalEnemies == _totalSpawned
-        && enemyCount == 0)
-    {
-        self.complete = YES;
-        [_delegate levelCompleted:_level];
-    }
+    return enemyCount;
 }
 
 @end
