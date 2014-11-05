@@ -11,10 +11,12 @@
 - (SFEntity *)createEntity;
 
 - (void)addComponent:(SFComponent *)component toEntity:(SFEntity *)entity;
+- (void)removeComponent:(Class)class fromEntity:(SFEntity *)entity;
 
 - (id)componentOfClass:(Class)class forEntity:(SFEntity *)entity;
 
 - (void)removeEntity:(SFEntity *)entity;
 
 - (NSArray *)allEntitiesPosessingComponentOfClass:(Class)class;
+
 @end

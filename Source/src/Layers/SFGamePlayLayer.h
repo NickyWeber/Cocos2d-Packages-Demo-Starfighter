@@ -12,6 +12,8 @@
 
 - (id)initWithDelegate:(id<SFGamePlaySceneDelegate>)aDelegate;
 
+- (void)startGame;
+
 - (void)disableGameObjectsAndControls;
 
 - (void)addGameEntity:(CCNode *)aGameEntity;

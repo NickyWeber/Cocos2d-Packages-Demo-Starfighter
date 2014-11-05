@@ -60,6 +60,12 @@
     components[entity.uuid] = component;
 }
 
+- (void)removeComponent:(Class)class fromEntity:(SFEntity *)entity
+{
+    NSMutableDictionary *components = _componentsByClass[NSStringFromClass(class)];
+    [components removeObjectForKey:entity.uuid];
+}
+
 - (id)componentOfClass:(Class)class forEntity:(SFEntity *)entity
 {
     return _componentsByClass[NSStringFromClass(class)][entity.uuid];

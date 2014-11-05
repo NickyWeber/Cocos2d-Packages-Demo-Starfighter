@@ -84,6 +84,7 @@
         glview.keyHandler = _keyEventHandler;
 #endif
 
+        [_gamePlayLayer startGame];
     }
 
     return self;
@@ -109,7 +110,7 @@
 	[_hudLayer updateShieldBarWithShieldInPercent:shieldInPercent];
 }
 
-- (void)addGameEntity:(CCNode *)aGameEntity
+- (void)addGameNode:(CCNode *)aGameEntity
 {
 	[_gamePlayLayer addGameEntity:aGameEntity];
 }

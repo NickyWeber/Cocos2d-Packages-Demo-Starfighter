@@ -3,6 +3,10 @@
 #import "SFEntityManager.h"
 #import "SFRenderComponent.h"
 #import "CCAnimationCache.h"
+#import "SFLootComponent.h"
+#import "SFGamePlaySceneDelegate.h"
+#import "SFEntityFactory.h"
+#import "SFCollisionComponent.h"
 
 @implementation SFHealthSystem
 
@@ -23,12 +27,30 @@
         {
             healthComponent.isAlive = NO;
 
-            SFRenderComponent *renderComponent = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
-            [renderComponent.node stopAllActions];
+            [self dropLootOfEntity:entity];
 
-            CCActionAnimate *actionAnimate = [CCActionAnimate actionWithAnimation:[[CCAnimationCache sharedAnimationCache] animationByName:@"Explosion"]];
+            [self explodeEntity:entity];
+        }
+    }
+}
 
-            id sequence = [CCActionSequence actions:// [CCActionCallFunc actionWithTarget:self selector:@selector(dropLoot)],
+- (void)dropLootOfEntity:(SFEntity *)entity
+{
+    SFLootComponent *lootComponent = [self.entityManager componentOfClass:[SFLootComponent class] forEntity:entity];
+
+    // [[SFEntityFactory sharedFactory] addLoot:lootComponent atPosition:ccp];
+}
+
+- (void)explodeEntity:(SFEntity *)entity
+{
+    [self.entityManager removeComponent:[SFCollisionComponent class] fromEntity:entity];
+
+    SFRenderComponent *renderComponent = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
+    [renderComponent.node stopAllActions];
+
+    CCActionAnimate *actionAnimate = [CCActionAnimate actionWithAnimation:[[CCAnimationCache sharedAnimationCache] animationByName:@"Explosion"]];
+
+    id sequence = [CCActionSequence actions:// [CCActionCallFunc actionWithTarget:self selector:@selector(dropLoot)],
                                                     actionAnimate,
                                                     [CCActionCallBlock actionWithBlock:^{
                                                         [renderComponent.node removeFromParentAndCleanup:YES];
@@ -36,9 +58,7 @@
                                                     }],
                                                     nil];
 
-        	[renderComponent.node runAction:sequence];
-        }
-    }
+    [renderComponent.node runAction:sequence];
 }
 
 @end

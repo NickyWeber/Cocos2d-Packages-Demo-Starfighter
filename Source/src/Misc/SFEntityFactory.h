@@ -3,6 +3,7 @@
 @protocol SFGamePlaySceneDelegate;
 @class SFEntityManager;
 @class SFEntity;
+@class SFLootComponent;
 
 
 @interface SFEntityFactory : NSObject
@@ -12,6 +13,10 @@
 
 + (SFEntityFactory *)sharedFactory;
 
-- (SFEntity *)addEnemy;
+- (SFEntity *)addEnemyAtPosition:(CGPoint)position;
+
+- (SFEntity *)addLoot:(SFLootComponent *)lootComponent atPosition:(CGPoint)position;
+
+- (SFEntity *)addLaserBeamAtPosition:(CGPoint)position;
 
 @end

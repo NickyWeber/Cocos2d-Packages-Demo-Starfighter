@@ -46,13 +46,12 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         [self setIsActive:YES];
         
         self.entity = [[SFEntityManager sharedManager] createEntity];
-        [[SFEntityManager sharedManager] addComponent:[[SFHealthComponent alloc] initWithHealth:100 healthMax:100] toEntity:_entity];
+        _entity.name = @"Spaceship";
+        [[SFEntityManager sharedManager] addComponent:[[SFHealthComponent alloc] initWithHealth:70 healthMax:100] toEntity:_entity];
 
-/*
         SFTagComponent *tagComponent = [[SFTagComponent alloc] init];
         [tagComponent addTag:@"Spaceship"];
         [[SFEntityManager sharedManager] addComponent:tagComponent toEntity:_entity];
-*/
 
         SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] init];
         [[SFEntityManager sharedManager] addComponent:collisionComponent toEntity:_entity];

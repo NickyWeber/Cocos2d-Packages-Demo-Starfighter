@@ -19,6 +19,9 @@
 #import "SFEntityFactory.h"
 #import "SFMoveSystem.h"
 #import "SFCollisionSystem.h"
+#import "SFLootComponent.h"
+#import "SFCollisionRewardComponent.h"
+#import "SFTimeToLiveSystem.h"
 
 
 @interface SFGamePlayLayer ()
@@ -58,14 +61,18 @@
         [SFEntityFactory sharedFactory].delegate = aDelegate;
         [SFEntityFactory sharedFactory].entityManager = _entityManager;
 
-		[self initializeSpaceship];
-
         self.systems = [NSMutableArray array];
-        [_systems addObject:[[SFMoveSystem alloc] initWithEntityManager:_entityManager]];
-        [_systems addObject:[[SFCollisionSystem alloc] initWithEntityManager:_entityManager]];
-        [_systems addObject:[[SFHealthSystem alloc] initWithEntityManager:_entityManager]];
+        [_systems addObject:[[SFMoveSystem alloc] initWithEntityManager:_entityManager delegate:aDelegate]];
+        [_systems addObject:[[SFCollisionSystem alloc] initWithEntityManager:_entityManager delegate:aDelegate]];
+        [_systems addObject:[[SFHealthSystem alloc] initWithEntityManager:_entityManager delegate:aDelegate]];
+        [_systems addObject:[[SFTimeToLiveSystem alloc] initWithEntityManager:_entityManager delegate:aDelegate]];
 	}
 	return self;
+}
+
+- (void)startGame
+{
+    [self initializeSpaceship];
 }
 
 - (void)disableGameObjectsAndControls
@@ -123,10 +130,13 @@
 
 
     // Only for debugging and dev
-    SFEntity *entity = [[SFEntityFactory sharedFactory] addEnemy];
-    SFRenderComponent *renderComponent = [_entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
-    renderComponent.node.position = ccp(160.0, 160.0);
-    [self addChild:renderComponent.node];
+    [[SFEntityFactory sharedFactory] addEnemyAtPosition:ccp(160.0, 600.0)];
+/*
+    SFEntity *entity = [[SFEntityFactory sharedFactory] addLoot:[[SFLootComponent alloc] initWithDropType:1] atPosition:ccp(160.0, 290.0)];
+    SFCollisionRewardComponent *rewardComponent = [_entityManager componentOfClass:[SFCollisionRewardComponent class] forEntity:entity];
+    rewardComponent.health = 20;
+    rewardComponent.points = 100;
+*/
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

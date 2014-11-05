@@ -1,6 +1,8 @@
 #import "SFLaserCannon.h"
 #import "SFGamePlaySceneDelegate.h"
 #import "SFLaserBeam.h"
+#import "SFEntityManager.h"
+#import "SFEntityFactory.h"
 
 
 @interface SFLaserCannon ()
@@ -40,14 +42,18 @@
 {
     if ([self canShoot])
     {
+        [[SFEntityFactory sharedFactory] addLaserBeamAtPosition:ccp(aPosition.x - 16, aPosition.y + 30)];
+        [[SFEntityFactory sharedFactory] addLaserBeamAtPosition:ccp(aPosition.x + 16, aPosition.y + 30)];
+/*
         SFLaserBeam *beamLeft = [[SFLaserBeam alloc] init];
         beamLeft.position = CGPointMake(aPosition.x - 16, aPosition.y + 30);
 
         SFLaserBeam *beamRight = [[SFLaserBeam alloc] init];
         beamRight.position = CGPointMake(aPosition.x + 16, aPosition.y + 30);
 
-        [_delegate addGameEntity:beamLeft];
-        [_delegate addGameEntity:beamRight];
+        [_delegate addGameNode:beamLeft];
+        [_delegate addGameNode:beamRight];
+*/
 
         self.timestampSinceLastShot = [[NSDate date] timeIntervalSince1970];
     }

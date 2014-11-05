@@ -5,11 +5,16 @@
 
 - (id)init
 {
-    self = [super init];
+    return [self initWithDespawnAfterCollision:NO];
+}
 
+- (instancetype)initWithDespawnAfterCollision:(BOOL)despawnAfterCollision
+{
+    self = [super init];
     if (self)
     {
-
+        self.despawnAfterCollision = despawnAfterCollision;
+        self.collisionExceptionTags = [NSMutableSet set];
     }
 
     return self;

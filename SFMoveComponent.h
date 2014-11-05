@@ -7,5 +7,4 @@
 
 - (instancetype)initWithVelocity:(CGPoint)velocity;
 
-
 @end

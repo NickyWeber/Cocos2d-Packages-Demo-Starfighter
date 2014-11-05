@@ -175,8 +175,6 @@
 
 - (void)explode
 {
-
-
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"TargetDestroyed"
 														object:self];
 
@@ -196,7 +194,7 @@
     if (loot)
     {
         loot.position = self.position;
-        [_delegate addGameEntity:loot];
+        [_delegate addGameNode:loot];
     }
 }
 
@@ -257,7 +255,7 @@
 
 
 		// NSLog(@"*********** FIRING FROM %f.2 %f.2 !!! ***************", aShot.position.x, aShot.position.y);
-		[_delegate addGameEntity:aShot];
+        [_delegate addGameNode:aShot];
 	}
 
 /*
