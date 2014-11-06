@@ -1,6 +1,5 @@
 #import "SFMoveComponent.h"
 
-
 @implementation SFMoveComponent
 
 - (instancetype)initWithVelocity:(CGPoint)velocity

@@ -8,6 +8,8 @@
 #import "SFEntityFactory.h"
 #import "SFCollisionComponent.h"
 #import "SFRewardComponent.h"
+#import "SFTagComponent.h"
+#import "SFGamePlaySceneDelegate.h"
 
 @implementation SFHealthSystem
 
@@ -60,6 +62,8 @@
 
 - (void)explodeEntity:(SFEntity *)entity
 {
+    SFTagComponent *tagComponent = [self.entityManager componentOfClass:[SFTagComponent class] forEntity:entity];
+
     [self.entityManager removeComponent:[SFCollisionComponent class] fromEntity:entity];
 
     SFRenderComponent *renderComponent = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
@@ -68,7 +72,12 @@
     CCActionAnimate *actionAnimate = [CCActionAnimate actionWithAnimation:[[CCAnimationCache sharedAnimationCache] animationByName:@"Explosion"]];
 
     id sequence = [CCActionSequence actions:actionAnimate,
-                                            [CCActionCallBlock actionWithBlock:^{
+                                            [CCActionCallBlock actionWithBlock:^
+                                            {
+                                                if ([tagComponent hasTag:@"Spaceship"])
+                                                {
+                                                    [self.delegate gameOver];
+                                                }
                                                 [renderComponent.node removeFromParentAndCleanup:YES];
                                                 [self.entityManager removeEntity:entity];
                                             }],

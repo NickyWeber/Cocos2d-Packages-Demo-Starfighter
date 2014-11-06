@@ -4,6 +4,7 @@
 @class SFEntityManager;
 @class SFEntity;
 @class SFLootComponent;
+@class SFWeaponComponent;
 
 
 @interface SFEntityFactory : NSObject
@@ -13,10 +14,12 @@
 
 + (SFEntityFactory *)sharedFactory;
 
+- (SFEntity *)addEnemyShotWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position;
+
 - (SFEntity *)addEnemyAtPosition:(CGPoint)position;
 
 - (SFEntity *)addLoot:(SFLootComponent *)lootComponent atPosition:(CGPoint)position;
 
-- (SFEntity *)addLaserBeamAtPosition:(CGPoint)position;
+- (SFEntity *)addLaserBeamWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position;
 
 @end

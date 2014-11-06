@@ -1,10 +1,13 @@
 #import <Foundation/Foundation.h>
 #import "SFGamePlaySceneDelegate.h"
 
-@protocol SFTouchDelegate
+@protocol SFEventDelegate
 
+#if __CC_PLATFORM_IOS || __CC_PLATFORM_ANDROID
 - (void)touchBegan:(CCTouch *)touch event:(CCTouchEvent *)event;
-
+#elif __CC_PLATFORM_MAC
+- (void) mouseDown:(NSEvent *)event;
+#endif
 @end
 
 
@@ -13,7 +16,7 @@
 @class SFGamePlayLayer;
 
 
-@interface SFGamePlayScene : CCScene  <SFGamePlaySceneDelegate, SFTouchDelegate>
+@interface SFGamePlayScene : CCScene  <SFGamePlaySceneDelegate, SFEventDelegate>
 
 @property (nonatomic, strong) SFBackgroundLayer *backgroundLayer;
 @property (nonatomic, strong) SFHUDLayer *hudLayer;

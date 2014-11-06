@@ -10,9 +10,9 @@
 
 @interface SFGameObject (Trigonometry)
 
-- (CGPoint)calcNormalizedShotVector:(CGPoint)startPosition andTargetPosition:(CGPoint)targetPosition;
++ (CGPoint)calcNormalizedShotVector:(CGPoint)startPosition andTargetPosition:(CGPoint)targetPosition;
 - (CGPoint)rotateVector:(CGPoint)vector byDegrees:(float)degrees;
-- (CGPoint)normalizeVector:(CGPoint)aVector;
++ (CGPoint)normalizeVector:(CGPoint)aVector;
 - (float)angleBetweenTwoVectors:(CGPoint)aVectorA vectorB:(CGPoint)aVectorB;
 - (float)distanceToPoint:(CGPoint)aPoint;
 

@@ -22,6 +22,7 @@
 #import "SFLootComponent.h"
 #import "SFCollisionRewardComponent.h"
 #import "SFTimeToLiveSystem.h"
+#import "SFWeaponSystem.h"
 
 
 @interface SFGamePlayLayer ()
@@ -37,6 +38,7 @@
 
 @property (nonatomic, strong) NSMutableArray *systems;
 
+@property (nonatomic, strong) id healthComponent;
 @end
 
 
@@ -66,6 +68,7 @@
         [_systems addObject:[[SFCollisionSystem alloc] initWithEntityManager:_entityManager delegate:aDelegate]];
         [_systems addObject:[[SFHealthSystem alloc] initWithEntityManager:_entityManager delegate:aDelegate]];
         [_systems addObject:[[SFTimeToLiveSystem alloc] initWithEntityManager:_entityManager delegate:aDelegate]];
+        [_systems addObject:[[SFWeaponSystem alloc] initWithEntityManager:_entityManager delegate:aDelegate]];
 	}
 	return self;
 }
@@ -121,13 +124,13 @@
     renderComponentA.node.position = _spaceship.position;
 	[self addChild:_spaceship];
 
-    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_spaceship.entity];
-    [healthComponent addObserver:self
+    self.healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_spaceship.entity];
+    [_healthComponent addObserver:self
                       forKeyPath:@"health"
                          options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld
                          context:NULL];
 
-    [healthComponent addObserver:self
+    [_healthComponent addObserver:self
                       forKeyPath:@"shield"
                          options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld
                          context:NULL];
@@ -150,17 +153,14 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"keypath %@", keyPath);
-
-    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_spaceship.entity];
     if ([keyPath isEqualToString:@"health"])
     {
-        [_delegate updateHealthBarWithHealthInPercent:[healthComponent healthInPercent]];
+        [_delegate updateHealthBarWithHealthInPercent:[_healthComponent healthInPercent]];
     }
 
     if ([keyPath isEqualToString:@"shield"])
     {
-        [_delegate updateShieldBarWithShieldInPercent:[healthComponent shieldInPercent]];
+        [_delegate updateShieldBarWithShieldInPercent:[_healthComponent shieldInPercent]];
     }
 }
 
@@ -223,6 +223,14 @@
 {
     _levelController.level = level;
     self.level = level;
+}
+
+- (void)playerDied
+{
+    _levelController.enabled = NO;
+
+    [_healthComponent removeObserver:self forKeyPath:@"shield"];
+    [_healthComponent removeObserver:self forKeyPath:@"health"];
 }
 
 @end

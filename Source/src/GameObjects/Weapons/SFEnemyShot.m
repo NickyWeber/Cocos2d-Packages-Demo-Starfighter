@@ -26,8 +26,10 @@
 		self.speedFactor = 110 + (10 * level);
 		self.power = 20 + (5 * level);
 
+/*
 		self.shotVector = [self calcNormalizedShotVector:startPosition
 									   andTargetPosition:_target.position];
+*/
 
         CCAnimation *spaceshipAnimation = [CCAnimation animation];
         [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Shots/EnemyShot_1.png"];

@@ -23,7 +23,7 @@
 
 @interface SFTouchNode : CCNode
 
-@property (nonatomic, weak) id <SFTouchDelegate> delegate;
+@property (nonatomic, weak) id <SFEventDelegate> delegate;
 
 @end
 
@@ -41,10 +41,17 @@
     return self;
 }
 
+#if __CC_PLATFORM_IOS || __CC_PLATFORM_ANDROID
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     [_delegate touchBegan:touch event:event];
 }
+#elif __CC_PLATFORM_MAC
+- (void) mouseDown:(NSEvent *)event
+{
+    [_delegate mouseDown:event];
+}
+#endif
 
 @end
 
@@ -145,7 +152,7 @@
 
 - (void)gameOver
 {
-    [_gamePlayLayer disableGameObjectsAndControls];
+    [_gamePlayLayer playerDied];
 
     CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
 
@@ -294,5 +301,10 @@
                                                                                                                              duration:0.3]];
 }
 
+- (void) mouseDown:(NSEvent *)event
+{
+    [[CCDirector sharedDirector] replaceScene:[[SFGameMenuScene alloc] init] withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown
+                                                                                                                             duration:0.3]];
+}
 
 @end

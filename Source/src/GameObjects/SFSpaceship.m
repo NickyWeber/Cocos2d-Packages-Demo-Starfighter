@@ -17,6 +17,7 @@
 #import "SFCollisionDamageComponent.h"
 #import "SFCollisionComponent.h"
 #import "SFRenderComponent.h"
+#import "SFWeaponComponent.h"
 
 
 static float EXPLOSION_ANIMATION_DURATION = 1.3f;
@@ -66,8 +67,6 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         CCActionAnimate *hitAnimationAction = [CCActionAnimate actionWithAnimation:hitAnimation];
         hitAnimationAction.duration = 5.0;
 
-
-
         collisionComponent.hitAnimationAction = hitAnimationAction;
 
         SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:10000000];
@@ -77,10 +76,13 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         [[SFEntityManager sharedManager] addComponent:renderComponent toEntity:_entity];
         renderComponent.node = self;
 
-        self.weaponSystems = [NSMutableArray array];
-
-        SFLaserCannon *laserCannon = [[SFLaserCannon alloc] initWithDelegate:self.delegate];
-        [_weaponSystems addObject:laserCannon];
+        SFWeaponComponent *weaponComponent = [[SFWeaponComponent alloc] init];
+        weaponComponent.fireRate = 2.0;
+        weaponComponent.weaponType = 2;
+        weaponComponent.timeSinceLastShot = 11111;
+        weaponComponent.power = 10;
+        weaponComponent.speed = 50;
+        [[SFEntityManager sharedManager] addComponent:weaponComponent toEntity:self.entity];
 
 /*
         MissileLauncher *missileLauncher = [[[MissileLauncher alloc] initWithDelegate:self.delegate
@@ -282,7 +284,7 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 	self.timeSinceLastShotFired += aTimeDelta;
 	self.timeSinceLastMissileLaunched += aTimeDelta;
 
-	[self addLaserShotsIfButtonPressedToDelegateWithPosition:newPosition andGameObjects:someGameObjects];
+	// [self addLaserShotsIfButtonPressedToDelegateWithPosition:newPosition andGameObjects:someGameObjects];
 }
 
 - (void)addLaserShotsIfButtonPressedToDelegateWithPosition:(CGPoint)aPosition andGameObjects:(NSArray *)someGameObjects

@@ -1,6 +1,7 @@
 #import "SFEntityManager.h"
 #import "SFEntity.h"
 #import "SFComponent.h"
+#import "SFTagComponent.h"
 
 
 @interface  SFEntityManager()

@@ -21,4 +21,5 @@
 
 - (void)advanceToLevel:(NSUInteger)level;
 
+- (void)playerDied;
 @end

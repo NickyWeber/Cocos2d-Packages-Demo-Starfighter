@@ -22,5 +22,6 @@
 - (BOOL)firing;
 
 - (void)levelCompleted:(NSUInteger)level;
+- (void)gameOver;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation SFGameObject (Trigonometry)
 
-- (CGPoint)calcNormalizedShotVector:(CGPoint)startPosition andTargetPosition:(CGPoint)targetPosition
++ (CGPoint)calcNormalizedShotVector:(CGPoint)startPosition andTargetPosition:(CGPoint)targetPosition
 {
 	CGPoint notNormalizedVector = CGPointMake(targetPosition.x - startPosition.x,
 											  targetPosition.y - startPosition.y);
@@ -18,22 +18,22 @@
 
 /*	NSLog(@"NNV %f.2 %f.2", notNormalizedVector.x, notNormalizedVector.y);
   */
-	return [self normalizeVector:notNormalizedVector];
+	return [SFGameObject normalizeVector:notNormalizedVector];
 }
 
-- (CGPoint)normalizeVector:(CGPoint)aVector
++ (CGPoint)normalizeVector:(CGPoint)aVector
 {
-	float lengthOfVector_ = [SFGameObject lengthOfVector:aVector];
+	float lengthOfVector = [SFGameObject lengthOfVector:aVector];
 /*
-	NSLog(@"NV %f.2 %f.2", aVector.x / lengthOfVector_, aVector.y / lengthOfVector_);
+	NSLog(@"NV %f.2 %f.2", aVector.x / lengthOfVector, aVector.y / lengthOfVector);
 */
 
-	return CGPointMake(aVector.x / lengthOfVector_, aVector.y / lengthOfVector_);
+	return CGPointMake(aVector.x / lengthOfVector, aVector.y / lengthOfVector);
 }
 
 + (float)lengthOfVector:(CGPoint)aVector
 {
-	return sqrtf(powf(aVector.x, 2.0) + powf(aVector.y, 2.0));
+	return sqrtf(powf((float) aVector.x, 2.0) + powf((float) aVector.y, 2.0));
 }
 
 - (CGPoint)rotateVector:(CGPoint)vector byDegrees:(float)degrees

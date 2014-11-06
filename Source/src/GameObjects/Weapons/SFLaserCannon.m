@@ -42,8 +42,8 @@
 {
     if ([self canShoot])
     {
-        [[SFEntityFactory sharedFactory] addLaserBeamAtPosition:ccp(aPosition.x - 16, aPosition.y + 30)];
-        [[SFEntityFactory sharedFactory] addLaserBeamAtPosition:ccp(aPosition.x + 16, aPosition.y + 30)];
+        [[SFEntityFactory sharedFactory] addLaserBeamWithWeaponComponent:nil atPosition:ccp(aPosition.x - 16, aPosition.y + 30)];
+        [[SFEntityFactory sharedFactory] addLaserBeamWithWeaponComponent:nil atPosition:ccp(aPosition.x + 16, aPosition.y + 30)];
 /*
         SFLaserBeam *beamLeft = [[SFLaserBeam alloc] init];
         beamLeft.position = CGPointMake(aPosition.x - 16, aPosition.y + 30);
