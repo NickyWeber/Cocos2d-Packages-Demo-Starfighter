@@ -274,7 +274,7 @@
         label.position = ccp((CGFloat) (screenSize.width / 2.0),
                              (CGFloat) (screenSize.height * 0.6666));
 
-        label.string = [NSString stringWithFormat:@"Level %u", level + 1];
+        label.string = [NSString stringWithFormat:@"Level %lu", level + 1];
 
         sequence = [CCActionSequence actions:actionFadeIn,
                                              [CCActionDelay actionWithDuration:5.0],

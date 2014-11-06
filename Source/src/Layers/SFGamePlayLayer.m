@@ -135,15 +135,9 @@
                          options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld
                          context:NULL];
 
-/*
-    [_delegate updateHealthBarWithHealthInPercent:[healthComponent healthInPercent]];
-    [_delegate updateShieldBarWithShieldInPercent:[healthComponent shieldInPercent]];
-*/
+/*   Only for debugging and dev
 
-
-    // Only for debugging and dev
     [[SFEntityFactory sharedFactory] addEnemyAtPosition:ccp(160.0, 600.0)];
-/*
     SFEntity *entity = [[SFEntityFactory sharedFactory] addLoot:[[SFLootComponent alloc] initWithDropType:1] atPosition:ccp(160.0, 290.0)];
     SFCollisionRewardComponent *rewardComponent = [_entityManager componentOfClass:[SFCollisionRewardComponent class] forEntity:entity];
     rewardComponent.health = 20;

@@ -81,7 +81,7 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         weaponComponent.weaponType = 2;
         weaponComponent.timeSinceLastShot = 11111;
         weaponComponent.power = 10;
-        weaponComponent.speed = 50;
+        weaponComponent.speed = 400;
         [[SFEntityManager sharedManager] addComponent:weaponComponent toEntity:self.entity];
 
 /*

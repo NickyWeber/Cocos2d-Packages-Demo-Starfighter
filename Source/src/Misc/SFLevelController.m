@@ -52,7 +52,7 @@
 
 - (NSUInteger)totalEnemiesForLevel:(NSUInteger)level
 {
-    return (NSUInteger) (300 + 3 * (level - 1));
+    return (NSUInteger) (3+ 3 * (level - 1));
 }
 
 - (void)setLevel:(NSUInteger)level
@@ -92,7 +92,6 @@
     if (timePassedSinceLastShot >= _spawTime
         && (_totalSpawned < _totalEnemies))
 	{
-/*
         self.totalSpawned += 1;
 
 		CGPoint position = CGPointMake((CGFloat) (([CCDirector sharedDirector].view.frame.size.width - 20.0) * CCRANDOM_0_1() + 20),
@@ -103,9 +102,6 @@
         self.lastSpawnTime = [[NSDate date] timeIntervalSince1970];
 
         enemyCount++;
-*/
-
-        // NSLog(@"Enemies left for next level: %u", _totalEnemies - _totalSpawned);
 	}
     return enemyCount;
 }
