@@ -13,6 +13,8 @@
 #import "CCAnimation.h"
 #import "CCBSequence.h"
 #import "SFConstants.h"
+#import "SFEntityFactory.h"
+#import "SFEntityManager.h"
 
 #if __CC_PLATFORM_MAC
 #import "SFKeyEventHandlingDelegate.h"
@@ -79,11 +81,14 @@
         self.hudLayer = [SFHUDLayer node];
         [self addChild:_hudLayer z:2];
 
-        self.gamePlayLayer = [[SFGamePlayLayer alloc] initWithDelegate:self];
+        self.gamePlayLayer = [[SFGamePlayLayer alloc] initWithDelegate:self entityManager:[SFEntityManager sharedManager]];
         [self addChild:_gamePlayLayer z:1];
 
         self.backgroundLayer = [SFBackgroundLayer node];
         [self addChild:_backgroundLayer z:0];
+
+        [SFEntityFactory sharedFactory].delegate = self;
+        [SFEntityFactory sharedFactory].entityManager = [SFEntityManager sharedManager];
 
 #if __CC_PLATFORM_MAC
         self.keyEventHandler = [[SFKeyEventHandler alloc] init];
@@ -120,11 +125,6 @@
 - (void)addGameNode:(CCNode *)aGameEntity
 {
 	[_gamePlayLayer addGameEntity:aGameEntity];
-}
-
-- (SFSpaceship *)spaceship
-{
-	return [_gamePlayLayer spaceship];
 }
 
 - (NSArray *)gameObjects
@@ -247,8 +247,6 @@
 
     if (level == GAME_LEVEL_MAX)
     {
-        [_gamePlayLayer disableGameObjectsAndControls];
-
         [self saveHighscore];
 
         label = [CCLabelTTF gameLabelWithSize:24.0 blockSize:2.0];
@@ -301,10 +299,9 @@
                                                                                                                              duration:0.3]];
 }
 
-- (void) mouseDown:(NSEvent *)event
+- (void)mouseDown:(NSEvent *)event
 {
-    [[CCDirector sharedDirector] replaceScene:[[SFGameMenuScene alloc] init] withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown
-                                                                                                                             duration:0.3]];
+    [[CCDirector sharedDirector] replaceScene:[[SFGameMenuScene alloc] init] withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown                                                                                                                            duration:0.3]];
 }
 
 @end

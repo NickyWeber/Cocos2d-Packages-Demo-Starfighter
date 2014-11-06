@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SFDebris : CCNode
+@interface SFBackgroundDebris : CCNode
 
 @end

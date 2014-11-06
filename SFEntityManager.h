@@ -19,4 +19,6 @@
 
 - (NSArray *)allEntitiesPosessingComponentOfClass:(Class)class;
 
+- (NSArray *)entitiesWithTag:(NSString *)tag;
+
 @end

@@ -1,5 +1,5 @@
 #import "SFBackgroundLayer.h"
-#import "SFDebris.h"
+#import "SFBackgroundDebris.h"
 
 
 @interface SFBackgroundLayer ()
@@ -36,7 +36,7 @@
 {
     if (_lastDebris >= _nextDebris)
    	{
-   		SFDebris *debris = [[SFDebris alloc] init];
+   		SFBackgroundDebris *debris = [[SFBackgroundDebris alloc] init];
    		[self addChild:debris];
    		self.nextDebris = (float) (0.8 * CCRANDOM_0_1() + 0.2);
            self.lastDebris = 0.0;

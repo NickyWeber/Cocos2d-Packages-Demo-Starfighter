@@ -15,15 +15,11 @@
 #import "SFWeaponComponent.h"
 #import "SFCollisionComponent.h"
 #import "SFLootComponent.h"
-#import "SFPointLoot.h"
-#import "SFShieldLoot.h"
-#import "SFHealthLoot.h"
 #import "SFCollisionRewardComponent.h"
 #import "SFTimeToLiveSystem.h"
 #import "SFTimeToLiveComponent.h"
 #import "SFRewardComponent.h"
-#import "SFWeaponComponent.h"
-#import "SFGameObject+Trigonometry.h"
+#import "SFTrigonometryHelper.h"
 
 @implementation SFEntityFactory
 
@@ -117,7 +113,7 @@
             SFEntity *shot = [_entityManager createEntity];
             shot.name = @"Shot";
 
-            CGPoint shotVector = [SFGameObject calcNormalizedShotVector:position andTargetPosition:renderComponentSpaceship.node.position];
+            CGPoint shotVector = [SFTrigonometryHelper calcNormalizedShotVector:position andTargetPosition:renderComponentSpaceship.node.position];
 
             SFMoveComponent *moveComponent = [[SFMoveComponent alloc] initWithVelocity:ccpMult(shotVector, weaponComponent.speed)];
             [_entityManager addComponent:moveComponent toEntity:shot];

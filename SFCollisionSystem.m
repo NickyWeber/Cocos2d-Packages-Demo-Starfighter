@@ -2,7 +2,6 @@
 #import "SFCollisionComponent.h"
 #import "SFEntity.h"
 #import "SFEntityManager.h"
-#import "SFBoundingBoxComponent.h"
 #import "SFRenderComponent.h"
 #import "SFTagComponent.h"
 #import "SFHealthComponent.h"

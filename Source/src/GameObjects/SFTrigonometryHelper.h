@@ -6,15 +6,13 @@
 
 
 #import <Foundation/Foundation.h>
-#import "SFGameObject.h"
 
-@interface SFGameObject (Trigonometry)
+@interface SFTrigonometryHelper : NSObject
 
 + (CGPoint)calcNormalizedShotVector:(CGPoint)startPosition andTargetPosition:(CGPoint)targetPosition;
-- (CGPoint)rotateVector:(CGPoint)vector byDegrees:(float)degrees;
++ (CGPoint)rotateVector:(CGPoint)vector byDegrees:(float)degrees;
 + (CGPoint)normalizeVector:(CGPoint)aVector;
-- (float)angleBetweenTwoVectors:(CGPoint)aVectorA vectorB:(CGPoint)aVectorB;
-- (float)distanceToPoint:(CGPoint)aPoint;
++ (float)angleBetweenTwoVectors:(CGPoint)aVectorA vectorB:(CGPoint)aVectorB;
 
 + (float)lengthOfVector:(CGPoint)aVector;
 + (float)distanceBetweenTwoPoints:(CGPoint)aPointA pointB:(CGPoint)aPointB;

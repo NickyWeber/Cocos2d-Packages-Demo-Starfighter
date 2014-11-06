@@ -16,8 +16,6 @@
 
 - (NSArray *)gameObjects;
 
-- (SFSpaceship *)spaceship;
-
 - (CGPoint)dPadVelocity;
 - (BOOL)firing;
 

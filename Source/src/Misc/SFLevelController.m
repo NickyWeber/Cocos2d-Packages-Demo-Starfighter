@@ -6,9 +6,7 @@
 
 
 #import "SFLevelController.h"
-#import "SFEnemy.h"
 #import "SFGamePlaySceneDelegate.h"
-#import "SFRenderComponent.h"
 #import "SFEntityManager.h"
 #import "SFEntityFactory.h"
 
@@ -18,17 +16,12 @@
 @property (nonatomic) NSUInteger totalSpawned;
 @property (nonatomic) BOOL complete;
 @property (nonatomic) NSTimeInterval lastSpawnTime;
-@property (nonatomic) double spawTime;
+@property (nonatomic) double spawnTime;
 
 @end
 
 
 @implementation SFLevelController
-
-- (id)init
-{
-	return [self init];
-}
 
 - (id)initWithDelegate:(id)aDelegate
 {
@@ -44,7 +37,7 @@
         self.level = 1;
         self.enabled = YES;
         self.lastSpawnTime = [[NSDate date] timeIntervalSince1970] - 10000000;
-        self.spawTime = 3.0;
+        self.spawnTime = 3.0;
 	}
 
 	return self;
@@ -67,29 +60,23 @@
     // NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
-
-#pragma mark -
-#pragma mark - public methods
-
-- (void)update:(CCTime)deltaTime andGameObjects:(NSArray *)someGameObjects
+- (void)update:(CCTime)deltaTime
 {
     if (_complete || !_enabled)
     {
         return;
     }
 
-    int enemyCount = [self countEnemies:someGameObjects];
+    [self spawnEnemy];
 
-    enemyCount = [self spawnEnemy:enemyCount];
-
-    [self completeLevel:enemyCount];
+    [self completeLevel];
 }
 
-- (int)spawnEnemy:(int)enemyCount
+- (void)spawnEnemy
 {
     NSTimeInterval timePassedSinceLastShot = [[NSDate date] timeIntervalSince1970] - _lastSpawnTime;
 
-    if (timePassedSinceLastShot >= _spawTime
+    if (timePassedSinceLastShot >= _spawnTime
         && (_totalSpawned < _totalEnemies))
 	{
         self.totalSpawned += 1;
@@ -100,35 +87,19 @@
         [[SFEntityFactory sharedFactory] addEnemyAtPosition:position];
 
         self.lastSpawnTime = [[NSDate date] timeIntervalSince1970];
-
-        enemyCount++;
 	}
-    return enemyCount;
 }
 
-- (void)completeLevel:(int)enemyCount
+- (void)completeLevel
 {
+    NSArray *enemies = [[SFEntityManager sharedManager] entitiesWithTag:@"Enemy"];
+
     if (_totalEnemies == _totalSpawned
-        && enemyCount == 0)
+        && enemies.count == 0)
     {
         self.complete = YES;
         [_delegate levelCompleted:_level];
     }
-}
-
-- (int)countEnemies:(NSArray *)someGameObjects
-{
-    int enemyCount = 0;
-
-    for (id gameObject in someGameObjects)
-	{
-		if ([gameObject isKindOfClass:[SFEnemy class]]
-			&& [gameObject isActive])
-		{
-			enemyCount++;
-		}
-	}
-    return enemyCount;
 }
 
 @end

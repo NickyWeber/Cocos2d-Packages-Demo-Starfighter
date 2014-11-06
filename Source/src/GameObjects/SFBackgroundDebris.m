@@ -1,14 +1,14 @@
-#import "SFDebris.h"
+#import "SFBackgroundDebris.h"
 
 
-@interface SFDebris ()
+@interface SFBackgroundDebris ()
 
 @property (nonatomic) float speedfactor;
 
 @end
 
 
-@implementation SFDebris
+@implementation SFBackgroundDebris
 
 
 - (id)init

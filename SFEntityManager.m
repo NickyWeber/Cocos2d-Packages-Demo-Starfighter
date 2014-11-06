@@ -102,4 +102,20 @@
     }
 }
 
+- (NSArray *)entitiesWithTag:(NSString *)tag
+{
+    NSMutableArray *result = [NSMutableArray array];
+    NSArray *entities = [self allEntitiesPosessingComponentOfClass:[SFTagComponent class]];
+    for (SFEntity *entity in entities)
+    {
+        SFTagComponent *tagComponent = [self componentOfClass:[SFTagComponent class] forEntity:entity];
+        if ([tagComponent hasTag:tag])
+        {
+            [result addObject:entity];
+        }
+    }
+
+    return result;
+}
+
 @end

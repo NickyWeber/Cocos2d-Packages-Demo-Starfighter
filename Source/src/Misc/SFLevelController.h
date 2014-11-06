@@ -20,6 +20,6 @@
 
 - (id)initWithDelegate:(id<SFGamePlaySceneDelegate>)aDelegate;
 
-- (void)update:(CCTime)deltaTime andGameObjects:(NSArray *)someGameObjects;
+- (void)update:(CCTime)deltaTime;
 
 @end

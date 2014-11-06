@@ -1,24 +1,21 @@
 #import <Foundation/Foundation.h>
 
 @protocol SFGamePlaySceneDelegate;
-@class SFSpaceship;
-@class SFMoveSystem;
-
+@class SFEntityManager;
 
 @interface SFGamePlayLayer : CCNode
 
 @property (nonatomic, weak) id<SFGamePlaySceneDelegate> delegate;
-@property (nonatomic, strong) SFSpaceship *spaceship;
+@property (nonatomic, strong) SFEntityManager *entityManager;
 
-- (id)initWithDelegate:(id<SFGamePlaySceneDelegate>)aDelegate;
+- (id)initWithDelegate:(id <SFGamePlaySceneDelegate>)aDelegate entityManager:(SFEntityManager *)entityManager;
 
 - (void)startGame;
-
-- (void)disableGameObjectsAndControls;
 
 - (void)addGameEntity:(CCNode *)aGameEntity;
 
 - (void)advanceToLevel:(NSUInteger)level;
 
 - (void)playerDied;
+
 @end
