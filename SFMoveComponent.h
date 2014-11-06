@@ -5,6 +5,8 @@
 
 @property (assign) CGPoint velocity;
 
+@property (nonatomic) CGFloat spaceshipSpeed;
+
 - (instancetype)initWithVelocity:(CGPoint)velocity;
 
 @end

@@ -28,17 +28,11 @@
 @interface SFGamePlayLayer ()
 
 @property (nonatomic, strong) SFLevelController *levelController;
-@property (nonatomic, strong) NSMutableArray *gameObjectRemovalPool;
-@property (nonatomic) double timeSinceLastStatusUpdate;
 @property (nonatomic) NSUInteger level;
-
 @property (nonatomic, strong) SFEntityManager *entityManager;
-@property (nonatomic, strong) SFHealthSystem *healthSystem;
-@property (nonatomic, strong) SFMoveSystem *moveSystem;
-
 @property (nonatomic, strong) NSMutableArray *systems;
-
 @property (nonatomic, strong) id healthComponent;
+
 @end
 
 
@@ -56,8 +50,6 @@
 
         self.entityManager = [SFEntityManager sharedManager];
 		self.delegate = aDelegate;
-		self.gameObjectRemovalPool = [NSMutableArray array];
-        
 		self.levelController = [[SFLevelController alloc] initWithDelegate:_delegate];
 
         [SFEntityFactory sharedFactory].delegate = aDelegate;
@@ -99,32 +91,23 @@
 
     [_levelController update:delta andGameObjects:[self children]];
 
-   	for (SFGameObject *gameObject in [[self children] copy])
-   	{
-   		if ([gameObject isKindOfClass:[SFGameObject class]]
-   			&& gameObject.isActive)
-   		{
-   			[gameObject updateStateWithTimeDelta:delta andGameObjects:[self children]];
-   		}
-
-   		[self addGameObjectToRemovalPoolIfMarkedWithGameObject:gameObject];
-   	}
-
-   	[self removeGameObjectsMarkedForRemoval];
-
-//   	[self debugStatusWithDeltaTime:deltaTime];
-
 }
 
 - (void)initializeSpaceship
 {
+/*
 	self.spaceship = [[SFSpaceship alloc] initWithDelegate:_delegate];
     _spaceship.position = CGPointMake(160, 160);
     SFRenderComponent *renderComponentA = [[SFEntityManager sharedManager] componentOfClass:[SFRenderComponent class] forEntity:_spaceship.entity];
     renderComponentA.node.position = _spaceship.position;
 	[self addChild:_spaceship];
-
     self.healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_spaceship.entity];
+*/
+    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
+
+    SFEntity *spaceship = [[SFEntityFactory sharedFactory] addSpaceshipAtPosition:ccp(screenSize.width / 2.0, screenSize.height * 0.333)];
+    self.healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:spaceship];
+
     [_healthComponent addObserver:self
                       forKeyPath:@"health"
                          options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld
@@ -158,59 +141,10 @@
     }
 }
 
-- (void)addGameObjectToRemovalPoolIfMarkedWithGameObject:(SFGameObject *)aGameObject
-{
-	if ([aGameObject respondsToSelector:@selector(removeInSeparateLoop)]
-        && aGameObject.removeInSeparateLoop)
-	{
-		[_gameObjectRemovalPool addObject:aGameObject];
-	}
-}
-
-- (void)removeGameObjectsMarkedForRemoval
-{
-	for (SFGameObject *aGameObjectToBeRemoved in [_gameObjectRemovalPool copy])
-	{
-		[aGameObjectToBeRemoved removeFromParentAndCleanup:YES];
-        [_gameObjectRemovalPool removeObject:aGameObjectToBeRemoved];
-	}
-}
-
 - (void)addGameEntity:(CCNode *)aGameEntity
 {
 	// NSLog(@"Adding a game entity %@", [aGameEntity class]);
 	[self addChild:aGameEntity];
-}
-
-- (void)addGameEntity:(CCNode *)aGameEntity z:(int)zOrder
-{
-	[self addChild:aGameEntity z:zOrder];
-}
-
-- (void)debugStatusWithDeltaTime:(CCTime)aTimeDelta
-{
-	if (_timeSinceLastStatusUpdate >= 1.0)
-	{
-		int shots = 0;
-		int enemies = 0;
-
-		for (SFGameObject *gameObject in [self children]) {
-			if ([gameObject isKindOfClass:[SFLaserBeam class]]) {
-				shots++;
-			}
-			if ([gameObject isKindOfClass:[SFEnemy class]]) {
-				enemies++;
-			}
-		}
-
-
-		// NSLog(@"Status update - Enemies: %d, Shots: %d", enemies, shots);
-		NSLog(@"Status update - game objects: %d", [[self children] count]);
-
-		self.timeSinceLastStatusUpdate = 0.0;
-	}
-
-	self.timeSinceLastStatusUpdate += aTimeDelta;
 }
 
 - (void)advanceToLevel:(NSUInteger)level

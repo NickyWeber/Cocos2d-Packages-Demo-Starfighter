@@ -135,7 +135,6 @@
 		E525F481736453057C9E5C83 /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E0DCE0A4472071F4D3 /* SFHealthComponent.m */; };
 		E525F48350928832D8A75402 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
 		E525F4A10CED0F9FFE8765CC /* SFAIMovementDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F086A56B83AF79727A53 /* SFAIMovementDebug.m */; };
-		E525F4A2D20C52924112C88D /* SFControlSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F96AB9426B9ACFFA7ED4 /* SFControlSystem.m */; };
 		E525F4A885A32A55344B66D3 /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F78B0E51C15B17BB5DF5 /* SFComponent.m */; };
 		E525F4F0AD133866A01FA985 /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F33A298303CEAD17B470 /* SFHealthSystem.m */; };
 		E525F4F983970FC43ABF3D96 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */; };
@@ -185,7 +184,6 @@
 		E525F85549FF5D237E0C3B30 /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F82D300EDF999271AC26 /* SFEntitySystem.m */; };
 		E525F869EE0F9A2CD03CB53C /* SFCollisionRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F54056E2E990B9CF31AF /* SFCollisionRewardComponent.m */; };
 		E525F8B23DB68AC4CDD9A9A0 /* SFLootComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F42D2FBC7E24F0781D59 /* SFLootComponent.m */; };
-		E525F8B4F6A178F8B0ADE539 /* SFControlSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F96AB9426B9ACFFA7ED4 /* SFControlSystem.m */; };
 		E525F8BE137601551FE6C1CC /* SFLevelComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FAF187F416C60080D998 /* SFLevelComponent.m */; };
 		E525F8C2804D5C82E1563557 /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6784D60787B11CAB70D /* SFEntityFactory.m */; };
 		E525F8DD1D6E07F72D79473D /* SFTagComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11B68F22F85AC81C956 /* SFTagComponent.m */; };
@@ -219,7 +217,6 @@
 		E525FB3C34AE49251723E03A /* SFBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* SFBoundingBox.m */; };
 		E525FB559E36E287A8230E1D /* SFGameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F930FFA18F370C7EC140 /* SFGameMenuScene.m */; };
 		E525FB93DDA49B1B66808E2E /* SFGameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F930FFA18F370C7EC140 /* SFGameMenuScene.m */; };
-		E525FBDA8D91E8E596B29D7F /* SFControlSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F96AB9426B9ACFFA7ED4 /* SFControlSystem.m */; };
 		E525FBE98B96C74201D24CC0 /* SFEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F57C24B73E6B954C2DD2 /* SFEnemy.m */; };
 		E525FBFBAB88DE37FD0741F4 /* SFBoundingBoxComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F14121E6A64BF3AB5279 /* SFBoundingBoxComponent.m */; };
 		E525FC12690A3503D700D748 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
@@ -442,7 +439,6 @@
 		E525F6237FDAA87E8CD0E445 /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
 		E525F62AC1970AEAF5231859 /* SFSpaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSpaceship.h; sourceTree = "<group>"; };
 		E525F64F87491E1473EA7ECA /* SFKeyEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFKeyEventHandler.m; sourceTree = "<group>"; };
-		E525F66D2AA8A678772E8115 /* SFControlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFControlSystem.h; sourceTree = "<group>"; };
 		E525F6784D60787B11CAB70D /* SFEntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntityFactory.m; sourceTree = "<group>"; };
 		E525F6DE925B6A53CBF3AB3C /* SFGamePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGamePlayScene.m; sourceTree = "<group>"; };
 		E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedDPadExample.m; sourceTree = "<group>"; };
@@ -464,7 +460,6 @@
 		E525F8F50CDB79070E9AC30C /* SFHealthLoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHealthLoot.m; sourceTree = "<group>"; };
 		E525F8FA9DC128277B43DEBB /* SFKeyEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKeyEventHandler.h; sourceTree = "<group>"; };
 		E525F930FFA18F370C7EC140 /* SFGameMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFGameMenuScene.m; path = Source/Platforms/iOS/SFGameMenuScene.m; sourceTree = SOURCE_ROOT; };
-		E525F96AB9426B9ACFFA7ED4 /* SFControlSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFControlSystem.m; sourceTree = "<group>"; };
 		E525F970C8EC31FACC7152C4 /* SFGamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGamePlayScene.h; sourceTree = "<group>"; };
 		E525F99E82751857FC49EA56 /* SFWeaponSystemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWeaponSystemProtocol.h; sourceTree = "<group>"; };
 		E525F9A80E349EDFEF2B5BF0 /* SFLaserCannon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLaserCannon.h; sourceTree = "<group>"; };
@@ -973,7 +968,6 @@
 			isa = PBXGroup;
 			children = (
 				E525FDEEC0161592A6F4CFBC /* Core */,
-				E525FA986B5881B9E21CB05F /* Systems */,
 				E525F2EC7D5609FBE5AD68F3 /* Health */,
 				E525FFDDAC80129830A809F2 /* Render */,
 				E525FF0C0A44EC318DE1AB42 /* Move */,
@@ -1025,15 +1019,6 @@
 				E525F873D55AD2AC7F4898A1 /* SFEnemyShot.m */,
 			);
 			path = Weapons;
-			sourceTree = "<group>";
-		};
-		E525FA986B5881B9E21CB05F /* Systems */ = {
-			isa = PBXGroup;
-			children = (
-				E525F96AB9426B9ACFFA7ED4 /* SFControlSystem.m */,
-				E525F66D2AA8A678772E8115 /* SFControlSystem.h */,
-			);
-			name = Systems;
 			sourceTree = "<group>";
 		};
 		E525FB96732E64F8E288C374 /* Scenes */ = {
@@ -1429,7 +1414,6 @@
 				E525F9D2D7453E6AB732B220 /* SFEntity.m in Sources */,
 				E525F2D4D973CC0CCC20227D /* SFEntitySystem.m in Sources */,
 				E525FDD62056D1206C9895D3 /* SFEntityManager.m in Sources */,
-				E525F8B4F6A178F8B0ADE539 /* SFControlSystem.m in Sources */,
 				E525F28DBB7D35316F3F6468 /* SFHealthSystem.m in Sources */,
 				E525F325A0662AE8F98F4F8D /* SFHealthComponent.m in Sources */,
 				E525FFD696C3F71DE1392F29 /* SFRenderComponent.m in Sources */,
@@ -1483,7 +1467,6 @@
 				E525F824EEDB1235F62D53E4 /* SFEntity.m in Sources */,
 				E525F85549FF5D237E0C3B30 /* SFEntitySystem.m in Sources */,
 				E525F5A7DE89C687F08BC3D5 /* SFEntityManager.m in Sources */,
-				E525F4A2D20C52924112C88D /* SFControlSystem.m in Sources */,
 				E525F78D102ECF683DA0845C /* SFHealthSystem.m in Sources */,
 				E525F481736453057C9E5C83 /* SFHealthComponent.m in Sources */,
 				E525FA9908C7079A5FA0E3EE /* SFRenderComponent.m in Sources */,
@@ -1547,7 +1530,6 @@
 				E525F9A524C2E53620EC8002 /* SFEntity.m in Sources */,
 				E525FF47CF4472461C8F95FB /* SFEntitySystem.m in Sources */,
 				E525F00E0DF76BBC06F2B857 /* SFEntityManager.m in Sources */,
-				E525FBDA8D91E8E596B29D7F /* SFControlSystem.m in Sources */,
 				E525F4F0AD133866A01FA985 /* SFHealthSystem.m in Sources */,
 				E525FED1897902A07EC991BD /* SFHealthComponent.m in Sources */,
 				E525F7151D4B53B586DFD1AF /* SFRenderComponent.m in Sources */,

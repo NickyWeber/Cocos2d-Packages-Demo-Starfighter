@@ -38,6 +38,69 @@
     return sharedFactory;
 }
 
+- (SFEntity *)addSpaceshipAtPosition:(CGPoint)position
+{
+    SFEntity *spaceship = [[SFEntityManager sharedManager] createEntity];
+    spaceship.name = @"Spaceship";
+    SFHealthComponent *healthComponent = [[SFHealthComponent alloc] initWithHealth:50 healthMax:100];
+    healthComponent.shieldMax = 100;
+    [[SFEntityManager sharedManager] addComponent:healthComponent toEntity:spaceship];
+
+    SFMoveComponent *moveComponent = [[SFMoveComponent alloc] init];
+    [_entityManager addComponent:moveComponent toEntity:spaceship];
+    moveComponent.spaceshipSpeed = 200.0;
+
+    SFTagComponent *tagComponent = [[SFTagComponent alloc] init];
+    [tagComponent addTag:@"Spaceship"];
+    [[SFEntityManager sharedManager] addComponent:tagComponent toEntity:spaceship];
+
+    SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] init];
+    [[SFEntityManager sharedManager] addComponent:collisionComponent toEntity:spaceship];
+
+    CCAnimation *hitAnimation = [CCAnimation animation];
+    [hitAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_hit.png"];
+    hitAnimation.restoreOriginalFrame = YES;
+    hitAnimation.delayPerUnit = 0.5;
+
+    CCActionAnimate *hitAnimationAction = [CCActionAnimate actionWithAnimation:hitAnimation];
+    hitAnimationAction.duration = 5.0;
+
+    collisionComponent.hitAnimationAction = hitAnimationAction;
+
+    SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:10000000];
+    [[SFEntityManager sharedManager] addComponent:collisionDamageComponent toEntity:spaceship];
+
+    SFRenderComponent *renderComponent = [[SFRenderComponent alloc] initWithSprite:[CCSprite spriteWithImageNamed:@"Sprites/Spaceship/Spaceship_1.png"]];
+    [[SFEntityManager sharedManager] addComponent:renderComponent toEntity:spaceship];
+    renderComponent.node.position = position;
+
+    CCAnimation *spaceshipAnimation = [CCAnimation animation];
+
+    spaceshipAnimation.restoreOriginalFrame = YES;
+    spaceshipAnimation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 5.0);
+
+    [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_1.png"];
+    [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_2.png"];
+    [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_3.png"];
+    [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_2.png"];
+
+    CCActionAnimate *spaceshipAnimationAction = [CCActionAnimate actionWithAnimation:spaceshipAnimation];
+
+    [renderComponent.node runAction:[CCActionRepeatForever actionWithAction:spaceshipAnimationAction]];
+
+    SFWeaponComponent *weaponComponent = [[SFWeaponComponent alloc] init];
+    weaponComponent.fireRate = 2.5;
+    weaponComponent.weaponType = 2;
+    weaponComponent.timeSinceLastShot = 11111;
+    weaponComponent.power = 10;
+    weaponComponent.speed = 400;
+    [[SFEntityManager sharedManager] addComponent:weaponComponent toEntity:spaceship];
+
+    [_delegate addGameNode:renderComponent.node];
+
+    return spaceship;
+}
+
 - (SFEntity *)addEnemyShotWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position
 {
     //SFTagComponent
