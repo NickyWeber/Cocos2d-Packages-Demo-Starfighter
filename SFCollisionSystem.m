@@ -38,8 +38,23 @@
 
                 [self removeCollidedEntityIfApplicable:entityA];
                 [self removeCollidedEntityIfApplicable:entityB];
+
+                [self playHitAnimation:entityA];
+                [self playHitAnimation:entityB];
             }
         }
+    }
+}
+
+- (void)playHitAnimation:(SFEntity *)entity
+{
+    SFCollisionComponent *collisionComponent = [self.entityManager componentOfClass:[SFCollisionComponent class] forEntity:entity];
+
+    if (collisionComponent.hitAnimationAction)
+    {
+        SFRenderComponent *renderComponent = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
+        [renderComponent.node stopAction:collisionComponent.hitAnimationAction];
+        [renderComponent.node runAction:collisionComponent.hitAnimationAction];
     }
 }
 
@@ -104,14 +119,15 @@
 
 - (BOOL)detectCollision:(SFEntity *)entityA entityB:(SFEntity *)entityB
 {
-    if ([self entity:entityA cannotCollideWithEntity:entityB])
+    if ([self testCollisionBlackListWithEntity:entityA andEntity:entityB])
     {
         return NO;
     }
-/*
-    SFBoundingBoxComponent *boundingBoxComponentA = [self.entityManager componentOfClass:[SFBoundingBoxComponent class] forEntity:entityA];
-    SFBoundingBoxComponent *boundingBoxComponentB = [self.entityManager componentOfClass:[SFBoundingBoxComponent class] forEntity:entityB];
-*/
+
+    if (![self testCollisionWhiteListWithEntity:entityA andEntity:entityB])
+    {
+        return NO;
+    }
 
     SFRenderComponent *renderComponentA = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entityA];
     SFRenderComponent *renderComponentB = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entityB];
@@ -119,10 +135,9 @@
 	// simple collision test, before we start looking through all the boundingboxes
     // Ther will be finder collision detection soon
     return [self detectTextureCollisionsOfRenderComponentA:renderComponentA andComponentB:renderComponentB];
-
 }
 
-- (BOOL)entity:(SFEntity *)entityA cannotCollideWithEntity:(SFEntity *)entityB
+- (BOOL)testCollisionWhiteListWithEntity:(SFEntity *)entityA andEntity:(SFEntity *)entityB
 {
     SFCollisionComponent *collisionComponentA = [self.entityManager componentOfClass:[SFCollisionComponent class] forEntity:entityA];
     SFCollisionComponent *collisionComponentB = [self.entityManager componentOfClass:[SFCollisionComponent class] forEntity:entityB];
@@ -130,7 +145,13 @@
     SFTagComponent *tagComponentA = [self.entityManager componentOfClass:[SFTagComponent class] forEntity:entityA];
     SFTagComponent *tagComponentB = [self.entityManager componentOfClass:[SFTagComponent class] forEntity:entityB];
 
-    for (NSString *tag in collisionComponentA.collisionExceptionTags)
+    if (!collisionComponentA.collisionWhiteListTags
+        && !collisionComponentB.collisionWhiteListTags)
+    {
+        return YES;
+    }
+
+    for (NSString *tag in collisionComponentA.collisionWhiteListTags)
     {
         if ([tagComponentB hasTag:tag])
         {
@@ -138,7 +159,34 @@
         }
     }
 
-    for (NSString *tag in collisionComponentB.collisionExceptionTags)
+    for (NSString *tag in collisionComponentB.collisionWhiteListTags)
+    {
+        if ([tagComponentA hasTag:tag])
+        {
+            return YES;
+        }
+    }
+
+    return NO;
+}
+
+- (BOOL)testCollisionBlackListWithEntity:(SFEntity *)entityA andEntity:(SFEntity *)entityB
+{
+    SFCollisionComponent *collisionComponentA = [self.entityManager componentOfClass:[SFCollisionComponent class] forEntity:entityA];
+    SFCollisionComponent *collisionComponentB = [self.entityManager componentOfClass:[SFCollisionComponent class] forEntity:entityB];
+
+    SFTagComponent *tagComponentA = [self.entityManager componentOfClass:[SFTagComponent class] forEntity:entityA];
+    SFTagComponent *tagComponentB = [self.entityManager componentOfClass:[SFTagComponent class] forEntity:entityB];
+
+    for (NSString *tag in collisionComponentA.collisionBlackListTags)
+    {
+        if ([tagComponentB hasTag:tag])
+        {
+            return YES;
+        }
+    }
+
+    for (NSString *tag in collisionComponentB.collisionBlackListTags)
     {
         if ([tagComponentA hasTag:tag])
         {

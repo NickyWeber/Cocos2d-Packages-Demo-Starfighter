@@ -56,11 +56,24 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] init];
         [[SFEntityManager sharedManager] addComponent:collisionComponent toEntity:_entity];
 
+        CCAnimation *hitAnimation = [CCAnimation animation];
+        [hitAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_hit.png"];
+        hitAnimation.restoreOriginalFrame = YES;
+        hitAnimation.delayPerUnit = 0.5;
+
+        CCActionAnimate *hitAnimationAction = [CCActionAnimate actionWithAnimation:hitAnimation];
+        hitAnimationAction.duration = 5.0;
+
+
+
+        collisionComponent.hitAnimationAction = hitAnimationAction;
+
         SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:10000000];
         [[SFEntityManager sharedManager] addComponent:collisionDamageComponent toEntity:_entity];
 
         SFRenderComponent *renderComponent = [[SFRenderComponent alloc] initWithSprite:[CCSprite spriteWithImageNamed:@"Sprites/Spaceship/Spaceship_1.png"]];
         [[SFEntityManager sharedManager] addComponent:renderComponent toEntity:_entity];
+        renderComponent.node = self;
 
         self.shield = 100;
         self.shieldMax = 100;
@@ -203,6 +216,7 @@ static float HIT_ANIMATION_DURATION = 0.1f;
 	}
 	else
 	{
+/*
 		CCAnimation *hitAnimation = [CCAnimation animation];
 		[hitAnimation addSpriteFrameWithFilename:@"Sprites/Spaceship/Spaceship_hit.png"];
         hitAnimation.restoreOriginalFrame = YES;
@@ -212,6 +226,7 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         hitAnimationAction.duration = HIT_ANIMATION_DURATION * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
 
 		[self runAction:hitAnimationAction];
+*/
 	}
 
 	[_delegate updateHealthBarWithHealthInPercent:[self healthInPercent]];

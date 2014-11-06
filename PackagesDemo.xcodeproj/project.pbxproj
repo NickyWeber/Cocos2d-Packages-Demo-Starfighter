@@ -111,11 +111,13 @@
 		E525F207B37CEEA504ABDA7D /* SFKeyEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F64F87491E1473EA7ECA /* SFKeyEventHandler.m */; };
 		E525F20AA3375575200510E4 /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F896260E422363BD2EFA /* SFMoveComponent.m */; };
 		E525F22B8EFBD6AC1BA91522 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
+		E525F24EE65E381CE93A8362 /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F35E4060FA22372D2D56 /* SFRewardComponent.m */; };
 		E525F28DBB7D35316F3F6468 /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F33A298303CEAD17B470 /* SFHealthSystem.m */; };
 		E525F2A7C9CC26DCE17D5CD7 /* SFGameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF0966AAF612B68ED038 /* SFGameObject.m */; };
 		E525F2D0CC6B46D34E028961 /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F78B0E51C15B17BB5DF5 /* SFComponent.m */; };
 		E525F2D4D973CC0CCC20227D /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F82D300EDF999271AC26 /* SFEntitySystem.m */; };
 		E525F30742E581BCA53AEFBA /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* SFHelper.m */; };
+		E525F309C3FCBAF4F797AC46 /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F35E4060FA22372D2D56 /* SFRewardComponent.m */; };
 		E525F325A0662AE8F98F4F8D /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E0DCE0A4472071F4D3 /* SFHealthComponent.m */; };
 		E525F378294D183345E4BE16 /* SFEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F57C24B73E6B954C2DD2 /* SFEnemy.m */; };
 		E525F3E21256195BD05F636C /* SFLaserCannon.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FD191D8AB3E57C4085A1 /* SFLaserCannon.m */; };
@@ -216,6 +218,7 @@
 		E525FBE98B96C74201D24CC0 /* SFEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F57C24B73E6B954C2DD2 /* SFEnemy.m */; };
 		E525FBFBAB88DE37FD0741F4 /* SFBoundingBoxComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F14121E6A64BF3AB5279 /* SFBoundingBoxComponent.m */; };
 		E525FC12690A3503D700D748 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
+		E525FC242ED3B44DB525C7ED /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F35E4060FA22372D2D56 /* SFRewardComponent.m */; };
 		E525FC35AE2324E0D2580B02 /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6784D60787B11CAB70D /* SFEntityFactory.m */; };
 		E525FC39CAEF80579AA61BBE /* SFHealthLoot.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8F50CDB79070E9AC30C /* SFHealthLoot.m */; };
 		E525FC3C25717ECF40DD0B87 /* SFTimeToLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */; };
@@ -404,6 +407,7 @@
 		E525F33A298303CEAD17B470 /* SFHealthSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHealthSystem.m; sourceTree = "<group>"; };
 		E525F34BF55EF3A50753D544 /* SFAIMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAIMovement.m; sourceTree = "<group>"; };
 		E525F34D7773E9CDB8BC9B04 /* SFMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMoveSystem.h; sourceTree = "<group>"; };
+		E525F35E4060FA22372D2D56 /* SFRewardComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRewardComponent.m; sourceTree = "<group>"; };
 		E525F3AD04305F7AB059A5DA /* SFTagComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTagComponent.h; sourceTree = "<group>"; };
 		E525F3CA10D9904CB89DDA72 /* SFEntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityManager.h; sourceTree = "<group>"; };
 		E525F3D51EA67127222D6A96 /* SFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFConstants.m; sourceTree = "<group>"; };
@@ -416,6 +420,7 @@
 		E525F480911E20C345715C5E /* SFBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBackgroundLayer.h; sourceTree = "<group>"; };
 		E525F48BB2DADFD124B475A7 /* SFHealthComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHealthComponent.h; sourceTree = "<group>"; };
 		E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimeToLiveComponent.m; sourceTree = "<group>"; };
+		E525F4AC2D79CD955CECA40D /* SFRewardComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRewardComponent.h; sourceTree = "<group>"; };
 		E525F4B298977559AC0F68CE /* SFPointLoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPointLoot.h; sourceTree = "<group>"; };
 		E525F4B62211489AEF1DCDA2 /* SFGameObject+Trigonometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFGameObject+Trigonometry.h"; sourceTree = "<group>"; };
 		E525F4C6485C20368767BDE7 /* SFCollisionRewardComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionRewardComponent.h; sourceTree = "<group>"; };
@@ -857,6 +862,8 @@
 				E525FD82DF3DF5C74DD90B57 /* SFLevelComponent.h */,
 				E525F11B68F22F85AC81C956 /* SFTagComponent.m */,
 				E525F3AD04305F7AB059A5DA /* SFTagComponent.h */,
+				E525F35E4060FA22372D2D56 /* SFRewardComponent.m */,
+				E525F4AC2D79CD955CECA40D /* SFRewardComponent.h */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -1417,6 +1424,7 @@
 				E525F869EE0F9A2CD03CB53C /* SFCollisionRewardComponent.m in Sources */,
 				E525F1ABDDDB26057D1697DB /* SFTimeToLiveSystem.m in Sources */,
 				E525FC3C25717ECF40DD0B87 /* SFTimeToLiveComponent.m in Sources */,
+				E525FC242ED3B44DB525C7ED /* SFRewardComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1468,6 +1476,7 @@
 				E525FC81E5B9DACB6E80F320 /* SFCollisionRewardComponent.m in Sources */,
 				E525FE6801C8729467003314 /* SFTimeToLiveSystem.m in Sources */,
 				E525FDE1D930793B5212C99A /* SFTimeToLiveComponent.m in Sources */,
+				E525F24EE65E381CE93A8362 /* SFRewardComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1529,6 +1538,7 @@
 				E525F5FAB80C23CB36D447C9 /* SFCollisionRewardComponent.m in Sources */,
 				E525F6E0AC162497F19E38FC /* SFTimeToLiveSystem.m in Sources */,
 				E525FD36BBC10C604FFDE474 /* SFTimeToLiveComponent.m in Sources */,
+				E525F309C3FCBAF4F797AC46 /* SFRewardComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

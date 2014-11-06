@@ -7,6 +7,7 @@
 #import "SFGamePlaySceneDelegate.h"
 #import "SFEntityFactory.h"
 #import "SFCollisionComponent.h"
+#import "SFRewardComponent.h"
 
 @implementation SFHealthSystem
 
@@ -29,16 +30,32 @@
 
             [self dropLootOfEntity:entity];
 
+            [self rewardOfEntity:entity];
+
             [self explodeEntity:entity];
         }
     }
 }
 
+- (void)rewardOfEntity:(SFEntity *)entity
+{
+    SFRewardComponent *rewardComponent = [self.entityManager componentOfClass:[SFRewardComponent class] forEntity:entity];
+
+    if (rewardComponent)
+    {
+        [self.delegate addPoints:rewardComponent.points];
+    }
+}
+
 - (void)dropLootOfEntity:(SFEntity *)entity
 {
+    SFRenderComponent *renderComponent = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
     SFLootComponent *lootComponent = [self.entityManager componentOfClass:[SFLootComponent class] forEntity:entity];
 
-    // [[SFEntityFactory sharedFactory] addLoot:lootComponent atPosition:ccp];
+    if (lootComponent)
+    {
+        [[SFEntityFactory sharedFactory] addLoot:lootComponent atPosition:renderComponent.node.position];
+    }
 }
 
 - (void)explodeEntity:(SFEntity *)entity

@@ -20,6 +20,7 @@
 #import "SFCollisionRewardComponent.h"
 #import "SFTimeToLiveSystem.h"
 #import "SFTimeToLiveComponent.h"
+#import "SFRewardComponent.h"
 
 @implementation SFEntityFactory
 
@@ -50,14 +51,31 @@
     SFLevelComponent *levelComponent = [[SFLevelComponent alloc] initWithLevel:1];
     [_entityManager addComponent:levelComponent toEntity:entity];
 
-/*
+    SFRewardComponent *rewardComponent = [[SFRewardComponent alloc] initWithPoints:100];
+    [_entityManager addComponent:rewardComponent toEntity:entity];
+
     SFTagComponent *tagComponent = [[SFTagComponent alloc] init];
     [tagComponent addTag:@"Enemy"];
     [[SFEntityManager sharedManager] addComponent:tagComponent toEntity:entity];
-*/
+
+    NSUInteger lootType = [self randomLootType];
+    if (lootType)
+    {
+        [_entityManager addComponent:[[SFLootComponent alloc] initWithDropType:lootType] toEntity:entity];
+    }
 
     SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] init];
+
     [[SFEntityManager sharedManager] addComponent:collisionComponent toEntity:entity];
+    CCAnimation *hitAnimation = [CCAnimation animation];
+    [hitAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_hit.png"];
+    hitAnimation.delayPerUnit = 0.1;
+
+    CCActionAnimate *hitAnimationAction = [CCActionAnimate actionWithAnimation:hitAnimation];
+    hitAnimationAction.duration = 0.1 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
+    hitAnimation.restoreOriginalFrame = YES;
+    collisionComponent.hitAnimationAction = hitAnimationAction;
+
 
     SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:50];
     [_entityManager addComponent:collisionDamageComponent toEntity:entity];
@@ -67,6 +85,17 @@
     [_delegate addGameNode:renderComponent.node];
 
     return entity;
+}
+
+- (NSUInteger)randomLootType
+{
+    int rng = arc4random() % 1000 + 1;
+
+    if (rng <= 1000)
+    {
+        return arc4random() % 3 + 1;
+    }
+    return 0;
 }
 
 - (SFEntity *)addLaserBeamAtPosition:(CGPoint)position
@@ -83,7 +112,7 @@
 
     SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] initWithDespawnAfterCollision:YES];
     [[SFEntityManager sharedManager] addComponent:collisionComponent toEntity:laserBeam];
-    [collisionComponent.collisionExceptionTags addObject:@"Spaceship"];
+    collisionComponent.collisionBlackListTags = @[@"Spaceship"];
 
     SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:10];
     [_entityManager addComponent:collisionDamageComponent toEntity:laserBeam];
@@ -134,18 +163,37 @@
         return nil;
     }
 
+
     NSString *lootSpriteName;
+    CCActionAnimate *actionAnimate;
+
+    NSUInteger points = 0;
+    NSUInteger health = 0;
+    NSUInteger shield = 0;
+
     switch (lootComponent.dropType)
     {
         case 1:
+        {
             lootSpriteName = @"Sprites/Loot/HealthLoot_1.png";
+            actionAnimate = [self healthLootAnimation];
+            health = 20;
             break;
+        }
         case 2:
+        {
             lootSpriteName = @"Sprites/Loot/ShieldLoot_1.png";
+            actionAnimate = [self shieldLootAnimation];
+            shield = 20;
             break;
+        }
         default:
+        {
             lootSpriteName = @"Sprites/Loot/CashLoot_1.png";
+            actionAnimate = [self pointLootAnimation];
+            points = 50;
             break;
+        }
     }
 
     SFEntity *loot = [_entityManager createEntity];
@@ -153,15 +201,20 @@
 
     SFRenderComponent *renderComponent = [[SFRenderComponent alloc] initWithSprite:[CCSprite spriteWithImageNamed:lootSpriteName]];
     [_entityManager addComponent:renderComponent toEntity:loot];
+    [renderComponent.node runAction:actionAnimate];
 
     SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] initWithDespawnAfterCollision:YES];
     [_entityManager addComponent:collisionComponent  toEntity:loot];
+    collisionComponent.collisionWhiteListTags = @[@"Spaceship"];
 
     SFTimeToLiveComponent *timeToLiveComponent = [[SFTimeToLiveComponent alloc] initWithTimeToLive:5.0 fadeDuration:2.0];
     [[SFEntityManager sharedManager] addComponent:timeToLiveComponent toEntity:loot];
 
     SFCollisionRewardComponent *collisionRewardComponent = [[SFCollisionRewardComponent alloc] init];
     [_entityManager addComponent:collisionRewardComponent toEntity:loot];
+    collisionRewardComponent.points = points;
+    collisionRewardComponent.health = health;
+    collisionRewardComponent.shield = shield;
 
     renderComponent.node.position = position;
 
@@ -170,5 +223,86 @@
     return loot;
 }
 
-@end
+- (CCActionAnimate *)pointLootAnimation
+{
+    CCAnimation *animation = [CCAnimation animation];
 
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_1.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_2.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_3.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_4.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_5.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_4.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_3.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_2.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/CashLoot_1.png"];
+
+    animation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 5.0);
+
+    CCActionAnimate *actionAnimate = [CCActionAnimate actionWithAnimation:animation];
+    actionAnimate.duration = 1.0 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
+    animation.restoreOriginalFrame = YES;
+
+    return [CCActionRepeatForever actionWithAction:actionAnimate];
+}
+
+- (CCActionAnimate *)shieldLootAnimation
+{
+    CCAnimation *action = [CCAnimation animation];
+
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_6.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_5.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_4.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_4.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_3.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_3.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_3.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_2.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_2.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_2.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_1.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_1.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_1.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_1.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_2.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_2.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_2.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_3.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_3.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_3.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_4.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_4.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_5.png"];
+    [action addSpriteFrameWithFilename:@"Sprites/Loot/ShieldLoot_6.png"];
+
+    action.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 5.0);
+
+    CCActionAnimate *actionAnimate = [CCActionAnimate actionWithAnimation:action];
+    actionAnimate.duration = 1.0 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
+    action.restoreOriginalFrame = YES;
+
+    return [CCActionRepeatForever actionWithAction:actionAnimate];
+}
+
+- (CCActionAnimate *)healthLootAnimation
+{
+    CCAnimation *animation = [CCAnimation animation];
+
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/HealthLoot_1.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/HealthLoot_1.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/HealthLoot_1.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/HealthLoot_1.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/HealthLoot_1.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/HealthLoot_1.png"];
+    [animation addSpriteFrameWithFilename:@"Sprites/Loot/HealthLoot_2.png"];
+
+    animation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 5.0);
+
+    CCActionAnimate *actionAnimate = [CCActionAnimate actionWithAnimation:animation];
+    actionAnimate.duration = 1.0 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
+    animation.restoreOriginalFrame = YES;
+
+    return [CCActionRepeatForever actionWithAction:actionAnimate];
+}
+
+@end

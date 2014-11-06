@@ -14,7 +14,6 @@
     if (self)
     {
         self.despawnAfterCollision = despawnAfterCollision;
-        self.collisionExceptionTags = [NSMutableSet set];
     }
 
     return self;

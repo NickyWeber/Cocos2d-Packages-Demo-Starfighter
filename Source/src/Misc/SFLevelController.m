@@ -10,6 +10,7 @@
 #import "SFGamePlaySceneDelegate.h"
 #import "SFRenderComponent.h"
 #import "SFEntityManager.h"
+#import "SFEntityFactory.h"
 
 
 @interface SFLevelController ()
@@ -94,11 +95,10 @@
 /*
         self.totalSpawned += 1;
 
-		SFEnemy *enemy = [[SFEnemy alloc] initEnemyWithDelegate:_delegate level:_level];
-		enemy.position = CGPointMake((CGFloat) (([CCDirector sharedDirector].view.frame.size.width - 20.0) * CCRANDOM_0_1() + 20),
-                                     (CGFloat) (([CCDirector sharedDirector].view.frame.size.height + 25.0) + enemy.contentSize.height / 2));
+		CGPoint position = CGPointMake((CGFloat) (([CCDirector sharedDirector].view.frame.size.width - 20.0) * CCRANDOM_0_1() + 20),
+                                     (CGFloat) ([CCDirector sharedDirector].view.frame.size.height + 50.0));
 
-		[_delegate addGameEntity:enemy];
+        [[SFEntityFactory sharedFactory] addEnemyAtPosition:position];
 
         self.lastSpawnTime = [[NSDate date] timeIntervalSince1970];
 
