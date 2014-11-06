@@ -47,7 +47,9 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         
         self.entity = [[SFEntityManager sharedManager] createEntity];
         _entity.name = @"Spaceship";
-        [[SFEntityManager sharedManager] addComponent:[[SFHealthComponent alloc] initWithHealth:70 healthMax:100] toEntity:_entity];
+        SFHealthComponent *healthComponent = [[SFHealthComponent alloc] initWithHealth:70 healthMax:100];
+        healthComponent.shieldMax = 100;
+        [[SFEntityManager sharedManager] addComponent:healthComponent toEntity:_entity];
 
         SFTagComponent *tagComponent = [[SFTagComponent alloc] init];
         [tagComponent addTag:@"Spaceship"];
@@ -74,9 +76,6 @@ static float HIT_ANIMATION_DURATION = 0.1f;
         SFRenderComponent *renderComponent = [[SFRenderComponent alloc] initWithSprite:[CCSprite spriteWithImageNamed:@"Sprites/Spaceship/Spaceship_1.png"]];
         [[SFEntityManager sharedManager] addComponent:renderComponent toEntity:_entity];
         renderComponent.node = self;
-
-        self.shield = 100;
-        self.shieldMax = 100;
 
         self.weaponSystems = [NSMutableArray array];
 

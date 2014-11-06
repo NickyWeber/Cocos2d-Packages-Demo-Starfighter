@@ -20,8 +20,6 @@
 
     for (SFEntity *entityA in entities)
     {
-        SFTagComponent *tagComponent = [self.entityManager componentOfClass:[SFTagComponent class] forEntity:entityA];
-
         [entities2 removeObject:entityA];
 
         for (SFEntity *entityB in entities2)
@@ -31,10 +29,8 @@
                 [self applyDamageOfEntity:entityA toEntity:entityB];
                 [self applyDamageOfEntity:entityB toEntity:entityA];
 
-                if ([tagComponent hasTag:@"Spaceship"])
-                {
-                    [self applyRewardEntity:entityB toSpaceship:entityA];
-                }
+                [self applyRewardEntity:entityA toEntity:entityB];
+                [self applyRewardEntity:entityB toEntity:entityA];
 
                 [self removeCollidedEntityIfApplicable:entityA];
                 [self removeCollidedEntityIfApplicable:entityB];
@@ -43,6 +39,22 @@
                 [self playHitAnimation:entityB];
             }
         }
+    }
+}
+
+- (void)applyRewardEntity:(SFEntity *)entityA toEntity:(SFEntity *)entityB
+{
+    SFTagComponent *tagComponentA = [self.entityManager componentOfClass:[SFTagComponent class] forEntity:entityA];
+    SFTagComponent *tagComponentB = [self.entityManager componentOfClass:[SFTagComponent class] forEntity:entityB];
+
+    if ([tagComponentA hasTag:@"Spaceship"])
+    {
+        [self applyRewardEntity:entityB toSpaceship:entityA];
+    }
+
+    if ([tagComponentB hasTag:@"Spaceship"])
+    {
+        [self applyRewardEntity:entityA toSpaceship:entityB];
     }
 }
 
@@ -80,11 +92,7 @@
 
     SFHealthComponent *healthComponent = [self.entityManager componentOfClass:[SFHealthComponent class] forEntity:spaceship];
     healthComponent.health += rewardComponent.health;
-
-/*
-    SFShieldComponent *shieldComponent = [self.entityManager componentOfClass:[SFShieldComponent class] forEntity:spaceship];
-    shieldComponent.shield += rewardComponent.shield;
-*/
+    healthComponent.shield += rewardComponent.shield;
 
     [self.delegate addPoints:rewardComponent.points];
 
@@ -105,16 +113,27 @@
         && damageComponentA
         && healthComponentB)
     {
-        healthComponentB.health -= damageComponentA.damage;
+        [self applyDamage:damageComponentA.damage toHealthComponent:healthComponentB];
         return;
     }
 
     if (!healthComponentA
         && damageComponentA)
     {
-        healthComponentB.health -= damageComponentA.damage;
+        [self applyDamage:damageComponentA.damage toHealthComponent:healthComponentB];
         return;
     }
+}
+
+- (void)applyDamage:(NSUInteger)damage toHealthComponent:(SFHealthComponent *)healthComponent
+{
+    NSInteger newShield = healthComponent.shield - damage;
+    healthComponent.shield = newShield;
+
+    if (newShield <= 0)
+   	{
+        healthComponent.health = healthComponent.health - newShield * -1;
+   	}
 }
 
 - (BOOL)detectCollision:(SFEntity *)entityA entityB:(SFEntity *)entityB

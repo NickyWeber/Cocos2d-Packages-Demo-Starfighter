@@ -105,7 +105,7 @@
 	self.scoreLabel.string = [NSString stringWithFormat:@"%d", newGameScore];
 }
 
-- (void)updateHealthBarWithHealthInPercent:(float)healthInPercent
+- (void)updateHealthBarWithHealthInPercent:(double)healthInPercent
 {
     id action = [_healthBar getActionByTag:1000];
 
@@ -126,7 +126,7 @@
 	_healthBar.contentSize = CGSizeMake((CGFloat) (displaySize.width * newHealthInPercent), _shieldBar.contentSize.height);
 }
 
-- (void)updateShieldBarWithShieldInPercent:(float)shieldInPercent
+- (void)updateShieldBarWithShieldInPercent:(double)shieldInPercent
 {
     CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
 

@@ -10,7 +10,7 @@
 - (void)addPoints:(int)pointsToAdd;
 
 - (void)updateHealthBarWithHealthInPercent:(double)healthInPercent;
-- (void)updateShieldBarWithShieldInPercent:(float)shieldInPercent;
+- (void)updateShieldBarWithShieldInPercent:(double)shieldInPercent;
 
 - (void)addGameNode:(CCNode *)aGameEntity;
 

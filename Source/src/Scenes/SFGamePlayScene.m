@@ -105,7 +105,7 @@
 	[_hudLayer updateHealthBarWithHealthInPercent:healthInPercent];
 }
 
-- (void)updateShieldBarWithShieldInPercent:(float)shieldInPercent
+- (void)updateShieldBarWithShieldInPercent:(double)shieldInPercent
 {
 	[_hudLayer updateShieldBarWithShieldInPercent:shieldInPercent];
 }

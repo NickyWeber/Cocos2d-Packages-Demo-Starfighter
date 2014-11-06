@@ -67,13 +67,12 @@
 
     CCActionAnimate *actionAnimate = [CCActionAnimate actionWithAnimation:[[CCAnimationCache sharedAnimationCache] animationByName:@"Explosion"]];
 
-    id sequence = [CCActionSequence actions:// [CCActionCallFunc actionWithTarget:self selector:@selector(dropLoot)],
-                                                    actionAnimate,
-                                                    [CCActionCallBlock actionWithBlock:^{
-                                                        [renderComponent.node removeFromParentAndCleanup:YES];
-                                                        [self.entityManager removeEntity:entity];
-                                                    }],
-                                                    nil];
+    id sequence = [CCActionSequence actions:actionAnimate,
+                                            [CCActionCallBlock actionWithBlock:^{
+                                                [renderComponent.node removeFromParentAndCleanup:YES];
+                                                [self.entityManager removeEntity:entity];
+                                            }],
+                                            nil];
 
     [renderComponent.node runAction:sequence];
 }

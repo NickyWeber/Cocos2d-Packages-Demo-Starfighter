@@ -59,7 +59,7 @@
     [[SFEntityManager sharedManager] addComponent:tagComponent toEntity:entity];
 
     NSUInteger lootType = [self randomLootType];
-    if (lootType)
+    if (lootType > 0)
     {
         [_entityManager addComponent:[[SFLootComponent alloc] initWithDropType:lootType] toEntity:entity];
     }

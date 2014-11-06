@@ -127,6 +127,15 @@
                          options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld
                          context:NULL];
 
+    [healthComponent addObserver:self
+                      forKeyPath:@"shield"
+                         options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld
+                         context:NULL];
+
+/*
+    [_delegate updateHealthBarWithHealthInPercent:[healthComponent healthInPercent]];
+    [_delegate updateShieldBarWithShieldInPercent:[healthComponent shieldInPercent]];
+*/
 
 
     // Only for debugging and dev
@@ -141,10 +150,17 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+    NSLog(@"keypath %@", keyPath);
+
+    SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_spaceship.entity];
     if ([keyPath isEqualToString:@"health"])
     {
-        SFHealthComponent *healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:_spaceship.entity];
         [_delegate updateHealthBarWithHealthInPercent:[healthComponent healthInPercent]];
+    }
+
+    if ([keyPath isEqualToString:@"shield"])
+    {
+        [_delegate updateShieldBarWithShieldInPercent:[healthComponent shieldInPercent]];
     }
 }
 
