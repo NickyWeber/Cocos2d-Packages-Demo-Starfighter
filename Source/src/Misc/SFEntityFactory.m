@@ -11,6 +11,7 @@
 #import "SFLevelComponent.h"
 #import "SFTagComponent.h"
 #import "SFCollisionDamageComponent.h"
+#import "SFConfigLoader.h"
 #import "SFLootComponent.h"
 #import "SFWeaponComponent.h"
 #import "SFCollisionComponent.h"
@@ -20,6 +21,11 @@
 #import "SFTimeToLiveComponent.h"
 #import "SFRewardComponent.h"
 #import "SFTrigonometryHelper.h"
+#import "SFConfigLoader.h"
+
+@interface SFEntityFactory ()
+@property (nonatomic, strong) SFConfigLoader *configLoader;
+@end
 
 @implementation SFEntityFactory
 
@@ -32,6 +38,18 @@
         sharedFactory = [[self alloc] init];
     });
     return sharedFactory;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.configLoader = [[SFConfigLoader alloc] init];
+        [self setupAnimations];
+    }
+
+    return self;
 }
 
 - (SFEntity *)addSpaceshipAtPosition:(CGPoint)position
@@ -92,15 +110,13 @@
     weaponComponent.speed = 400;
     [[SFEntityManager sharedManager] addComponent:weaponComponent toEntity:spaceship];
 
-    [_delegate addGameNode:renderComponent.node];
+    [_delegate addEntityNodeToGame:renderComponent.node];
 
     return spaceship;
 }
 
 - (SFEntity *)addEnemyShotWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position
 {
-    //SFTagComponent
-
     NSArray *array = [_entityManager allEntitiesPosessingComponentOfClass:[SFTagComponent class]];
 
     for (SFEntity *entity in array)
@@ -108,39 +124,18 @@
         SFTagComponent *tagComponent = [self.entityManager componentOfClass:[SFTagComponent  class] forEntity:entity];
         if ([tagComponent hasTag:@"Spaceship"])
         {
-            SFRenderComponent *renderComponentSpaceship = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
+            SFEntity *shot = [self addEntityWithName:@"EnemyShot" atPosition:position];
+            shot.name = @"@EnemyShot";
 
-            SFEntity *shot = [_entityManager createEntity];
-            shot.name = @"Shot";
+            SFRenderComponent *renderComponentSpaceship = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
 
             CGPoint shotVector = [SFTrigonometryHelper calcNormalizedShotVector:position andTargetPosition:renderComponentSpaceship.node.position];
 
             SFMoveComponent *moveComponent = [[SFMoveComponent alloc] initWithVelocity:ccpMult(shotVector, weaponComponent.speed)];
             [_entityManager addComponent:moveComponent toEntity:shot];
 
-            SFRenderComponent *renderComponent = [[SFRenderComponent alloc] initWithSprite:[CCSprite spriteWithImageNamed:@"Sprites/Shots/EnemyShot_2.png"]];
-            [_entityManager addComponent:renderComponent toEntity:shot];
-            renderComponent.node.position = position;
-
-            SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] init];
-            [[SFEntityManager sharedManager] addComponent:collisionComponent toEntity:shot];
-            collisionComponent.collisionWhiteListTags = @[@"Spaceship"];
-            collisionComponent.despawnAfterCollision = YES;
-
-            CCAnimation *spaceshipAnimation = [CCAnimation animation];
-            [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Shots/EnemyShot_1.png"];
-            [spaceshipAnimation addSpriteFrameWithFilename:@"Sprites/Shots/EnemyShot_2.png"];
-            spaceshipAnimation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 2.0);
-
-            CCActionAnimate *spaceshipAnimationAction = [CCActionAnimate actionWithAnimation:spaceshipAnimation];
-            spaceshipAnimationAction.duration = 1.0 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
-            spaceshipAnimation.restoreOriginalFrame = YES;
-            [renderComponent.node runAction:[CCActionRepeatForever actionWithAction:spaceshipAnimationAction]];
-
             SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:weaponComponent.power];
             [_entityManager addComponent:collisionDamageComponent toEntity:shot];
-
-            [_delegate addGameNode:renderComponent.node];
 
             return shot;
         }
@@ -149,65 +144,38 @@
     return nil;
 }
 
+- (SFEntity *)addLaserBeamWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position
+{
+    SFEntity *result = [self addEntityWithName:@"LaserBeam" atPosition:position];
+    result.name = @"LaserBeam";
+
+    SFMoveComponent *moveComponent = [[SFMoveComponent alloc] initWithVelocity:ccp(0.0, weaponComponent.speed)];
+    [_entityManager addComponent:moveComponent toEntity:result];
+
+    SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:weaponComponent.power];
+    [_entityManager addComponent:collisionDamageComponent toEntity:result];
+
+    return result;
+}
+
 - (SFEntity *)addEnemyAtPosition:(CGPoint)position
 {
-    SFEntity *entity = [_entityManager createEntity];
-    entity.name = @"Enemy";
-    [_entityManager addComponent:[[SFHealthComponent alloc] initWithHealth:50 healthMax:50] toEntity:entity];
+    return [self addEntityWithName:@"Enemy" atPosition:position];
+}
 
-    SFRenderComponent *renderComponent = [[SFRenderComponent alloc] initWithSprite:[CCSprite spriteWithImageNamed:@"Sprites/Enemy/Enemy_1.png"]];
-    [_entityManager addComponent:renderComponent toEntity:entity];
+- (SFEntity *)addEntityWithName:(NSString *)name atPosition:(CGPoint)position
+{
+    NSArray *components = [_configLoader componentsWithConfigName:name];
+
+    SFEntity *result = [_entityManager createEntityWithComponents:components];
+    result.name = name;
+
+    SFRenderComponent *renderComponent = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:result];
     renderComponent.node.position = position;
 
-    SFWeaponComponent *weaponComponent = [[SFWeaponComponent alloc] init];
-    weaponComponent.enemyWeapon = YES;
-    weaponComponent.fireRate = 0.75;
-    weaponComponent.weaponType = 1;
-    weaponComponent.timeSinceLastShot = 11110;
-    weaponComponent.power = 10;
-    weaponComponent.speed = 200;
-    [_entityManager addComponent:weaponComponent toEntity:entity];
+    [_delegate addEntityNodeToGame:renderComponent.node];
 
-    SFMoveComponent *moveComponent = [[SFMoveComponent alloc] initWithVelocity:ccp(0.0, -100.0)];
-    [_entityManager addComponent:moveComponent toEntity:entity];
-
-    SFLevelComponent *levelComponent = [[SFLevelComponent alloc] initWithLevel:1];
-    [_entityManager addComponent:levelComponent toEntity:entity];
-
-    SFRewardComponent *rewardComponent = [[SFRewardComponent alloc] initWithPoints:100];
-    [_entityManager addComponent:rewardComponent toEntity:entity];
-
-    SFTagComponent *tagComponent = [[SFTagComponent alloc] init];
-    [tagComponent addTag:@"Enemy"];
-    [[SFEntityManager sharedManager] addComponent:tagComponent toEntity:entity];
-
-    NSUInteger lootType = [self randomLootType];
-    if (lootType > 0)
-    {
-        [_entityManager addComponent:[[SFLootComponent alloc] initWithDropType:lootType] toEntity:entity];
-    }
-
-    SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] init];
-    [[SFEntityManager sharedManager] addComponent:collisionComponent toEntity:entity];
-
-    CCAnimation *hitAnimation = [CCAnimation animation];
-    [hitAnimation addSpriteFrameWithFilename:@"Sprites/Enemy/Enemy_hit.png"];
-    hitAnimation.delayPerUnit = 0.1;
-
-    CCActionAnimate *hitAnimationAction = [CCActionAnimate actionWithAnimation:hitAnimation];
-    hitAnimationAction.duration = 0.1 * TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER;
-    hitAnimation.restoreOriginalFrame = YES;
-    collisionComponent.hitAnimationAction = hitAnimationAction;
-
-
-    SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:50];
-    [_entityManager addComponent:collisionDamageComponent toEntity:entity];
-
-    [self setupEnemyAnimationWithRenderComponent:renderComponent];
-
-    [_delegate addGameNode:renderComponent.node];
-
-    return entity;
+    return result;
 }
 
 - (NSUInteger)randomLootType
@@ -219,30 +187,6 @@
         return arc4random() % 3 + 1;
     }
     return 0;
-}
-
-- (SFEntity *)addLaserBeamWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position
-{
-    SFEntity *laserBeam = [_entityManager createEntity];
-    laserBeam.name = @"Laser";
-
-    SFRenderComponent *renderComponent = [[SFRenderComponent alloc] initWithSprite:[CCSprite spriteWithImageNamed:@"Sprites/Shots/LaserBeam.png"]];
-    [_entityManager addComponent:renderComponent toEntity:laserBeam];
-    renderComponent.node.position = position;
-
-    SFMoveComponent *moveComponent = [[SFMoveComponent alloc] initWithVelocity:ccp(0.0, weaponComponent.speed)];
-    [_entityManager addComponent:moveComponent toEntity:laserBeam];
-
-    SFCollisionComponent *collisionComponent = [[SFCollisionComponent alloc] initWithDespawnAfterCollision:YES];
-    [[SFEntityManager sharedManager] addComponent:collisionComponent toEntity:laserBeam];
-    collisionComponent.collisionBlackListTags = @[@"Spaceship"];
-
-    SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:weaponComponent.power];
-    [_entityManager addComponent:collisionDamageComponent toEntity:laserBeam];
-
-    [_delegate addGameNode:renderComponent.node];
-
-    return laserBeam;
 }
 
 - (void)setupEnemyAnimationWithRenderComponent:(SFRenderComponent *)renderComponent
@@ -263,6 +207,10 @@
     [renderComponent.node runAction:standardAnimation];
 
     // TODO: move
+}
+
+- (void)setupAnimations
+{
     CCAnimation *explosionAnimation = [CCAnimation animation];
     [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_1.png"];
     [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_2.png"];
@@ -341,7 +289,7 @@
 
     renderComponent.node.position = position;
 
-    [_delegate addGameNode:renderComponent.node];
+    [_delegate addEntityNodeToGame:renderComponent.node];
 
     return loot;
 }

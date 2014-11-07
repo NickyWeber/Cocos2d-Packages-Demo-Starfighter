@@ -12,7 +12,7 @@
 - (void)updateHealthBarWithHealthInPercent:(double)healthInPercent;
 - (void)updateShieldBarWithShieldInPercent:(double)shieldInPercent;
 
-- (void)addGameNode:(CCNode *)aGameEntity;
+- (void)addEntityNodeToGame:(CCNode *)aGameEntity;
 
 - (NSArray *)gameObjects;
 

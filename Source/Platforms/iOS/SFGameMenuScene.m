@@ -2,6 +2,7 @@
 #import "SFBackgroundLayer.h"
 #import "CCLabelTTF+GameFont.h"
 #import "SFGamePlayScene.h"
+#import "SFConfigLoader.h"
 
 
 @implementation SFGameMenuScene
@@ -12,6 +13,9 @@
 
     if (self)
     {
+        SFConfigLoader *configLoader = [[SFConfigLoader alloc] init];
+        [configLoader componentsWithConfigName:@"Enemy"];
+
         CCButton *button = [CCButton buttonWithTitle:@"Play" spriteFrame:[CCSpriteFrame frameWithImageNamed:@"ccbResources/ccbButtonNormal.png"]];
         button.label.fontName = @"Courier-Bold";
         button.preferredSize = CGSizeMake(40, 40);

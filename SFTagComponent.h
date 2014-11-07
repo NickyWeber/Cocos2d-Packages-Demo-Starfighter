@@ -3,7 +3,7 @@
 
 @interface SFTagComponent : SFComponent
 
-@property (nonatomic, strong) NSMutableSet *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 - (void)addTag:(id)tag;
 

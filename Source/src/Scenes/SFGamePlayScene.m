@@ -122,7 +122,7 @@
 	[_hudLayer updateShieldBarWithShieldInPercent:shieldInPercent];
 }
 
-- (void)addGameNode:(CCNode *)aGameEntity
+- (void)addEntityNodeToGame:(CCNode *)aGameEntity
 {
 	[_gamePlayLayer addGameEntity:aGameEntity];
 }

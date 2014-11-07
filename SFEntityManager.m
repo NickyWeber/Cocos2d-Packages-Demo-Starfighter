@@ -67,6 +67,21 @@
     [components removeObjectForKey:entity.uuid];
 }
 
+- (NSArray *)allComponentsOfEntity:(SFEntity *)entity
+{
+    NSMutableArray *result = [NSMutableArray array];
+    for (NSString *componentName in _componentsByClass)
+    {
+        SFComponent *component = _componentsByClass[componentName][entity.uuid];
+        if (component)
+        {
+            [result addObject:component];
+        }
+    }
+
+    return result;
+}
+
 - (id)componentOfClass:(Class)class forEntity:(SFEntity *)entity
 {
     return _componentsByClass[NSStringFromClass(class)][entity.uuid];
@@ -116,6 +131,18 @@
     }
 
     return result;
+}
+
+- (SFEntity *)createEntityWithComponents:(NSArray *)components
+{
+    SFEntity *newEntity = [self createEntity];
+
+    for (SFComponent *component in components)
+    {
+        [self addComponent:component toEntity:newEntity];
+    }
+
+    return newEntity;
 }
 
 @end

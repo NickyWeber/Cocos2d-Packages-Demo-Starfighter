@@ -90,8 +90,8 @@
     }
 
     SFHealthComponent *healthComponent = [self.entityManager componentOfClass:[SFHealthComponent class] forEntity:spaceship];
-    healthComponent.health += rewardComponent.health;
-    healthComponent.shield += rewardComponent.shield;
+    [self setHealth:(NSUInteger) (healthComponent.health + rewardComponent.health) forComponent:healthComponent];
+    [self setShield:(NSUInteger) (healthComponent.shield + rewardComponent.shield) forComponent:healthComponent];
 
     [self.delegate addPoints:rewardComponent.points];
 
@@ -242,6 +242,16 @@
 							rect.size.height);
 
 	return tmp;
+}
+
+- (void)setHealth:(NSUInteger)newHealth forComponent:(SFHealthComponent *)healthComponent
+{
+    healthComponent.health = (NSInteger) MIN(MAX(0, newHealth), healthComponent.healthMax);
+}
+
+- (void)setShield:(NSUInteger)newShield forComponent:(SFHealthComponent *)healthComponent
+{
+    healthComponent.shield = (NSInteger) MIN(MAX(0, newShield), healthComponent.shieldMax);
 }
 
 @end

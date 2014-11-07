@@ -2,13 +2,15 @@
 
 @implementation SFTagComponent
 
+
+// TODO: Remove me
 - (id)init
 {
     self = [super init];
 
     if (self)
     {
-        self.tags = [NSMutableSet set];
+        self.tags = [NSMutableArray array];
     }
 
     return self;

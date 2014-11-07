@@ -5,6 +5,7 @@
 #import "SFGamePlaySceneDelegate.h"
 #import "SFEntityFactory.h"
 #import "SFRenderComponent.h"
+#import "SFHealthComponent.h"
 
 @implementation SFWeaponSystem
 
@@ -13,7 +14,14 @@
     NSArray *entities = [self.entityManager allEntitiesPosessingComponentOfClass:[SFWeaponComponent class]];
     for (SFEntity *entity in entities)
     {
+        SFHealthComponent *healthComponent = [self.entityManager componentOfClass:[SFHealthComponent class] forEntity:entity];
         SFWeaponComponent *weaponComponent = [self.entityManager componentOfClass:[SFWeaponComponent class] forEntity:entity];
+
+        if (!healthComponent.isAlive)
+        {
+            continue;
+        }
+
         if (weaponComponent.enemyWeapon)
         {
             [self fireWeaponsOfEntity:entity delta:delta];

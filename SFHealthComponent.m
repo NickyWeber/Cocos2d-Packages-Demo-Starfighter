@@ -2,6 +2,18 @@
 
 @implementation SFHealthComponent
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.isAlive = YES;
+    }
+
+    return self;
+}
+
+// TODO remove me
 - (instancetype)initWithHealth:(NSUInteger)health healthMax:(NSUInteger)healthMax
 {
     self = [super init];
@@ -15,16 +27,6 @@
     }
 
     return self;
-}
-
-- (void)setHealth:(NSInteger)health
-{
-    _health = (NSInteger) MIN(MAX(0, health), _healthMax);
-}
-
-- (void)setShield:(NSInteger)shield
-{
-    _shield = (NSInteger) MIN(MAX(0, shield), _shieldMax);
 }
 
 - (double)healthInPercent

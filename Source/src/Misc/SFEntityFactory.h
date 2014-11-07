@@ -5,6 +5,7 @@
 @class SFEntity;
 @class SFLootComponent;
 @class SFWeaponComponent;
+@class SFConfigLoader;
 
 
 @interface SFEntityFactory : NSObject

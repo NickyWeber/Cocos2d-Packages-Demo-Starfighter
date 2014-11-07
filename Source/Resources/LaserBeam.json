@@ -1,0 +1,28 @@
+{
+    "components" :
+    [
+        {
+            "name" : "level",
+            "level" : 1
+        },
+        {
+            "name" : "render",
+            "spriteName" : "Sprites/Shots/LaserBeam.png"
+        },
+        {
+            "name" : "tag",
+            "tags" :
+            [
+                "LaserBeam"
+            ]
+        },
+        {
+            "name" : "collision",
+            "collisionBlackListTags" :
+                [
+                    "Spaceship"
+                ],
+            "despawnAfterCollision" : true
+        }
+    ]
+}

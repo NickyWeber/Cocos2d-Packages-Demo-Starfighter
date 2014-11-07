@@ -1,0 +1,37 @@
+{
+    "components" :
+    [
+        {
+            "name" : "level",
+            "level" : 1
+        },
+        {
+            "name" : "render",
+            "spriteName" : "Sprites/Shots/EnemyShot_2.png",
+            "defaultAnimation" : {
+                "spriteFrames": [
+                    "Sprites/Shots/EnemyShot_1.png",
+                    "Sprites/Shots/EnemyShot_2.png"
+                ],
+                "delayPerUnit": 0.5,
+                "duration": 1.0,
+                "restoreOriginalFrame": true
+            }
+        },
+        {
+            "name" : "tag",
+            "tags" :
+            [
+                "EnemyShot"
+            ]
+        },
+        {
+            "name" : "collision",
+            "collisionWhiteListTags" :
+                [
+                    "Spaceship"
+                ],
+            "despawnAfterCollision" : true
+        }
+    ]
+}
