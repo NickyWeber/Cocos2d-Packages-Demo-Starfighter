@@ -142,7 +142,7 @@
     [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_8.png"];
     [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_9.png"];
     [explosionAnimation addSpriteFrameWithFilename:@"Sprites/Explosion/Explosion_10.png"];
-    explosionAnimation.delayPerUnit = (float) (TIME_CONSTANT_ANIMATION_DURATION_MULTIPLIER / 1.3 / explosionAnimation.frames.count);
+    explosionAnimation.delayPerUnit = (float) (1.0 / 1.3 / explosionAnimation.frames.count);
 
     [[CCAnimationCache sharedAnimationCache] addAnimation:explosionAnimation name:@"Explosion"];
 }
