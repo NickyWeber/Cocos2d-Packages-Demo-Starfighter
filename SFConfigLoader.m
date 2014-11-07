@@ -3,6 +3,8 @@
 #import "SFRenderComponent.h"
 #import "SFCollisionComponent.h"
 #import "CCAnimation.h"
+#import "SFLootComponent.h"
+#import "SFDropTable.h"
 
 @interface SFConfigLoader()
 
@@ -86,10 +88,15 @@
         CCSprite *valueToSet = [CCSprite spriteWithImageNamed:value];
         [component setValue:valueToSet forKey:@"node"];
     }
+    else if ([component isKindOfClass:[SFLootComponent class]] && [key isEqualToString:@"dropTable"])
+    {
+        SFDropTable *dropTable = [self createDropTable:value];
+        [((SFLootComponent *)component) setDropTable:dropTable];
+    }
     else if ([component isKindOfClass:[SFRenderComponent class]] && [key isEqualToString:@"defaultAnimation"])
     {
         CCActionAnimate *action = [self loadAnimation:value repeatForever:YES];
-        [[((SFRenderComponent *)component) node] runAction:action];
+        [((SFRenderComponent *)component) setDefaultActionAnimate:action];
     }
     else if ([component isKindOfClass:[SFCollisionComponent class]] && [key isEqualToString:@"hitAnimation"])
     {
@@ -112,6 +119,14 @@
     }
 }
 
+- (SFDropTable *)createDropTable:(id)value
+{
+    SFDropTable *dropTable = [[SFDropTable  alloc] init];
+    dropTable.chance = [value[@"chance"] doubleValue];
+    dropTable.list = value[@"list"];
+    return dropTable;
+}
+
 - (CCActionAnimate *)loadAnimation:(id)value repeatForever:(BOOL)repeatForever
 {
     CCAnimation *animation = [CCAnimation animation];
@@ -125,7 +140,7 @@
     animation.restoreOriginalFrame = [value[@"restoreOriginalFrame"] boolValue];
 
     CCActionAnimate *actionAnimate = [CCActionAnimate actionWithAnimation:animation];
-    actionAnimate.duration = [value[@"duration"] floatValue];
+    actionAnimate.duration = [value[@"duration"] doubleValue];
 
     if (repeatForever)
     {

@@ -96,12 +96,13 @@
 		E525F0880539B2BBDFB57DD2 /* SFHUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* SFHUDLayer.m */; };
 		E525F098159DAE3092972600 /* SFCollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCCF8D7C1FD71913358C /* SFCollisionSystem.m */; };
 		E525F0DD5564A85DB6B6469C /* SFGamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* SFGamePlayLayer.m */; };
-		E525F0F54896D9A4F7F4951B /* EnemyShot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525FB6CF0C275611EA358DC /* EnemyShot.json */; };
 		E525F12852DCBC476BCB64CC /* SFWeaponSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCACD2D192D9E418572A /* SFWeaponSystem.m */; };
 		E525F16941679F3A70C1AA53 /* SFGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* SFGamePlayScene.m */; };
+		E525F170297E9D4C660BE410 /* HealthLoot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525FC5F0E23D94988E563A2 /* HealthLoot.json */; };
 		E525F179272E03CA7BB0C55D /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
 		E525F183AE074F1F2CEC05A5 /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* SFConstants.m */; };
 		E525F187B1EF9E6425A6361D /* SFWeaponSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCACD2D192D9E418572A /* SFWeaponSystem.m */; };
+		E525F1A43DAD0EF8299211C5 /* PointLoot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525F12BBB4CBB1A305B039E /* PointLoot.json */; };
 		E525F1ABDDDB26057D1697DB /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */; };
 		E525F1C1CD62C83A817B6BF8 /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AC8FD0C2C6DF58DDDF /* SFBackgroundDebris.m */; };
 		E525F1E279AF6554F5DB68E3 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FDDBE171C661E737C6AD /* CCEffectInvert.m */; };
@@ -111,6 +112,7 @@
 		E525F22B8EFBD6AC1BA91522 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
 		E525F24EE65E381CE93A8362 /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F35E4060FA22372D2D56 /* SFRewardComponent.m */; };
 		E525F28DBB7D35316F3F6468 /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F33A298303CEAD17B470 /* SFHealthSystem.m */; };
+		E525F294252E2DDA989BBB7E /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3AD07F41D56AFB198BE /* SFDropTable.m */; };
 		E525F2D0CC6B46D34E028961 /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F78B0E51C15B17BB5DF5 /* SFComponent.m */; };
 		E525F2D4D973CC0CCC20227D /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F82D300EDF999271AC26 /* SFEntitySystem.m */; };
 		E525F30742E581BCA53AEFBA /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* SFHelper.m */; };
@@ -119,6 +121,7 @@
 		E525F3EC175B9B4452CD9DF4 /* SFTagComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11B68F22F85AC81C956 /* SFTagComponent.m */; };
 		E525F4115E3E19661B920EA9 /* SFWeaponComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F19C15E175FB11810488 /* SFWeaponComponent.m */; };
 		E525F42BB170E68DF95B4DC2 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
+		E525F43FCD269B4D9A5120F0 /* PointLoot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525F12BBB4CBB1A305B039E /* PointLoot.json */; };
 		E525F46C361900888F89423B /* SFLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBB355E9F0C7DCD609EE /* SFLevelController.m */; };
 		E525F472711FA48C285F2AF5 /* SFBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* SFBackgroundLayer.m */; };
 		E525F481736453057C9E5C83 /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E0DCE0A4472071F4D3 /* SFHealthComponent.m */; };
@@ -129,22 +132,22 @@
 		E525F5056396262B97612CD5 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
 		E525F50CE65AFA7832C184A1 /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F896260E422363BD2EFA /* SFMoveComponent.m */; };
 		E525F5762EEB3EC2D5EA49B5 /* SFHUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* SFHUDLayer.m */; };
-		E525F58E892E3605A0396B46 /* EnemyShot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525FB6CF0C275611EA358DC /* EnemyShot.json */; };
 		E525F5957BA86C84CE570E2D /* SFCollisionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCFEFB78C8CAD2E233C1 /* SFCollisionComponent.m */; };
 		E525F5A7DE89C687F08BC3D5 /* SFEntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F75BFE739F3339BFBFDC /* SFEntityManager.m */; };
 		E525F5A8892F0C6178AA4F54 /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* SFConstants.m */; };
 		E525F5AD074AD49A741EAE68 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */; };
 		E525F5BDBBFED07AF765329B /* SFGamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* SFGamePlayLayer.m */; };
+		E525F5C963C5C0A47BFC97BA /* PointLoot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525F12BBB4CBB1A305B039E /* PointLoot.json */; };
 		E525F5FAB80C23CB36D447C9 /* SFCollisionRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F54056E2E990B9CF31AF /* SFCollisionRewardComponent.m */; };
 		E525F5FF86D2CA3CD2CBBFE6 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
 		E525F625F68099A87A7AD214 /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */; };
+		E525F639534BDB82C577D404 /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3AD07F41D56AFB198BE /* SFDropTable.m */; };
 		E525F66E9108621DE194C727 /* SFTagComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11B68F22F85AC81C956 /* SFTagComponent.m */; };
 		E525F66EBDBF3C6D10723368 /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* SFHelper.m */; };
 		E525F6A40943A5BB4EFE9371 /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F896260E422363BD2EFA /* SFMoveComponent.m */; };
 		E525F6B7E6C27F059CDAE500 /* SFConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE1DB47E4861682A789A /* SFConfigLoader.m */; };
 		E525F6C696DC140BA215DD38 /* SFGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* SFGamePlayScene.m */; };
 		E525F6D0166D5449DEA47719 /* SFGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* SFGamePlayScene.m */; };
-		E525F6DCE2BFC9AC0FC91798 /* EnemyShot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525FB6CF0C275611EA358DC /* EnemyShot.json */; };
 		E525F6E07106EB0D9EFCEA8B /* CCLabelTTF+GameFont.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB5CBBD2CF718283C6B1 /* CCLabelTTF+GameFont.m */; };
 		E525F6E0AC162497F19E38FC /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */; };
 		E525F6FAB7DC50DD5D162BDF /* SFBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* SFBoundingBox.m */; };
@@ -154,6 +157,7 @@
 		E525F78D102ECF683DA0845C /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F33A298303CEAD17B470 /* SFHealthSystem.m */; };
 		E525F78D4B5E7CC96671DBF4 /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* SFConstants.m */; };
 		E525F7BDA149297C2063D73D /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */; };
+		E525F7D46BC4D3E29F08B15E /* HealthLoot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525FC5F0E23D94988E563A2 /* HealthLoot.json */; };
 		E525F7D9C8B8DBA1995B66E2 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FDDBE171C661E737C6AD /* CCEffectInvert.m */; };
 		E525F7DFE1857D0A640D7649 /* SFBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* SFBackgroundLayer.m */; };
 		E525F7E8A2D5BCD0152CF639 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
@@ -176,14 +180,17 @@
 		E525F9442A189B916FBF52C8 /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6784D60787B11CAB70D /* SFEntityFactory.m */; };
 		E525F989219BB060773E3B26 /* SFHUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* SFHUDLayer.m */; };
 		E525F98B0BF4056ABB4F5286 /* SFWeaponComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F19C15E175FB11810488 /* SFWeaponComponent.m */; };
+		E525F99786F48E7EB6A000A1 /* EnemyShot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525F5589CC5055C5496DCED /* EnemyShot.json */; };
 		E525F99CE573887A8AD71EA1 /* SFCollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCCF8D7C1FD71913358C /* SFCollisionSystem.m */; };
 		E525F99F4C3373E16CCBE372 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */; };
 		E525F9A524C2E53620EC8002 /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E65A961703CDC23DAC /* SFEntity.m */; };
+		E525F9A8341A09B7E8D186EA /* ShieldLoot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525F808B08A36F7A5B9BF57 /* ShieldLoot.json */; };
 		E525F9BDE59C9F410B716346 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FDDBE171C661E737C6AD /* CCEffectInvert.m */; };
 		E525F9D2D7453E6AB732B220 /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E65A961703CDC23DAC /* SFEntity.m */; };
 		E525F9D94AFF3D050F4AF5CD /* Enemy.json in Resources */ = {isa = PBXBuildFile; fileRef = E525FBF658234AD9B71987BB /* Enemy.json */; };
 		E525F9E9AD46D66CF26A3CCF /* SFLootComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F42D2FBC7E24F0781D59 /* SFLootComponent.m */; };
 		E525FA07F082296C2F44F217 /* SFBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* SFBoundingBox.m */; };
+		E525FA35140B6D77AAEF2848 /* EnemyShot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525F5589CC5055C5496DCED /* EnemyShot.json */; };
 		E525FA3B2FE8EAEBE19B6617 /* CCLabelTTF+GameFont.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB5CBBD2CF718283C6B1 /* CCLabelTTF+GameFont.m */; };
 		E525FA422CEA8CCD007880F3 /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */; };
 		E525FA56C045E76EFD4E3FDD /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F78B0E51C15B17BB5DF5 /* SFComponent.m */; };
@@ -200,11 +207,14 @@
 		E525FC242ED3B44DB525C7ED /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F35E4060FA22372D2D56 /* SFRewardComponent.m */; };
 		E525FC35AE2324E0D2580B02 /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6784D60787B11CAB70D /* SFEntityFactory.m */; };
 		E525FC3C25717ECF40DD0B87 /* SFTimeToLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */; };
+		E525FC3DA5C198C76A5864C4 /* HealthLoot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525FC5F0E23D94988E563A2 /* HealthLoot.json */; };
 		E525FC603553E6AF012C3F4D /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
+		E525FC715377E2EA9F29C102 /* EnemyShot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525F5589CC5055C5496DCED /* EnemyShot.json */; };
 		E525FC81E5B9DACB6E80F320 /* SFCollisionRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F54056E2E990B9CF31AF /* SFCollisionRewardComponent.m */; };
 		E525FCABF92C92B87CC79BC5 /* SFWeaponComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F19C15E175FB11810488 /* SFWeaponComponent.m */; };
 		E525FCBCDF27434575DD6DC5 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
 		E525FCD9E3D8F02E37C367B1 /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AC8FD0C2C6DF58DDDF /* SFBackgroundDebris.m */; };
+		E525FCF9955B4D43AB575C90 /* ShieldLoot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525F808B08A36F7A5B9BF57 /* ShieldLoot.json */; };
 		E525FD2440F1E577A7BA5220 /* Enemy.json in Resources */ = {isa = PBXBuildFile; fileRef = E525FBF658234AD9B71987BB /* Enemy.json */; };
 		E525FD36BBC10C604FFDE474 /* SFTimeToLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */; };
 		E525FD59762E512B5F1C9611 /* SFLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBB355E9F0C7DCD609EE /* SFLevelController.m */; };
@@ -217,6 +227,7 @@
 		E525FE6801C8729467003314 /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */; };
 		E525FE96D4385C39B1A92335 /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AC8FD0C2C6DF58DDDF /* SFBackgroundDebris.m */; };
 		E525FEC721CD410DE6625619 /* CCLabelTTF+GameFont.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB5CBBD2CF718283C6B1 /* CCLabelTTF+GameFont.m */; };
+		E525FECFFE484FFD64946CD1 /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3AD07F41D56AFB198BE /* SFDropTable.m */; };
 		E525FED1897902A07EC991BD /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E0DCE0A4472071F4D3 /* SFHealthComponent.m */; };
 		E525FF41F1D681A45C5FEF68 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
 		E525FF47CF4472461C8F95FB /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F82D300EDF999271AC26 /* SFEntitySystem.m */; };
@@ -224,6 +235,7 @@
 		E525FF733821E1C9165D3D04 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
 		E525FF8B5E204F02A11DE11F /* SFCollisionDamageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11C9D3978D6F900029E /* SFCollisionDamageComponent.m */; };
 		E525FFA64C063CBDABA3FC47 /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* SFHelper.m */; };
+		E525FFB99B99D89D16C34004 /* ShieldLoot.json in Resources */ = {isa = PBXBuildFile; fileRef = E525F808B08A36F7A5B9BF57 /* ShieldLoot.json */; };
 		E525FFD696C3F71DE1392F29 /* SFRenderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F892297853C4569B6A30 /* SFRenderComponent.m */; };
 		E525FFE5FA46E7C92E7A3CE1 /* SFCollisionDamageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11C9D3978D6F900029E /* SFCollisionDamageComponent.m */; };
 /* End PBXBuildFile section */
@@ -366,6 +378,7 @@
 		E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimeToLiveSystem.m; sourceTree = "<group>"; };
 		E525F11B68F22F85AC81C956 /* SFTagComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTagComponent.m; sourceTree = "<group>"; };
 		E525F11C9D3978D6F900029E /* SFCollisionDamageComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionDamageComponent.m; sourceTree = "<group>"; };
+		E525F12BBB4CBB1A305B039E /* PointLoot.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = PointLoot.json; sourceTree = "<group>"; };
 		E525F15B179C2F1CB288D832 /* SFWeaponComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWeaponComponent.h; sourceTree = "<group>"; };
 		E525F1977383887308B4098D /* SFHUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHUDLayer.m; sourceTree = "<group>"; };
 		E525F19C15E175FB11810488 /* SFWeaponComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWeaponComponent.m; sourceTree = "<group>"; };
@@ -382,6 +395,7 @@
 		E525F34D7773E9CDB8BC9B04 /* SFMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMoveSystem.h; sourceTree = "<group>"; };
 		E525F35E4060FA22372D2D56 /* SFRewardComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRewardComponent.m; sourceTree = "<group>"; };
 		E525F3AD04305F7AB059A5DA /* SFTagComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTagComponent.h; sourceTree = "<group>"; };
+		E525F3AD07F41D56AFB198BE /* SFDropTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDropTable.m; sourceTree = "<group>"; };
 		E525F3CA10D9904CB89DDA72 /* SFEntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityManager.h; sourceTree = "<group>"; };
 		E525F3D51EA67127222D6A96 /* SFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFConstants.m; sourceTree = "<group>"; };
 		E525F403B739C47888FA5590 /* SFBoundingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBoundingBox.h; sourceTree = "<group>"; };
@@ -394,8 +408,10 @@
 		E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimeToLiveComponent.m; sourceTree = "<group>"; };
 		E525F4AC2D79CD955CECA40D /* SFRewardComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRewardComponent.h; sourceTree = "<group>"; };
 		E525F4C6485C20368767BDE7 /* SFCollisionRewardComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionRewardComponent.h; sourceTree = "<group>"; };
+		E525F4ED0612F6AC79A91C46 /* SFDropTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDropTable.h; sourceTree = "<group>"; };
 		E525F504441FEA7B27C69919 /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
 		E525F54056E2E990B9CF31AF /* SFCollisionRewardComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionRewardComponent.m; sourceTree = "<group>"; };
+		E525F5589CC5055C5496DCED /* EnemyShot.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = EnemyShot.json; sourceTree = "<group>"; };
 		E525F5A1B3FB2125BED4AF59 /* SFBackgroundDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFBackgroundDebris.h; path = Source/src/GameObjects/SFBackgroundDebris.h; sourceTree = SOURCE_ROOT; };
 		E525F5B447DB0681A5F0F59A /* SFCollisionDamageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionDamageComponent.h; sourceTree = "<group>"; };
 		E525F6237FDAA87E8CD0E445 /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
@@ -410,6 +426,7 @@
 		E525F7E9973048779F98F0E2 /* SFBoundingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBoundingBox.m; sourceTree = "<group>"; };
 		E525F7EB5DA3CCAECD61449E /* SFHUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHUDLayer.h; sourceTree = "<group>"; };
 		E525F7F6BACC943D680305F7 /* SFGamePlaySceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFGamePlaySceneDelegate.h; path = Source/src/Layers/SFGamePlaySceneDelegate.h; sourceTree = SOURCE_ROOT; };
+		E525F808B08A36F7A5B9BF57 /* ShieldLoot.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = ShieldLoot.json; sourceTree = "<group>"; };
 		E525F82D300EDF999271AC26 /* SFEntitySystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntitySystem.m; sourceTree = "<group>"; };
 		E525F892297853C4569B6A30 /* SFRenderComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRenderComponent.m; sourceTree = "<group>"; };
 		E525F896260E422363BD2EFA /* SFMoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMoveComponent.m; sourceTree = "<group>"; };
@@ -424,7 +441,6 @@
 		E525FB428FCC9A5C4C3170D7 /* SFGamePlayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGamePlayLayer.m; sourceTree = "<group>"; };
 		E525FB5967BFE42130910AC7 /* SFEntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityFactory.h; sourceTree = "<group>"; };
 		E525FB5CBBD2CF718283C6B1 /* CCLabelTTF+GameFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCLabelTTF+GameFont.m"; sourceTree = "<group>"; };
-		E525FB6CF0C275611EA358DC /* EnemyShot.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = EnemyShot.json; sourceTree = "<group>"; };
 		E525FB7C76A1902BDDE010D1 /* SFMoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMoveComponent.h; sourceTree = "<group>"; };
 		E525FBA078C043671FE7CFA6 /* SneakyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
 		E525FBB355E9F0C7DCD609EE /* SFLevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLevelController.m; sourceTree = "<group>"; };
@@ -432,6 +448,7 @@
 		E525FBF658234AD9B71987BB /* Enemy.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = Enemy.json; sourceTree = "<group>"; };
 		E525FC191827BE76F6B72BA2 /* SFGamePlayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGamePlayLayer.h; sourceTree = "<group>"; };
 		E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMoveSystem.m; sourceTree = "<group>"; };
+		E525FC5F0E23D94988E563A2 /* HealthLoot.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = HealthLoot.json; sourceTree = "<group>"; };
 		E525FC658E8822105FAB2FD5 /* SFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFConstants.h; sourceTree = "<group>"; };
 		E525FCACD2D192D9E418572A /* SFWeaponSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWeaponSystem.m; sourceTree = "<group>"; };
 		E525FCCF8D7C1FD71913358C /* SFCollisionSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionSystem.m; sourceTree = "<group>"; };
@@ -620,7 +637,7 @@
 				7A40366219DDF8CB007B6E8F /* iOS */,
 				7A40366319DDF8D4007B6E8F /* Android */,
 				7A40366419DDF8DB007B6E8F /* Mac */,
-				E525FB6CF0C275611EA358DC /* EnemyShot.json */,
+				E525FC5F0E23D94988E563A2 /* HealthLoot.json */,
 			);
 			name = Platforms;
 			sourceTree = "<group>";
@@ -728,6 +745,8 @@
 				B77F1CCF17B978D8009739AE /* Supporting Files */,
 				B77F1B3017B978D7009739AE /* Frameworks */,
 				B77F1B2F17B978D7009739AE /* Products */,
+				E525F3AD07F41D56AFB198BE /* SFDropTable.m */,
+				E525F4ED0612F6AC79A91C46 /* SFDropTable.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -775,6 +794,9 @@
 				B78A0B0F198AF87200C63841 /* Published-Android */,
 				E525FBF658234AD9B71987BB /* Enemy.json */,
 				E525FBCA77AE5306B44FCD22 /* LaserBeam.json */,
+				E525F5589CC5055C5496DCED /* EnemyShot.json */,
+				E525F12BBB4CBB1A305B039E /* PointLoot.json */,
+				E525F808B08A36F7A5B9BF57 /* ShieldLoot.json */,
 			);
 			name = Resources;
 			path = Source/Resources;
@@ -1175,7 +1197,10 @@
 				7A4036F619DE3FFC007B6E8F /* Published-iOS in Resources */,
 				E525F9D94AFF3D050F4AF5CD /* Enemy.json in Resources */,
 				E525FBE1B77035F77A894A6F /* LaserBeam.json in Resources */,
-				E525F6DCE2BFC9AC0FC91798 /* EnemyShot.json in Resources */,
+				E525F99786F48E7EB6A000A1 /* EnemyShot.json in Resources */,
+				E525F5C963C5C0A47BFC97BA /* PointLoot.json in Resources */,
+				E525FFB99B99D89D16C34004 /* ShieldLoot.json in Resources */,
+				E525F7D46BC4D3E29F08B15E /* HealthLoot.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1200,7 +1225,10 @@
 				927F61BB196C771E000F43EF /* iPad-old.png in Resources */,
 				E525FD2440F1E577A7BA5220 /* Enemy.json in Resources */,
 				E525FB380772CD16A54E537A /* LaserBeam.json in Resources */,
-				E525F58E892E3605A0396B46 /* EnemyShot.json in Resources */,
+				E525FA35140B6D77AAEF2848 /* EnemyShot.json in Resources */,
+				E525F1A43DAD0EF8299211C5 /* PointLoot.json in Resources */,
+				E525F9A8341A09B7E8D186EA /* ShieldLoot.json in Resources */,
+				E525F170297E9D4C660BE410 /* HealthLoot.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1225,7 +1253,10 @@
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 				E525FA7F238380D61BEEAB6F /* Enemy.json in Resources */,
 				E525F789B79A3A88EFD6F2A6 /* LaserBeam.json in Resources */,
-				E525F0F54896D9A4F7F4951B /* EnemyShot.json in Resources */,
+				E525FC715377E2EA9F29C102 /* EnemyShot.json in Resources */,
+				E525F43FCD269B4D9A5120F0 /* PointLoot.json in Resources */,
+				E525FCF9955B4D43AB575C90 /* ShieldLoot.json in Resources */,
+				E525FC3DA5C198C76A5864C4 /* HealthLoot.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1326,6 +1357,7 @@
 				E525FCD9E3D8F02E37C367B1 /* SFBackgroundDebris.m in Sources */,
 				E525F0156B7CF52848E81791 /* SFTrigonometryHelper.m in Sources */,
 				E525F897E746F05C949A87F8 /* SFConfigLoader.m in Sources */,
+				E525F294252E2DDA989BBB7E /* SFDropTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1371,6 +1403,7 @@
 				E525FE96D4385C39B1A92335 /* SFBackgroundDebris.m in Sources */,
 				E525FC15C064BFC4E805C892 /* SFTrigonometryHelper.m in Sources */,
 				E525F1FF8BE24075C7BD03E8 /* SFConfigLoader.m in Sources */,
+				E525F639534BDB82C577D404 /* SFDropTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1422,6 +1455,7 @@
 				E525F1C1CD62C83A817B6BF8 /* SFBackgroundDebris.m in Sources */,
 				E525F033A6AAA603DC3A96B9 /* SFTrigonometryHelper.m in Sources */,
 				E525F6B7E6C27F059CDAE500 /* SFConfigLoader.m in Sources */,
+				E525FECFFE484FFD64946CD1 /* SFDropTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

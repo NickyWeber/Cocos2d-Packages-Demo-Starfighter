@@ -1,0 +1,51 @@
+{
+    "components" :
+    [
+        {
+            "name" : "level",
+            "level" : 1
+        },
+        {
+            "name" : "render",
+            "spriteName" : "Sprites/Loot/HealthLoot_1.png",
+            "defaultAnimation" : {
+                "spriteFrames": [
+                    "Sprites/Loot/HealthLoot_1.png",
+                    "Sprites/Loot/HealthLoot_1.png",
+                    "Sprites/Loot/HealthLoot_1.png",
+                    "Sprites/Loot/HealthLoot_1.png",
+                    "Sprites/Loot/HealthLoot_1.png",
+                    "Sprites/Loot/HealthLoot_1.png",
+                    "Sprites/Loot/HealthLoot_2.png"
+                ],
+                "delayPerUnit": 0.2,
+                "duration": 1.0,
+                "restoreOriginalFrame": true
+            }
+        },
+        {
+            "name" : "tag",
+            "tags" :
+            [
+                "Loot"
+            ]
+        },
+        {
+            "name" : "collision",
+            "collisionWhiteListTags" :
+                [
+                    "Spaceship"
+                ],
+            "despawnAfterCollision" : true
+        },
+        {
+            "name" : "timeToLive",
+            "timeToLive" : 5.0,
+            "fadeDuration" : 2.0
+        },
+        {
+            "name" : "collisionReward",
+            "health" : 20
+        }
+    ]
+}

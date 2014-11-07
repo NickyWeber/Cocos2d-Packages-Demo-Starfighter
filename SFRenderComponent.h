@@ -5,6 +5,7 @@
 @interface SFRenderComponent : SFComponent
 
 @property (nonatomic, strong) CCNode *node;
+@property (nonatomic, strong) id defaultActionAnimate;
 
 - (instancetype)initWithSprite:(CCNode *)node;
 

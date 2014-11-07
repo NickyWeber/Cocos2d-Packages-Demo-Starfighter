@@ -57,7 +57,16 @@
             ]
         },
         {
-            "name" : "loot"
+            "name" : "loot",
+            "dropTable" :
+            {
+                "chance" : 1.0,
+                "list" : [
+                    "HealthLoot",
+                    "ShieldLoot",
+                    "PointLoot"
+                ]
+            }
         },
         {
             "name" : "collision",
