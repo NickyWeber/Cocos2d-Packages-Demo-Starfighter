@@ -1,3 +1,4 @@
+
 #import "SFGamePlayScene.h"
 #import "SFBackgroundLayer.h"
 #import "SFHUDLayer.h"
@@ -15,6 +16,8 @@
 #import "SFConstants.h"
 #import "SFEntityFactory.h"
 #import "SFEntityManager.h"
+#import "SFLevel.h"
+#import "SFLevelConfigLoader.h"
 
 #if __CC_PLATFORM_MAC
 #import "SFKeyEventHandlingDelegate.h"
@@ -63,6 +66,7 @@
 @property (nonatomic) int gameScore;
 
 
+@property (nonatomic, strong) NSArray *levels;
 #if __CC_PLATFORM_MAC
 @property (nonatomic, strong) SFKeyEventHandler <SFKeyEventHandlingDelegate>* keyEventHandler;
 #endif
@@ -81,14 +85,22 @@
         self.hudLayer = [SFHUDLayer node];
         [self addChild:_hudLayer z:2];
 
-        self.gamePlayLayer = [[SFGamePlayLayer alloc] initWithDelegate:self entityManager:[SFEntityManager sharedManager]];
-        [self addChild:_gamePlayLayer z:1];
-
         self.backgroundLayer = [SFBackgroundLayer node];
         [self addChild:_backgroundLayer z:0];
 
         [SFEntityFactory sharedFactory].delegate = self;
         [SFEntityFactory sharedFactory].entityManager = [SFEntityManager sharedManager];
+
+        [[SFEntityManager sharedManager] removeAllEntities];
+
+        SFLevelConfigLoader *levelConfigLoader = [[SFLevelConfigLoader alloc] init];
+        self.levels = [levelConfigLoader loadLevelsWithFileName:@"Levels.json"];
+        NSAssert(_levels != nil, @"Level parsing failed");
+        NSAssert([_levels count] > 0, @"No levels to play");
+
+        self.gamePlayLayer = [[SFGamePlayLayer alloc] initWithDelegate:self entityManager:[SFEntityManager sharedManager] startLevel:_levels[0]];
+        [self addChild:_gamePlayLayer z:1];
+
 
 #if __CC_PLATFORM_MAC
         self.keyEventHandler = [[SFKeyEventHandler alloc] init];
@@ -236,7 +248,7 @@
     return sequence2;
 }
 
-- (void)levelCompleted:(NSUInteger)level
+- (void)levelCompleted:(SFLevel *)level
 {
     CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
 
@@ -245,7 +257,9 @@
     CCActionFadeIn *actionFadeIn = [CCActionFadeIn actionWithDuration:0.5];
     CCActionSequence *sequence;
 
-    if (level == GAME_LEVEL_MAX)
+    SFLevel *nextLevel = [self nextLevelForCurrentLevel:level];
+
+    if (nextLevel == nil)
     {
         [self saveHighscore];
 
@@ -272,7 +286,7 @@
         label.position = ccp((CGFloat) (screenSize.width / 2.0),
                              (CGFloat) (screenSize.height * 0.6666));
 
-        label.string = [NSString stringWithFormat:@"Level %lu", level + 1];
+        label.string = nextLevel.name;
 
         sequence = [CCActionSequence actions:actionFadeIn,
                                              [CCActionDelay actionWithDuration:5.0],
@@ -281,7 +295,7 @@
                                                  [label removeFromParentAndCleanup:YES];
                                              }],
                                              [CCActionCallBlock actionWithBlock:^{
-                                                 [_gamePlayLayer advanceToLevel:level + 1];
+                                                 [_gamePlayLayer advanceToLevel:nextLevel];
                                              }], nil];
     }
 
@@ -291,6 +305,20 @@
 
     [_hudLayer addChild:label];
     [label runAction:sequence];
+}
+
+- (SFLevel *)nextLevelForCurrentLevel:(SFLevel *)level
+{
+    NSUInteger index = [_levels indexOfObject:level];
+
+    if (index + 1 >= [_levels count])
+    {
+        return nil;
+    }
+    else
+    {
+        return _levels[index+1];
+    }
 }
 
 - (void)touchBegan:(CCTouch *)touch event:(CCTouchEvent *)event

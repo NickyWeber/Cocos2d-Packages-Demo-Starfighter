@@ -5,14 +5,14 @@
 @class SFEntity;
 @class SFLootComponent;
 @class SFWeaponComponent;
-@class SFConfigLoader;
+@class SFEntityConfigLoader;
 
 
 @interface SFEntityFactory : NSObject
 
 @property (nonatomic, strong) id <SFGamePlaySceneDelegate> delegate;
 @property (nonatomic, strong) SFEntityManager *entityManager;
-@property (nonatomic) NSUInteger currentLevel;
+@property (nonatomic, copy) NSString *currentLevelId;
 
 + (SFEntityFactory *)sharedFactory;
 

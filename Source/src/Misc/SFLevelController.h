@@ -9,12 +9,13 @@
 #import "ccTypes.h"
 
 @protocol SFGamePlaySceneDelegate;
+@class SFLevel;
 
 
 @interface SFLevelController : NSObject
 
 @property (nonatomic, weak) id<SFGamePlaySceneDelegate> delegate;
-@property (nonatomic) NSUInteger level;
+@property (nonatomic, strong) SFLevel *level;
 @property (nonatomic) NSUInteger totalEnemies;
 @property (nonatomic) BOOL enabled;
 

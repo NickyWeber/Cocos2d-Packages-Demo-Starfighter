@@ -24,4 +24,5 @@
 - (NSArray *)entitiesWithTag:(NSString *)tag;
 
 
+- (void)removeAllEntities;
 @end

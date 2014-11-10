@@ -2,7 +2,7 @@
 #import "SFBackgroundLayer.h"
 #import "CCLabelTTF+GameFont.h"
 #import "SFGamePlayScene.h"
-#import "SFConfigLoader.h"
+#import "SFEntityConfigLoader.h"
 
 
 @implementation SFGameMenuScene

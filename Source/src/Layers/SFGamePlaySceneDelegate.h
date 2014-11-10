@@ -3,6 +3,7 @@
 @class SneakyButton;
 @class SneakyJoystick;
 @class SFSpaceship;
+@class SFLevel;
 
 @protocol SFGamePlaySceneDelegate <NSObject>
 
@@ -19,7 +20,7 @@
 - (CGPoint)dPadVelocity;
 - (BOOL)firing;
 
-- (void)levelCompleted:(NSUInteger)level;
+- (void)levelCompleted:(SFLevel *)level;
 - (void)gameOver;
 
 @end

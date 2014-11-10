@@ -1,4 +1,4 @@
-#import "SFConfigLoader.h"
+#import "SFEntityConfigLoader.h"
 #import "SFEntity.h"
 #import "SFRenderComponent.h"
 #import "SFCollisionComponent.h"
@@ -6,14 +6,14 @@
 #import "SFLootComponent.h"
 #import "SFDropTable.h"
 
-@interface SFConfigLoader()
+@interface SFEntityConfigLoader ()
 
 @property (nonatomic, strong) NSMutableDictionary *configCache;
 
 @end
 
 
-@implementation SFConfigLoader
+@implementation SFEntityConfigLoader
 
 - (id)init
 {
@@ -27,7 +27,7 @@
     return self;
 }
 
-- (NSArray *)componentsWithConfigName:(NSString *)name level:(NSUInteger)level
+- (NSArray *)componentsWithConfigName:(NSString *)name levelId:(NSString *)levelId
 {
     NSAssert(name != nil, @"name must not be nil");
 
@@ -64,21 +64,23 @@
     }
 
     NSDictionary *levelDataDict = jsonDict[@"levelData"];
-    [self patchComponents:components forLevel:level withLevelData:levelDataDict];
+    [self patchComponents:components forLevelId:levelId withLevelData:levelDataDict];
 
     return components;
 }
 
-- (void)patchComponents:(NSMutableArray *)componentsToPatch forLevel:(NSUInteger)level withLevelData:(NSDictionary *)levelData
+- (void)patchComponents:(NSMutableArray *)componentsToPatch forLevelId:(NSString *)levelId withLevelData:(NSDictionary *)levelData
 {
-    if (!levelData
-        || level <= 1)
+    if (!levelData)
     {
         return;
     }
 
-    NSString *levelIndex = [NSString stringWithFormat:@"%lu", level];
-    NSArray *componentsToPatchData = levelData[levelIndex];
+    NSArray *componentsToPatchData = levelData[levelId];
+    if (!componentsToPatchData)
+    {
+        return;
+    }
 
     for (NSDictionary *componentDict in componentsToPatchData)
     {

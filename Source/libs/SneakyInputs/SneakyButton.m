@@ -8,6 +8,7 @@
 
 #import "SneakyButton.h"
 #import "SneakyJoystick.h"
+#import "SFLevel.h"
 
 @interface SneakyButton()
 

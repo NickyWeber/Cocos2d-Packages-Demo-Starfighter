@@ -8,7 +8,7 @@
 #import "SFMoveComponent.h"
 #import "SFTagComponent.h"
 #import "SFCollisionDamageComponent.h"
-#import "SFConfigLoader.h"
+#import "SFEntityConfigLoader.h"
 #import "SFLootComponent.h"
 #import "SFWeaponComponent.h"
 #import "SFTrigonometryHelper.h"
@@ -16,7 +16,7 @@
 #import "SFWeaponStatsComponent.h"
 
 @interface SFEntityFactory ()
-@property (nonatomic, strong) SFConfigLoader *configLoader;
+@property (nonatomic, strong) SFEntityConfigLoader *configLoader;
 @end
 
 @implementation SFEntityFactory
@@ -37,8 +37,7 @@
     self = [super init];
     if (self)
     {
-        self.configLoader = [[SFConfigLoader alloc] init];
-        self.currentLevel = 1;
+        self.configLoader = [[SFEntityConfigLoader alloc] init];
         [self setupAnimations];
     }
 
@@ -113,7 +112,7 @@
 
 - (SFEntity *)addEntityWithName:(NSString *)name atPosition:(CGPoint)position
 {
-    NSArray *components = [_configLoader componentsWithConfigName:name level:_currentLevel];
+    NSArray *components = [_configLoader componentsWithConfigName:name levelId:_currentLevelId];
 
     SFEntity *result = [_entityManager createEntityWithComponents:components];
     result.name = name;

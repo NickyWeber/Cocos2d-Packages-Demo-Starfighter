@@ -145,4 +145,10 @@
     return newEntity;
 }
 
+- (void)removeAllEntities
+{
+    [_entities removeAllObjects];
+    [_componentsByClass removeAllObjects];
+}
+
 @end

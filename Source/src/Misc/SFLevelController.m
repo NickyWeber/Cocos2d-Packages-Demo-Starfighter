@@ -9,6 +9,7 @@
 #import "SFGamePlaySceneDelegate.h"
 #import "SFEntityManager.h"
 #import "SFEntityFactory.h"
+#import "SFLevel.h"
 
 
 @interface SFLevelController ()
@@ -34,7 +35,6 @@
 
         self.totalSpawned = 0;
 		self.delegate = aDelegate;
-        self.level = 1;
         self.enabled = YES;
         self.lastSpawnTime = [[NSDate date] timeIntervalSince1970] - 10000000;
         self.spawnTime = 3.0;
@@ -43,21 +43,16 @@
 	return self;
 }
 
-- (NSUInteger)totalEnemiesForLevel:(NSUInteger)level
-{
-    return (NSUInteger) (3+ 3 * (level - 1));
-}
-
-- (void)setLevel:(NSUInteger)level
+- (void)setLevel:(SFLevel *)level
 {
     self.complete = NO;
     self.totalSpawned = 0;
 
     _level = level;
 
-    [SFEntityFactory sharedFactory].currentLevel = _level;
+    [SFEntityFactory sharedFactory].currentLevelId = level.id;
 
-    self.totalEnemies = [self totalEnemiesForLevel:_level];
+    self.totalEnemies = _level.enemyCount;
 
     // NSLog(@"*** New Level: %u - total enemies %u", level, _totalEnemies);
     // NSLog(@"%@", [NSThread callStackSymbols]);

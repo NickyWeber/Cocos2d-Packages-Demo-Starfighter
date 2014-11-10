@@ -12,6 +12,7 @@
 #import "SFRenderComponent.h"
 #import "SFHealthComponent.h"
 #import "SFEntityFactory.h"
+#import "SFLevel.h"
 #import "SFMoveSystem.h"
 #import "SFCollisionSystem.h"
 #import "SFLootComponent.h"
@@ -32,7 +33,7 @@
 
 @implementation SFGamePlayLayer
 
-- (id)initWithDelegate:(id <SFGamePlaySceneDelegate>)aDelegate entityManager:(SFEntityManager *)entityManager
+- (id)initWithDelegate:(id <SFGamePlaySceneDelegate>)aDelegate entityManager:(SFEntityManager *)entityManager startLevel:(SFLevel *)startLevel
 {
 	self = [super init];
 
@@ -40,12 +41,14 @@
 	{
 		NSAssert(aDelegate != nil, @"Delegate has to be set!");
         NSAssert(entityManager != nil, @"entityManager has to be set!");
+        NSAssert(startLevel != nil, @"startLevel has to be set!");
 		NSAssert([aDelegate conformsToProtocol:@protocol(SFGamePlaySceneDelegate)],
 		         @"Delegate has to conform to SFGamePlaySceneDelegate!");
 
 		self.delegate = aDelegate;
         self.entityManager = entityManager;
 		self.levelController = [[SFLevelController alloc] initWithDelegate:_delegate];
+        _levelController.level = startLevel;
 
         self.systems = [NSMutableArray array];
         [_systems addObject:[[SFMoveSystem alloc] initWithEntityManager:_entityManager delegate:aDelegate]];
@@ -108,10 +111,9 @@
 	[self addChild:aGameEntity];
 }
 
-- (void)advanceToLevel:(NSUInteger)level
+- (void)advanceToLevel:(SFLevel *)level
 {
     _levelController.level = level;
-    self.level = level;
 }
 
 - (void)playerDied
