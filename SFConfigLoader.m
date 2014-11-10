@@ -75,6 +75,11 @@
             continue;
         }
 
+        if ([key isEqualToString:@"target"])
+        {
+            NSLog(@"break");
+        }
+
         id value = dictionary[key];
 
         [self setComponentPropertyWithComponent:component key:key value:value];
@@ -103,7 +108,9 @@
         CCActionAnimate *animate = [self loadAnimation:value repeatForever:NO];
         [component setValue:animate forKey:@"hitAnimationAction"];
     }
-    else if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSArray class]])
+    else if ([value isKindOfClass:[NSNumber class]]
+             || [value isKindOfClass:[NSArray class]]
+             || [value isKindOfClass:[NSString class]])
     {
         [component setValue:value forKey:key];
     }

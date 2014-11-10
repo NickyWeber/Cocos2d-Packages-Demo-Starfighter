@@ -23,6 +23,6 @@
 
 - (SFEntity *)addLoot:(SFLootComponent *)lootComponent atPosition:(CGPoint)position;
 
-- (SFEntity *)addLaserBeamWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position;
+- (SFEntity *)addProjectileForWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position;
 
 @end

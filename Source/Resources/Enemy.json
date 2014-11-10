@@ -18,10 +18,9 @@
             "name" : "weapon",
             "enemyWeapon" : true,
             "fireRate" : 0.75,
-            "weaponType" : 1,
-            "timeSinceLastShot" : 100,
-            "power" : 10,
-            "speed" : 200
+            "weaponType" : "EnemyShot",
+            "target" : "Spaceship",
+            "timeSinceLastShot" : 100
         },
         {
             "name" : "health",

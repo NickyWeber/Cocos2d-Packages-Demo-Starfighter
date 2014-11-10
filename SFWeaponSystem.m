@@ -46,8 +46,8 @@
         SFRenderComponent *renderComponent = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:spaceship];
         CGPoint position = renderComponent.node.position;
 
-        [[SFEntityFactory sharedFactory] addLaserBeamWithWeaponComponent:weaponComponent atPosition:ccp(position.x - 16, position.y + 30)];
-        [[SFEntityFactory sharedFactory] addLaserBeamWithWeaponComponent:weaponComponent atPosition:ccp(position.x + 16, position.y + 30)];
+        [[SFEntityFactory sharedFactory] addProjectileForWeaponComponent:weaponComponent atPosition:ccp(position.x - 16, position.y + 30)];
+        [[SFEntityFactory sharedFactory] addProjectileForWeaponComponent:weaponComponent atPosition:ccp(position.x + 16, position.y + 30)];
     }
 
     weaponComponent.timeSinceLastShot += delta;
@@ -62,7 +62,7 @@
         weaponComponent.timeSinceLastShot = 0.0;
 
         SFRenderComponent *renderComponent = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
-        [[SFEntityFactory sharedFactory] addEnemyShotWithWeaponComponent:weaponComponent atPosition:renderComponent.node.position];
+        [[SFEntityFactory sharedFactory] addProjectileForWeaponComponent:weaponComponent atPosition:renderComponent.node.position];
 	}
 
     // [self fireAtPlayer];

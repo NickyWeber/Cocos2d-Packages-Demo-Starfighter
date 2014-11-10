@@ -26,12 +26,24 @@
             ]
         },
         {
+            "name" : "weaponStats",
+            "speed" : 200.0,
+            "damage" : 10
+        },
+        {
             "name" : "collision",
             "collisionWhiteListTags" :
                 [
                     "Spaceship"
                 ],
+            "collisionBlackListTags" :
+                [
+                    "Enemy"
+                ],
             "despawnAfterCollision" : true
+        },
+        {
+            "name" : "collisionDamage"
         }
     ]
 }

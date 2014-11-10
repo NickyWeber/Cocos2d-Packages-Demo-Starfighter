@@ -6,8 +6,9 @@
 @property (nonatomic) BOOL enemyWeapon;
 @property (nonatomic) double fireRate;
 @property (nonatomic) NSUInteger power;
-@property (nonatomic) double speed;
-@property (nonatomic) NSUInteger weaponType;
+@property (nonatomic) NSString *weaponType;
 @property (nonatomic) CCTime timeSinceLastShot;
+@property (nonatomic) NSString *target;
+@property (nonatomic) CGPoint targetVector;
 
 @end

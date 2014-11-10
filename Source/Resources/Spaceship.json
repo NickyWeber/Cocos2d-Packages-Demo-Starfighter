@@ -13,10 +13,15 @@
             "name" : "weapon",
             "enemyWeapon" : false,
             "fireRate" : 2.5,
-            "weaponType" : 2,
-            "timeSinceLastShot" : 100,
-            "power" : 10,
-            "speed" : 400
+            "target" : "static",
+            "targetVector" :
+            {
+                "type" : "point",
+                "x" : 0.0,
+                "y" : 1.0
+            },
+            "weaponType" : "LaserBeam",
+            "timeSinceLastShot" : 100
         },
         {
             "name" : "health",

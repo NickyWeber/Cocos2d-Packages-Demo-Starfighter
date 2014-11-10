@@ -23,6 +23,7 @@
 #import "SFTrigonometryHelper.h"
 #import "SFConfigLoader.h"
 #import "SFDropTable.h"
+#import "SFWeaponStatsComponent.h"
 
 @interface SFEntityFactory ()
 @property (nonatomic, strong) SFConfigLoader *configLoader;
@@ -61,47 +62,57 @@
     return spaceship;
 }
 
-- (SFEntity *)addEnemyShotWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position
+- (SFEntity *)addWeaponProjectileWithName:(NSString *)name atPosition:(CGPoint)position directionVector:(CGPoint)directionVector
 {
-    NSArray *array = [_entityManager allEntitiesPosessingComponentOfClass:[SFTagComponent class]];
+    SFEntity *entity = [self addEntityWithName:name atPosition:position];
+    entity.name = name;
 
-    for (SFEntity *entity in array)
+    SFWeaponStatsComponent *weaponStats = [self.entityManager componentOfClass:[SFWeaponStatsComponent class] forEntity:entity];
+
+    SFCollisionDamageComponent *collisionDamageComponent = [self.entityManager componentOfClass:[SFCollisionDamageComponent class] forEntity:entity];
+    collisionDamageComponent.damage = weaponStats.damage;
+
+    CGPoint vector = ccpMult(directionVector, weaponStats.speed);
+
+    SFMoveComponent *moveComponent = [[SFMoveComponent alloc] initWithVelocity:vector];
+    [_entityManager addComponent:moveComponent toEntity:entity];
+
+    return entity;
+}
+
+- (SFEntity *)addProjectileForWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position
+{
+    CGPoint directionVector = [self projectileVectorForWeaponComponent:weaponComponent andPosition:position];
+
+    SFEntity *result = [self addWeaponProjectileWithName:weaponComponent.weaponType
+                                              atPosition:position
+                                         directionVector:directionVector];
+
+    return result;
+}
+
+- (CGPoint)projectileVectorForWeaponComponent:(SFWeaponComponent *)component andPosition:(CGPoint)position
+{
+    if ([component.target isEqualToString:@"static"])
     {
-        SFTagComponent *tagComponent = [self.entityManager componentOfClass:[SFTagComponent  class] forEntity:entity];
-        if ([tagComponent hasTag:@"Spaceship"])
+        return [SFTrigonometryHelper normalizeVector:component.targetVector];
+    }
+    else if ([component.target isEqualToString:@"Spaceship"])
+    {
+        NSArray *array = [_entityManager allEntitiesPosessingComponentOfClass:[SFTagComponent class]];
+
+        for (SFEntity *entity in array)
         {
-            SFEntity *shot = [self addEntityWithName:@"EnemyShot" atPosition:position];
-            shot.name = @"@EnemyShot";
-
-            SFRenderComponent *renderComponentSpaceship = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
-
-            CGPoint shotVector = [SFTrigonometryHelper calcNormalizedShotVector:position andTargetPosition:renderComponentSpaceship.node.position];
-
-            SFMoveComponent *moveComponent = [[SFMoveComponent alloc] initWithVelocity:ccpMult(shotVector, weaponComponent.speed)];
-            [_entityManager addComponent:moveComponent toEntity:shot];
-
-            SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:weaponComponent.power];
-            [_entityManager addComponent:collisionDamageComponent toEntity:shot];
-
-            return shot;
+            SFTagComponent *tagComponent = [self.entityManager componentOfClass:[SFTagComponent  class] forEntity:entity];
+            if ([tagComponent hasTag:@"Spaceship"])
+            {
+                SFRenderComponent *renderComponentSpaceship = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
+                return [SFTrigonometryHelper calcNormalizedShotVector:position andTargetPosition:renderComponentSpaceship.node.position];
+            }
         }
     }
 
-    return nil;
-}
-
-- (SFEntity *)addLaserBeamWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position
-{
-    SFEntity *result = [self addEntityWithName:@"LaserBeam" atPosition:position];
-    result.name = @"LaserBeam";
-
-    SFMoveComponent *moveComponent = [[SFMoveComponent alloc] initWithVelocity:ccp(0.0, weaponComponent.speed)];
-    [_entityManager addComponent:moveComponent toEntity:result];
-
-    SFCollisionDamageComponent *collisionDamageComponent = [[SFCollisionDamageComponent alloc] initWithDamage:weaponComponent.power];
-    [_entityManager addComponent:collisionDamageComponent toEntity:result];
-
-    return result;
+    return ccp(0.0, 0.0);
 }
 
 - (SFEntity *)addEnemyAtPosition:(CGPoint)position
