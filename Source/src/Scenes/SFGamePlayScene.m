@@ -8,7 +8,6 @@
 #import "SneakyButtonSkinnedBase.h"
 #import "SneakyJoystickSkinnedDPadExample.h"
 #import "CCEffectInvert.h"
-#import "CCLabelTTF+GameFont.h"
 #import "SFHelper.h"
 #import "SFGameMenuScene.h"
 #import "CCAnimation.h"
@@ -18,6 +17,7 @@
 #import "SFEntityManager.h"
 #import "SFLevel.h"
 #import "SFLevelConfigLoader.h"
+#import "SFUIHelper.h"
 
 #if __CC_PLATFORM_MAC
 #import "SFKeyEventHandlingDelegate.h"
@@ -168,7 +168,7 @@
 
     CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
 
-    CCLabelTTF *label = [CCLabelTTF gameLabelWithSize:48.0];
+    CCLabelTTF *label = [SFUIHelper gameLabelWithSize:48.0];
     label.string = @"Game Over";
     label.opacity = 0.0;
 
@@ -218,7 +218,7 @@
 {
     CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
 
-    CCLabelTTF *label2 = [CCLabelTTF gameLabelWithSize:20.0 blockSize:2.0];
+    CCLabelTTF *label2 = [SFUIHelper gameLabelWithSize:20.0 blockSize:2.0];
     label2.string = @"(tap to continue)";
     label2.opacity = 0.0;
     label2.position = ccp((CGFloat) (screenSize.width / 2.0),
@@ -263,7 +263,7 @@
     {
         [self saveHighscore];
 
-        label = [CCLabelTTF gameLabelWithSize:24.0 blockSize:2.0];
+        label = [SFUIHelper gameLabelWithSize:24.0 blockSize:2.0];
         label.string = @"Congratulations!!!\nYou won!";
         label.position = ccp((CGFloat) (screenSize.width / 2.0),
                              (CGFloat) (screenSize.height * 0.75));
@@ -282,7 +282,7 @@
     }
     else
     {
-        label = [CCLabelTTF gameLabelWithSize:36.0];
+        label = [SFUIHelper gameLabelWithSize:36.0];
         label.position = ccp((CGFloat) (screenSize.width / 2.0),
                              (CGFloat) (screenSize.height * 0.6666));
 
@@ -321,15 +321,19 @@
     }
 }
 
+#if __CC_PLATFORM_IOS
 - (void)touchBegan:(CCTouch *)touch event:(CCTouchEvent *)event
 {
     [[CCDirector sharedDirector] replaceScene:[[SFGameMenuScene alloc] init] withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown
                                                                                                                              duration:0.3]];
 }
+#endif
 
+#if __CC_PLATFORM_MAC
 - (void)mouseDown:(NSEvent *)event
 {
     [[CCDirector sharedDirector] replaceScene:[[SFGameMenuScene alloc] init] withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown                                                                                                                            duration:0.3]];
 }
+#endif
 
 @end

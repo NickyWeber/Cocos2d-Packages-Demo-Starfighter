@@ -56,20 +56,19 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
 
+#if TARGET_IPHONE_SIMULATOR
+    NSArray *cachesDirArr = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachesDir = cachesDirArr[0];
+    NSLog(@"Caches dir: %@", cachesDir);
+#endif
+
     return YES;
 }
 
-- (CCScene*) startScene
+- (CCScene *)startScene
 {
     SFGameMenuScene *gameMenuScene = [[SFGameMenuScene alloc] init];
     return gameMenuScene;
-
-
-/*
-    SFGamePlayScene *gamePlayScene = [[SFGamePlayScene alloc] init];
-
-    return gamePlayScene;
-*/
 }
 
 @end

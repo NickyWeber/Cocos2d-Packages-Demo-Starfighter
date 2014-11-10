@@ -1,0 +1,32 @@
+{
+    "components" :
+    [
+        {
+            "name" : "render",
+            "spriteName" : "Sprites/Shots/LaserBeam.png"
+        },
+        {
+            "name" : "tag",
+            "tags" :
+            [
+                "LaserBeam"
+            ]
+        },
+        {
+            "name" : "weaponStats",
+            "speed" : 400.0,
+            "damage" : 10
+        },
+        {
+            "name" : "collision",
+            "collisionBlackListTags" :
+                [
+                    "Spaceship"
+                ],
+            "despawnAfterCollision" : true
+        },
+        {
+            "name" : "collisionDamage"
+        }
+    ]
+}

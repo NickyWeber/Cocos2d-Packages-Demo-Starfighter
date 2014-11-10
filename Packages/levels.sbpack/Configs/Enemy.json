@@ -1,0 +1,94 @@
+{
+    "components" :
+    [
+        {
+            "name" : "move",
+            "velocity" :
+            {
+                "type" : "point",
+                "x" : 0.0,
+                "y" : -100.0
+            }
+        },
+        {
+            "name" : "weapon",
+            "enemyWeapon" : true,
+            "fireRate" : 0.75,
+            "weaponType" : "EnemyShot",
+            "target" : "Spaceship",
+            "timeSinceLastShot" : 100
+        },
+        {
+            "name" : "health",
+            "health" : 50,
+            "healthMax" : 50,
+            "shield" : 0,
+            "shieldMax" : 0
+        },
+        {
+            "name" : "render",
+            "spriteName" : "Sprites/Enemy/Enemy_1.png",
+            "defaultAnimation" : {
+                "spriteFrames": [
+                    "Sprites/Enemy/Enemy_1.png",
+                    "Sprites/Enemy/Enemy_2.png",
+                    "Sprites/Enemy/Enemy_3.png",
+                    "Sprites/Enemy/Enemy_2.png"
+                ],
+                "delayPerUnit": 0.2,
+                "duration": 1.0,
+                "restoreOriginalFrame": true
+            }
+        },
+        {
+            "name" : "reward",
+            "points" : 100
+        },
+        {
+            "name" : "tag",
+            "tags" :
+            [
+                "Enemy"
+            ]
+        },
+        {
+            "name" : "loot",
+            "dropTable" :
+            {
+                "chance" : 1.0,
+                "list" : [
+                    "HealthLoot",
+                    "ShieldLoot",
+                    "PointLoot"
+                ]
+            }
+        },
+        {
+            "name" : "collision",
+            "hitAnimation" :
+            {
+                "spriteFrames" :
+                    [
+                        "Sprites/Enemy/Enemy_hit.png"
+                    ],
+                "delayPerUnit" : 0.1,
+                "duration" : 0.1,
+                "restoreOriginalFrame" : true
+            }
+        },
+        {
+            "name" : "collisionDamage",
+            "damage" : 50
+        }
+    ],
+    "levelData" :
+    {
+        "2" :
+        [
+           {
+               "name" : "reward",
+               "points" : 200
+           }
+        ]
+    }
+}

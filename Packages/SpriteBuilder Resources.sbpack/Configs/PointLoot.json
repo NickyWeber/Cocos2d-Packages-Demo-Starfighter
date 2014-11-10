@@ -1,0 +1,49 @@
+{
+    "components" :
+    [
+        {
+            "name" : "render",
+            "spriteName" : "Sprites/Loot/CashLoot_1.png",
+            "defaultAnimation" : {
+                "spriteFrames": [
+                    "Sprites/Loot/CashLoot_1.png",
+                    "Sprites/Loot/CashLoot_2.png",
+                    "Sprites/Loot/CashLoot_3.png",
+                    "Sprites/Loot/CashLoot_4.png",
+                    "Sprites/Loot/CashLoot_5.png",
+                    "Sprites/Loot/CashLoot_4.png",
+                    "Sprites/Loot/CashLoot_3.png",
+                    "Sprites/Loot/CashLoot_2.png",
+                    "Sprites/Loot/CashLoot_1.png"
+                ],
+                "delayPerUnit": 0.2,
+                "duration": 1.0,
+                "restoreOriginalFrame": true
+            }
+        },
+        {
+            "name" : "tag",
+            "tags" :
+            [
+                "Loot"
+            ]
+        },
+        {
+            "name" : "collision",
+            "collisionWhiteListTags" :
+                [
+                    "Spaceship"
+                ],
+            "despawnAfterCollision" : true
+        },
+        {
+            "name" : "timeToLive",
+            "timeToLive" : 5.0,
+            "fadeDuration" : 2.0
+        },
+        {
+            "name" : "collisionReward",
+            "points" : 50
+        }
+    ]
+}

@@ -39,7 +39,7 @@
 	<key>publishDirectoryAndroid</key>
 	<string>Source/Resources/Published-Android</string>
 	<key>publishEnabledAndroid</key>
-	<true/>
+	<false/>
 	<key>publishEnablediPhone</key>
 	<true/>
 	<key>publishEnvironment</key>
@@ -69,6 +69,14 @@
 		<dict>
 			<key>path</key>
 			<string>Packages/SpriteBuilder Resources.sbpack</string>
+		</dict>
+		<dict>
+			<key>path</key>
+			<string>Packages/patch_1_1.sbpack</string>
+		</dict>
+		<dict>
+			<key>path</key>
+			<string>Packages/levels.sbpack</string>
 		</dict>
 	</array>
 	<key>resourceProperties</key>

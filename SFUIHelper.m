@@ -4,7 +4,7 @@
 
 @implementation SFUIHelper
 
-+ (CCNode *)createMenuButtonWithTitle:(NSString *)title target:(id)target selector:(SEL)selector atRelPosition:(CGPoint)atPosition
++ (NSDictionary *)createMenuButtonWithTitle:(NSString *)title target:(id)target selector:(SEL)selector atRelPosition:(CGPoint)atPosition
 {
     CCButton *button = [CCButton buttonWithTitle:title spriteFrame:[CCSpriteFrame frameWithImageNamed:@"ccbResources/ccbButtonNormal.png"]];
     button.label.fontName = @"Courier-Bold";
@@ -26,7 +26,7 @@
     effectNode.anchorPoint = ccp(0.5, 0.5);
     [effectNode addChild:button];
 
-    return effectNode;
+    return @{@"button":button, @"effectNode" : effectNode};
 }
 
 + (CCLabelTTF *)gameLabelWithSize:(CGFloat)size blockSize:(float)blockSize

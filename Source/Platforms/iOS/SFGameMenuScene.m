@@ -13,11 +13,11 @@
 
     if (self)
     {
-        CCNode *playButton = [SFUIHelper createMenuButtonWithTitle:@"Play" target:self selector:@selector(playGame) atRelPosition:ccp(0.5, 0.5)];
-        [self addChild:playButton];
+        NSDictionary *playButton = [SFUIHelper createMenuButtonWithTitle:@"Play" target:self selector:@selector(playGame) atRelPosition:ccp(0.5, 0.5)];
+        [self addChild:playButton[@"effectNode"]];
 
-        CCNode *dlcButton = [SFUIHelper createMenuButtonWithTitle:@"DLC" target:self selector:@selector(downloads) atRelPosition:ccp(0.5, 0.4)];
-        [self addChild:dlcButton];
+        NSDictionary *dlcButton = [SFUIHelper createMenuButtonWithTitle:@"DLC" target:self selector:@selector(downloads) atRelPosition:ccp(0.5, 0.4)];
+        [self addChild:dlcButton[@"effectNode"]];
 
         SFBackgroundLayer *backgroundLayer = [SFBackgroundLayer node];
         [self addChild:backgroundLayer z:-1];

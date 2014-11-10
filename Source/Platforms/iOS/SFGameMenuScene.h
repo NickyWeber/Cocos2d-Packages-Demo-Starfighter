@@ -2,9 +2,9 @@
 
 @class SFBackgroundLayer;
 
-
 @interface SFGameMenuScene : CCScene
 {
 
 }
+
 @end

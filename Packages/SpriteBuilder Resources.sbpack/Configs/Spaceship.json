@@ -1,0 +1,85 @@
+{
+    "components" :
+    [
+        {
+            "name" : "move",
+            "spaceshipSpeed" : 200
+        },
+        {
+            "name" : "weapon",
+            "enemyWeapon" : false,
+            "fireRate" : 2.5,
+            "target" : "static",
+            "targetVector" :
+            {
+                "type" : "point",
+                "x" : 0.0,
+                "y" : 1.0
+            },
+            "weaponType" : "LaserBeam",
+            "timeSinceLastShot" : 100
+        },
+        {
+            "name" : "health",
+            "health" : 50,
+            "healthMax" : 100,
+            "shield" : 0,
+            "shieldMax" : 100
+        },
+        {
+            "name" : "render",
+            "spriteName" : "Sprites/Spaceship/Spaceship_1.png",
+            "defaultAnimation" : {
+                "spriteFrames": [
+                    "Sprites/Spaceship/Spaceship_1.png",
+                    "Sprites/Spaceship/Spaceship_2.png",
+                    "Sprites/Spaceship/Spaceship_3.png",
+                    "Sprites/Spaceship/Spaceship_2.png"
+                ],
+                "delayPerUnit": 0.2,
+                "duration": 1.0,
+                "restoreOriginalFrame": true
+            }
+        },
+        {
+            "name" : "reward",
+            "points" : 100
+        },
+        {
+            "name" : "tag",
+            "tags" :
+            [
+                "Spaceship"
+            ]
+        },
+        {
+            "name" : "loot",
+            "dropTable" :
+            {
+                "chance" : 1.0,
+                "list" : [
+                    "HealthLoot",
+                    "ShieldLoot",
+                    "PointLoot"
+                ]
+            }
+        },
+        {
+            "name" : "collision",
+            "hitAnimation" :
+            {
+                "spriteFrames" :
+                    [
+                        "Sprites/Spaceship/Spaceship_hit.png"
+                    ],
+                "delayPerUnit" : 0.5,
+                "duration" : 0.1,
+                "restoreOriginalFrame" : true
+            }
+        },
+        {
+            "name" : "collisionDamage",
+            "damage" : 1000000
+        }
+    ]
+}
