@@ -5,6 +5,7 @@
 #import "SFRenderComponent.h"
 #import "SFTagComponent.h"
 #import "SFGamePlaySceneDelegate.h"
+#import "SFHealthComponent.h"
 
 @implementation SFMoveSystem
 
@@ -21,6 +22,12 @@
 
         if ([tagComponent hasTag:@"Spaceship"])
         {
+            SFHealthComponent *healthComponent = [self.entityManager componentOfClass:[SFHealthComponent class] forEntity:entity];
+            if (!healthComponent.isAlive)
+            {
+                return;
+            }
+
         	CGPoint scaledVelocity = ccpMult(self.delegate.dPadVelocity, moveComponent.spaceshipSpeed);
 
         	CGPoint newPosition = CGPointMake(MAX(0, MIN(renderComponent.node.position.x + scaledVelocity.x * delta, displaySize.width)),
