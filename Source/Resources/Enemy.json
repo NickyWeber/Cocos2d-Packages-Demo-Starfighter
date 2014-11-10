@@ -2,10 +2,6 @@
     "components" :
     [
         {
-            "name" : "level",
-            "level" : 1
-        },
-        {
             "name" : "move",
             "velocity" :
             {
@@ -84,5 +80,15 @@
             "name" : "collisionDamage",
             "damage" : 50
         }
-    ]
+    ],
+    "levelData" :
+    {
+        "2" :
+        [
+           {
+               "name" : "reward",
+               "points" : 200
+           }
+        ]
+    }
 }

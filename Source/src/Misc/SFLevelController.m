@@ -54,6 +54,9 @@
     self.totalSpawned = 0;
 
     _level = level;
+
+    [SFEntityFactory sharedFactory].currentLevel = _level;
+
     self.totalEnemies = [self totalEnemiesForLevel:_level];
 
     // NSLog(@"*** New Level: %u - total enemies %u", level, _totalEnemies);

@@ -27,7 +27,7 @@
     return self;
 }
 
-- (NSArray *)componentsWithConfigName:(NSString *)name
+- (NSArray *)componentsWithConfigName:(NSString *)name level:(NSUInteger)level
 {
     NSAssert(name != nil, @"name must not be nil");
 
@@ -63,7 +63,47 @@
         // NSLog(@"%@", componentDict);
     }
 
+    NSDictionary *levelDataDict = jsonDict[@"levelData"];
+    [self patchComponents:components forLevel:level withLevelData:levelDataDict];
+
     return components;
+}
+
+- (void)patchComponents:(NSMutableArray *)componentsToPatch forLevel:(NSUInteger)level withLevelData:(NSDictionary *)levelData
+{
+    if (!levelData
+        || level <= 1)
+    {
+        return;
+    }
+
+    NSString *levelIndex = [NSString stringWithFormat:@"%lu", level];
+    NSArray *componentsToPatchData = levelData[levelIndex];
+
+    for (NSDictionary *componentDict in componentsToPatchData)
+    {
+        Class componentClass = [self classForComponentName:componentDict[@"name"]];
+        SFComponent *component = [self componentOfClass:componentClass inComponents:componentsToPatch];
+
+        if (!component)
+        {
+            continue;
+        }
+
+        [self setProperties:componentDict forComponent:component];
+    }
+}
+
+- (SFComponent *)componentOfClass:(Class)class inComponents:(NSArray *)components
+{
+    for (SFComponent *component in components)
+    {
+        if ([component isKindOfClass:class])
+        {
+            return component;
+        }
+    }
+    return nil;
 }
 
 - (void)setProperties:(NSDictionary *)dictionary forComponent:(id)component
@@ -75,10 +115,12 @@
             continue;
         }
 
+/*
         if ([key isEqualToString:@"target"])
         {
             NSLog(@"break");
         }
+*/
 
         id value = dictionary[key];
 

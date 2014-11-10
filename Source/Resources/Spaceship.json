@@ -2,10 +2,6 @@
     "components" :
     [
         {
-            "name" : "level",
-            "level" : 1
-        },
-        {
             "name" : "move",
             "spaceshipSpeed" : 200
         },

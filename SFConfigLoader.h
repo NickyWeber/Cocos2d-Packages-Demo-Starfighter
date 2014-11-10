@@ -4,7 +4,7 @@
 
 @interface SFConfigLoader : NSObject
 
-- (NSArray *)componentsWithConfigName:(NSString *)name;
+- (NSArray *)componentsWithConfigName:(NSString *)name level:(NSUInteger)level;
 
 - (void)invalidateCache;
 

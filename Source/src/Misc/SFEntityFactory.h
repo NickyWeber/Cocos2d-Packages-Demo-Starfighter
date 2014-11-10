@@ -12,12 +12,11 @@
 
 @property (nonatomic, strong) id <SFGamePlaySceneDelegate> delegate;
 @property (nonatomic, strong) SFEntityManager *entityManager;
+@property (nonatomic) NSUInteger currentLevel;
 
 + (SFEntityFactory *)sharedFactory;
 
 - (SFEntity *)addSpaceshipAtPosition:(CGPoint)position;
-
-- (SFEntity *)addEnemyShotWithWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position;
 
 - (SFEntity *)addEnemyAtPosition:(CGPoint)position;
 

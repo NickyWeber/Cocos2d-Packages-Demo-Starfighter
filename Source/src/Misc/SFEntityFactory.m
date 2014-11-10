@@ -1,27 +1,17 @@
 #import "SFEntityFactory.h"
 #import "SFGamePlaySceneDelegate.h"
 #import "SFRenderComponent.h"
-#import "SFHealthComponent.h"
 #import "SFEntity.h"
 #import "SFEntityManager.h"
 #import "CCAnimation.h"
-#import "SFConstants.h"
 #import "CCAnimationCache.h"
 #import "SFMoveComponent.h"
-#import "SFLevelComponent.h"
 #import "SFTagComponent.h"
 #import "SFCollisionDamageComponent.h"
 #import "SFConfigLoader.h"
 #import "SFLootComponent.h"
 #import "SFWeaponComponent.h"
-#import "SFCollisionComponent.h"
-#import "SFLootComponent.h"
-#import "SFCollisionRewardComponent.h"
-#import "SFTimeToLiveSystem.h"
-#import "SFTimeToLiveComponent.h"
-#import "SFRewardComponent.h"
 #import "SFTrigonometryHelper.h"
-#import "SFConfigLoader.h"
 #import "SFDropTable.h"
 #import "SFWeaponStatsComponent.h"
 
@@ -48,6 +38,7 @@
     if (self)
     {
         self.configLoader = [[SFConfigLoader alloc] init];
+        self.currentLevel = 1;
         [self setupAnimations];
     }
 
@@ -122,7 +113,7 @@
 
 - (SFEntity *)addEntityWithName:(NSString *)name atPosition:(CGPoint)position
 {
-    NSArray *components = [_configLoader componentsWithConfigName:name];
+    NSArray *components = [_configLoader componentsWithConfigName:name level:_currentLevel];
 
     SFEntity *result = [_entityManager createEntityWithComponents:components];
     result.name = name;
