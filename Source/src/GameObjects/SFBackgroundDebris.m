@@ -3,8 +3,6 @@
 
 @interface SFBackgroundDebris ()
 
-@property (nonatomic) float speedfactor;
-
 @end
 
 
@@ -22,7 +20,7 @@
         self.position = ccp((CGFloat) ([CCDirector sharedDirector].view.frame.size.width * CCRANDOM_0_1()),
                             [CCDirector sharedDirector].view.frame.size.height);
 
-        self.speedfactor = (float) ([CCDirector sharedDirector].view.frame.size.height - (1.0 * rnd + 0.5));
+        self.speedfactor = 200.0;
         float size = (float) (2.0 * rnd + 0.5);
         GLubyte color = (GLubyte) (80.0 * rnd + 130.0);
 

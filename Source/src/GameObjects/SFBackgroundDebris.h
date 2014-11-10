@@ -3,4 +3,6 @@
 
 @interface SFBackgroundDebris : CCNode
 
+@property (nonatomic) float speedfactor;
+
 @end
