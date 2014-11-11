@@ -5,6 +5,7 @@
 #import "CCPackageManager.h"
 #import "CCPackage.h"
 #import "SFUIPackageControls.h"
+#import "SFEntityFactory.h"
 
 
 static NSString *PACKAGE_NAME_PATCH_1_1 = @"patch_1_1";
@@ -54,7 +55,7 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
 {
     NSArray *packages = [[CCPackageManager sharedManager] allPackages];
 
-    for (CCPackage *package in packages)
+    for (CCPackage *package in [packages copy])
     {
         NSError *error;
         if (![[CCPackageManager sharedManager] deletePackage:package error:&error])
@@ -67,6 +68,8 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
     {
         controls.package = nil;
     }
+
+    [[SFEntityFactory sharedFactory] invalidateCache];
 }
 
 - (void)setupPackageControls
@@ -114,6 +117,7 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
             return controls;
         }
     }
+
     return nil;
 }
 

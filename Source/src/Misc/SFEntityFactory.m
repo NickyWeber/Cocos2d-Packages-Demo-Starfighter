@@ -16,7 +16,9 @@
 #import "SFWeaponStatsComponent.h"
 
 @interface SFEntityFactory ()
+
 @property (nonatomic, strong) SFEntityConfigLoader *configLoader;
+
 @end
 
 @implementation SFEntityFactory
@@ -165,6 +167,11 @@
         return loot;
     }
     return nil;
+}
+
+- (void)invalidateCache
+{
+    [_configLoader invalidateCache];
 }
 
 @end

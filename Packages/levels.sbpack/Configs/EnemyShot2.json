@@ -1,0 +1,45 @@
+{
+    "components" :
+    [
+        {
+            "name" : "render",
+            "spriteName" : "Sprites/Shots2/EnemyShot2_2.png",
+            "defaultAnimation" : {
+                "spriteFrames": [
+                    "Sprites/Shots2/EnemyShot2_1.png",
+                    "Sprites/Shots2/EnemyShot2_2.png"
+                ],
+                "delayPerUnit": 0.5,
+                "duration": 1.0,
+                "restoreOriginalFrame": true
+            }
+        },
+        {
+            "name" : "tag",
+            "tags" :
+            [
+                "EnemyShot"
+            ]
+        },
+        {
+            "name" : "weaponStats",
+            "speed" : 250.0,
+            "damage" : 10
+        },
+        {
+            "name" : "collision",
+            "collisionWhiteListTags" :
+                [
+                    "Spaceship"
+                ],
+            "collisionBlackListTags" :
+                [
+                    "Enemy"
+                ],
+            "despawnAfterCollision" : true
+        },
+        {
+            "name" : "collisionDamage"
+        }
+    ]
+}

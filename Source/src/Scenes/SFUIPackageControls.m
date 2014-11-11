@@ -2,6 +2,7 @@
 #import "SFUIHelper.h"
 #import "CCPackageManager.h"
 #import "CCPackage.h"
+#import "SFEntityFactory.h"
 
 @implementation SFUIPackageControls
 
@@ -179,6 +180,11 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     [self updateButton];
+
+    if (_package.status == CCPackageStatusInstalledEnabled || _package.status == CCPackageStatusInstalledDisabled)
+    {
+        [[SFEntityFactory sharedFactory] invalidateCache];
+    }
 }
 
 - (void)enablePackage:(id)sender

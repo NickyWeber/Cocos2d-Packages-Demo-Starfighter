@@ -24,4 +24,6 @@
 
 - (SFEntity *)addProjectileForWeaponComponent:(SFWeaponComponent *)weaponComponent atPosition:(CGPoint)position;
 
+- (void)invalidateCache;
+
 @end
