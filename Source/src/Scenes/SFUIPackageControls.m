@@ -6,13 +6,15 @@
 
 @implementation SFUIPackageControls
 
-- (instancetype)initWithPackageName:(NSString *)packageName title:(NSString *)title
+- (instancetype)initWithPackageURL:(NSURL *)packageURL title:(NSString *)title name:(NSString *)name resolution:(NSString *)resolution
 {
     self = [super init];
 
     if (self)
     {
-        self.packageName = packageName;
+        self.packageURL = packageURL;
+        self.packageName = name;
+        self.resolution = resolution;
 
         self.title = [SFUIHelper gameLabelWithSize:24.0 blockSize:2.0];
         _title.string = title;
@@ -37,15 +39,30 @@
 
         self.button = buttonDownloadPatch[@"button"];
 
-        self.package = [[CCPackageManager sharedManager] packageWithName:_packageName];;
+        self.package = [self findPackage];
     }
 
     return self;
 }
 
+- (CCPackage *)findPackage
+{
+    for (CCPackage *aPackage in [[CCPackageManager sharedManager] allPackages])
+    {
+        if ([aPackage.name isEqualToString:_packageName ] && [aPackage.resolution isEqualToString:_resolution])
+        {
+            return aPackage;
+        }
+    }
+    return nil;
+}
+
 - (void)downloadPackage
 {
-    self.package = [[CCPackageManager sharedManager] downloadPackageWithName:_packageName enableAfterDownload:YES];
+    self.package = [[CCPackageManager sharedManager] downloadPackageWithName:_packageName
+                                                                  resolution:_resolution
+                                                                   remoteURL:_packageURL
+                                                         enableAfterDownload:YES];
 }
 
 - (void)packageInstallationFailedWithError:(NSError *)error
