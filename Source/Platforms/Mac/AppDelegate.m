@@ -3,6 +3,7 @@
 #import "CCFileUtils.h"
 #import "SFHelper.h"
 #import "SFKeyEventHandlingDelegate.h"
+#import "CCPackageManager.h"
 
 @interface AppDelegate ()
 
@@ -42,6 +43,8 @@
 
     [[CCFileUtils sharedFileUtils] setMacContentScaleFactor:2.0];
 
+    [[CCPackageManager sharedManager] loadPackages];
+
     SFGameMenuScene *gameMenuScene = [[SFGameMenuScene alloc] init];
 
     [director runWithScene:gameMenuScene];
@@ -49,8 +52,7 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
-
+    [[CCPackageManager sharedManager] savePackages];
 }
-
 
 @end
