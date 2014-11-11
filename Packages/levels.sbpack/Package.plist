@@ -9,7 +9,12 @@
 			<key>audio_quality</key>
 			<integer>4</integer>
 			<key>resolutions</key>
-			<array/>
+			<array>
+				<string>phone</string>
+				<string>phonehd</string>
+				<string>tablet</string>
+				<string>tablethd</string>
+			</array>
 		</dict>
 		<key>ios</key>
 		<dict>
@@ -33,6 +38,6 @@
 	<key>publishToMainProject</key>
 	<false/>
 	<key>publishToZip</key>
-	<false/>
+	<true/>
 </dict>
 </plist>

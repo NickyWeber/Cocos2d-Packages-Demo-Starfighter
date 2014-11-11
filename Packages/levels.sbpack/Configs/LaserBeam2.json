@@ -3,7 +3,7 @@
     [
         {
             "name" : "render",
-            "spriteName" : "Sprites/Shots/LaserBeam.png"
+            "spriteName" : "Sprites/Shots/PlasmaBolt.png"
         },
         {
             "name" : "tag",
@@ -14,8 +14,8 @@
         },
         {
             "name" : "weaponStats",
-            "speed" : 400.0,
-            "damage" : 10
+            "speed" : 550.0,
+            "damage" : 35
         },
         {
             "name" : "collision",

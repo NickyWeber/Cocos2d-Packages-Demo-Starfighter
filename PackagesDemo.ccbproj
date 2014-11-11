@@ -128,6 +128,26 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>Sprites/Enemy2/Enemy2_1.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Enemy2/Enemy2_2.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Enemy2/Enemy2_3.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Enemy2/Enemy2_hit.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>Sprites/Explosion/Explosion_1.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -254,6 +274,21 @@
 			<integer>1</integer>
 		</dict>
 		<key>Sprites/Shots/LaserBeam.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Shots2/EnemyShot2_1.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Shots2/EnemyShot2_2.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Sprites/Shots2/PlasmaBolt.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>

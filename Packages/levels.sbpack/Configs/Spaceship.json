@@ -8,7 +8,7 @@
         {
             "name" : "weapon",
             "enemyWeapon" : false,
-            "fireRate" : 2.5,
+            "fireRate" : 3.5,
             "target" : "static",
             "targetVector" :
             {
@@ -16,7 +16,7 @@
                 "x" : 0.0,
                 "y" : 1.0
             },
-            "weaponType" : "LaserBeam",
+            "weaponType" : "LaserBeam2",
             "timeSinceLastShot" : 100
         },
         {
