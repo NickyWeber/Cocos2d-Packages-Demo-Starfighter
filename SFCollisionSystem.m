@@ -127,7 +127,7 @@
 - (void)applyDamage:(NSUInteger)damage toHealthComponent:(SFHealthComponent *)healthComponent
 {
     NSInteger newShield = healthComponent.shield - damage;
-    healthComponent.shield = newShield;
+    healthComponent.shield = MAX(newShield, 0);
 
     if (newShield <= 0)
    	{
