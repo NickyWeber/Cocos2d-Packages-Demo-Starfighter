@@ -32,8 +32,13 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
 
         [self setupPackageControls];
 
-        NSDictionary *buttonBack = [SFUIHelper createMenuButtonWithTitle:@"back" target:self selector:@selector(back) atRelPosition:ccp(0.5, 0.2)];
+        NSDictionary *buttonBack = [SFUIHelper createMenuButtonWithTitle:@"back" target:self selector:@selector(back) atRelPosition:ccp(0.5, 0.1)];
         [self addChild:buttonBack[@"effectNode"]];
+
+        NSDictionary *buttonDeleteAll = [SFUIHelper createMenuButtonWithTitle:@"Delete All" target:self selector:@selector(deleteAll) atRelPosition:ccp(0.5, 0.2)];
+        [self addChild:buttonDeleteAll[@"effectNode"]];
+        CCButton *deleteButton = buttonDeleteAll[@"button"];
+        [deleteButton setLabelColor:[CCColor redColor] forState:CCControlStateNormal];
 
         CCLabelTTF *title = [SFUIHelper gameLabelWithSize:36.0];
         title.string = @"Downloads";
@@ -43,6 +48,25 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
     }
 
     return self;
+}
+
+- (void)deleteAll
+{
+    NSArray *packages = [[CCPackageManager sharedManager] allPackages];
+
+    for (CCPackage *package in packages)
+    {
+        NSError *error;
+        if (![[CCPackageManager sharedManager] deletePackage:package error:&error])
+        {
+            NSLog(@"Error deleting package %@ with error %@", package, error);
+        }
+    }
+
+    for (SFUIPackageControls *controls in _packageControls)
+    {
+        controls.package = nil;
+    }
 }
 
 - (void)setupPackageControls

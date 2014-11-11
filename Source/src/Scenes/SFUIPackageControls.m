@@ -37,11 +37,6 @@
         self.button = buttonDownloadPatch[@"button"];
 
         self.package = [[CCPackageManager sharedManager] packageWithName:_packageName];;
-
-        if (!_package)
-        {
-            [_button setTarget:self selector:@selector(downloadPackage)];
-        }
     }
 
     return self;
@@ -89,14 +84,18 @@
 
 - (void)setPackage:(CCPackage *)package
 {
-    if (!package)
-    {
-        return;
-    }
+    [self removeObserver];
 
     _package = package;
 
-    [self removeObserver];
+    // Package is not created yet by manager, downloadPackage will trigger that
+    if (!package)
+    {
+        [self setButtonsTitle:@"Download" selector:nil enabled:YES];
+        _status.string = @"Not Installed";
+        [_button setTarget:self selector:@selector(downloadPackage)];
+        return;
+    }
 
     [self updateButton];
 
@@ -170,7 +169,10 @@
             _status.string = @"Deactivated";
             break;
 
-        default: break;
+        default:
+            [self setButtonsTitle:@"Download" selector:nil enabled:NO];
+            _status.string = @"Not Installed";
+            break;
     }
 }
 
