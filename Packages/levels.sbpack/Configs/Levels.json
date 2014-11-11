@@ -2,31 +2,31 @@
     {
         "name" : "Level 1",
         "id" : "1",
-        "enemyCount" : 1,
+        "enemyCount" : 8,
         "spawnType" : "Enemy2"
     },
     {
         "name" : "Level 2",
         "id" : "2",
-        "enemyCount" : 1,
+        "enemyCount" : 12,
         "spawnType" : "Enemy2"
     },
     {
         "name" : "Level 3",
         "id" : "3",
-        "enemyCount" : 1,
+        "enemyCount" : 7,
         "spawnType" : "Enemy2"
     },
     {
         "name" : "Level 4",
         "id" : "4",
-        "enemyCount" : 1,
+        "enemyCount" : 15,
         "spawnType" : "Enemy2"
     },
     {
         "name" : "Level 5",
         "id" : "5",
-        "enemyCount" : 1,
+        "enemyCount" : 20,
         "spawnType" : "Enemy2"
     }
 ]

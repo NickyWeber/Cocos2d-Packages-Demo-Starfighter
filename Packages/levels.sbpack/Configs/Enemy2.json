@@ -88,7 +88,96 @@
            {
                "name" : "reward",
                "points" : 350
-           }
-        ]
+           },
+           {
+               "name" : "collisionDamage",
+               "damage" : 100
+           },
+            {
+                "name" : "health",
+                "health" : 125,
+                "healthMax" : 125,
+                "shield" : 0,
+                "shieldMax" : 0
+            }           
+        ],
+        "3" :
+        [
+           {
+               "name" : "reward",
+               "points" : 500
+           },
+           {
+               "name" : "collisionDamage",
+               "damage" : 125
+           },
+           {
+                "name" : "weapon",
+                "enemyWeapon" : true,
+                "fireRate" : 1.0,
+                "weaponType" : "EnemyShot2",
+                "target" : "Spaceship",
+                "timeSinceLastShot" : 100
+           },
+            {
+                "name" : "health",
+                "health" : 175,
+                "healthMax" : 175,
+                "shield" : 0,
+                "shieldMax" : 0
+            }
+        ],
+        "4" :
+        [
+           {
+               "name" : "reward",
+               "points" : 750
+           },
+           {
+               "name" : "collisionDamage",
+               "damage" : 150
+           },
+           {
+                "name" : "weapon",
+                "enemyWeapon" : true,
+                "fireRate" : 1.25,
+                "weaponType" : "EnemyShot2",
+                "target" : "Spaceship",
+                "timeSinceLastShot" : 0
+            },
+            {
+                "name" : "health",
+                "health" : 225,
+                "healthMax" : 225,
+                "shield" : 0,
+                "shieldMax" : 0
+            }
+        ],
+        "5" :
+        [
+           {
+               "name" : "reward",
+               "points" : 1250
+           },
+           {
+               "name" : "collisionDamage",
+               "damage" : 200
+           },
+           {
+                "name" : "weapon",
+                "enemyWeapon" : true,
+                "fireRate" : 1.5,
+                "weaponType" : "EnemyShot2",
+                "target" : "Spaceship",
+                "timeSinceLastShot" : 0
+            },
+            {
+                "name" : "health",
+                "health" : 300,
+                "healthMax" : 300,
+                "shield" : 0,
+                "shieldMax" : 0
+            }
+        ]        
     }
 }
