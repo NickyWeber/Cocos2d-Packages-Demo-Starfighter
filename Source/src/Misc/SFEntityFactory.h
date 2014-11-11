@@ -18,7 +18,7 @@
 
 - (SFEntity *)addSpaceshipAtPosition:(CGPoint)position;
 
-- (SFEntity *)addEnemyAtPosition:(CGPoint)position;
+- (SFEntity *)addEntityWithName:(NSString *)name atPosition:(CGPoint)position;
 
 - (SFEntity *)addLoot:(SFLootComponent *)lootComponent atPosition:(CGPoint)position;
 

@@ -82,7 +82,7 @@
 		CGPoint position = CGPointMake((CGFloat) (([CCDirector sharedDirector].view.frame.size.width - 20.0) * CCRANDOM_0_1() + 20),
                                      (CGFloat) ([CCDirector sharedDirector].view.frame.size.height + 50.0));
 
-        [[SFEntityFactory sharedFactory] addEnemyAtPosition:position];
+        [[SFEntityFactory sharedFactory] addEntityWithName:_level.spawnType atPosition:position];
 
         self.lastSpawnTime = [[NSDate date] timeIntervalSince1970];
 	}

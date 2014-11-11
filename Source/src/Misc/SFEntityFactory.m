@@ -105,11 +105,6 @@
     return ccp(0.0, 0.0);
 }
 
-- (SFEntity *)addEnemyAtPosition:(CGPoint)position
-{
-    return [self addEntityWithName:@"Enemy" atPosition:position];
-}
-
 - (SFEntity *)addEntityWithName:(NSString *)name atPosition:(CGPoint)position
 {
     NSArray *components = [_configLoader componentsWithConfigName:name levelId:_currentLevelId];

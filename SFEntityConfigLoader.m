@@ -5,6 +5,7 @@
 #import "CCAnimation.h"
 #import "SFLootComponent.h"
 #import "SFDropTable.h"
+#import "CCFileUtils+Packages.h"
 
 @interface SFEntityConfigLoader ()
 
@@ -34,7 +35,9 @@
     NSDictionary *jsonDict = _configCache[name];
     if (!jsonDict)
     {
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
+        NSString *filePath = [[CCFileUtils sharedFileUtils] filePathForFilename:[name stringByAppendingPathExtension:@"json"]
+                                                                    inDirectory:@"Configs"];
+
         NSData *data = [NSData dataWithContentsOfFile:filePath];
         NSError *error = nil;
         jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];

@@ -1,12 +1,14 @@
 #import "SFLevelConfigLoader.h"
 #import "SFLevel.h"
+#import "CCFileUtils+Packages.h"
 
 
 @implementation SFLevelConfigLoader
 
 - (NSArray *)loadLevelsWithFileName:(NSString *)filename
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:nil];
+    NSString *filePath = [[CCFileUtils sharedFileUtils] filePathForFilename:filename inDirectory:@"Configs"];
+
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSError *error = nil;
 
