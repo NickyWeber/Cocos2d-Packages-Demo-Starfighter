@@ -11,7 +11,7 @@
 
 - (void)update:(CCTime)delta
 {
-    CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
+    CGSize displaySize = [[CCDirector sharedDirector] designSize];
 
     NSArray * entities = [self.entityManager allEntitiesPosessingComponentOfClass:[SFMoveComponent class]];
     for (SFEntity *entity in entities)
@@ -49,7 +49,7 @@
 {
     SFRenderComponent *renderComponent = [self.entityManager componentOfClass:[SFRenderComponent class] forEntity:entity];
 
-    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
+    CGSize screenSize = [[CCDirector sharedDirector] designSize];
 
     if (renderComponent.node.position.x <= -100
         || renderComponent.node.position.x >= screenSize.width + 100

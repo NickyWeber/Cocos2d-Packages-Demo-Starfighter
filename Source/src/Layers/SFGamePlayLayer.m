@@ -77,7 +77,7 @@
 
 - (void)initializeSpaceship
 {
-    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
+    CGSize screenSize = [[CCDirector sharedDirector] designSize];
 
     SFEntity *spaceship = [[SFEntityFactory sharedFactory] addSpaceshipAtPosition:ccp(screenSize.width / 2.0, screenSize.height * 0.333)];
     self.healthComponent = [[SFEntityManager sharedManager] componentOfClass:[SFHealthComponent class] forEntity:spaceship];

@@ -79,8 +79,8 @@
 	{
         self.totalSpawned += 1;
 
-		CGPoint position = CGPointMake((CGFloat) (([CCDirector sharedDirector].view.frame.size.width - 20.0) * CCRANDOM_0_1() + 20),
-                                     (CGFloat) ([CCDirector sharedDirector].view.frame.size.height + 50.0));
+		CGPoint position = CGPointMake((CGFloat) (([[CCDirector sharedDirector] designSize].width - 20.0) * CCRANDOM_0_1() + 20),
+                                     (CGFloat) ([[CCDirector sharedDirector] designSize].height + 50.0));
 
         [[SFEntityFactory sharedFactory] addEntityWithName:_level.spawnType atPosition:position];
 

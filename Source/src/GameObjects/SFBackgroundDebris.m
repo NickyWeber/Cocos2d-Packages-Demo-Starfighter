@@ -16,9 +16,11 @@
     if (self)
     {
         float rnd = CCRANDOM_0_1();
+        
+        CGSize screenSize = [[CCDirector sharedDirector] designSize];
 
-        self.position = ccp((CGFloat) ([CCDirector sharedDirector].view.frame.size.width * CCRANDOM_0_1()),
-                            [CCDirector sharedDirector].view.frame.size.height);
+        self.position = ccp((CGFloat) (screenSize.width * CCRANDOM_0_1()),
+                            screenSize.height);
 
         self.speedfactor = 200.0;
         float size = (float) (2.0 * rnd + 0.5);

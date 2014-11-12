@@ -166,7 +166,7 @@
 {
     [_gamePlayLayer playerDied];
 
-    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
+    CGSize screenSize = [[CCDirector sharedDirector] designSize];
 
     CCLabelTTF *label = [SFUIHelper gameLabelWithSize:48.0];
     label.string = @"Game Over";
@@ -216,7 +216,7 @@
 
 - (CCLabelTTF *)tapToContinueLabel
 {
-    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
+    CGSize screenSize = [[CCDirector sharedDirector] designSize];
 
     CCLabelTTF *label2 = [SFUIHelper gameLabelWithSize:20.0 blockSize:2.0];
     label2.string = @"(tap to continue)";
@@ -250,7 +250,7 @@
 
 - (void)levelCompleted:(SFLevel *)level
 {
-    CGSize screenSize = [CCDirector sharedDirector].view.frame.size;
+    CGSize screenSize = [[CCDirector sharedDirector] designSize];
 
     CCLabelTTF *label;
 
@@ -321,7 +321,7 @@
     }
 }
 
-#if __CC_PLATFORM_IOS
+#if __CC_PLATFORM_IOS || __CC_PLATFORM_ANDROID
 - (void)touchBegan:(CCTouch *)touch event:(CCTouchEvent *)event
 {
     [[CCDirector sharedDirector] replaceScene:[[SFGameMenuScene alloc] init] withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown

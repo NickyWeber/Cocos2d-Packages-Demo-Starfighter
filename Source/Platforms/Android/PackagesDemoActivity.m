@@ -24,12 +24,15 @@
 
 
 #import "PackagesDemoActivity.h"
+#import "SFGameMenuScene.hw"
 
 @implementation PackagesDemoActivity
 
 - (CCScene *)startScene
 {
-    return [CCBReader loadAsScene:@"MainScene"];
+    SFGameMenuScene *gameMenuScene = [[SFGameMenuScene alloc] init];
+    
+    return gameMenuScene;
 }
 
 - (BOOL)onKeyUp:(int32_t)keyCode keyEvent:(AndroidKeyEvent *)event

@@ -35,7 +35,7 @@
 
 - (void)setupShieldBar
 {
-    CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
+    CGSize displaySize = [[CCDirector sharedDirector] designSize];
 
     self.shieldBar = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0 green:1.0 blue:1.0]];
     _shieldBar.contentSize = CGSizeMake(displaySize.width, 3.0);
@@ -46,7 +46,7 @@
 
 - (void)setupHealthBar
 {
-    CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
+    CGSize displaySize = [[CCDirector sharedDirector] designSize];
 
     self.healthBar = [CCNodeColor nodeWithColor:[CCColor colorWithRed:1.0 green:0.0 blue:0.0]];
     _healthBar.contentSize = CGSizeMake(displaySize.width, 3.0);
@@ -60,7 +60,7 @@
 
 - (void)setupScoreLabel
 {
-    CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
+    CGSize displaySize = [[CCDirector sharedDirector] designSize];
 
     self.scoreLabel = [CCLabelTTF labelWithString:@"1234"
                                          fontName:@"Courier-Bold"
@@ -79,7 +79,7 @@
 
 - (void)initialiseUserControls
 {
-    CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
+    CGSize displaySize = [[CCDirector sharedDirector] designSize];
 
 	// DPad
 	self.joystick = [[SneakyJoystickSkinnedDPadExample alloc] init];
@@ -118,7 +118,7 @@
         [_healthBar stopAction:_healthFlickerAction];
     }
 
-    CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
+    CGSize displaySize = [[CCDirector sharedDirector] designSize];
 
 	float newHealthInPercent = MAX(0, MIN(healthInPercent, 1.0));
 
@@ -128,7 +128,7 @@
 
 - (void)updateShieldBarWithShieldInPercent:(double)shieldInPercent
 {
-    CGSize displaySize = [CCDirector sharedDirector].view.frame.size;
+    CGSize displaySize = [[CCDirector sharedDirector] designSize];
 
 	float newShieldInPercent = MAX(0, MIN(shieldInPercent, 1.0));
 
