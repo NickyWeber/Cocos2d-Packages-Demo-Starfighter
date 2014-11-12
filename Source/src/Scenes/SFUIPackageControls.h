@@ -17,15 +17,8 @@
 
 - (instancetype)initWithPackageURL:(NSURL *)packageURL title:(NSString *)title name:(NSString *)name resolution:(NSString *)resolution;
 
-- (void)packageInstallationFailedWithError:(NSError *)error;
-
-- (void)packageDownloadFailedWithError:(NSError *)error;
-
-- (void)packageUnzippingFailedWithError:(NSError *)error;
-
 - (void)packageDownloadProgressDownloadedBytes:(NSUInteger)downloadedBytes totalBytes:(NSUInteger)totalBytes;
 
 - (void)packageUnzippingProgressUnzippedBytes:(NSUInteger)unzippedBytes totalBytes:(NSUInteger)totalBytes;
-
 
 @end

@@ -133,8 +133,8 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
 
 - (void)packageInstallationFailed:(CCPackage *)package error:(NSError *)error
 {
-    SFUIPackageControls *controls = [self controlsForPackage:package];
-    [controls packageInstallationFailedWithError:error];
+    // ...
+    NSLog(@"%@ with error %@", NSStringFromSelector(_cmd), error);    
 }
 
 - (void)packageDownloadFinished:(CCPackage *)package
@@ -144,8 +144,8 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
 
 - (void)packageDownloadFailed:(CCPackage *)package error:(NSError *)error
 {
-    SFUIPackageControls *controls = [self controlsForPackage:package];
-    [controls packageDownloadFailedWithError:error];
+    // ...
+    NSLog(@"%@ with error %@", NSStringFromSelector(_cmd), error);
 }
 
 - (void)packageUnzippingFinished:(CCPackage *)package
@@ -155,8 +155,8 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
 
 - (void)packageUnzippingFailed:(CCPackage *)package error:(NSError *)error
 {
-    SFUIPackageControls *controls = [self controlsForPackage:package];
-    [controls packageUnzippingFailedWithError:error];
+    // ...
+    NSLog(@"%@ with error %@", NSStringFromSelector(_cmd), error);
 }
 
 - (void)packageDownloadProgress:(CCPackage *)package downloadedBytes:(NSUInteger)downloadedBytes totalBytes:(NSUInteger)totalBytes

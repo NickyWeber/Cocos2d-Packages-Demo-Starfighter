@@ -65,33 +65,15 @@
                                                          enableAfterDownload:YES];
 }
 
-- (void)packageInstallationFailedWithError:(NSError *)error
-{
-    [_status setString:@"Error"];
-    NSLog(@"Error %@ installing package %@", _package, error);
-}
-
-- (void)packageDownloadFailedWithError:(NSError *)error
-{
-    [_status setString:@"Error"];
-    NSLog(@"Error %@ downloading package %@", _package, error);
-}
-
-- (void)packageUnzippingFailedWithError:(NSError *)error
-{
-    [_status setString:@"Error"];
-    NSLog(@"Error %@ unzipping package %@", _package, error);
-}
-
 - (void)packageDownloadProgressDownloadedBytes:(NSUInteger)downloadedBytes totalBytes:(NSUInteger)totalBytes
 {
-    NSString *progressString = [NSString stringWithFormat:@"DL: %u, / %u", downloadedBytes, totalBytes];
+    NSString *progressString = [NSString stringWithFormat:@"DL: %lu, / %lu", downloadedBytes, totalBytes];
     [_status setString:progressString];
 }
 
 - (void)packageUnzippingProgressUnzippedBytes:(NSUInteger)unzippedBytes totalBytes:(NSUInteger)totalBytes
 {
-    NSString *progressString = [NSString stringWithFormat:@"unzip: %u, / %u", unzippedBytes, totalBytes];
+    NSString *progressString = [NSString stringWithFormat:@"unzip: %lu, / %lu", unzippedBytes, totalBytes];
     [_status setString:progressString];
 }
 
