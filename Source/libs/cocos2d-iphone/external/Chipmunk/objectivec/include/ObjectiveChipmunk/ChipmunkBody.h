@@ -154,7 +154,7 @@
 /**
 	Force the body to sleep immediately. The body will be added to the same group as @c group. When any object in a group is woken up, all of the bodies are woken up with it.
 	If @c group is nil, then a new group is created and the body is added to it. It is an error pass a non-sleeping body as @c group.
-	This is useful if you want an object to be complete until something hits it such as a pile of boxes you want the player to plow through or a stalactite hanging from a cave ceiling.
+	This is useful if you want an object to be inactive until something hits it such as a pile of boxes you want the player to plow through or a stalactite hanging from a cave ceiling.
 	Make sure the body is fully set up before you call this. Adding this body or any shapes or constraints attached to it to a space, or modifying any of their properties automatically wake a body up.
 */
 - (void)sleepWithGroup:(ChipmunkBody *)group;

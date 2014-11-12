@@ -39,18 +39,18 @@
 #import "CCMetalSupport_Private.h"
 
 
-const NSString *CCShaderUniformDefaultGlobals = @"cc_GlobalUniforms";
-const NSString *CCShaderUniformProjection = @"cc_Projection";
-const NSString *CCShaderUniformProjectionInv = @"cc_ProjectionInv";
-const NSString *CCShaderUniformViewSize = @"cc_ViewSize";
-const NSString *CCShaderUniformViewSizeInPixels = @"cc_ViewSizeInPixels";
-const NSString *CCShaderUniformTime = @"cc_Time";
-const NSString *CCShaderUniformSinTime = @"cc_SinTime";
-const NSString *CCShaderUniformCosTime = @"cc_CosTime";
-const NSString *CCShaderUniformRandom01 = @"cc_Random01";
-const NSString *CCShaderUniformMainTexture = @"cc_MainTexture";
-const NSString *CCShaderUniformNormalMapTexture = @"cc_NormalMapTexture";
-const NSString *CCShaderUniformAlphaTestValue = @"cc_AlphaTestValue";
+NSString * const CCShaderUniformDefaultGlobals = @"cc_GlobalUniforms";
+NSString * const CCShaderUniformProjection = @"cc_Projection";
+NSString * const CCShaderUniformProjectionInv = @"cc_ProjectionInv";
+NSString * const CCShaderUniformViewSize = @"cc_ViewSize";
+NSString * const CCShaderUniformViewSizeInPixels = @"cc_ViewSizeInPixels";
+NSString * const CCShaderUniformTime = @"cc_Time";
+NSString * const CCShaderUniformSinTime = @"cc_SinTime";
+NSString * const CCShaderUniformCosTime = @"cc_CosTime";
+NSString * const CCShaderUniformRandom01 = @"cc_Random01";
+NSString * const CCShaderUniformMainTexture = @"cc_MainTexture";
+NSString * const CCShaderUniformNormalMapTexture = @"cc_NormalMapTexture";
+NSString * const CCShaderUniformAlphaTestValue = @"cc_AlphaTestValue";
 
 
 // Stringify macros
@@ -83,7 +83,7 @@ static const GLchar *CCShaderHeader =
 
 static const GLchar *CCVertexShaderHeader =
 	"#ifdef GL_ES\n"
-	"precision highp float;\n\n"
+	"precision highp float;\n"
 	"#endif\n\n"
 	"#define CC_NODE_RENDER_SUBPIXEL " XSTR(CC_NODE_RENDER_SUBPIXEL) "\n"
 	"attribute highp vec4 cc_Position;\n"
@@ -95,7 +95,6 @@ static const GLchar *CCVertexShaderHeader =
 static const GLchar *CCFragmentShaderHeader =
 	"#ifdef GL_ES\n"
 	"precision " XSTR(CC_SHADER_DEFAULT_FRAGMENT_PRECISION) " float;\n"
-    "#extension GL_OES_standard_derivatives : enable\n"
 	"#endif\n\n"
 	"// End Cocos2D fragment shader header.\n\n";
 
@@ -118,14 +117,14 @@ static NSString *CCMetalShaderHeader =
 	@"	float2 texCoord1;\n"
 	@"	float2 texCoord2;\n"
 	@"	float4 color;\n"
-	@"} CCVertex;\n"
-	@"typedef struct CCFragData {\n\n"
+	@"} CCVertex;\n\n"
+	@"typedef struct CCFragData {\n"
 	@"	float4 position [[position]];\n"
 	@"	float2 texCoord1;\n"
 	@"	float2 texCoord2;\n"
 	@"	half4  color;\n"
-	@"} CCFragData;\n"
-	@"typedef struct CCGlobalUniforms {\n\n"
+	@"} CCFragData;\n\n"
+	@"typedef struct CCGlobalUniforms {\n"
 	@"	float4x4 projection;\n"
 	@"	float4x4 projectionInv;\n"
 	@"	float2 viewSize;\n"
@@ -180,10 +179,10 @@ CompileShader(GLenum type, const char *source)
 		CCShaderTypeHeader(type),
 		source,
 	};
-	
+
 	glShaderSource(shader, 3, sources, NULL);
 	glCompileShader(shader);
-	
+	    
 	if(CCCheckShaderError(shader, GL_COMPILE_STATUS, glGetShaderiv, glGetShaderInfoLog)){
 		return shader;
 	} else {
@@ -488,7 +487,7 @@ MetalUniformSetSampler(NSString *name, MTLArgument *vertexArg, MTLArgument *frag
 	CCMetalContext *context = [CCMetalContext currentContext];
 	
 	return ^(CCRenderer *renderer, NSDictionary *shaderUniforms, NSDictionary *globalShaderUniforms){
-		CCTexture *texture = shaderUniforms[name] ?: globalShaderUniforms[name] ?: [CCTexture none];
+		CCTexture *texture = shaderUniforms[textureName] ?: globalShaderUniforms[textureName] ?: [CCTexture none];
 		NSCAssert([texture isKindOfClass:[CCTexture class]], @"Shader uniform '%@' value must be a CCTexture object.", name);
 		
 		id<MTLSamplerState> sampler = texture.metalSampler;

@@ -111,7 +111,6 @@
 		E525F1AA015BC76875184315 /* SFUIPackageControls.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2D62C308EC0C7CF75CF /* SFUIPackageControls.m */; };
 		E525F1ABDDDB26057D1697DB /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */; };
 		E525F1C1CD62C83A817B6BF8 /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AC8FD0C2C6DF58DDDF /* SFBackgroundDebris.m */; };
-		E525F1E279AF6554F5DB68E3 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FDDBE171C661E737C6AD /* CCEffectInvert.m */; };
 		E525F1FF8BE24075C7BD03E8 /* SFEntityConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE1DB47E4861682A789A /* SFEntityConfigLoader.m */; };
 		E525F207B37CEEA504ABDA7D /* SFKeyEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F64F87491E1473EA7ECA /* SFKeyEventHandler.m */; };
 		E525F20AA3375575200510E4 /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F896260E422363BD2EFA /* SFMoveComponent.m */; };
@@ -164,7 +163,6 @@
 		E525F78D4B5E7CC96671DBF4 /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* SFConstants.m */; };
 		E525F7BDA149297C2063D73D /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */; };
 		E525F7C38724E97430B24591 /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F89F1D87B36DF82DA617 /* SFDropTable.m */; };
-		E525F7D9C8B8DBA1995B66E2 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FDDBE171C661E737C6AD /* CCEffectInvert.m */; };
 		E525F7DFE1857D0A640D7649 /* SFBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* SFBackgroundLayer.m */; };
 		E525F7E8A2D5BCD0152CF639 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
 		E525F7EAD544FF954F91663A /* SFCollisionDamageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11C9D3978D6F900029E /* SFCollisionDamageComponent.m */; };
@@ -189,7 +187,6 @@
 		E525F99CE573887A8AD71EA1 /* SFCollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCCF8D7C1FD71913358C /* SFCollisionSystem.m */; };
 		E525F99F4C3373E16CCBE372 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */; };
 		E525F9A524C2E53620EC8002 /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E65A961703CDC23DAC /* SFEntity.m */; };
-		E525F9BDE59C9F410B716346 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FDDBE171C661E737C6AD /* CCEffectInvert.m */; };
 		E525F9D2D7453E6AB732B220 /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E65A961703CDC23DAC /* SFEntity.m */; };
 		E525F9D7BA97A3C09A2DDB8A /* SFWeaponStatsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F38CCB363C5FB89E7CCB /* SFWeaponStatsComponent.m */; };
 		E525F9E9AD46D66CF26A3CCF /* SFLootComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F42D2FBC7E24F0781D59 /* SFLootComponent.m */; };
@@ -321,7 +318,7 @@
 		5B121013197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121015197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B12101B19748413004C1E1D /* PackagesDemoActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; name = PackagesDemoActivity.java; path = Source/Platforms/Android/java/org/cocos2d/PackagesDemo/PackagesDemoActivity.java; sourceTree = "<group>"; };
-		5B121021197484A3004C1E1D /* PackagesDemo Java.jar */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.jar; path = "PackagesDemo Java.jar"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B121021197484A3004C1E1D /* PackagesDemo Java.jar */ = {isa = PBXFileReference; explicitFileType = compiled.java.jar; includeInIndex = 0; path = "PackagesDemo Java.jar"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B12102E197484FA004C1E1D /* PackagesDemoActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PackagesDemoActivity.h; path = Source/Platforms/Android/PackagesDemoActivity.h; sourceTree = "<group>"; };
 		5B12102F197484FA004C1E1D /* PackagesDemoActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PackagesDemoActivity.m; path = Source/Platforms/Android/PackagesDemoActivity.m; sourceTree = "<group>"; };
 		5B121033197485FE004C1E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/Android/Info.plist; sourceTree = "<group>"; };
@@ -374,7 +371,6 @@
 		B78A0B0F198AF87200C63841 /* Published-Android */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Published-Android"; sourceTree = "<group>"; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
 		E525F05ABFB8B7E4B2A1FD71 /* SFGameMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFGameMenuScene.h; path = Source/Platforms/iOS/SFGameMenuScene.h; sourceTree = SOURCE_ROOT; };
-		E525F0A3582275A9D2D4D7F1 /* CCEffectInvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEffectInvert.h; path = "Source/libs/cocos2d-iphone/cocos2d/CCEffectInvert.h"; sourceTree = "<group>"; };
 		E525F0CE1205AFC5DD796077 /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
 		E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimeToLiveSystem.m; sourceTree = "<group>"; };
 		E525F11B68F22F85AC81C956 /* SFTagComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTagComponent.m; sourceTree = "<group>"; };
@@ -458,7 +454,6 @@
 		E525FCFEFB78C8CAD2E233C1 /* SFCollisionComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionComponent.m; sourceTree = "<group>"; };
 		E525FD0693B73D9A49B3AD49 /* SFLootComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLootComponent.h; sourceTree = "<group>"; };
 		E525FDAF02C6A82B0D8CFD46 /* SneakyJoystickSkinnedDPadExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedDPadExample.h; sourceTree = "<group>"; };
-		E525FDDBE171C661E737C6AD /* CCEffectInvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCEffectInvert.m; path = "Source/libs/cocos2d-iphone/cocos2d/CCEffectInvert.m"; sourceTree = "<group>"; };
 		E525FDFB7930A07737730573 /* SFHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHelper.h; sourceTree = "<group>"; };
 		E525FE03320DF96E5C628725 /* SFCollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionComponent.h; sourceTree = "<group>"; };
 		E525FE12F698B03CC73708C5 /* SFEntityConfigLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityConfigLoader.h; sourceTree = "<group>"; };
@@ -979,8 +974,6 @@
 		E525FD2CF3D92FCDCFE29C98 /* Cocos2dAddons */ = {
 			isa = PBXGroup;
 			children = (
-				E525FDDBE171C661E737C6AD /* CCEffectInvert.m */,
-				E525F0A3582275A9D2D4D7F1 /* CCEffectInvert.h */,
 				E525F2AB12343226CB40BBC2 /* SFUIHelper.m */,
 				E525FECFC94BDD32B1224FF3 /* SFUIHelper.h */,
 				E525F9831BEB8359BC751383 /* CCFileUtils+Packages.m */,
@@ -1295,7 +1288,6 @@
 			files = (
 				5B12102A197484DD004C1E1D /* PackagesDemoActivity.java in Sources */,
 				E525F99F4C3373E16CCBE372 /* CCDirector.m in Sources */,
-				E525F1E279AF6554F5DB68E3 /* CCEffectInvert.m in Sources */,
 				E525FB93DDA49B1B66808E2E /* SFGameMenuScene.m in Sources */,
 				E525F66EBDBF3C6D10723368 /* SFHelper.m in Sources */,
 			);
@@ -1320,7 +1312,6 @@
 				E525F5A8892F0C6178AA4F54 /* SFConstants.m in Sources */,
 				E525F46C361900888F89423B /* SFLevelController.m in Sources */,
 				E525F5AD074AD49A741EAE68 /* CCDirector.m in Sources */,
-				E525F9BDE59C9F410B716346 /* CCEffectInvert.m in Sources */,
 				E525FB559E36E287A8230E1D /* SFGameMenuScene.m in Sources */,
 				E525F30742E581BCA53AEFBA /* SFHelper.m in Sources */,
 				E525F207B37CEEA504ABDA7D /* SFKeyEventHandler.m in Sources */,
@@ -1431,7 +1422,6 @@
 				E525F183AE074F1F2CEC05A5 /* SFConstants.m in Sources */,
 				E525FF663095AEFBFA8A15AF /* SFLevelController.m in Sources */,
 				E525F4F983970FC43ABF3D96 /* CCDirector.m in Sources */,
-				E525F7D9C8B8DBA1995B66E2 /* CCEffectInvert.m in Sources */,
 				E525F050684B700D1200840C /* SFGameMenuScene.m in Sources */,
 				E525FFA64C063CBDABA3FC47 /* SFHelper.m in Sources */,
 				E525FA56C045E76EFD4E3FDD /* SFComponent.m in Sources */,
@@ -1596,12 +1586,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = (
-					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
-					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
-					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
 					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
+					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
+					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1611,6 +1600,7 @@
 					"-ObjC",
 					"-lz",
 				);
+				PRODUCT_MODULE_NAME = PackagesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -1638,12 +1628,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = (
-					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
-					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
-					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
 					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
+					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
+					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1653,6 +1642,7 @@
 					"-ObjC",
 					"-lz",
 				);
+				PRODUCT_MODULE_NAME = PackagesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -1827,9 +1817,9 @@
 				HEADER_SEARCH_PATHS = (
 					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
+					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
-					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/iOS/Info.plist;
@@ -1862,9 +1852,9 @@
 				HEADER_SEARCH_PATHS = (
 					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
+					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
-					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/iOS/Info.plist;

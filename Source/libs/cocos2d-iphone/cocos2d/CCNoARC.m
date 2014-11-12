@@ -83,7 +83,7 @@ EnqueueTriangles(CCSprite *self, CCRenderer *renderer, const GLKMatrix4 *transfo
 	if (_effect)
 	{
 		_effectRenderer.contentSize = self.contentSizeInPoints;
-		if ([self.effect prepareForRendering] == CCEffectPrepareSuccess)
+		if ([self.effect prepareForRenderingWithSprite:self] == CCEffectPrepareSuccess)
 		{
 			// Preparing an effect for rendering can modify its uniforms
 			// dictionary which means we need to reinitialize our copy of the
@@ -181,7 +181,7 @@ PageOffset(NSUInteger firstVertex, NSUInteger vertexCount)
 	NSUInteger firstVertex = _buffers->_vertexBuffer->_count;
 	NSUInteger firstIndex = _buffers->_indexBuffer->_count;
 	
-	// Value is 0 unless there a page boundary overlap would occur.
+	// Value is 0 unless a page boundary overlap would occur.
 	NSUInteger vertexPageOffset = PageOffset(firstVertex, vertexCount);
 	
 	// Split vertexes into pages of 2^16 vertexes since GLES2 requires indexing with shorts.

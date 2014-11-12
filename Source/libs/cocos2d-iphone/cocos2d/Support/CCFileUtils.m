@@ -31,18 +31,18 @@
 #import "../ccConfig.h"
 #import "../ccTypes.h"
 
-NSString *CCFileUtilsSuffixDefault = @"default";
+NSString * const CCFileUtilsSuffixDefault = @"default";
 
-NSString *CCFileUtilsSuffixiPad = @"ipad";
-NSString *CCFileUtilsSuffixiPadHD = @"ipadhd";
-NSString *CCFileUtilsSuffixiPhone = @"iphone";
-NSString *CCFileUtilsSuffixiPhoneHD = @"iphonehd";
-NSString *CCFileUtilsSuffixiPhone5 = @"iphone5";
-NSString *CCFileUtilsSuffixiPhone5HD = @"iphone5hd";
-NSString *CCFileUtilsSuffixMac = @"mac";
-NSString *CCFileUtilsSuffixMacHD = @"machd";
+NSString * const CCFileUtilsSuffixiPad = @"ipad";
+NSString * const CCFileUtilsSuffixiPadHD = @"ipadhd";
+NSString * const CCFileUtilsSuffixiPhone = @"iphone";
+NSString * const CCFileUtilsSuffixiPhoneHD = @"iphonehd";
+NSString * const CCFileUtilsSuffixiPhone5 = @"iphone5";
+NSString * const CCFileUtilsSuffixiPhone5HD = @"iphone5hd";
+NSString * const CCFileUtilsSuffixMac = @"mac";
+NSString * const CCFileUtilsSuffixMacHD = @"machd";
 
-NSString *kCCFileUtilsDefaultSearchPath = @"";
+NSString * const kCCFileUtilsDefaultSearchPath = @"";
 
 #pragma mark - Helper free functions
 
@@ -234,7 +234,18 @@ static CCFileUtils *fileUtils = nil;
 			[_searchResolutionsOrder addObject:CCFileUtilsSuffixiPhoneHD];
 		}
 	}
-	else if (device == CCDeviceiPhone5RetinaDisplay)
+	else if (device == CCDeviceiPhone6Plus)
+	{
+		// Terrible, terrible iPhone 6+ hack.
+		[self setiPadContentScaleFactor:2.0];
+		[_searchResolutionsOrder addObject:CCFileUtilsSuffixiPadHD];
+		
+		[_searchResolutionsOrder addObject:CCFileUtilsSuffixiPhone5HD];
+		[_searchResolutionsOrder addObject:CCFileUtilsSuffixiPhoneHD];
+		[_searchResolutionsOrder addObject:CCFileUtilsSuffixiPhone5];
+		[_searchResolutionsOrder addObject:CCFileUtilsSuffixiPhone];
+	}
+	else if (device == CCDeviceiPhone5RetinaDisplay || device == CCDeviceiPhone6)
 	{
 		[_searchResolutionsOrder addObject:CCFileUtilsSuffixiPhone5HD];
 		[_searchResolutionsOrder addObject:CCFileUtilsSuffixiPhoneHD];

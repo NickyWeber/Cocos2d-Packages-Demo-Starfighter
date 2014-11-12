@@ -1146,6 +1146,10 @@
 #pragma mark AVAudioPlayerDelegate
 
 #if TARGET_OS_IPHONE
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
+
 - (void) audioPlayerBeginInterruption:(AVAudioPlayer*) playerIn
 {
 	if([delegate respondsToSelector:@selector(audioPlayerBeginInterruption:)])
@@ -1161,6 +1165,8 @@
 		[delegate audioPlayerEndInterruption:playerIn withOptions:flags];
 	}
 }
+
+#pragma clang diagnostic pop
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
 - (void)audioPlayerEndInterruption:(AVAudioPlayer *)playerIn withFlags:(NSUInteger)flags

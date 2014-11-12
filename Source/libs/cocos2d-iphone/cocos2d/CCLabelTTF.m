@@ -101,6 +101,7 @@ static __strong NSMutableDictionary* ccLabelTTF_registeredFonts;
     return [self initWithString:@"" fontName:@"Helvetica" fontSize:12];
 }
 
+
 - (id) initWithString:(NSString*)str fontName:(NSString*)name fontSize:(CGFloat)size
 {
 	return [self initWithAttributedString:[[NSAttributedString alloc] initWithString:str] fontName:name fontSize:size dimensions:CGSizeZero];
