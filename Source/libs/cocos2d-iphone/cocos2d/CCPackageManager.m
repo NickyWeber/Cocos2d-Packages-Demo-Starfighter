@@ -432,7 +432,7 @@
 
 - (void)removeUnzippedPackage:(CCPackage *)package
 {
-    NSAssert(package.unzipURL, @"installData.unzipURL must not be nil");
+    NSAssert(package.unzipURL, @"package.unzipURL must not be nil");
 
     NSError *error;
     if (![[NSFileManager defaultManager] removeItemAtURL:package.unzipURL error:&error])
@@ -477,7 +477,7 @@
 
 - (BOOL)determinePackageFolderNameInUnzippedFile:(CCPackage *)package error:(NSError **)error
 {
-    NSAssert(package.unzipURL, @"installData.unzipURL must not be nil");
+    NSAssert(package.unzipURL, @"package.unzipURL must not be nil");
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *files = [fileManager contentsOfDirectoryAtURL:package.unzipURL
@@ -521,7 +521,7 @@
 
 - (void)setPackageEmptyError:(NSError **)error package:(CCPackage *)package
 {
-    NSAssert(package.unzipURL, @"installData.unzipURL must not be nil");
+    NSAssert(package.unzipURL, @"package.unzipURL must not be nil");
 
     if (error)
     {
@@ -535,7 +535,7 @@
 
 - (BOOL)askDelegateForCustomFolderName:(CCPackage *)package files:(NSArray *)files
 {
-    NSAssert(package.unzipURL, @"installData.unzipURL must not be nil");
+    NSAssert(package.unzipURL, @"package.unzipURL must not be nil");
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([_delegate respondsToSelector:@selector(customFolderName:packageContents:)])

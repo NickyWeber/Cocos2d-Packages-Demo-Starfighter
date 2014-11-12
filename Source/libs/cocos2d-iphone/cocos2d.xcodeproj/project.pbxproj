@@ -445,7 +445,7 @@
 		839CE58719FFB139003369F0 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 839CE58519FFB139003369F0 /* CCEffectInvert.m */; };
 		839CE58A19FFB145003369F0 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 839CE58519FFB139003369F0 /* CCEffectInvert.m */; };
 		839CE58B19FFB146003369F0 /* CCEffectInvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 839CE58519FFB139003369F0 /* CCEffectInvert.m */; };
-		83BAEBE11A135FE3002CB80B /* CCPackageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A85F19C8ACA0000A3BCA /* CCPackageManager.m */; };
+		83BAEDAA1A1366F8002CB80B /* CCPackageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A85F19C8ACA0000A3BCA /* CCPackageManager.m */; };
 		83E1A86219C8ACA0000A3BCA /* CCPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A85A19C8ACA0000A3BCA /* CCPackage.h */; };
 		83E1A86319C8ACA0000A3BCA /* CCPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1A85B19C8ACA0000A3BCA /* CCPackage.m */; };
 		83E1A86419C8ACA0000A3BCA /* CCPackageConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E1A85C19C8ACA0000A3BCA /* CCPackageConstants.h */; };
@@ -3274,7 +3274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A59479119E3759800F65F90 /* CCEffectDistanceField.m in Sources */,
-				83BAEBE11A135FE3002CB80B /* CCPackageManager.m in Sources */,
 				7A59479319E3759800F65F90 /* CCEffectDFOutline.m in Sources */,
 				839CE58B19FFB146003369F0 /* CCEffectInvert.m in Sources */,
 				7A59479519E3759800F65F90 /* CCEffectDFInnerGlow.m in Sources */,
@@ -3283,6 +3282,7 @@
 				7A59479B19E3759900F65F90 /* CCEffectRefraction.m in Sources */,
 				7A59479D19E3759900F65F90 /* CCEffectUtils.m in Sources */,
 				7A59479F19E3759900F65F90 /* CCEffectBloom.m in Sources */,
+				83BAEDAA1A1366F8002CB80B /* CCPackageManager.m in Sources */,
 				7A5947A119E3759900F65F90 /* CCEffectGlass.m in Sources */,
 				7A5947A319E3759A00F65F90 /* CCEffectHue.m in Sources */,
 				7A5947A519E3759A00F65F90 /* CCEffectReflection.m in Sources */,

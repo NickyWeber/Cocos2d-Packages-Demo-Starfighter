@@ -12,7 +12,9 @@
 		5B12102A197484DD004C1E1D /* PackagesDemoActivity.java in Sources */ = {isa = PBXBuildFile; fileRef = 5B12101B19748413004C1E1D /* PackagesDemoActivity.java */; };
 		5B121030197484FA004C1E1D /* PackagesDemoActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* PackagesDemoActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
+		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
 		7A40360419DDEE84007B6E8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A40360319DDEE84007B6E8F /* main.m */; };
+		7A4036E819DE3F33007B6E8F /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
 		7A4036EB19DE3F8E007B6E8F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		7A4036EC19DE3F90007B6E8F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3117B978D7009739AE /* QuartzCore.framework */; };
 		7A4036EE19DE3F93007B6E8F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3517B978D7009739AE /* OpenAL.framework */; };
@@ -45,9 +47,147 @@
 		7A97911719E631C6001FFC4D /* libcocos2d-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A97910419E62E40001FFC4D /* libcocos2d-mac.a */; };
 		7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9790FE19E62E40001FFC4D /* libcocos2d.a */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
-		83E21C261A1240CE000D1695 /* Configs in Resources */ = {isa = PBXBuildFile; fileRef = 83E21C251A1240CE000D1695 /* Configs */; };
-		83E21C271A1240CE000D1695 /* Configs in Resources */ = {isa = PBXBuildFile; fileRef = 83E21C251A1240CE000D1695 /* Configs */; };
-		83E21C281A1240CE000D1695 /* Configs in Resources */ = {isa = PBXBuildFile; fileRef = 83E21C251A1240CE000D1695 /* Configs */; };
+		83BAED071A1365DF002CB80B /* CCFileUtils+Packages.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECAC1A1365DE002CB80B /* CCFileUtils+Packages.m */; };
+		83BAED081A1365DF002CB80B /* CCFileUtils+Packages.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECAC1A1365DE002CB80B /* CCFileUtils+Packages.m */; };
+		83BAED091A1365DF002CB80B /* CCFileUtils+Packages.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECAC1A1365DE002CB80B /* CCFileUtils+Packages.m */; };
+		83BAED0A1A1365DF002CB80B /* SFCollisionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECAF1A1365DE002CB80B /* SFCollisionComponent.m */; };
+		83BAED0B1A1365DF002CB80B /* SFCollisionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECAF1A1365DE002CB80B /* SFCollisionComponent.m */; };
+		83BAED0C1A1365DF002CB80B /* SFCollisionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECAF1A1365DE002CB80B /* SFCollisionComponent.m */; };
+		83BAED0D1A1365DF002CB80B /* SFCollisionDamageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB11A1365DE002CB80B /* SFCollisionDamageComponent.m */; };
+		83BAED0E1A1365DF002CB80B /* SFCollisionDamageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB11A1365DE002CB80B /* SFCollisionDamageComponent.m */; };
+		83BAED0F1A1365DF002CB80B /* SFCollisionDamageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB11A1365DE002CB80B /* SFCollisionDamageComponent.m */; };
+		83BAED101A1365DF002CB80B /* SFCollisionRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB31A1365DE002CB80B /* SFCollisionRewardComponent.m */; };
+		83BAED111A1365DF002CB80B /* SFCollisionRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB31A1365DE002CB80B /* SFCollisionRewardComponent.m */; };
+		83BAED121A1365DF002CB80B /* SFCollisionRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB31A1365DE002CB80B /* SFCollisionRewardComponent.m */; };
+		83BAED131A1365DF002CB80B /* SFCollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB51A1365DE002CB80B /* SFCollisionSystem.m */; };
+		83BAED141A1365DF002CB80B /* SFCollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB51A1365DE002CB80B /* SFCollisionSystem.m */; };
+		83BAED151A1365DF002CB80B /* SFCollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB51A1365DE002CB80B /* SFCollisionSystem.m */; };
+		83BAED161A1365DF002CB80B /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB71A1365DE002CB80B /* SFComponent.m */; };
+		83BAED171A1365DF002CB80B /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB71A1365DE002CB80B /* SFComponent.m */; };
+		83BAED181A1365DF002CB80B /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB71A1365DE002CB80B /* SFComponent.m */; };
+		83BAED191A1365DF002CB80B /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB91A1365DF002CB80B /* SFDropTable.m */; };
+		83BAED1A1A1365DF002CB80B /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB91A1365DF002CB80B /* SFDropTable.m */; };
+		83BAED1B1A1365DF002CB80B /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECB91A1365DF002CB80B /* SFDropTable.m */; };
+		83BAED1C1A1365DF002CB80B /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECBB1A1365DF002CB80B /* SFEntity.m */; };
+		83BAED1D1A1365DF002CB80B /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECBB1A1365DF002CB80B /* SFEntity.m */; };
+		83BAED1E1A1365DF002CB80B /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECBB1A1365DF002CB80B /* SFEntity.m */; };
+		83BAED1F1A1365DF002CB80B /* SFEntityConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECBD1A1365DF002CB80B /* SFEntityConfigLoader.m */; };
+		83BAED201A1365DF002CB80B /* SFEntityConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECBD1A1365DF002CB80B /* SFEntityConfigLoader.m */; };
+		83BAED211A1365DF002CB80B /* SFEntityConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECBD1A1365DF002CB80B /* SFEntityConfigLoader.m */; };
+		83BAED221A1365DF002CB80B /* SFEntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECBF1A1365DF002CB80B /* SFEntityManager.m */; };
+		83BAED231A1365DF002CB80B /* SFEntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECBF1A1365DF002CB80B /* SFEntityManager.m */; };
+		83BAED241A1365DF002CB80B /* SFEntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECBF1A1365DF002CB80B /* SFEntityManager.m */; };
+		83BAED251A1365DF002CB80B /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC11A1365DF002CB80B /* SFEntitySystem.m */; };
+		83BAED261A1365DF002CB80B /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC11A1365DF002CB80B /* SFEntitySystem.m */; };
+		83BAED271A1365DF002CB80B /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC11A1365DF002CB80B /* SFEntitySystem.m */; };
+		83BAED2A1A1365DF002CB80B /* SFGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC31A1365DF002CB80B /* SFGLView.m */; };
+		83BAED2B1A1365DF002CB80B /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC51A1365DF002CB80B /* SFHealthComponent.m */; };
+		83BAED2C1A1365DF002CB80B /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC51A1365DF002CB80B /* SFHealthComponent.m */; };
+		83BAED2D1A1365DF002CB80B /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC51A1365DF002CB80B /* SFHealthComponent.m */; };
+		83BAED2E1A1365DF002CB80B /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC71A1365DF002CB80B /* SFHealthSystem.m */; };
+		83BAED2F1A1365DF002CB80B /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC71A1365DF002CB80B /* SFHealthSystem.m */; };
+		83BAED301A1365DF002CB80B /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC71A1365DF002CB80B /* SFHealthSystem.m */; };
+		83BAED331A1365DF002CB80B /* SFKeyEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECC91A1365DF002CB80B /* SFKeyEventHandler.m */; };
+		83BAED341A1365DF002CB80B /* SFLootComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECCB1A1365DF002CB80B /* SFLootComponent.m */; };
+		83BAED351A1365DF002CB80B /* SFLootComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECCB1A1365DF002CB80B /* SFLootComponent.m */; };
+		83BAED361A1365DF002CB80B /* SFLootComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECCB1A1365DF002CB80B /* SFLootComponent.m */; };
+		83BAED371A1365DF002CB80B /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECCD1A1365DF002CB80B /* SFMoveComponent.m */; };
+		83BAED381A1365DF002CB80B /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECCD1A1365DF002CB80B /* SFMoveComponent.m */; };
+		83BAED391A1365DF002CB80B /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECCD1A1365DF002CB80B /* SFMoveComponent.m */; };
+		83BAED3A1A1365DF002CB80B /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECCF1A1365DF002CB80B /* SFMoveSystem.m */; };
+		83BAED3B1A1365DF002CB80B /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECCF1A1365DF002CB80B /* SFMoveSystem.m */; };
+		83BAED3C1A1365DF002CB80B /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECCF1A1365DF002CB80B /* SFMoveSystem.m */; };
+		83BAED3D1A1365DF002CB80B /* SFRenderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD11A1365DF002CB80B /* SFRenderComponent.m */; };
+		83BAED3E1A1365DF002CB80B /* SFRenderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD11A1365DF002CB80B /* SFRenderComponent.m */; };
+		83BAED3F1A1365DF002CB80B /* SFRenderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD11A1365DF002CB80B /* SFRenderComponent.m */; };
+		83BAED401A1365DF002CB80B /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD31A1365DF002CB80B /* SFRewardComponent.m */; };
+		83BAED411A1365DF002CB80B /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD31A1365DF002CB80B /* SFRewardComponent.m */; };
+		83BAED421A1365DF002CB80B /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD31A1365DF002CB80B /* SFRewardComponent.m */; };
+		83BAED431A1365DF002CB80B /* SFTagComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD51A1365DF002CB80B /* SFTagComponent.m */; };
+		83BAED441A1365DF002CB80B /* SFTagComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD51A1365DF002CB80B /* SFTagComponent.m */; };
+		83BAED451A1365DF002CB80B /* SFTagComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD51A1365DF002CB80B /* SFTagComponent.m */; };
+		83BAED461A1365DF002CB80B /* SFTimeToLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD71A1365DF002CB80B /* SFTimeToLiveComponent.m */; };
+		83BAED471A1365DF002CB80B /* SFTimeToLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD71A1365DF002CB80B /* SFTimeToLiveComponent.m */; };
+		83BAED481A1365DF002CB80B /* SFTimeToLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD71A1365DF002CB80B /* SFTimeToLiveComponent.m */; };
+		83BAED491A1365DF002CB80B /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD91A1365DF002CB80B /* SFTimeToLiveSystem.m */; };
+		83BAED4A1A1365DF002CB80B /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD91A1365DF002CB80B /* SFTimeToLiveSystem.m */; };
+		83BAED4B1A1365DF002CB80B /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECD91A1365DF002CB80B /* SFTimeToLiveSystem.m */; };
+		83BAED4C1A1365DF002CB80B /* SFUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECDB1A1365DF002CB80B /* SFUIHelper.m */; };
+		83BAED4D1A1365DF002CB80B /* SFUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECDB1A1365DF002CB80B /* SFUIHelper.m */; };
+		83BAED4E1A1365DF002CB80B /* SFUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECDB1A1365DF002CB80B /* SFUIHelper.m */; };
+		83BAED4F1A1365DF002CB80B /* SFWeaponComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECDD1A1365DF002CB80B /* SFWeaponComponent.m */; };
+		83BAED501A1365DF002CB80B /* SFWeaponComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECDD1A1365DF002CB80B /* SFWeaponComponent.m */; };
+		83BAED511A1365DF002CB80B /* SFWeaponComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECDD1A1365DF002CB80B /* SFWeaponComponent.m */; };
+		83BAED521A1365DF002CB80B /* SFWeaponStatsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECDF1A1365DF002CB80B /* SFWeaponStatsComponent.m */; };
+		83BAED531A1365DF002CB80B /* SFWeaponStatsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECDF1A1365DF002CB80B /* SFWeaponStatsComponent.m */; };
+		83BAED541A1365DF002CB80B /* SFWeaponStatsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECDF1A1365DF002CB80B /* SFWeaponStatsComponent.m */; };
+		83BAED551A1365DF002CB80B /* SFWeaponSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECE11A1365DF002CB80B /* SFWeaponSystem.m */; };
+		83BAED561A1365DF002CB80B /* SFWeaponSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECE11A1365DF002CB80B /* SFWeaponSystem.m */; };
+		83BAED571A1365DF002CB80B /* SFWeaponSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECE11A1365DF002CB80B /* SFWeaponSystem.m */; };
+		83BAED581A1365DF002CB80B /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECE41A1365DF002CB80B /* SFBackgroundDebris.m */; };
+		83BAED591A1365DF002CB80B /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECE41A1365DF002CB80B /* SFBackgroundDebris.m */; };
+		83BAED5A1A1365DF002CB80B /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECE41A1365DF002CB80B /* SFBackgroundDebris.m */; };
+		83BAED5B1A1365DF002CB80B /* SFTrigonometryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECE61A1365DF002CB80B /* SFTrigonometryHelper.m */; };
+		83BAED5C1A1365DF002CB80B /* SFTrigonometryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECE61A1365DF002CB80B /* SFTrigonometryHelper.m */; };
+		83BAED5D1A1365DF002CB80B /* SFTrigonometryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECE61A1365DF002CB80B /* SFTrigonometryHelper.m */; };
+		83BAED611A1365DF002CB80B /* SFBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECEC1A1365DF002CB80B /* SFBackgroundLayer.m */; };
+		83BAED621A1365DF002CB80B /* SFBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECEC1A1365DF002CB80B /* SFBackgroundLayer.m */; };
+		83BAED631A1365DF002CB80B /* SFBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECEC1A1365DF002CB80B /* SFBackgroundLayer.m */; };
+		83BAED641A1365DF002CB80B /* SFGamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECEE1A1365DF002CB80B /* SFGamePlayLayer.m */; };
+		83BAED651A1365DF002CB80B /* SFGamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECEE1A1365DF002CB80B /* SFGamePlayLayer.m */; };
+		83BAED661A1365DF002CB80B /* SFGamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECEE1A1365DF002CB80B /* SFGamePlayLayer.m */; };
+		83BAED671A1365DF002CB80B /* SFHUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF11A1365DF002CB80B /* SFHUDLayer.m */; };
+		83BAED681A1365DF002CB80B /* SFHUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF11A1365DF002CB80B /* SFHUDLayer.m */; };
+		83BAED691A1365DF002CB80B /* SFHUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF11A1365DF002CB80B /* SFHUDLayer.m */; };
+		83BAED6A1A1365DF002CB80B /* SFBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF41A1365DF002CB80B /* SFBoundingBox.m */; };
+		83BAED6B1A1365DF002CB80B /* SFBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF41A1365DF002CB80B /* SFBoundingBox.m */; };
+		83BAED6C1A1365DF002CB80B /* SFBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF41A1365DF002CB80B /* SFBoundingBox.m */; };
+		83BAED6D1A1365DF002CB80B /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF61A1365DF002CB80B /* SFConstants.m */; };
+		83BAED6E1A1365DF002CB80B /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF61A1365DF002CB80B /* SFConstants.m */; };
+		83BAED6F1A1365DF002CB80B /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF61A1365DF002CB80B /* SFConstants.m */; };
+		83BAED701A1365DF002CB80B /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF81A1365DF002CB80B /* SFEntityFactory.m */; };
+		83BAED711A1365DF002CB80B /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF81A1365DF002CB80B /* SFEntityFactory.m */; };
+		83BAED721A1365DF002CB80B /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECF81A1365DF002CB80B /* SFEntityFactory.m */; };
+		83BAED731A1365DF002CB80B /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECFA1A1365DF002CB80B /* SFHelper.m */; };
+		83BAED741A1365DF002CB80B /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECFA1A1365DF002CB80B /* SFHelper.m */; };
+		83BAED751A1365DF002CB80B /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECFA1A1365DF002CB80B /* SFHelper.m */; };
+		83BAED761A1365DF002CB80B /* SFLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECFC1A1365DF002CB80B /* SFLevel.m */; };
+		83BAED771A1365DF002CB80B /* SFLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECFC1A1365DF002CB80B /* SFLevel.m */; };
+		83BAED781A1365DF002CB80B /* SFLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECFC1A1365DF002CB80B /* SFLevel.m */; };
+		83BAED791A1365DF002CB80B /* SFLevelConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECFE1A1365DF002CB80B /* SFLevelConfigLoader.m */; };
+		83BAED7A1A1365DF002CB80B /* SFLevelConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECFE1A1365DF002CB80B /* SFLevelConfigLoader.m */; };
+		83BAED7B1A1365DF002CB80B /* SFLevelConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAECFE1A1365DF002CB80B /* SFLevelConfigLoader.m */; };
+		83BAED7C1A1365DF002CB80B /* SFLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED001A1365DF002CB80B /* SFLevelController.m */; };
+		83BAED7D1A1365DF002CB80B /* SFLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED001A1365DF002CB80B /* SFLevelController.m */; };
+		83BAED7E1A1365DF002CB80B /* SFLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED001A1365DF002CB80B /* SFLevelController.m */; };
+		83BAED7F1A1365DF002CB80B /* SFGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED031A1365DF002CB80B /* SFGamePlayScene.m */; };
+		83BAED801A1365DF002CB80B /* SFGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED031A1365DF002CB80B /* SFGamePlayScene.m */; };
+		83BAED811A1365DF002CB80B /* SFGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED031A1365DF002CB80B /* SFGamePlayScene.m */; };
+		83BAED821A1365DF002CB80B /* SFUIPackageControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED051A1365DF002CB80B /* SFUIPackageControls.m */; };
+		83BAED831A1365DF002CB80B /* SFUIPackageControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED051A1365DF002CB80B /* SFUIPackageControls.m */; };
+		83BAED841A1365DF002CB80B /* SFUIPackageControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED051A1365DF002CB80B /* SFUIPackageControls.m */; };
+		83BAED911A136679002CB80B /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED881A136679002CB80B /* SneakyButton.m */; };
+		83BAED921A136679002CB80B /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED881A136679002CB80B /* SneakyButton.m */; };
+		83BAED931A136679002CB80B /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED881A136679002CB80B /* SneakyButton.m */; };
+		83BAED941A136679002CB80B /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED8A1A136679002CB80B /* SneakyButtonSkinnedBase.m */; };
+		83BAED951A136679002CB80B /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED8A1A136679002CB80B /* SneakyButtonSkinnedBase.m */; };
+		83BAED961A136679002CB80B /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED8A1A136679002CB80B /* SneakyButtonSkinnedBase.m */; };
+		83BAED971A136679002CB80B /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED8C1A136679002CB80B /* SneakyJoystick.m */; };
+		83BAED981A136679002CB80B /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED8C1A136679002CB80B /* SneakyJoystick.m */; };
+		83BAED991A136679002CB80B /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED8C1A136679002CB80B /* SneakyJoystick.m */; };
+		83BAED9A1A136679002CB80B /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED8E1A136679002CB80B /* SneakyJoystickSkinnedBase.m */; };
+		83BAED9B1A136679002CB80B /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED8E1A136679002CB80B /* SneakyJoystickSkinnedBase.m */; };
+		83BAED9C1A136679002CB80B /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED8E1A136679002CB80B /* SneakyJoystickSkinnedBase.m */; };
+		83BAED9D1A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED901A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m */; };
+		83BAED9E1A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED901A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m */; };
+		83BAED9F1A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAED901A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m */; };
+		83BAEDA21A1366BA002CB80B /* SFGameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAEDA11A1366BA002CB80B /* SFGameMenuScene.m */; };
+		83BAEDA31A1366BA002CB80B /* SFGameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAEDA11A1366BA002CB80B /* SFGameMenuScene.m */; };
+		83BAEDA41A1366BA002CB80B /* SFGameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAEDA11A1366BA002CB80B /* SFGameMenuScene.m */; };
+		83BAEDA71A1366D8002CB80B /* SFDLCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAEDA61A1366D8002CB80B /* SFDLCScene.m */; };
+		83BAEDA81A1366D8002CB80B /* SFDLCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAEDA61A1366D8002CB80B /* SFDLCScene.m */; };
+		83BAEDA91A1366D8002CB80B /* SFDLCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BAEDA61A1366D8002CB80B /* SFDLCScene.m */; };
+		927F619E196C771E000F43EF /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
 		927F61A5196C771E000F43EF /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3517B978D7009739AE /* OpenAL.framework */; };
 		927F61A9196C771E000F43EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		927F61AA196C771E000F43EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
@@ -92,149 +232,6 @@
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		B78A0B10198AF87200C63841 /* Published-Android in Resources */ = {isa = PBXBuildFile; fileRef = B78A0B0F198AF87200C63841 /* Published-Android */; };
-		E525F00E0DF76BBC06F2B857 /* SFEntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F75BFE739F3339BFBFDC /* SFEntityManager.m */; };
-		E525F0156B7CF52848E81791 /* SFTrigonometryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F48F41E5CD723D5511E1 /* SFTrigonometryHelper.m */; };
-		E525F026CA6613CB5F36F895 /* CCFileUtils+Packages.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F9831BEB8359BC751383 /* CCFileUtils+Packages.m */; };
-		E525F033A6AAA603DC3A96B9 /* SFTrigonometryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F48F41E5CD723D5511E1 /* SFTrigonometryHelper.m */; };
-		E525F03AC683827AD1BC0305 /* SFLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FA2CFB42F469010F23E7 /* SFLevel.m */; };
-		E525F050684B700D1200840C /* SFGameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F930FFA18F370C7EC140 /* SFGameMenuScene.m */; };
-		E525F0880539B2BBDFB57DD2 /* SFHUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* SFHUDLayer.m */; };
-		E525F09049F91E20EE03B991 /* SFUIPackageControls.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2D62C308EC0C7CF75CF /* SFUIPackageControls.m */; };
-		E525F098159DAE3092972600 /* SFCollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCCF8D7C1FD71913358C /* SFCollisionSystem.m */; };
-		E525F0A069BB65377042AE26 /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F89F1D87B36DF82DA617 /* SFDropTable.m */; };
-		E525F0DD5564A85DB6B6469C /* SFGamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* SFGamePlayLayer.m */; };
-		E525F12852DCBC476BCB64CC /* SFWeaponSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCACD2D192D9E418572A /* SFWeaponSystem.m */; };
-		E525F16941679F3A70C1AA53 /* SFGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* SFGamePlayScene.m */; };
-		E525F179272E03CA7BB0C55D /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
-		E525F183AE074F1F2CEC05A5 /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* SFConstants.m */; };
-		E525F187B1EF9E6425A6361D /* SFWeaponSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCACD2D192D9E418572A /* SFWeaponSystem.m */; };
-		E525F1AA015BC76875184315 /* SFUIPackageControls.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2D62C308EC0C7CF75CF /* SFUIPackageControls.m */; };
-		E525F1ABDDDB26057D1697DB /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */; };
-		E525F1C1CD62C83A817B6BF8 /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AC8FD0C2C6DF58DDDF /* SFBackgroundDebris.m */; };
-		E525F1FF8BE24075C7BD03E8 /* SFEntityConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE1DB47E4861682A789A /* SFEntityConfigLoader.m */; };
-		E525F207B37CEEA504ABDA7D /* SFKeyEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F64F87491E1473EA7ECA /* SFKeyEventHandler.m */; };
-		E525F20AA3375575200510E4 /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F896260E422363BD2EFA /* SFMoveComponent.m */; };
-		E525F20C69C2819700E3F916 /* SFDLCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FEF535E3E5BBF15D179C /* SFDLCScene.m */; };
-		E525F22B8EFBD6AC1BA91522 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
-		E525F22DFC7E393CDD714AD1 /* SFLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FA2CFB42F469010F23E7 /* SFLevel.m */; };
-		E525F24EE65E381CE93A8362 /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F35E4060FA22372D2D56 /* SFRewardComponent.m */; };
-		E525F2649C981A4370B12F5B /* SFDLCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FEF535E3E5BBF15D179C /* SFDLCScene.m */; };
-		E525F28DBB7D35316F3F6468 /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F33A298303CEAD17B470 /* SFHealthSystem.m */; };
-		E525F2D0CC6B46D34E028961 /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F78B0E51C15B17BB5DF5 /* SFComponent.m */; };
-		E525F2D4D973CC0CCC20227D /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F82D300EDF999271AC26 /* SFEntitySystem.m */; };
-		E525F30742E581BCA53AEFBA /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* SFHelper.m */; };
-		E525F309C3FCBAF4F797AC46 /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F35E4060FA22372D2D56 /* SFRewardComponent.m */; };
-		E525F325A0662AE8F98F4F8D /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E0DCE0A4472071F4D3 /* SFHealthComponent.m */; };
-		E525F3EC175B9B4452CD9DF4 /* SFTagComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11B68F22F85AC81C956 /* SFTagComponent.m */; };
-		E525F4115E3E19661B920EA9 /* SFWeaponComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F19C15E175FB11810488 /* SFWeaponComponent.m */; };
-		E525F42BB170E68DF95B4DC2 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
-		E525F46C361900888F89423B /* SFLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBB355E9F0C7DCD609EE /* SFLevelController.m */; };
-		E525F472711FA48C285F2AF5 /* SFBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* SFBackgroundLayer.m */; };
-		E525F481736453057C9E5C83 /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E0DCE0A4472071F4D3 /* SFHealthComponent.m */; };
-		E525F48350928832D8A75402 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
-		E525F4A885A32A55344B66D3 /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F78B0E51C15B17BB5DF5 /* SFComponent.m */; };
-		E525F4F0AD133866A01FA985 /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F33A298303CEAD17B470 /* SFHealthSystem.m */; };
-		E525F4F983970FC43ABF3D96 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */; };
-		E525F5056396262B97612CD5 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
-		E525F50CE65AFA7832C184A1 /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F896260E422363BD2EFA /* SFMoveComponent.m */; };
-		E525F52E6C063319C7C6A2FB /* SFUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AB12343226CB40BBC2 /* SFUIHelper.m */; };
-		E525F553245EABB3AF2A5B32 /* SFLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FA2CFB42F469010F23E7 /* SFLevel.m */; };
-		E525F5762EEB3EC2D5EA49B5 /* SFHUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* SFHUDLayer.m */; };
-		E525F5957BA86C84CE570E2D /* SFCollisionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCFEFB78C8CAD2E233C1 /* SFCollisionComponent.m */; };
-		E525F5A7DE89C687F08BC3D5 /* SFEntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F75BFE739F3339BFBFDC /* SFEntityManager.m */; };
-		E525F5A8892F0C6178AA4F54 /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* SFConstants.m */; };
-		E525F5AD074AD49A741EAE68 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */; };
-		E525F5B6890B865BD484E7E1 /* SFWeaponStatsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F38CCB363C5FB89E7CCB /* SFWeaponStatsComponent.m */; };
-		E525F5BDBBFED07AF765329B /* SFGamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* SFGamePlayLayer.m */; };
-		E525F5FAB80C23CB36D447C9 /* SFCollisionRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F54056E2E990B9CF31AF /* SFCollisionRewardComponent.m */; };
-		E525F5FF86D2CA3CD2CBBFE6 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
-		E525F625F68099A87A7AD214 /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */; };
-		E525F66E9108621DE194C727 /* SFTagComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11B68F22F85AC81C956 /* SFTagComponent.m */; };
-		E525F66EBDBF3C6D10723368 /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* SFHelper.m */; };
-		E525F6A40943A5BB4EFE9371 /* SFMoveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F896260E422363BD2EFA /* SFMoveComponent.m */; };
-		E525F6B7E6C27F059CDAE500 /* SFEntityConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE1DB47E4861682A789A /* SFEntityConfigLoader.m */; };
-		E525F6C696DC140BA215DD38 /* SFGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* SFGamePlayScene.m */; };
-		E525F6D0166D5449DEA47719 /* SFGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6DE925B6A53CBF3AB3C /* SFGamePlayScene.m */; };
-		E525F6E0AC162497F19E38FC /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */; };
-		E525F6FAB7DC50DD5D162BDF /* SFBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* SFBoundingBox.m */; };
-		E525F7151D4B53B586DFD1AF /* SFRenderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F892297853C4569B6A30 /* SFRenderComponent.m */; };
-		E525F725DF52F0CBF9403292 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */; };
-		E525F78D102ECF683DA0845C /* SFHealthSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F33A298303CEAD17B470 /* SFHealthSystem.m */; };
-		E525F78D4B5E7CC96671DBF4 /* SFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F3D51EA67127222D6A96 /* SFConstants.m */; };
-		E525F7BDA149297C2063D73D /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */; };
-		E525F7C38724E97430B24591 /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F89F1D87B36DF82DA617 /* SFDropTable.m */; };
-		E525F7DFE1857D0A640D7649 /* SFBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* SFBackgroundLayer.m */; };
-		E525F7E8A2D5BCD0152CF639 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
-		E525F7EAD544FF954F91663A /* SFCollisionDamageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11C9D3978D6F900029E /* SFCollisionDamageComponent.m */; };
-		E525F7F952E370DF43071937 /* CCFileUtils+Packages.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F9831BEB8359BC751383 /* CCFileUtils+Packages.m */; };
-		E525F80A59D23F7D36A535BF /* SFWeaponSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCACD2D192D9E418572A /* SFWeaponSystem.m */; };
-		E525F824EEDB1235F62D53E4 /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E65A961703CDC23DAC /* SFEntity.m */; };
-		E525F8358043B4837F4339CB /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
-		E525F83A18836EFB63E6CF99 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
-		E525F85549FF5D237E0C3B30 /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F82D300EDF999271AC26 /* SFEntitySystem.m */; };
-		E525F869EE0F9A2CD03CB53C /* SFCollisionRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F54056E2E990B9CF31AF /* SFCollisionRewardComponent.m */; };
-		E525F897E746F05C949A87F8 /* SFEntityConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE1DB47E4861682A789A /* SFEntityConfigLoader.m */; };
-		E525F8B23DB68AC4CDD9A9A0 /* SFLootComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F42D2FBC7E24F0781D59 /* SFLootComponent.m */; };
-		E525F8C2804D5C82E1563557 /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6784D60787B11CAB70D /* SFEntityFactory.m */; };
-		E525F8DD1D6E07F72D79473D /* SFTagComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11B68F22F85AC81C956 /* SFTagComponent.m */; };
-		E525F8EDE367C119D845B866 /* SFDLCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FEF535E3E5BBF15D179C /* SFDLCScene.m */; };
-		E525F8FCCC93720D086C4F61 /* SFLootComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F42D2FBC7E24F0781D59 /* SFLootComponent.m */; };
-		E525F941C9456E4BC2FE2919 /* SFCollisionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCFEFB78C8CAD2E233C1 /* SFCollisionComponent.m */; };
-		E525F9442A189B916FBF52C8 /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6784D60787B11CAB70D /* SFEntityFactory.m */; };
-		E525F959F61DC9AABB885DCB /* SFUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AB12343226CB40BBC2 /* SFUIHelper.m */; };
-		E525F989219BB060773E3B26 /* SFHUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F1977383887308B4098D /* SFHUDLayer.m */; };
-		E525F98B0BF4056ABB4F5286 /* SFWeaponComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F19C15E175FB11810488 /* SFWeaponComponent.m */; };
-		E525F99CE573887A8AD71EA1 /* SFCollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCCF8D7C1FD71913358C /* SFCollisionSystem.m */; };
-		E525F99F4C3373E16CCBE372 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */; };
-		E525F9A524C2E53620EC8002 /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E65A961703CDC23DAC /* SFEntity.m */; };
-		E525F9D2D7453E6AB732B220 /* SFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E65A961703CDC23DAC /* SFEntity.m */; };
-		E525F9D7BA97A3C09A2DDB8A /* SFWeaponStatsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F38CCB363C5FB89E7CCB /* SFWeaponStatsComponent.m */; };
-		E525F9E9AD46D66CF26A3CCF /* SFLootComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F42D2FBC7E24F0781D59 /* SFLootComponent.m */; };
-		E525FA07F082296C2F44F217 /* SFBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* SFBoundingBox.m */; };
-		E525FA422CEA8CCD007880F3 /* SFMoveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */; };
-		E525FA56C045E76EFD4E3FDD /* SFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F78B0E51C15B17BB5DF5 /* SFComponent.m */; };
-		E525FA5D1A27AE2667464059 /* SFUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AB12343226CB40BBC2 /* SFUIHelper.m */; };
-		E525FA9908C7079A5FA0E3EE /* SFRenderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F892297853C4569B6A30 /* SFRenderComponent.m */; };
-		E525FAB8FB858BF827286DAE /* SFGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2BC72D5C5DA54BCD70E /* SFGLView.m */; };
-		E525FAF268BEDE099ABDDDB0 /* SFLevelConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FA87228783F672D78EF5 /* SFLevelConfigLoader.m */; };
-		E525FB3C34AE49251723E03A /* SFBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F7E9973048779F98F0E2 /* SFBoundingBox.m */; };
-		E525FB559E36E287A8230E1D /* SFGameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F930FFA18F370C7EC140 /* SFGameMenuScene.m */; };
-		E525FB93DDA49B1B66808E2E /* SFGameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F930FFA18F370C7EC140 /* SFGameMenuScene.m */; };
-		E525FBC74F86BAC3AF76D9DE /* CCFileUtils+Packages.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F9831BEB8359BC751383 /* CCFileUtils+Packages.m */; };
-		E525FC12690A3503D700D748 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */; };
-		E525FC15C064BFC4E805C892 /* SFTrigonometryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F48F41E5CD723D5511E1 /* SFTrigonometryHelper.m */; };
-		E525FC242ED3B44DB525C7ED /* SFRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F35E4060FA22372D2D56 /* SFRewardComponent.m */; };
-		E525FC35AE2324E0D2580B02 /* SFEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F6784D60787B11CAB70D /* SFEntityFactory.m */; };
-		E525FC3C25717ECF40DD0B87 /* SFTimeToLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */; };
-		E525FC4850D51C1B573C9FA4 /* SFLevelConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FA87228783F672D78EF5 /* SFLevelConfigLoader.m */; };
-		E525FC603553E6AF012C3F4D /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */; };
-		E525FC81E5B9DACB6E80F320 /* SFCollisionRewardComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F54056E2E990B9CF31AF /* SFCollisionRewardComponent.m */; };
-		E525FCABF92C92B87CC79BC5 /* SFWeaponComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F19C15E175FB11810488 /* SFWeaponComponent.m */; };
-		E525FCBCDF27434575DD6DC5 /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */; };
-		E525FCD7A17E6EA5767DB9C8 /* SFLevelConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FA87228783F672D78EF5 /* SFLevelConfigLoader.m */; };
-		E525FCD9E3D8F02E37C367B1 /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AC8FD0C2C6DF58DDDF /* SFBackgroundDebris.m */; };
-		E525FD36BBC10C604FFDE474 /* SFTimeToLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */; };
-		E525FD59762E512B5F1C9611 /* SFLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBB355E9F0C7DCD609EE /* SFLevelController.m */; };
-		E525FD70756CF3D85B0F48B2 /* SFGamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FB428FCC9A5C4C3170D7 /* SFGamePlayLayer.m */; };
-		E525FD7C7C96337CFB77F87A /* SFCollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCCF8D7C1FD71913358C /* SFCollisionSystem.m */; };
-		E525FDBE0FB2E7196032E601 /* SFWeaponStatsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F38CCB363C5FB89E7CCB /* SFWeaponStatsComponent.m */; };
-		E525FDD62056D1206C9895D3 /* SFEntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F75BFE739F3339BFBFDC /* SFEntityManager.m */; };
-		E525FDE1D930793B5212C99A /* SFTimeToLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */; };
-		E525FE12DE3AFE0299C7CAF3 /* SFCollisionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FCFEFB78C8CAD2E233C1 /* SFCollisionComponent.m */; };
-		E525FE34C3D10272FE0F74E2 /* SFBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F29CF485434C548AFB09 /* SFBackgroundLayer.m */; };
-		E525FE59B4B60FC8C278A16C /* SFUIPackageControls.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2D62C308EC0C7CF75CF /* SFUIPackageControls.m */; };
-		E525FE6527DD494642D8A114 /* SFDropTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F89F1D87B36DF82DA617 /* SFDropTable.m */; };
-		E525FE6801C8729467003314 /* SFTimeToLiveSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */; };
-		E525FE96D4385C39B1A92335 /* SFBackgroundDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F2AC8FD0C2C6DF58DDDF /* SFBackgroundDebris.m */; };
-		E525FED1897902A07EC991BD /* SFHealthComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F8E0DCE0A4472071F4D3 /* SFHealthComponent.m */; };
-		E525FF41F1D681A45C5FEF68 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
-		E525FF47CF4472461C8F95FB /* SFEntitySystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F82D300EDF999271AC26 /* SFEntitySystem.m */; };
-		E525FF663095AEFBFA8A15AF /* SFLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBB355E9F0C7DCD609EE /* SFLevelController.m */; };
-		E525FF733821E1C9165D3D04 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FBA078C043671FE7CFA6 /* SneakyButton.m */; };
-		E525FF8B5E204F02A11DE11F /* SFCollisionDamageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11C9D3978D6F900029E /* SFCollisionDamageComponent.m */; };
-		E525FFA64C063CBDABA3FC47 /* SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FE3B5223A61311EDD4E6 /* SFHelper.m */; };
-		E525FFD696C3F71DE1392F29 /* SFRenderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F892297853C4569B6A30 /* SFRenderComponent.m */; };
-		E525FFE5FA46E7C92E7A3CE1 /* SFCollisionDamageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E525F11C9D3978D6F900029E /* SFCollisionDamageComponent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,7 +315,7 @@
 		5B121013197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121015197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B12101B19748413004C1E1D /* PackagesDemoActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; name = PackagesDemoActivity.java; path = Source/Platforms/Android/java/org/cocos2d/PackagesDemo/PackagesDemoActivity.java; sourceTree = "<group>"; };
-		5B121021197484A3004C1E1D /* PackagesDemo Java.jar */ = {isa = PBXFileReference; explicitFileType = compiled.java.jar; includeInIndex = 0; path = "PackagesDemo Java.jar"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B121021197484A3004C1E1D /* PackagesDemo Java.jar */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.jar; path = "PackagesDemo Java.jar"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B12102E197484FA004C1E1D /* PackagesDemoActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PackagesDemoActivity.h; path = Source/Platforms/Android/PackagesDemoActivity.h; sourceTree = "<group>"; };
 		5B12102F197484FA004C1E1D /* PackagesDemoActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PackagesDemoActivity.m; path = Source/Platforms/Android/PackagesDemoActivity.m; sourceTree = "<group>"; };
 		5B121033197485FE004C1E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/Android/Info.plist; sourceTree = "<group>"; };
@@ -336,7 +333,105 @@
 		7AFCD5DB19E9BD9F00BCCCDA /* cocos2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cocos2d.h; path = "Source/libs/cocos2d-iphone/cocos2d/cocos2d.h"; sourceTree = "<group>"; };
 		7AFCD5DD19E9BDC200BCCCDA /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Source/Bridging-Header.h"; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		83E21C251A1240CE000D1695 /* Configs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configs; sourceTree = "<group>"; };
+		83BAECAB1A1365DE002CB80B /* CCFileUtils+Packages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCFileUtils+Packages.h"; sourceTree = "<group>"; };
+		83BAECAC1A1365DE002CB80B /* CCFileUtils+Packages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCFileUtils+Packages.m"; sourceTree = "<group>"; };
+		83BAECAE1A1365DE002CB80B /* SFCollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionComponent.h; sourceTree = "<group>"; };
+		83BAECAF1A1365DE002CB80B /* SFCollisionComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionComponent.m; sourceTree = "<group>"; };
+		83BAECB01A1365DE002CB80B /* SFCollisionDamageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionDamageComponent.h; sourceTree = "<group>"; };
+		83BAECB11A1365DE002CB80B /* SFCollisionDamageComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionDamageComponent.m; sourceTree = "<group>"; };
+		83BAECB21A1365DE002CB80B /* SFCollisionRewardComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionRewardComponent.h; sourceTree = "<group>"; };
+		83BAECB31A1365DE002CB80B /* SFCollisionRewardComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionRewardComponent.m; sourceTree = "<group>"; };
+		83BAECB41A1365DE002CB80B /* SFCollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionSystem.h; sourceTree = "<group>"; };
+		83BAECB51A1365DE002CB80B /* SFCollisionSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionSystem.m; sourceTree = "<group>"; };
+		83BAECB61A1365DE002CB80B /* SFComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFComponent.h; sourceTree = "<group>"; };
+		83BAECB71A1365DE002CB80B /* SFComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFComponent.m; sourceTree = "<group>"; };
+		83BAECB81A1365DF002CB80B /* SFDropTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDropTable.h; sourceTree = "<group>"; };
+		83BAECB91A1365DF002CB80B /* SFDropTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDropTable.m; sourceTree = "<group>"; };
+		83BAECBA1A1365DF002CB80B /* SFEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntity.h; sourceTree = "<group>"; };
+		83BAECBB1A1365DF002CB80B /* SFEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntity.m; sourceTree = "<group>"; };
+		83BAECBC1A1365DF002CB80B /* SFEntityConfigLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityConfigLoader.h; sourceTree = "<group>"; };
+		83BAECBD1A1365DF002CB80B /* SFEntityConfigLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntityConfigLoader.m; sourceTree = "<group>"; };
+		83BAECBE1A1365DF002CB80B /* SFEntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityManager.h; sourceTree = "<group>"; };
+		83BAECBF1A1365DF002CB80B /* SFEntityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntityManager.m; sourceTree = "<group>"; };
+		83BAECC01A1365DF002CB80B /* SFEntitySystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntitySystem.h; sourceTree = "<group>"; };
+		83BAECC11A1365DF002CB80B /* SFEntitySystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntitySystem.m; sourceTree = "<group>"; };
+		83BAECC21A1365DF002CB80B /* SFGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFGLView.h; path = Source/src/EntitySystem/SFGLView.h; sourceTree = "<group>"; };
+		83BAECC31A1365DF002CB80B /* SFGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFGLView.m; path = Source/src/EntitySystem/SFGLView.m; sourceTree = "<group>"; };
+		83BAECC41A1365DF002CB80B /* SFHealthComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHealthComponent.h; sourceTree = "<group>"; };
+		83BAECC51A1365DF002CB80B /* SFHealthComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHealthComponent.m; sourceTree = "<group>"; };
+		83BAECC61A1365DF002CB80B /* SFHealthSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHealthSystem.h; sourceTree = "<group>"; };
+		83BAECC71A1365DF002CB80B /* SFHealthSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHealthSystem.m; sourceTree = "<group>"; };
+		83BAECC81A1365DF002CB80B /* SFKeyEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFKeyEventHandler.h; path = Source/src/EntitySystem/SFKeyEventHandler.h; sourceTree = "<group>"; };
+		83BAECC91A1365DF002CB80B /* SFKeyEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFKeyEventHandler.m; path = Source/src/EntitySystem/SFKeyEventHandler.m; sourceTree = "<group>"; };
+		83BAECCA1A1365DF002CB80B /* SFLootComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLootComponent.h; sourceTree = "<group>"; };
+		83BAECCB1A1365DF002CB80B /* SFLootComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLootComponent.m; sourceTree = "<group>"; };
+		83BAECCC1A1365DF002CB80B /* SFMoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMoveComponent.h; sourceTree = "<group>"; };
+		83BAECCD1A1365DF002CB80B /* SFMoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMoveComponent.m; sourceTree = "<group>"; };
+		83BAECCE1A1365DF002CB80B /* SFMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMoveSystem.h; sourceTree = "<group>"; };
+		83BAECCF1A1365DF002CB80B /* SFMoveSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMoveSystem.m; sourceTree = "<group>"; };
+		83BAECD01A1365DF002CB80B /* SFRenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRenderComponent.h; sourceTree = "<group>"; };
+		83BAECD11A1365DF002CB80B /* SFRenderComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRenderComponent.m; sourceTree = "<group>"; };
+		83BAECD21A1365DF002CB80B /* SFRewardComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRewardComponent.h; sourceTree = "<group>"; };
+		83BAECD31A1365DF002CB80B /* SFRewardComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRewardComponent.m; sourceTree = "<group>"; };
+		83BAECD41A1365DF002CB80B /* SFTagComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTagComponent.h; sourceTree = "<group>"; };
+		83BAECD51A1365DF002CB80B /* SFTagComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTagComponent.m; sourceTree = "<group>"; };
+		83BAECD61A1365DF002CB80B /* SFTimeToLiveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTimeToLiveComponent.h; sourceTree = "<group>"; };
+		83BAECD71A1365DF002CB80B /* SFTimeToLiveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimeToLiveComponent.m; sourceTree = "<group>"; };
+		83BAECD81A1365DF002CB80B /* SFTimeToLiveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTimeToLiveSystem.h; sourceTree = "<group>"; };
+		83BAECD91A1365DF002CB80B /* SFTimeToLiveSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimeToLiveSystem.m; sourceTree = "<group>"; };
+		83BAECDA1A1365DF002CB80B /* SFUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIHelper.h; sourceTree = "<group>"; };
+		83BAECDB1A1365DF002CB80B /* SFUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFUIHelper.m; sourceTree = "<group>"; };
+		83BAECDC1A1365DF002CB80B /* SFWeaponComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWeaponComponent.h; sourceTree = "<group>"; };
+		83BAECDD1A1365DF002CB80B /* SFWeaponComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWeaponComponent.m; sourceTree = "<group>"; };
+		83BAECDE1A1365DF002CB80B /* SFWeaponStatsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWeaponStatsComponent.h; sourceTree = "<group>"; };
+		83BAECDF1A1365DF002CB80B /* SFWeaponStatsComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWeaponStatsComponent.m; sourceTree = "<group>"; };
+		83BAECE01A1365DF002CB80B /* SFWeaponSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWeaponSystem.h; sourceTree = "<group>"; };
+		83BAECE11A1365DF002CB80B /* SFWeaponSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWeaponSystem.m; sourceTree = "<group>"; };
+		83BAECE31A1365DF002CB80B /* SFBackgroundDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBackgroundDebris.h; sourceTree = "<group>"; };
+		83BAECE41A1365DF002CB80B /* SFBackgroundDebris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBackgroundDebris.m; sourceTree = "<group>"; };
+		83BAECE51A1365DF002CB80B /* SFTrigonometryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTrigonometryHelper.h; sourceTree = "<group>"; };
+		83BAECE61A1365DF002CB80B /* SFTrigonometryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTrigonometryHelper.m; sourceTree = "<group>"; };
+		83BAECEB1A1365DF002CB80B /* SFBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBackgroundLayer.h; sourceTree = "<group>"; };
+		83BAECEC1A1365DF002CB80B /* SFBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBackgroundLayer.m; sourceTree = "<group>"; };
+		83BAECED1A1365DF002CB80B /* SFGamePlayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGamePlayLayer.h; sourceTree = "<group>"; };
+		83BAECEE1A1365DF002CB80B /* SFGamePlayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGamePlayLayer.m; sourceTree = "<group>"; };
+		83BAECEF1A1365DF002CB80B /* SFGamePlaySceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGamePlaySceneDelegate.h; sourceTree = "<group>"; };
+		83BAECF01A1365DF002CB80B /* SFHUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHUDLayer.h; sourceTree = "<group>"; };
+		83BAECF11A1365DF002CB80B /* SFHUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHUDLayer.m; sourceTree = "<group>"; };
+		83BAECF31A1365DF002CB80B /* SFBoundingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBoundingBox.h; sourceTree = "<group>"; };
+		83BAECF41A1365DF002CB80B /* SFBoundingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBoundingBox.m; sourceTree = "<group>"; };
+		83BAECF51A1365DF002CB80B /* SFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFConstants.h; sourceTree = "<group>"; };
+		83BAECF61A1365DF002CB80B /* SFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFConstants.m; sourceTree = "<group>"; };
+		83BAECF71A1365DF002CB80B /* SFEntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityFactory.h; sourceTree = "<group>"; };
+		83BAECF81A1365DF002CB80B /* SFEntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntityFactory.m; sourceTree = "<group>"; };
+		83BAECF91A1365DF002CB80B /* SFHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHelper.h; sourceTree = "<group>"; };
+		83BAECFA1A1365DF002CB80B /* SFHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHelper.m; sourceTree = "<group>"; };
+		83BAECFB1A1365DF002CB80B /* SFLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLevel.h; sourceTree = "<group>"; };
+		83BAECFC1A1365DF002CB80B /* SFLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLevel.m; sourceTree = "<group>"; };
+		83BAECFD1A1365DF002CB80B /* SFLevelConfigLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLevelConfigLoader.h; sourceTree = "<group>"; };
+		83BAECFE1A1365DF002CB80B /* SFLevelConfigLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLevelConfigLoader.m; sourceTree = "<group>"; };
+		83BAECFF1A1365DF002CB80B /* SFLevelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLevelController.h; sourceTree = "<group>"; };
+		83BAED001A1365DF002CB80B /* SFLevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLevelController.m; sourceTree = "<group>"; };
+		83BAED021A1365DF002CB80B /* SFGamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGamePlayScene.h; sourceTree = "<group>"; };
+		83BAED031A1365DF002CB80B /* SFGamePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGamePlayScene.m; sourceTree = "<group>"; };
+		83BAED041A1365DF002CB80B /* SFUIPackageControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIPackageControls.h; sourceTree = "<group>"; };
+		83BAED051A1365DF002CB80B /* SFUIPackageControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFUIPackageControls.m; sourceTree = "<group>"; };
+		83BAED061A1365DF002CB80B /* SFGamePlaySceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGamePlaySceneDelegate.h; sourceTree = "<group>"; };
+		83BAED851A136617002CB80B /* SFKeyEventHandlingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SFKeyEventHandlingDelegate.h; path = Source/Platforms/Mac/SFKeyEventHandlingDelegate.h; sourceTree = "<group>"; };
+		83BAED871A136679002CB80B /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
+		83BAED881A136679002CB80B /* SneakyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
+		83BAED891A136679002CB80B /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		83BAED8A1A136679002CB80B /* SneakyButtonSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButtonSkinnedBase.m; sourceTree = "<group>"; };
+		83BAED8B1A136679002CB80B /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
+		83BAED8C1A136679002CB80B /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
+		83BAED8D1A136679002CB80B /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
+		83BAED8E1A136679002CB80B /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
+		83BAED8F1A136679002CB80B /* SneakyJoystickSkinnedDPadExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedDPadExample.h; sourceTree = "<group>"; };
+		83BAED901A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedDPadExample.m; sourceTree = "<group>"; };
+		83BAEDA01A1366BA002CB80B /* SFGameMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGameMenuScene.h; sourceTree = "<group>"; };
+		83BAEDA11A1366BA002CB80B /* SFGameMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGameMenuScene.m; sourceTree = "<group>"; };
+		83BAEDA51A1366D8002CB80B /* SFDLCScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDLCScene.h; sourceTree = "<group>"; };
+		83BAEDA61A1366D8002CB80B /* SFDLCScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDLCScene.m; sourceTree = "<group>"; };
 		927F61BF196C771E000F43EF /* PackagesDemo Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PackagesDemo Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
@@ -358,6 +453,8 @@
 		B737896E180762440076A88C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Source/Resources/Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		B73789851807631A0076A88C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/Platforms/iOS/main.m; sourceTree = SOURCE_ROOT; };
 		B73789861807631A0076A88C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = Source/Prefix.pch; sourceTree = SOURCE_ROOT; };
+		B7378992180767190076A88C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Source/MainScene.h; sourceTree = "<group>"; };
+		B7378993180767190076A88C /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScene.m; path = Source/MainScene.m; sourceTree = "<group>"; };
 		B77F1B2E17B978D7009739AE /* PackagesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackagesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77F1B3117B978D7009739AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B77F1B3317B978D7009739AE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -370,106 +467,7 @@
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B78A0B0F198AF87200C63841 /* Published-Android */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Published-Android"; sourceTree = "<group>"; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
-		E525F05ABFB8B7E4B2A1FD71 /* SFGameMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFGameMenuScene.h; path = Source/Platforms/iOS/SFGameMenuScene.h; sourceTree = SOURCE_ROOT; };
-		E525F0CE1205AFC5DD796077 /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
-		E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimeToLiveSystem.m; sourceTree = "<group>"; };
-		E525F11B68F22F85AC81C956 /* SFTagComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTagComponent.m; sourceTree = "<group>"; };
-		E525F11C9D3978D6F900029E /* SFCollisionDamageComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionDamageComponent.m; sourceTree = "<group>"; };
-		E525F15B179C2F1CB288D832 /* SFWeaponComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWeaponComponent.h; sourceTree = "<group>"; };
-		E525F1977383887308B4098D /* SFHUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHUDLayer.m; sourceTree = "<group>"; };
-		E525F19C15E175FB11810488 /* SFWeaponComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWeaponComponent.m; sourceTree = "<group>"; };
-		E525F1A0769F83C0FB2A9C16 /* SFEntitySystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntitySystem.h; sourceTree = "<group>"; };
-		E525F1A727A4613051155FBA /* SFTrigonometryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFTrigonometryHelper.h; path = Source/src/GameObjects/SFTrigonometryHelper.h; sourceTree = SOURCE_ROOT; };
-		E525F208E9A2DDA921911441 /* SFGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGLView.h; sourceTree = "<group>"; };
-		E525F2253F12497948B5129E /* CCFileUtils+Packages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCFileUtils+Packages.h"; sourceTree = "<group>"; };
-		E525F28A43B1130849C78795 /* SFWeaponSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWeaponSystem.h; sourceTree = "<group>"; };
-		E525F29CF485434C548AFB09 /* SFBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBackgroundLayer.m; sourceTree = "<group>"; };
-		E525F2AB12343226CB40BBC2 /* SFUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFUIHelper.m; sourceTree = "<group>"; };
-		E525F2AC8FD0C2C6DF58DDDF /* SFBackgroundDebris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFBackgroundDebris.m; path = Source/src/GameObjects/SFBackgroundDebris.m; sourceTree = SOURCE_ROOT; };
-		E525F2BC72D5C5DA54BCD70E /* SFGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGLView.m; sourceTree = "<group>"; };
-		E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCDirector.m; path = "Source/libs/cocos2d-iphone/cocos2d/CCDirector.m"; sourceTree = SOURCE_ROOT; };
-		E525F2D62C308EC0C7CF75CF /* SFUIPackageControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFUIPackageControls.m; sourceTree = "<group>"; };
-		E525F2EAAB4653935181B7A8 /* SFDropTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDropTable.h; sourceTree = "<group>"; };
-		E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
-		E525F33A298303CEAD17B470 /* SFHealthSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHealthSystem.m; sourceTree = "<group>"; };
-		E525F34D7773E9CDB8BC9B04 /* SFMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMoveSystem.h; sourceTree = "<group>"; };
-		E525F3599AEB8BEAD150CB7A /* SFDLCScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFDLCScene.h; path = Source/Platforms/iOS/SFDLCScene.h; sourceTree = SOURCE_ROOT; };
-		E525F35E4060FA22372D2D56 /* SFRewardComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRewardComponent.m; sourceTree = "<group>"; };
-		E525F38CCB363C5FB89E7CCB /* SFWeaponStatsComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWeaponStatsComponent.m; sourceTree = "<group>"; };
-		E525F3AD04305F7AB059A5DA /* SFTagComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTagComponent.h; sourceTree = "<group>"; };
-		E525F3CA10D9904CB89DDA72 /* SFEntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityManager.h; sourceTree = "<group>"; };
-		E525F3D51EA67127222D6A96 /* SFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFConstants.m; sourceTree = "<group>"; };
-		E525F403B739C47888FA5590 /* SFBoundingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBoundingBox.h; sourceTree = "<group>"; };
-		E525F42D2FBC7E24F0781D59 /* SFLootComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLootComponent.m; sourceTree = "<group>"; };
-		E525F4683BECF0BCE5225579 /* SFTimeToLiveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTimeToLiveSystem.h; sourceTree = "<group>"; };
-		E525F46B3DDB13BF855F50DF /* SFTimeToLiveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTimeToLiveComponent.h; sourceTree = "<group>"; };
-		E525F480911E20C345715C5E /* SFBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBackgroundLayer.h; sourceTree = "<group>"; };
-		E525F48BB2DADFD124B475A7 /* SFHealthComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHealthComponent.h; sourceTree = "<group>"; };
-		E525F48F41E5CD723D5511E1 /* SFTrigonometryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFTrigonometryHelper.m; path = Source/src/GameObjects/SFTrigonometryHelper.m; sourceTree = SOURCE_ROOT; };
-		E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimeToLiveComponent.m; sourceTree = "<group>"; };
-		E525F4AC2D79CD955CECA40D /* SFRewardComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRewardComponent.h; sourceTree = "<group>"; };
-		E525F4C47A6EB49E8AD028A1 /* SFLevelConfigLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLevelConfigLoader.h; sourceTree = "<group>"; };
-		E525F4C6485C20368767BDE7 /* SFCollisionRewardComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionRewardComponent.h; sourceTree = "<group>"; };
-		E525F504441FEA7B27C69919 /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
-		E525F54056E2E990B9CF31AF /* SFCollisionRewardComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionRewardComponent.m; sourceTree = "<group>"; };
-		E525F5A1B3FB2125BED4AF59 /* SFBackgroundDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFBackgroundDebris.h; path = Source/src/GameObjects/SFBackgroundDebris.h; sourceTree = SOURCE_ROOT; };
-		E525F5B447DB0681A5F0F59A /* SFCollisionDamageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionDamageComponent.h; sourceTree = "<group>"; };
-		E525F6237FDAA87E8CD0E445 /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
-		E525F64F87491E1473EA7ECA /* SFKeyEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFKeyEventHandler.m; sourceTree = "<group>"; };
-		E525F6784D60787B11CAB70D /* SFEntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntityFactory.m; sourceTree = "<group>"; };
-		E525F6DE925B6A53CBF3AB3C /* SFGamePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGamePlayScene.m; sourceTree = "<group>"; };
-		E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedDPadExample.m; sourceTree = "<group>"; };
-		E525F725EB2055FCA744E4DE /* SFKeyEventHandlingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFKeyEventHandlingDelegate.h; path = Source/Platforms/Mac/SFKeyEventHandlingDelegate.h; sourceTree = "<group>"; };
-		E525F74E9A80288022C92BE0 /* SFLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLevel.h; sourceTree = "<group>"; };
-		E525F750DAFE0458BBE64709 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
-		E525F75BFE739F3339BFBFDC /* SFEntityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntityManager.m; sourceTree = "<group>"; };
-		E525F78B0E51C15B17BB5DF5 /* SFComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFComponent.m; sourceTree = "<group>"; };
-		E525F7E9973048779F98F0E2 /* SFBoundingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBoundingBox.m; sourceTree = "<group>"; };
-		E525F7EB5DA3CCAECD61449E /* SFHUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHUDLayer.h; sourceTree = "<group>"; };
-		E525F7F6BACC943D680305F7 /* SFGamePlaySceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFGamePlaySceneDelegate.h; path = Source/src/Layers/SFGamePlaySceneDelegate.h; sourceTree = SOURCE_ROOT; };
-		E525F82D300EDF999271AC26 /* SFEntitySystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntitySystem.m; sourceTree = "<group>"; };
-		E525F892297853C4569B6A30 /* SFRenderComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRenderComponent.m; sourceTree = "<group>"; };
-		E525F896260E422363BD2EFA /* SFMoveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMoveComponent.m; sourceTree = "<group>"; };
-		E525F89C732FA272D2E96584 /* SFRenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRenderComponent.h; sourceTree = "<group>"; };
-		E525F89F1D87B36DF82DA617 /* SFDropTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDropTable.m; sourceTree = "<group>"; };
-		E525F8E0DCE0A4472071F4D3 /* SFHealthComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHealthComponent.m; sourceTree = "<group>"; };
-		E525F8E65A961703CDC23DAC /* SFEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntity.m; sourceTree = "<group>"; };
-		E525F8FA9DC128277B43DEBB /* SFKeyEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKeyEventHandler.h; sourceTree = "<group>"; };
-		E525F930FFA18F370C7EC140 /* SFGameMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFGameMenuScene.m; path = Source/Platforms/iOS/SFGameMenuScene.m; sourceTree = SOURCE_ROOT; };
-		E525F970C8EC31FACC7152C4 /* SFGamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGamePlayScene.h; sourceTree = "<group>"; };
-		E525F9831BEB8359BC751383 /* CCFileUtils+Packages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCFileUtils+Packages.m"; sourceTree = "<group>"; };
-		E525FA2CFB42F469010F23E7 /* SFLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLevel.m; sourceTree = "<group>"; };
-		E525FA42F0AD12B38C3E71D5 /* CCDirector_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCDirector_Private.h; path = "Source/libs/cocos2d-iphone/cocos2d/CCDirector_Private.h"; sourceTree = SOURCE_ROOT; };
-		E525FA87228783F672D78EF5 /* SFLevelConfigLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLevelConfigLoader.m; sourceTree = "<group>"; };
-		E525FB428FCC9A5C4C3170D7 /* SFGamePlayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFGamePlayLayer.m; sourceTree = "<group>"; };
-		E525FB5967BFE42130910AC7 /* SFEntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityFactory.h; sourceTree = "<group>"; };
-		E525FB7C76A1902BDDE010D1 /* SFMoveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMoveComponent.h; sourceTree = "<group>"; };
-		E525FBA078C043671FE7CFA6 /* SneakyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
-		E525FBB355E9F0C7DCD609EE /* SFLevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLevelController.m; sourceTree = "<group>"; };
-		E525FC191827BE76F6B72BA2 /* SFGamePlayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGamePlayLayer.h; sourceTree = "<group>"; };
-		E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMoveSystem.m; sourceTree = "<group>"; };
-		E525FC658E8822105FAB2FD5 /* SFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFConstants.h; sourceTree = "<group>"; };
-		E525FCACD2D192D9E418572A /* SFWeaponSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWeaponSystem.m; sourceTree = "<group>"; };
-		E525FCCF8D7C1FD71913358C /* SFCollisionSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionSystem.m; sourceTree = "<group>"; };
-		E525FCFEFB78C8CAD2E233C1 /* SFCollisionComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCollisionComponent.m; sourceTree = "<group>"; };
-		E525FD0693B73D9A49B3AD49 /* SFLootComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLootComponent.h; sourceTree = "<group>"; };
-		E525FDAF02C6A82B0D8CFD46 /* SneakyJoystickSkinnedDPadExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedDPadExample.h; sourceTree = "<group>"; };
-		E525FDFB7930A07737730573 /* SFHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHelper.h; sourceTree = "<group>"; };
-		E525FE03320DF96E5C628725 /* SFCollisionComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionComponent.h; sourceTree = "<group>"; };
-		E525FE12F698B03CC73708C5 /* SFEntityConfigLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntityConfigLoader.h; sourceTree = "<group>"; };
-		E525FE1DB47E4861682A789A /* SFEntityConfigLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFEntityConfigLoader.m; sourceTree = "<group>"; };
-		E525FE29537CC91AE78A8498 /* SFCollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCollisionSystem.h; sourceTree = "<group>"; };
-		E525FE3B5223A61311EDD4E6 /* SFHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHelper.m; sourceTree = "<group>"; };
-		E525FE8824C648AB247D5D15 /* SFComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFComponent.h; sourceTree = "<group>"; };
-		E525FECFC94BDD32B1224FF3 /* SFUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIHelper.h; sourceTree = "<group>"; };
-		E525FEF535E3E5BBF15D179C /* SFDLCScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFDLCScene.m; path = Source/Platforms/iOS/SFDLCScene.m; sourceTree = SOURCE_ROOT; };
-		E525FEF7E71229CB632AA77E /* SFEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFEntity.h; sourceTree = "<group>"; };
-		E525FF06B8B7CC8AFD08F3F4 /* SFLevelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLevelController.h; sourceTree = "<group>"; };
-		E525FF2DABFB5DF317E0486D /* SFUIPackageControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIPackageControls.h; sourceTree = "<group>"; };
-		E525FFACDF31167D92FFB9E0 /* SFWeaponStatsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWeaponStatsComponent.h; sourceTree = "<group>"; };
-		E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
-		E525FFE7DF7577184B25443D /* SFHealthSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHealthSystem.h; sourceTree = "<group>"; };
-		E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButtonSkinnedBase.m; sourceTree = "<group>"; };
+		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -681,22 +679,180 @@
 		7A9791C019E6FAC5001FFC4D /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				83BAECC21A1365DF002CB80B /* SFGLView.h */,
+				83BAECC31A1365DF002CB80B /* SFGLView.m */,
+				83BAECC81A1365DF002CB80B /* SFKeyEventHandler.h */,
+				83BAECC91A1365DF002CB80B /* SFKeyEventHandler.m */,
+				83BAED851A136617002CB80B /* SFKeyEventHandlingDelegate.h */,
 				7A40360519DDEE84007B6E8F /* AppDelegate.h */,
 				7A40360619DDEE84007B6E8F /* AppDelegate.m */,
-				E525F725EB2055FCA744E4DE /* SFKeyEventHandlingDelegate.h */,
-				E525F64F87491E1473EA7ECA /* SFKeyEventHandler.m */,
-				E525F8FA9DC128277B43DEBB /* SFKeyEventHandler.h */,
-				E525F2BC72D5C5DA54BCD70E /* SFGLView.m */,
-				E525F208E9A2DDA921911441 /* SFGLView.h */,
 			);
 			name = Mac;
+			sourceTree = "<group>";
+		};
+		83BAEBEA1A136442002CB80B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				83BAECAA1A1365DE002CB80B /* Cocos2dAddons */,
+				83BAECAD1A1365DE002CB80B /* EntitySystem */,
+				83BAECE21A1365DF002CB80B /* GameObjects */,
+				83BAECEA1A1365DF002CB80B /* Layers */,
+				83BAECF21A1365DF002CB80B /* Misc */,
+				83BAED011A1365DF002CB80B /* Scenes */,
+				83BAED061A1365DF002CB80B /* SFGamePlaySceneDelegate.h */,
+			);
+			name = src;
+			path = Source/src;
+			sourceTree = "<group>";
+		};
+		83BAECAA1A1365DE002CB80B /* Cocos2dAddons */ = {
+			isa = PBXGroup;
+			children = (
+				83BAECAB1A1365DE002CB80B /* CCFileUtils+Packages.h */,
+				83BAECAC1A1365DE002CB80B /* CCFileUtils+Packages.m */,
+			);
+			path = Cocos2dAddons;
+			sourceTree = "<group>";
+		};
+		83BAECAD1A1365DE002CB80B /* EntitySystem */ = {
+			isa = PBXGroup;
+			children = (
+				83BAECAE1A1365DE002CB80B /* SFCollisionComponent.h */,
+				83BAECAF1A1365DE002CB80B /* SFCollisionComponent.m */,
+				83BAECB01A1365DE002CB80B /* SFCollisionDamageComponent.h */,
+				83BAECB11A1365DE002CB80B /* SFCollisionDamageComponent.m */,
+				83BAECB21A1365DE002CB80B /* SFCollisionRewardComponent.h */,
+				83BAECB31A1365DE002CB80B /* SFCollisionRewardComponent.m */,
+				83BAECB41A1365DE002CB80B /* SFCollisionSystem.h */,
+				83BAECB51A1365DE002CB80B /* SFCollisionSystem.m */,
+				83BAECB61A1365DE002CB80B /* SFComponent.h */,
+				83BAECB71A1365DE002CB80B /* SFComponent.m */,
+				83BAECB81A1365DF002CB80B /* SFDropTable.h */,
+				83BAECB91A1365DF002CB80B /* SFDropTable.m */,
+				83BAECBA1A1365DF002CB80B /* SFEntity.h */,
+				83BAECBB1A1365DF002CB80B /* SFEntity.m */,
+				83BAECBC1A1365DF002CB80B /* SFEntityConfigLoader.h */,
+				83BAECBD1A1365DF002CB80B /* SFEntityConfigLoader.m */,
+				83BAECBE1A1365DF002CB80B /* SFEntityManager.h */,
+				83BAECBF1A1365DF002CB80B /* SFEntityManager.m */,
+				83BAECC01A1365DF002CB80B /* SFEntitySystem.h */,
+				83BAECC11A1365DF002CB80B /* SFEntitySystem.m */,
+				83BAECC41A1365DF002CB80B /* SFHealthComponent.h */,
+				83BAECC51A1365DF002CB80B /* SFHealthComponent.m */,
+				83BAECC61A1365DF002CB80B /* SFHealthSystem.h */,
+				83BAECC71A1365DF002CB80B /* SFHealthSystem.m */,
+				83BAECCA1A1365DF002CB80B /* SFLootComponent.h */,
+				83BAECCB1A1365DF002CB80B /* SFLootComponent.m */,
+				83BAECCC1A1365DF002CB80B /* SFMoveComponent.h */,
+				83BAECCD1A1365DF002CB80B /* SFMoveComponent.m */,
+				83BAECCE1A1365DF002CB80B /* SFMoveSystem.h */,
+				83BAECCF1A1365DF002CB80B /* SFMoveSystem.m */,
+				83BAECD01A1365DF002CB80B /* SFRenderComponent.h */,
+				83BAECD11A1365DF002CB80B /* SFRenderComponent.m */,
+				83BAECD21A1365DF002CB80B /* SFRewardComponent.h */,
+				83BAECD31A1365DF002CB80B /* SFRewardComponent.m */,
+				83BAECD41A1365DF002CB80B /* SFTagComponent.h */,
+				83BAECD51A1365DF002CB80B /* SFTagComponent.m */,
+				83BAECD61A1365DF002CB80B /* SFTimeToLiveComponent.h */,
+				83BAECD71A1365DF002CB80B /* SFTimeToLiveComponent.m */,
+				83BAECD81A1365DF002CB80B /* SFTimeToLiveSystem.h */,
+				83BAECD91A1365DF002CB80B /* SFTimeToLiveSystem.m */,
+				83BAECDA1A1365DF002CB80B /* SFUIHelper.h */,
+				83BAECDB1A1365DF002CB80B /* SFUIHelper.m */,
+				83BAECDC1A1365DF002CB80B /* SFWeaponComponent.h */,
+				83BAECDD1A1365DF002CB80B /* SFWeaponComponent.m */,
+				83BAECDE1A1365DF002CB80B /* SFWeaponStatsComponent.h */,
+				83BAECDF1A1365DF002CB80B /* SFWeaponStatsComponent.m */,
+				83BAECE01A1365DF002CB80B /* SFWeaponSystem.h */,
+				83BAECE11A1365DF002CB80B /* SFWeaponSystem.m */,
+			);
+			path = EntitySystem;
+			sourceTree = "<group>";
+		};
+		83BAECE21A1365DF002CB80B /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				83BAECE31A1365DF002CB80B /* SFBackgroundDebris.h */,
+				83BAECE41A1365DF002CB80B /* SFBackgroundDebris.m */,
+				83BAECE51A1365DF002CB80B /* SFTrigonometryHelper.h */,
+				83BAECE61A1365DF002CB80B /* SFTrigonometryHelper.m */,
+			);
+			path = GameObjects;
+			sourceTree = "<group>";
+		};
+		83BAECEA1A1365DF002CB80B /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				83BAECEB1A1365DF002CB80B /* SFBackgroundLayer.h */,
+				83BAECEC1A1365DF002CB80B /* SFBackgroundLayer.m */,
+				83BAECED1A1365DF002CB80B /* SFGamePlayLayer.h */,
+				83BAECEE1A1365DF002CB80B /* SFGamePlayLayer.m */,
+				83BAECEF1A1365DF002CB80B /* SFGamePlaySceneDelegate.h */,
+				83BAECF01A1365DF002CB80B /* SFHUDLayer.h */,
+				83BAECF11A1365DF002CB80B /* SFHUDLayer.m */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		83BAECF21A1365DF002CB80B /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				83BAECF31A1365DF002CB80B /* SFBoundingBox.h */,
+				83BAECF41A1365DF002CB80B /* SFBoundingBox.m */,
+				83BAECF51A1365DF002CB80B /* SFConstants.h */,
+				83BAECF61A1365DF002CB80B /* SFConstants.m */,
+				83BAECF71A1365DF002CB80B /* SFEntityFactory.h */,
+				83BAECF81A1365DF002CB80B /* SFEntityFactory.m */,
+				83BAECF91A1365DF002CB80B /* SFHelper.h */,
+				83BAECFA1A1365DF002CB80B /* SFHelper.m */,
+				83BAECFB1A1365DF002CB80B /* SFLevel.h */,
+				83BAECFC1A1365DF002CB80B /* SFLevel.m */,
+				83BAECFD1A1365DF002CB80B /* SFLevelConfigLoader.h */,
+				83BAECFE1A1365DF002CB80B /* SFLevelConfigLoader.m */,
+				83BAECFF1A1365DF002CB80B /* SFLevelController.h */,
+				83BAED001A1365DF002CB80B /* SFLevelController.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		83BAED011A1365DF002CB80B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				83BAEDA51A1366D8002CB80B /* SFDLCScene.h */,
+				83BAEDA61A1366D8002CB80B /* SFDLCScene.m */,
+				83BAEDA01A1366BA002CB80B /* SFGameMenuScene.h */,
+				83BAEDA11A1366BA002CB80B /* SFGameMenuScene.m */,
+				83BAED021A1365DF002CB80B /* SFGamePlayScene.h */,
+				83BAED031A1365DF002CB80B /* SFGamePlayScene.m */,
+				83BAED041A1365DF002CB80B /* SFUIPackageControls.h */,
+				83BAED051A1365DF002CB80B /* SFUIPackageControls.m */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		83BAED861A136679002CB80B /* SneakyInputs */ = {
+			isa = PBXGroup;
+			children = (
+				83BAED871A136679002CB80B /* SneakyButton.h */,
+				83BAED881A136679002CB80B /* SneakyButton.m */,
+				83BAED891A136679002CB80B /* SneakyButtonSkinnedBase.h */,
+				83BAED8A1A136679002CB80B /* SneakyButtonSkinnedBase.m */,
+				83BAED8B1A136679002CB80B /* SneakyJoystick.h */,
+				83BAED8C1A136679002CB80B /* SneakyJoystick.m */,
+				83BAED8D1A136679002CB80B /* SneakyJoystickSkinnedBase.h */,
+				83BAED8E1A136679002CB80B /* SneakyJoystickSkinnedBase.m */,
+				83BAED8F1A136679002CB80B /* SneakyJoystickSkinnedDPadExample.h */,
+				83BAED901A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m */,
+			);
+			name = SneakyInputs;
+			path = Source/libs/SneakyInputs;
 			sourceTree = "<group>";
 		};
 		9222E2B918734FF800A246C7 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				83BAED861A136679002CB80B /* SneakyInputs */,
 				B7378940180761A80076A88C /* cocos2d.xcodeproj */,
-				E525F2014752C49088CAA693 /* SneakyInputs */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -704,12 +860,11 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				83BAEBEA1A136442002CB80B /* src */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
-				E525FC59FE5FE09A7206C0AD /* Layers */,
-				E525FB96732E64F8E288C374 /* Scenes */,
-				E525F4C9264B5452ED47B86A /* Misc */,
-				E525FD2CF3D92FCDCFE29C98 /* Cocos2dAddons */,
-				E525F5CAB120A2CB895DE58B /* Engine */,
+				B7378992180767190076A88C /* MainScene.h */,
+				B7378993180767190076A88C /* MainScene.m */,
+				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -784,7 +939,6 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				83E21C251A1240CE000D1695 /* Configs */,
 				7A40366119DDF8C2007B6E8F /* Platforms */,
 				5B12100D197483EE004C1E1D /* res */,
 				B73789911807667A0076A88C /* Icons */,
@@ -804,219 +958,6 @@
 				B73789861807631A0076A88C /* Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E525F2014752C49088CAA693 /* SneakyInputs */ = {
-			isa = PBXGroup;
-			children = (
-				E525F504441FEA7B27C69919 /* SneakyButton.h */,
-				E525FBA078C043671FE7CFA6 /* SneakyButton.m */,
-				E525F0CE1205AFC5DD796077 /* SneakyJoystick.h */,
-				E525F328DF6AAE56130A7EA8 /* SneakyJoystick.m */,
-				E525F6237FDAA87E8CD0E445 /* SneakyButtonSkinnedBase.h */,
-				E525FFF801DB09BA67734A6C /* SneakyButtonSkinnedBase.m */,
-				E525F750DAFE0458BBE64709 /* SneakyJoystickSkinnedBase.h */,
-				E525FFBB77D7859FB78993A6 /* SneakyJoystickSkinnedBase.m */,
-				E525FDAF02C6A82B0D8CFD46 /* SneakyJoystickSkinnedDPadExample.h */,
-				E525F71155516AC407BB4033 /* SneakyJoystickSkinnedDPadExample.m */,
-				E525FA42F0AD12B38C3E71D5 /* CCDirector_Private.h */,
-				E525F2CE8DE9654FDF66BAE3 /* CCDirector.m */,
-			);
-			name = SneakyInputs;
-			path = Source/libs/SneakyInputs;
-			sourceTree = "<group>";
-		};
-		E525F2C6FB8557BF701E9CCC /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-				E525F11B68F22F85AC81C956 /* SFTagComponent.m */,
-				E525F3AD04305F7AB059A5DA /* SFTagComponent.h */,
-				E525F35E4060FA22372D2D56 /* SFRewardComponent.m */,
-				E525F4AC2D79CD955CECA40D /* SFRewardComponent.h */,
-			);
-			name = Misc;
-			sourceTree = "<group>";
-		};
-		E525F2EC7D5609FBE5AD68F3 /* Health */ = {
-			isa = PBXGroup;
-			children = (
-				E525F33A298303CEAD17B470 /* SFHealthSystem.m */,
-				E525F8E0DCE0A4472071F4D3 /* SFHealthComponent.m */,
-				E525F48BB2DADFD124B475A7 /* SFHealthComponent.h */,
-				E525FFE7DF7577184B25443D /* SFHealthSystem.h */,
-			);
-			name = Health;
-			sourceTree = "<group>";
-		};
-		E525F36FB3896A795F8A772F /* Loot */ = {
-			isa = PBXGroup;
-			children = (
-				E525F42D2FBC7E24F0781D59 /* SFLootComponent.m */,
-				E525FD0693B73D9A49B3AD49 /* SFLootComponent.h */,
-				E525F89F1D87B36DF82DA617 /* SFDropTable.m */,
-				E525F2EAAB4653935181B7A8 /* SFDropTable.h */,
-			);
-			name = Loot;
-			sourceTree = "<group>";
-		};
-		E525F4C9264B5452ED47B86A /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-				E525F403B739C47888FA5590 /* SFBoundingBox.h */,
-				E525F7E9973048779F98F0E2 /* SFBoundingBox.m */,
-				E525F3D51EA67127222D6A96 /* SFConstants.m */,
-				E525FC658E8822105FAB2FD5 /* SFConstants.h */,
-				E525FF06B8B7CC8AFD08F3F4 /* SFLevelController.h */,
-				E525FBB355E9F0C7DCD609EE /* SFLevelController.m */,
-				E525FE3B5223A61311EDD4E6 /* SFHelper.m */,
-				E525FDFB7930A07737730573 /* SFHelper.h */,
-				E525F6784D60787B11CAB70D /* SFEntityFactory.m */,
-				E525FB5967BFE42130910AC7 /* SFEntityFactory.h */,
-				E525F48F41E5CD723D5511E1 /* SFTrigonometryHelper.m */,
-				E525F1A727A4613051155FBA /* SFTrigonometryHelper.h */,
-				E525FA2CFB42F469010F23E7 /* SFLevel.m */,
-				E525F74E9A80288022C92BE0 /* SFLevel.h */,
-				E525FA87228783F672D78EF5 /* SFLevelConfigLoader.m */,
-				E525F4C47A6EB49E8AD028A1 /* SFLevelConfigLoader.h */,
-			);
-			name = Misc;
-			path = Source/src/Misc;
-			sourceTree = "<group>";
-		};
-		E525F50671FEB134D7233B00 /* Weapons */ = {
-			isa = PBXGroup;
-			children = (
-				E525FCACD2D192D9E418572A /* SFWeaponSystem.m */,
-				E525F28A43B1130849C78795 /* SFWeaponSystem.h */,
-				E525F19C15E175FB11810488 /* SFWeaponComponent.m */,
-				E525F15B179C2F1CB288D832 /* SFWeaponComponent.h */,
-				E525F38CCB363C5FB89E7CCB /* SFWeaponStatsComponent.m */,
-				E525FFACDF31167D92FFB9E0 /* SFWeaponStatsComponent.h */,
-			);
-			name = Weapons;
-			sourceTree = "<group>";
-		};
-		E525F5CAB120A2CB895DE58B /* Engine */ = {
-			isa = PBXGroup;
-			children = (
-				E525FDEEC0161592A6F4CFBC /* Core */,
-				E525F2EC7D5609FBE5AD68F3 /* Health */,
-				E525FFDDAC80129830A809F2 /* Render */,
-				E525FF0C0A44EC318DE1AB42 /* Move */,
-				E525F2C6FB8557BF701E9CCC /* Misc */,
-				E525F8DE00FB1E0BAECC2213 /* Collision */,
-				E525F36FB3896A795F8A772F /* Loot */,
-				E525F9E678970FCE549A30EC /* TimeToLive */,
-				E525F50671FEB134D7233B00 /* Weapons */,
-			);
-			name = Engine;
-			sourceTree = "<group>";
-		};
-		E525F8DE00FB1E0BAECC2213 /* Collision */ = {
-			isa = PBXGroup;
-			children = (
-				E525FCCF8D7C1FD71913358C /* SFCollisionSystem.m */,
-				E525FE29537CC91AE78A8498 /* SFCollisionSystem.h */,
-				E525FE03320DF96E5C628725 /* SFCollisionComponent.h */,
-				E525FCFEFB78C8CAD2E233C1 /* SFCollisionComponent.m */,
-				E525F11C9D3978D6F900029E /* SFCollisionDamageComponent.m */,
-				E525F5B447DB0681A5F0F59A /* SFCollisionDamageComponent.h */,
-				E525F54056E2E990B9CF31AF /* SFCollisionRewardComponent.m */,
-				E525F4C6485C20368767BDE7 /* SFCollisionRewardComponent.h */,
-			);
-			name = Collision;
-			sourceTree = "<group>";
-		};
-		E525F9E678970FCE549A30EC /* TimeToLive */ = {
-			isa = PBXGroup;
-			children = (
-				E525F0F06CC6AC782F4531A7 /* SFTimeToLiveSystem.m */,
-				E525F4683BECF0BCE5225579 /* SFTimeToLiveSystem.h */,
-				E525F49DFB9429662DB033A6 /* SFTimeToLiveComponent.m */,
-				E525F46B3DDB13BF855F50DF /* SFTimeToLiveComponent.h */,
-			);
-			name = TimeToLive;
-			sourceTree = "<group>";
-		};
-		E525FB96732E64F8E288C374 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				E525F970C8EC31FACC7152C4 /* SFGamePlayScene.h */,
-				E525F6DE925B6A53CBF3AB3C /* SFGamePlayScene.m */,
-				E525F7F6BACC943D680305F7 /* SFGamePlaySceneDelegate.h */,
-				E525F05ABFB8B7E4B2A1FD71 /* SFGameMenuScene.h */,
-				E525F930FFA18F370C7EC140 /* SFGameMenuScene.m */,
-				E525F3599AEB8BEAD150CB7A /* SFDLCScene.h */,
-				E525FEF535E3E5BBF15D179C /* SFDLCScene.m */,
-				E525F2D62C308EC0C7CF75CF /* SFUIPackageControls.m */,
-				E525FF2DABFB5DF317E0486D /* SFUIPackageControls.h */,
-			);
-			name = Scenes;
-			path = Source/src/Scenes;
-			sourceTree = "<group>";
-		};
-		E525FC59FE5FE09A7206C0AD /* Layers */ = {
-			isa = PBXGroup;
-			children = (
-				E525F7EB5DA3CCAECD61449E /* SFHUDLayer.h */,
-				E525F1977383887308B4098D /* SFHUDLayer.m */,
-				E525F480911E20C345715C5E /* SFBackgroundLayer.h */,
-				E525F29CF485434C548AFB09 /* SFBackgroundLayer.m */,
-				E525FB428FCC9A5C4C3170D7 /* SFGamePlayLayer.m */,
-				E525FC191827BE76F6B72BA2 /* SFGamePlayLayer.h */,
-				E525F2AC8FD0C2C6DF58DDDF /* SFBackgroundDebris.m */,
-				E525F5A1B3FB2125BED4AF59 /* SFBackgroundDebris.h */,
-			);
-			name = Layers;
-			path = Source/src/Layers;
-			sourceTree = "<group>";
-		};
-		E525FD2CF3D92FCDCFE29C98 /* Cocos2dAddons */ = {
-			isa = PBXGroup;
-			children = (
-				E525F2AB12343226CB40BBC2 /* SFUIHelper.m */,
-				E525FECFC94BDD32B1224FF3 /* SFUIHelper.h */,
-				E525F9831BEB8359BC751383 /* CCFileUtils+Packages.m */,
-				E525F2253F12497948B5129E /* CCFileUtils+Packages.h */,
-			);
-			name = Cocos2dAddons;
-			sourceTree = "<group>";
-		};
-		E525FDEEC0161592A6F4CFBC /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				E525F78B0E51C15B17BB5DF5 /* SFComponent.m */,
-				E525FE8824C648AB247D5D15 /* SFComponent.h */,
-				E525F8E65A961703CDC23DAC /* SFEntity.m */,
-				E525F82D300EDF999271AC26 /* SFEntitySystem.m */,
-				E525FEF7E71229CB632AA77E /* SFEntity.h */,
-				E525F75BFE739F3339BFBFDC /* SFEntityManager.m */,
-				E525F1A0769F83C0FB2A9C16 /* SFEntitySystem.h */,
-				E525F3CA10D9904CB89DDA72 /* SFEntityManager.h */,
-				E525FE1DB47E4861682A789A /* SFEntityConfigLoader.m */,
-				E525FE12F698B03CC73708C5 /* SFEntityConfigLoader.h */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		E525FF0C0A44EC318DE1AB42 /* Move */ = {
-			isa = PBXGroup;
-			children = (
-				E525F896260E422363BD2EFA /* SFMoveComponent.m */,
-				E525FB7C76A1902BDDE010D1 /* SFMoveComponent.h */,
-				E525FC4E1487ABF51BF51FBA /* SFMoveSystem.m */,
-				E525F34D7773E9CDB8BC9B04 /* SFMoveSystem.h */,
-			);
-			name = Move;
-			sourceTree = "<group>";
-		};
-		E525FFDDAC80129830A809F2 /* Render */ = {
-			isa = PBXGroup;
-			children = (
-				E525F89C732FA272D2E96584 /* SFRenderComponent.h */,
-				E525F892297853C4569B6A30 /* SFRenderComponent.m */,
-			);
-			name = Render;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1085,6 +1026,7 @@
 				D2E0167A18D782EC00927430 /* Run Script */,
 				B77F1B2A17B978D7009739AE /* Sources */,
 				B77F1B2B17B978D7009739AE /* Frameworks */,
+				D352B47A19EC5D8A00829775 /* Compile Metal Shaders */,
 				B77F1B2C17B978D7009739AE /* Resources */,
 			);
 			buildRules = (
@@ -1103,14 +1045,13 @@
 		B77F1B2617B978D7009739AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					7A4035FE19DDEE84007B6E8F = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = VR5TR4K9TD;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -1198,7 +1139,6 @@
 				7A40370319DE401F007B6E8F /* Default.png in Resources */,
 				7A40370419DE401F007B6E8F /* Default@2x.png in Resources */,
 				7A4036F619DE3FFC007B6E8F /* Published-iOS in Resources */,
-				83E21C281A1240CE000D1695 /* Configs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,7 +1146,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83E21C271A1240CE000D1695 /* Configs in Resources */,
 				927F61AD196C771E000F43EF /* Settings.png in Resources */,
 				927F61AE196C771E000F43EF /* Default@2x.png in Resources */,
 				927F61AF196C771E000F43EF /* iPad@2x.png in Resources */,
@@ -1229,7 +1168,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83E21C261A1240CE000D1695 /* Configs in Resources */,
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
@@ -1279,6 +1217,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# osascript -e 'tell application \"System Events\"' -e 'set ProcessList to name of every process' -e 'if \"SpriteBuilder\" is in ProcessList then' -e 'tell application \"SpriteBuilder\" to publish' -e 'end if' -e 'end tell'";
 		};
+		D352B47A19EC5D8A00829775 /* Compile Metal Shaders */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Metal Shaders";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /usr/bin/ruby;
+			shellScript = "# Special thanks to Filip Iliescu at Apple for the help with this.\n\n# Environment variables.\nSDK = ENV[\"PLATFORM_NAME\"]\nOBJECT_FILE_DIR = ENV[\"OBJECT_FILE_DIR\"]\nSRCROOT = ENV[\"SRCROOT\"]\nBUILT_PRODUCTS_DIR = ENV[\"BUILT_PRODUCTS_DIR\"]\nPRODUCT_NAME = ENV[\"PRODUCT_NAME\"]\n\n# User variables\n# Directory with your custom .metal files in it.\nSHADER_DIR = \"#{SRCROOT}/Source/MetalShaders\"\n# Location of the cocos2d library directory.\nCOCOS2D_DIR = \"#{SRCROOT}/Source/libs/cocos2d-iphone/cocos2d\"\n\nMETAL_ARGS = [\n\t\"-arch air64\",\n\t\"-emit-llvm\",\n\t\"-c\",\n\t\"-gline-tables-only\",\n\t\"-ffast-math\",\n\t\"-std=ios-metal1.0\",\n    %{-I \"#{COCOS2D_DIR}\"},\n]\n\ndef system(cmd)\n\tputs cmd\n    Kernel.system cmd\nend\n\nPRODUCTS = \"#{OBJECT_FILE_DIR}/CCMetalShaders\"\nARCHIVE = \"#{PRODUCTS}/default.metal-ar\"\n\ndef compile_shader(src)\n\tdst = \"#{PRODUCTS}/#{File.basename(src, \".metal\")}.air\"\n\t\n\t# Compile and archive the shader.\n\tsystem %{xcrun -sdk #{SDK} metal #{METAL_ARGS.join(\" \")} \"#{src}\" -o \"#{dst}\"}\n\tsystem %{xcrun -sdk #{SDK} ar r \"#{ARCHIVE}\" \"#{dst}\"}\nend\n\nif SDK == \"iphoneos\"\n\t# Cannot use default.metallib to avoid clashing with Xcode build magic.\n\t# This is part of a workaround due to the iOS simulator not supporting Metal and may go away in the future.\n\tmetal_lib = \"#{BUILT_PRODUCTS_DIR}/#{PRODUCT_NAME}.app/CCShaders.metallib\"\n    \n\t# Delete the old products dir and metal lib.\n\tsystem %{rm -rf \"#{PRODUCTS}\"}\n    system %{rm -f \"#{metal_lib}\"}\n    system %{mkdir -p \"#{PRODUCTS}\"}\n    \n    # Compile the builtin shaders.\n    compile_shader(%{#{COCOS2D_DIR}/Platforms/iOS/CCShaders.metal})\n    \n\t# Compile/archive all the shaders in the shader directory.\n    Dir.glob(\"#{SHADER_DIR}/*.metal\").each{|src| compile_shader(src)}\n    \n\t# Link all shaders into default lib.\n\tsystem %{xcrun -sdk #{SDK} metallib -o \"#{metal_lib}\" \"#{ARCHIVE}\"}\nend\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1287,9 +1239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B12102A197484DD004C1E1D /* PackagesDemoActivity.java in Sources */,
-				E525F99F4C3373E16CCBE372 /* CCDirector.m in Sources */,
-				E525FB93DDA49B1B66808E2E /* SFGameMenuScene.m in Sources */,
-				E525F66EBDBF3C6D10723368 /* SFHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1297,57 +1246,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BAED541A1365DF002CB80B /* SFWeaponStatsComponent.m in Sources */,
+				83BAED331A1365DF002CB80B /* SFKeyEventHandler.m in Sources */,
+				83BAED2D1A1365DF002CB80B /* SFHealthComponent.m in Sources */,
+				83BAED151A1365DF002CB80B /* SFCollisionSystem.m in Sources */,
+				83BAEDA41A1366BA002CB80B /* SFGameMenuScene.m in Sources */,
+				7A4036E819DE3F33007B6E8F /* MainScene.m in Sources */,
+				83BAED7E1A1365DF002CB80B /* SFLevelController.m in Sources */,
+				83BAED301A1365DF002CB80B /* SFHealthSystem.m in Sources */,
+				83BAED991A136679002CB80B /* SneakyJoystick.m in Sources */,
+				83BAED931A136679002CB80B /* SneakyButton.m in Sources */,
+				83BAED4B1A1365DF002CB80B /* SFTimeToLiveSystem.m in Sources */,
+				83BAED271A1365DF002CB80B /* SFEntitySystem.m in Sources */,
+				83BAED7B1A1365DF002CB80B /* SFLevelConfigLoader.m in Sources */,
 				7A40360419DDEE84007B6E8F /* main.m in Sources */,
+				83BAED511A1365DF002CB80B /* SFWeaponComponent.m in Sources */,
+				83BAED391A1365DF002CB80B /* SFMoveComponent.m in Sources */,
+				83BAED091A1365DF002CB80B /* CCFileUtils+Packages.m in Sources */,
+				83BAED211A1365DF002CB80B /* SFEntityConfigLoader.m in Sources */,
+				83BAED1E1A1365DF002CB80B /* SFEntity.m in Sources */,
+				83BAED181A1365DF002CB80B /* SFComponent.m in Sources */,
+				83BAED0C1A1365DF002CB80B /* SFCollisionComponent.m in Sources */,
+				83BAED421A1365DF002CB80B /* SFRewardComponent.m in Sources */,
+				83BAED571A1365DF002CB80B /* SFWeaponSystem.m in Sources */,
+				83BAED9F1A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m in Sources */,
+				83BAED1B1A1365DF002CB80B /* SFDropTable.m in Sources */,
+				83BAED3F1A1365DF002CB80B /* SFRenderComponent.m in Sources */,
+				83BAED9C1A136679002CB80B /* SneakyJoystickSkinnedBase.m in Sources */,
+				83BAED781A1365DF002CB80B /* SFLevel.m in Sources */,
+				83BAED661A1365DF002CB80B /* SFGamePlayLayer.m in Sources */,
+				83BAED751A1365DF002CB80B /* SFHelper.m in Sources */,
+				83BAED121A1365DF002CB80B /* SFCollisionRewardComponent.m in Sources */,
+				83BAED6C1A1365DF002CB80B /* SFBoundingBox.m in Sources */,
+				83BAED0F1A1365DF002CB80B /* SFCollisionDamageComponent.m in Sources */,
+				83BAEDA91A1366D8002CB80B /* SFDLCScene.m in Sources */,
+				83BAED721A1365DF002CB80B /* SFEntityFactory.m in Sources */,
+				83BAED2A1A1365DF002CB80B /* SFGLView.m in Sources */,
+				83BAED6F1A1365DF002CB80B /* SFConstants.m in Sources */,
+				83BAED841A1365DF002CB80B /* SFUIPackageControls.m in Sources */,
+				83BAED451A1365DF002CB80B /* SFTagComponent.m in Sources */,
+				83BAED961A136679002CB80B /* SneakyButtonSkinnedBase.m in Sources */,
+				83BAED691A1365DF002CB80B /* SFHUDLayer.m in Sources */,
 				7A59498E19E3941300F65F90 /* AppDelegate.m in Sources */,
-				E525FF733821E1C9165D3D04 /* SneakyButton.m in Sources */,
-				E525F42BB170E68DF95B4DC2 /* SneakyJoystick.m in Sources */,
-				E525F5056396262B97612CD5 /* SneakyButtonSkinnedBase.m in Sources */,
-				E525FC603553E6AF012C3F4D /* SneakyJoystickSkinnedBase.m in Sources */,
-				E525FCBCDF27434575DD6DC5 /* SneakyJoystickSkinnedDPadExample.m in Sources */,
-				E525F5762EEB3EC2D5EA49B5 /* SFHUDLayer.m in Sources */,
-				E525F7DFE1857D0A640D7649 /* SFBackgroundLayer.m in Sources */,
-				E525F16941679F3A70C1AA53 /* SFGamePlayScene.m in Sources */,
-				E525FD70756CF3D85B0F48B2 /* SFGamePlayLayer.m in Sources */,
-				E525F6FAB7DC50DD5D162BDF /* SFBoundingBox.m in Sources */,
-				E525F5A8892F0C6178AA4F54 /* SFConstants.m in Sources */,
-				E525F46C361900888F89423B /* SFLevelController.m in Sources */,
-				E525F5AD074AD49A741EAE68 /* CCDirector.m in Sources */,
-				E525FB559E36E287A8230E1D /* SFGameMenuScene.m in Sources */,
-				E525F30742E581BCA53AEFBA /* SFHelper.m in Sources */,
-				E525F207B37CEEA504ABDA7D /* SFKeyEventHandler.m in Sources */,
-				E525FAB8FB858BF827286DAE /* SFGLView.m in Sources */,
-				E525F2D0CC6B46D34E028961 /* SFComponent.m in Sources */,
-				E525F9D2D7453E6AB732B220 /* SFEntity.m in Sources */,
-				E525F2D4D973CC0CCC20227D /* SFEntitySystem.m in Sources */,
-				E525FDD62056D1206C9895D3 /* SFEntityManager.m in Sources */,
-				E525F28DBB7D35316F3F6468 /* SFHealthSystem.m in Sources */,
-				E525F325A0662AE8F98F4F8D /* SFHealthComponent.m in Sources */,
-				E525FFD696C3F71DE1392F29 /* SFRenderComponent.m in Sources */,
-				E525F9442A189B916FBF52C8 /* SFEntityFactory.m in Sources */,
-				E525F50CE65AFA7832C184A1 /* SFMoveComponent.m in Sources */,
-				E525F625F68099A87A7AD214 /* SFMoveSystem.m in Sources */,
-				E525FD7C7C96337CFB77F87A /* SFCollisionSystem.m in Sources */,
-				E525FE12DE3AFE0299C7CAF3 /* SFCollisionComponent.m in Sources */,
-				E525F3EC175B9B4452CD9DF4 /* SFTagComponent.m in Sources */,
-				E525FFE5FA46E7C92E7A3CE1 /* SFCollisionDamageComponent.m in Sources */,
-				E525F8FCCC93720D086C4F61 /* SFLootComponent.m in Sources */,
-				E525F869EE0F9A2CD03CB53C /* SFCollisionRewardComponent.m in Sources */,
-				E525F1ABDDDB26057D1697DB /* SFTimeToLiveSystem.m in Sources */,
-				E525FC3C25717ECF40DD0B87 /* SFTimeToLiveComponent.m in Sources */,
-				E525FC242ED3B44DB525C7ED /* SFRewardComponent.m in Sources */,
-				E525F187B1EF9E6425A6361D /* SFWeaponSystem.m in Sources */,
-				E525FCABF92C92B87CC79BC5 /* SFWeaponComponent.m in Sources */,
-				E525FCD9E3D8F02E37C367B1 /* SFBackgroundDebris.m in Sources */,
-				E525F0156B7CF52848E81791 /* SFTrigonometryHelper.m in Sources */,
-				E525F897E746F05C949A87F8 /* SFEntityConfigLoader.m in Sources */,
-				E525FDBE0FB2E7196032E601 /* SFWeaponStatsComponent.m in Sources */,
-				E525F553245EABB3AF2A5B32 /* SFLevel.m in Sources */,
-				E525FCD7A17E6EA5767DB9C8 /* SFLevelConfigLoader.m in Sources */,
-				E525FE6527DD494642D8A114 /* SFDropTable.m in Sources */,
-				E525F8EDE367C119D845B866 /* SFDLCScene.m in Sources */,
-				E525FA5D1A27AE2667464059 /* SFUIHelper.m in Sources */,
-				E525F1AA015BC76875184315 /* SFUIPackageControls.m in Sources */,
-				E525F7F952E370DF43071937 /* CCFileUtils+Packages.m in Sources */,
+				83BAED361A1365DF002CB80B /* SFLootComponent.m in Sources */,
+				83BAED5A1A1365DF002CB80B /* SFBackgroundDebris.m in Sources */,
+				83BAED241A1365DF002CB80B /* SFEntityManager.m in Sources */,
+				83BAED3C1A1365DF002CB80B /* SFMoveSystem.m in Sources */,
+				83BAED811A1365DF002CB80B /* SFGamePlayScene.m in Sources */,
+				83BAED631A1365DF002CB80B /* SFBackgroundLayer.m in Sources */,
+				83BAED5D1A1365DF002CB80B /* SFTrigonometryHelper.m in Sources */,
+				83BAED4E1A1365DF002CB80B /* SFUIHelper.m in Sources */,
+				83BAED481A1365DF002CB80B /* SFTimeToLiveComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1355,51 +1304,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BAED2C1A1365DF002CB80B /* SFHealthComponent.m in Sources */,
+				83BAED441A1365DF002CB80B /* SFTagComponent.m in Sources */,
+				83BAED351A1365DF002CB80B /* SFLootComponent.m in Sources */,
+				83BAED531A1365DF002CB80B /* SFWeaponStatsComponent.m in Sources */,
+				83BAED711A1365DF002CB80B /* SFEntityFactory.m in Sources */,
+				83BAED831A1365DF002CB80B /* SFUIPackageControls.m in Sources */,
+				83BAED6B1A1365DF002CB80B /* SFBoundingBox.m in Sources */,
+				83BAED921A136679002CB80B /* SneakyButton.m in Sources */,
+				83BAED591A1365DF002CB80B /* SFBackgroundDebris.m in Sources */,
+				83BAED9B1A136679002CB80B /* SneakyJoystickSkinnedBase.m in Sources */,
+				83BAED981A136679002CB80B /* SneakyJoystick.m in Sources */,
+				83BAED621A1365DF002CB80B /* SFBackgroundLayer.m in Sources */,
+				83BAED9E1A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m in Sources */,
+				83BAED651A1365DF002CB80B /* SFGamePlayLayer.m in Sources */,
+				83BAED4A1A1365DF002CB80B /* SFTimeToLiveSystem.m in Sources */,
+				83BAED6E1A1365DF002CB80B /* SFConstants.m in Sources */,
+				83BAED411A1365DF002CB80B /* SFRewardComponent.m in Sources */,
+				83BAED7A1A1365DF002CB80B /* SFLevelConfigLoader.m in Sources */,
+				83BAEDA81A1366D8002CB80B /* SFDLCScene.m in Sources */,
+				83BAED5C1A1365DF002CB80B /* SFTrigonometryHelper.m in Sources */,
+				83BAED141A1365DF002CB80B /* SFCollisionSystem.m in Sources */,
+				83BAED261A1365DF002CB80B /* SFEntitySystem.m in Sources */,
+				83BAED741A1365DF002CB80B /* SFHelper.m in Sources */,
+				83BAED7D1A1365DF002CB80B /* SFLevelController.m in Sources */,
+				83BAED471A1365DF002CB80B /* SFTimeToLiveComponent.m in Sources */,
+				83BAED4D1A1365DF002CB80B /* SFUIHelper.m in Sources */,
+				83BAED801A1365DF002CB80B /* SFGamePlayScene.m in Sources */,
+				83BAED561A1365DF002CB80B /* SFWeaponSystem.m in Sources */,
+				83BAED3B1A1365DF002CB80B /* SFMoveSystem.m in Sources */,
+				83BAED3E1A1365DF002CB80B /* SFRenderComponent.m in Sources */,
+				83BAED111A1365DF002CB80B /* SFCollisionRewardComponent.m in Sources */,
+				83BAED951A136679002CB80B /* SneakyButtonSkinnedBase.m in Sources */,
+				83BAED501A1365DF002CB80B /* SFWeaponComponent.m in Sources */,
+				83BAED0E1A1365DF002CB80B /* SFCollisionDamageComponent.m in Sources */,
+				927F619E196C771E000F43EF /* MainScene.m in Sources */,
+				83BAED681A1365DF002CB80B /* SFHUDLayer.m in Sources */,
+				83BAEDA31A1366BA002CB80B /* SFGameMenuScene.m in Sources */,
+				83BAED171A1365DF002CB80B /* SFComponent.m in Sources */,
+				83BAED231A1365DF002CB80B /* SFEntityManager.m in Sources */,
+				83BAED201A1365DF002CB80B /* SFEntityConfigLoader.m in Sources */,
+				83BAED0B1A1365DF002CB80B /* SFCollisionComponent.m in Sources */,
+				83BAED1A1A1365DF002CB80B /* SFDropTable.m in Sources */,
+				83BAED1D1A1365DF002CB80B /* SFEntity.m in Sources */,
 				5B121030197484FA004C1E1D /* PackagesDemoActivity.m in Sources */,
-				E525F22B8EFBD6AC1BA91522 /* SneakyButton.m in Sources */,
-				E525FC12690A3503D700D748 /* SneakyJoystick.m in Sources */,
-				E525F725DF52F0CBF9403292 /* SneakyButtonSkinnedBase.m in Sources */,
-				E525F8358043B4837F4339CB /* SneakyJoystickSkinnedBase.m in Sources */,
-				E525F7E8A2D5BCD0152CF639 /* SneakyJoystickSkinnedDPadExample.m in Sources */,
-				E525F989219BB060773E3B26 /* SFHUDLayer.m in Sources */,
-				E525FE34C3D10272FE0F74E2 /* SFBackgroundLayer.m in Sources */,
-				E525F6D0166D5449DEA47719 /* SFGamePlayScene.m in Sources */,
-				E525F5BDBBFED07AF765329B /* SFGamePlayLayer.m in Sources */,
-				E525FB3C34AE49251723E03A /* SFBoundingBox.m in Sources */,
-				E525F78D4B5E7CC96671DBF4 /* SFConstants.m in Sources */,
-				E525FD59762E512B5F1C9611 /* SFLevelController.m in Sources */,
-				E525F4A885A32A55344B66D3 /* SFComponent.m in Sources */,
-				E525F824EEDB1235F62D53E4 /* SFEntity.m in Sources */,
-				E525F85549FF5D237E0C3B30 /* SFEntitySystem.m in Sources */,
-				E525F5A7DE89C687F08BC3D5 /* SFEntityManager.m in Sources */,
-				E525F78D102ECF683DA0845C /* SFHealthSystem.m in Sources */,
-				E525F481736453057C9E5C83 /* SFHealthComponent.m in Sources */,
-				E525FA9908C7079A5FA0E3EE /* SFRenderComponent.m in Sources */,
-				E525F8C2804D5C82E1563557 /* SFEntityFactory.m in Sources */,
-				E525F6A40943A5BB4EFE9371 /* SFMoveComponent.m in Sources */,
-				E525FA422CEA8CCD007880F3 /* SFMoveSystem.m in Sources */,
-				E525F99CE573887A8AD71EA1 /* SFCollisionSystem.m in Sources */,
-				E525F5957BA86C84CE570E2D /* SFCollisionComponent.m in Sources */,
-				E525F66E9108621DE194C727 /* SFTagComponent.m in Sources */,
-				E525F7EAD544FF954F91663A /* SFCollisionDamageComponent.m in Sources */,
-				E525F8B23DB68AC4CDD9A9A0 /* SFLootComponent.m in Sources */,
-				E525FC81E5B9DACB6E80F320 /* SFCollisionRewardComponent.m in Sources */,
-				E525FE6801C8729467003314 /* SFTimeToLiveSystem.m in Sources */,
-				E525FDE1D930793B5212C99A /* SFTimeToLiveComponent.m in Sources */,
-				E525F24EE65E381CE93A8362 /* SFRewardComponent.m in Sources */,
-				E525F12852DCBC476BCB64CC /* SFWeaponSystem.m in Sources */,
-				E525F98B0BF4056ABB4F5286 /* SFWeaponComponent.m in Sources */,
-				E525FE96D4385C39B1A92335 /* SFBackgroundDebris.m in Sources */,
-				E525FC15C064BFC4E805C892 /* SFTrigonometryHelper.m in Sources */,
-				E525F1FF8BE24075C7BD03E8 /* SFEntityConfigLoader.m in Sources */,
-				E525F9D7BA97A3C09A2DDB8A /* SFWeaponStatsComponent.m in Sources */,
-				E525F03AC683827AD1BC0305 /* SFLevel.m in Sources */,
-				E525FC4850D51C1B573C9FA4 /* SFLevelConfigLoader.m in Sources */,
-				E525F7C38724E97430B24591 /* SFDropTable.m in Sources */,
-				E525F2649C981A4370B12F5B /* SFDLCScene.m in Sources */,
-				E525F959F61DC9AABB885DCB /* SFUIHelper.m in Sources */,
-				E525FE59B4B60FC8C278A16C /* SFUIPackageControls.m in Sources */,
-				E525F026CA6613CB5F36F895 /* CCFileUtils+Packages.m in Sources */,
+				83BAED081A1365DF002CB80B /* CCFileUtils+Packages.m in Sources */,
+				83BAED771A1365DF002CB80B /* SFLevel.m in Sources */,
+				83BAED2F1A1365DF002CB80B /* SFHealthSystem.m in Sources */,
+				83BAED381A1365DF002CB80B /* SFMoveComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,55 +1359,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BAED521A1365DF002CB80B /* SFWeaponStatsComponent.m in Sources */,
+				83BAED2B1A1365DF002CB80B /* SFHealthComponent.m in Sources */,
+				83BAED131A1365DF002CB80B /* SFCollisionSystem.m in Sources */,
+				83BAEDA21A1366BA002CB80B /* SFGameMenuScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				83BAED7C1A1365DF002CB80B /* SFLevelController.m in Sources */,
+				83BAED2E1A1365DF002CB80B /* SFHealthSystem.m in Sources */,
+				83BAED971A136679002CB80B /* SneakyJoystick.m in Sources */,
+				83BAED911A136679002CB80B /* SneakyButton.m in Sources */,
+				83BAED491A1365DF002CB80B /* SFTimeToLiveSystem.m in Sources */,
+				83BAED251A1365DF002CB80B /* SFEntitySystem.m in Sources */,
+				83BAED791A1365DF002CB80B /* SFLevelConfigLoader.m in Sources */,
+				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
+				83BAED4F1A1365DF002CB80B /* SFWeaponComponent.m in Sources */,
+				83BAED371A1365DF002CB80B /* SFMoveComponent.m in Sources */,
+				83BAED071A1365DF002CB80B /* CCFileUtils+Packages.m in Sources */,
+				83BAED1F1A1365DF002CB80B /* SFEntityConfigLoader.m in Sources */,
+				83BAED1C1A1365DF002CB80B /* SFEntity.m in Sources */,
+				83BAED161A1365DF002CB80B /* SFComponent.m in Sources */,
+				83BAED0A1A1365DF002CB80B /* SFCollisionComponent.m in Sources */,
+				83BAED401A1365DF002CB80B /* SFRewardComponent.m in Sources */,
+				83BAED551A1365DF002CB80B /* SFWeaponSystem.m in Sources */,
+				83BAED9D1A136679002CB80B /* SneakyJoystickSkinnedDPadExample.m in Sources */,
+				83BAED191A1365DF002CB80B /* SFDropTable.m in Sources */,
+				83BAED3D1A1365DF002CB80B /* SFRenderComponent.m in Sources */,
+				83BAED9A1A136679002CB80B /* SneakyJoystickSkinnedBase.m in Sources */,
+				83BAED761A1365DF002CB80B /* SFLevel.m in Sources */,
+				83BAED641A1365DF002CB80B /* SFGamePlayLayer.m in Sources */,
+				83BAED731A1365DF002CB80B /* SFHelper.m in Sources */,
+				83BAED101A1365DF002CB80B /* SFCollisionRewardComponent.m in Sources */,
+				83BAED6A1A1365DF002CB80B /* SFBoundingBox.m in Sources */,
+				83BAED0D1A1365DF002CB80B /* SFCollisionDamageComponent.m in Sources */,
+				83BAEDA71A1366D8002CB80B /* SFDLCScene.m in Sources */,
+				83BAED701A1365DF002CB80B /* SFEntityFactory.m in Sources */,
+				83BAED6D1A1365DF002CB80B /* SFConstants.m in Sources */,
+				83BAED821A1365DF002CB80B /* SFUIPackageControls.m in Sources */,
+				83BAED431A1365DF002CB80B /* SFTagComponent.m in Sources */,
+				83BAED941A136679002CB80B /* SneakyButtonSkinnedBase.m in Sources */,
+				83BAED671A1365DF002CB80B /* SFHUDLayer.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
-				E525FF41F1D681A45C5FEF68 /* SneakyButton.m in Sources */,
-				E525F179272E03CA7BB0C55D /* SneakyJoystick.m in Sources */,
-				E525F5FF86D2CA3CD2CBBFE6 /* SneakyButtonSkinnedBase.m in Sources */,
-				E525F48350928832D8A75402 /* SneakyJoystickSkinnedBase.m in Sources */,
-				E525F83A18836EFB63E6CF99 /* SneakyJoystickSkinnedDPadExample.m in Sources */,
-				E525F0880539B2BBDFB57DD2 /* SFHUDLayer.m in Sources */,
-				E525F472711FA48C285F2AF5 /* SFBackgroundLayer.m in Sources */,
-				E525F6C696DC140BA215DD38 /* SFGamePlayScene.m in Sources */,
-				E525F0DD5564A85DB6B6469C /* SFGamePlayLayer.m in Sources */,
-				E525FA07F082296C2F44F217 /* SFBoundingBox.m in Sources */,
-				E525F183AE074F1F2CEC05A5 /* SFConstants.m in Sources */,
-				E525FF663095AEFBFA8A15AF /* SFLevelController.m in Sources */,
-				E525F4F983970FC43ABF3D96 /* CCDirector.m in Sources */,
-				E525F050684B700D1200840C /* SFGameMenuScene.m in Sources */,
-				E525FFA64C063CBDABA3FC47 /* SFHelper.m in Sources */,
-				E525FA56C045E76EFD4E3FDD /* SFComponent.m in Sources */,
-				E525F9A524C2E53620EC8002 /* SFEntity.m in Sources */,
-				E525FF47CF4472461C8F95FB /* SFEntitySystem.m in Sources */,
-				E525F00E0DF76BBC06F2B857 /* SFEntityManager.m in Sources */,
-				E525F4F0AD133866A01FA985 /* SFHealthSystem.m in Sources */,
-				E525FED1897902A07EC991BD /* SFHealthComponent.m in Sources */,
-				E525F7151D4B53B586DFD1AF /* SFRenderComponent.m in Sources */,
-				E525FC35AE2324E0D2580B02 /* SFEntityFactory.m in Sources */,
-				E525F20AA3375575200510E4 /* SFMoveComponent.m in Sources */,
-				E525F7BDA149297C2063D73D /* SFMoveSystem.m in Sources */,
-				E525F098159DAE3092972600 /* SFCollisionSystem.m in Sources */,
-				E525F941C9456E4BC2FE2919 /* SFCollisionComponent.m in Sources */,
-				E525F8DD1D6E07F72D79473D /* SFTagComponent.m in Sources */,
-				E525FF8B5E204F02A11DE11F /* SFCollisionDamageComponent.m in Sources */,
-				E525F9E9AD46D66CF26A3CCF /* SFLootComponent.m in Sources */,
-				E525F5FAB80C23CB36D447C9 /* SFCollisionRewardComponent.m in Sources */,
-				E525F6E0AC162497F19E38FC /* SFTimeToLiveSystem.m in Sources */,
-				E525FD36BBC10C604FFDE474 /* SFTimeToLiveComponent.m in Sources */,
-				E525F309C3FCBAF4F797AC46 /* SFRewardComponent.m in Sources */,
-				E525F80A59D23F7D36A535BF /* SFWeaponSystem.m in Sources */,
-				E525F4115E3E19661B920EA9 /* SFWeaponComponent.m in Sources */,
-				E525F1C1CD62C83A817B6BF8 /* SFBackgroundDebris.m in Sources */,
-				E525F033A6AAA603DC3A96B9 /* SFTrigonometryHelper.m in Sources */,
-				E525F6B7E6C27F059CDAE500 /* SFEntityConfigLoader.m in Sources */,
-				E525F5B6890B865BD484E7E1 /* SFWeaponStatsComponent.m in Sources */,
-				E525F22DFC7E393CDD714AD1 /* SFLevel.m in Sources */,
-				E525FAF268BEDE099ABDDDB0 /* SFLevelConfigLoader.m in Sources */,
-				E525F0A069BB65377042AE26 /* SFDropTable.m in Sources */,
-				E525F20C69C2819700E3F916 /* SFDLCScene.m in Sources */,
-				E525F52E6C063319C7C6A2FB /* SFUIHelper.m in Sources */,
-				E525F09049F91E20EE03B991 /* SFUIPackageControls.m in Sources */,
-				E525FBC74F86BAC3AF76D9DE /* CCFileUtils+Packages.m in Sources */,
+				83BAED341A1365DF002CB80B /* SFLootComponent.m in Sources */,
+				83BAED581A1365DF002CB80B /* SFBackgroundDebris.m in Sources */,
+				83BAED221A1365DF002CB80B /* SFEntityManager.m in Sources */,
+				83BAED3A1A1365DF002CB80B /* SFMoveSystem.m in Sources */,
+				83BAED7F1A1365DF002CB80B /* SFGamePlayScene.m in Sources */,
+				83BAED611A1365DF002CB80B /* SFBackgroundLayer.m in Sources */,
+				83BAED5B1A1365DF002CB80B /* SFTrigonometryHelper.m in Sources */,
+				83BAED4C1A1365DF002CB80B /* SFUIHelper.m in Sources */,
+				83BAED461A1365DF002CB80B /* SFTimeToLiveComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1511,6 +1463,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -1546,6 +1499,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1587,10 +1541,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = (
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
-					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
-					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
+					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
+					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1603,6 +1557,8 @@
 				PRODUCT_MODULE_NAME = PackagesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1629,10 +1585,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = (
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
-					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
-					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
+					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
+					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1645,6 +1601,7 @@
 				PRODUCT_MODULE_NAME = PackagesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -1657,6 +1614,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1667,7 +1625,6 @@
 					"COCOS2D_ANDROID=1",
 				);
 				HEADER_SEARCH_PATHS = (
-					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
@@ -1688,6 +1645,7 @@
 					"-lgles_apportable",
 					"-landroid",
 				);
+				PRODUCT_MODULE_NAME = PackagesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = sbandroid;
@@ -1705,6 +1663,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
@@ -1714,7 +1673,6 @@
 					"COCOS2D_ANDROID=1",
 				);
 				HEADER_SEARCH_PATHS = (
-					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
@@ -1734,6 +1692,7 @@
 					"-lgles_apportable",
 					"-landroid",
 				);
+				PRODUCT_MODULE_NAME = PackagesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = sbandroid;
@@ -1751,8 +1710,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1767,7 +1728,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1782,8 +1743,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -1796,7 +1759,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1815,15 +1778,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
-					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
-					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
+					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -1850,15 +1812,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
-					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
-					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
+					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lz",
