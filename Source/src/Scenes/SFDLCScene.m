@@ -71,6 +71,21 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
     }
 
     [[SFEntityFactory sharedFactory] invalidateCache];
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    NSString *packagesInstallPath = [[CCPackageManager sharedManager] installedPackagesPath];
+    NSArray *packagesPaths = [fileManager contentsOfDirectoryAtPath:packagesInstallPath error:nil];
+
+    for (NSString *folderName in packagesPaths)
+    {
+        NSString *path = [packagesInstallPath stringByAppendingPathComponent:folderName];
+        NSError *error;
+        if  (![fileManager removeItemAtPath:path error:&error])
+        {
+            NSLog(@"error deleting packages folder: %@ - %@", path, error);
+        }
+    }
 }
 
 - (void)setupPackageControls
@@ -79,13 +94,13 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
 
     NSString *resolution = [CCPackageHelper defaultResolution];
 
-    SFUIPackageControls *control1 = [[SFUIPackageControls alloc] initWithName:PACKAGE_NAME_PATCH_1_1 title:@"Patch 1.1" resolution:resolution];
+    SFUIPackageControls *control1 = [[SFUIPackageControls alloc] initWithName:PACKAGE_NAME_PATCH_1_1 title:@"Patch 1.1"];
     control1.positionType = CCPositionTypeNormalized;
     control1.position = ccp(0.5, 0.70);
     [self addChild:control1];
     [_packageControls addObject:control1];
 
-    SFUIPackageControls *control2 = [[SFUIPackageControls alloc] initWithName:PACKAGE_NAME_LEVELS title:@"More Levels" resolution:resolution];
+    SFUIPackageControls *control2 = [[SFUIPackageControls alloc] initWithName:PACKAGE_NAME_LEVELS title:@"More Levels"];
     [_packageControls addObject:control2];
     [self addChild:control2];
     control2.positionType = CCPositionTypeNormalized;

@@ -7,14 +7,13 @@
 
 @implementation SFUIPackageControls
 
-- (instancetype)initWithName:(NSString *)name title:(NSString *)title resolution:(NSString *)resolution
+- (instancetype)initWithName:(NSString *)name title:(NSString *)title
 {
     self = [super init];
 
     if (self)
     {
         self.packageName = name;
-        self.resolution = resolution;
 
         self.title = [SFUIHelper gameLabelWithSize:24.0 blockSize:2.0];
         _title.string = title;
@@ -39,22 +38,10 @@
 
         self.button = buttonDownloadPatch[@"button"];
 
-        self.package = [self findPackage];
+        self.package = [[CCPackageManager sharedManager] packageWithName:_packageName];
     }
 
     return self;
-}
-
-- (CCPackage *)findPackage
-{
-    for (CCPackage *aPackage in [[CCPackageManager sharedManager] allPackages])
-    {
-        if ([aPackage.name isEqualToString:_packageName ] && [aPackage.resolution isEqualToString:_resolution])
-        {
-            return aPackage;
-        }
-    }
-    return nil;
 }
 
 - (void)downloadPackage

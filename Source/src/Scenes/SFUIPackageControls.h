@@ -6,16 +6,14 @@
 
 @interface SFUIPackageControls : CCNode
 
-@property (nonatomic, copy) NSURL *packageURL;
 @property (nonatomic, copy) NSString *packageName;
-@property (nonatomic, copy) NSString *resolution;
 @property (nonatomic, strong) CCLabelTTF *title;
 @property (nonatomic, strong) CCLabelTTF *status;
 @property (nonatomic, strong) CCButton *button;
 @property (nonatomic, strong) CCNode *buttonContainer;
 @property (nonatomic, strong) CCPackage *package;
 
-- (instancetype)initWithName:(NSString *)name title:(NSString *)title resolution:(NSString *)resolution;
+- (instancetype)initWithName:(NSString *)name title:(NSString *)title;
 
 - (void)packageDownloadProgressDownloadedBytes:(NSUInteger)downloadedBytes totalBytes:(NSUInteger)totalBytes;
 
