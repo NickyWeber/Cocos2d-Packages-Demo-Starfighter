@@ -28,7 +28,7 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
     if (self)
     {
         [CCPackageManager sharedManager].delegate = self;
-        [CCPackageManager sharedManager].baseURL = [NSURL URLWithString:@"http://siner.de"];
+        [CCPackageManager sharedManager].baseURL = [NSURL URLWithString:@"http://siner.de/cocos2d-packages-demo-starfighter/"];
 
         [self setupBackground];
 
@@ -79,15 +79,13 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
 
     NSString *resolution = [CCPackageHelper defaultResolution];
 
-    NSURL *patchPackageURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://github.com/NickyWeber/Cocos2d-Packages-Demo-Starfighter/blob/master/Published-Packages/patch_1_1-iOS-%@.zip?raw=true", resolution]];
-    SFUIPackageControls *control1 = [[SFUIPackageControls alloc] initWithPackageURL:patchPackageURL title:@"Patch 1.1" name:PACKAGE_NAME_PATCH_1_1 resolution:resolution];
+    SFUIPackageControls *control1 = [[SFUIPackageControls alloc] initWithName:PACKAGE_NAME_PATCH_1_1 title:@"Patch 1.1" resolution:resolution];
     control1.positionType = CCPositionTypeNormalized;
     control1.position = ccp(0.5, 0.70);
     [self addChild:control1];
     [_packageControls addObject:control1];
 
-    NSURL *levelsPackageURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://github.com/NickyWeber/Cocos2d-Packages-Demo-Starfighter/blob/master/Published-Packages/levels-iOS-%@.zip?raw=true", resolution]];
-    SFUIPackageControls *control2 = [[SFUIPackageControls alloc] initWithPackageURL:levelsPackageURL title:@"More Levels" name:PACKAGE_NAME_LEVELS resolution:resolution];
+    SFUIPackageControls *control2 = [[SFUIPackageControls alloc] initWithName:PACKAGE_NAME_LEVELS title:@"More Levels" resolution:resolution];
     [_packageControls addObject:control2];
     [self addChild:control2];
     control2.positionType = CCPositionTypeNormalized;

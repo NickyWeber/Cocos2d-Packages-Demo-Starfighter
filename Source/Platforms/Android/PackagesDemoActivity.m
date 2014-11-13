@@ -24,7 +24,7 @@
 
 
 #import "PackagesDemoActivity.h"
-#import "SFGameMenuScene.hw"
+#import "SFGameMenuScene.h"
 
 @implementation PackagesDemoActivity
 

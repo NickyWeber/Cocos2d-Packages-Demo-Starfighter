@@ -3,16 +3,16 @@
 #import "CCPackageManager.h"
 #import "CCPackage.h"
 #import "SFEntityFactory.h"
+#import "CCPackageHelper+Mac.h"
 
 @implementation SFUIPackageControls
 
-- (instancetype)initWithPackageURL:(NSURL *)packageURL title:(NSString *)title name:(NSString *)name resolution:(NSString *)resolution
+- (instancetype)initWithName:(NSString *)name title:(NSString *)title resolution:(NSString *)resolution
 {
     self = [super init];
 
     if (self)
     {
-        self.packageURL = packageURL;
         self.packageName = name;
         self.resolution = resolution;
 
@@ -60,8 +60,6 @@
 - (void)downloadPackage
 {
     self.package = [[CCPackageManager sharedManager] downloadPackageWithName:_packageName
-                                                                  resolution:_resolution
-                                                                   remoteURL:_packageURL
                                                          enableAfterDownload:YES];
 }
 

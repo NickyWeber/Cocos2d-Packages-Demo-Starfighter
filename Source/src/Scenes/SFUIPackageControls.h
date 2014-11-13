@@ -15,7 +15,7 @@
 @property (nonatomic, strong) CCNode *buttonContainer;
 @property (nonatomic, strong) CCPackage *package;
 
-- (instancetype)initWithPackageURL:(NSURL *)packageURL title:(NSString *)title name:(NSString *)name resolution:(NSString *)resolution;
+- (instancetype)initWithName:(NSString *)name title:(NSString *)title resolution:(NSString *)resolution;
 
 - (void)packageDownloadProgressDownloadedBytes:(NSUInteger)downloadedBytes totalBytes:(NSUInteger)totalBytes;
 

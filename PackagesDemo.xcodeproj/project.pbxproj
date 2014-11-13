@@ -232,6 +232,9 @@
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		B78A0B10198AF87200C63841 /* Published-Android in Resources */ = {isa = PBXBuildFile; fileRef = B78A0B0F198AF87200C63841 /* Published-Android */; };
+		E525FAE05F920A6A6B2B7824 /* CCPackageHelper+Mac.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF99849D9A5C0382A39A /* CCPackageHelper+Mac.m */; };
+		E525FC86436BE4B8F11CE4A7 /* CCPackageHelper+Mac.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF99849D9A5C0382A39A /* CCPackageHelper+Mac.m */; };
+		E525FFBAC58A0A0F27823883 /* CCPackageHelper+Mac.m in Sources */ = {isa = PBXBuildFile; fileRef = E525FF99849D9A5C0382A39A /* CCPackageHelper+Mac.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -468,6 +471,8 @@
 		B78A0B0F198AF87200C63841 /* Published-Android */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Published-Android"; sourceTree = "<group>"; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
+		E525FABDB454D4DE9B5C1F71 /* CCPackageHelper+Mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCPackageHelper+Mac.h"; sourceTree = "<group>"; };
+		E525FF99849D9A5C0382A39A /* CCPackageHelper+Mac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCPackageHelper+Mac.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -710,6 +715,8 @@
 			children = (
 				83BAECAB1A1365DE002CB80B /* CCFileUtils+Packages.h */,
 				83BAECAC1A1365DE002CB80B /* CCFileUtils+Packages.m */,
+				E525FF99849D9A5C0382A39A /* CCPackageHelper+Mac.m */,
+				E525FABDB454D4DE9B5C1F71 /* CCPackageHelper+Mac.h */,
 			);
 			path = Cocos2dAddons;
 			sourceTree = "<group>";
@@ -1297,6 +1304,7 @@
 				83BAED5D1A1365DF002CB80B /* SFTrigonometryHelper.m in Sources */,
 				83BAED4E1A1365DF002CB80B /* SFUIHelper.m in Sources */,
 				83BAED481A1365DF002CB80B /* SFTimeToLiveComponent.m in Sources */,
+				E525FC86436BE4B8F11CE4A7 /* CCPackageHelper+Mac.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1352,6 +1360,7 @@
 				83BAED771A1365DF002CB80B /* SFLevel.m in Sources */,
 				83BAED2F1A1365DF002CB80B /* SFHealthSystem.m in Sources */,
 				83BAED381A1365DF002CB80B /* SFMoveComponent.m in Sources */,
+				E525FFBAC58A0A0F27823883 /* CCPackageHelper+Mac.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1408,6 +1417,7 @@
 				83BAED5B1A1365DF002CB80B /* SFTrigonometryHelper.m in Sources */,
 				83BAED4C1A1365DF002CB80B /* SFUIHelper.m in Sources */,
 				83BAED461A1365DF002CB80B /* SFTimeToLiveComponent.m in Sources */,
+				E525FAE05F920A6A6B2B7824 /* CCPackageHelper+Mac.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
