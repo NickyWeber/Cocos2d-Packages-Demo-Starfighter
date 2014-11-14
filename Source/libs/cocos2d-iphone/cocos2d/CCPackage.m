@@ -40,22 +40,6 @@ static NSString *const PACKAGE_SERIALIZATION_KEY_ENABLE_ON_DOWNLOAD = @"enableOn
     return self;
 }
 
-- (instancetype)initWithName:(NSString *)name resolution:(NSString *)resolution remoteURL:(NSURL *)remoteURL
-{
-    return [[CCPackage alloc] initWithName:name
-                                resolution:resolution
-                                        os:[CCPackageHelper currentOS]
-                                 remoteURL:remoteURL];
-}
-
-- (instancetype)initWithName:(NSString *)name remoteURL:(NSURL *)remoteURL
-{
-    return [[CCPackage alloc] initWithName:name
-                                resolution:[CCPackageHelper defaultResolution]
-                                        os:[CCPackageHelper currentOS]
-                                 remoteURL:remoteURL];
-}
-
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     CCPackage *package = [[CCPackage alloc] initWithName:dictionary[PACKAGE_SERIALIZATION_KEY_NAME]
@@ -152,6 +136,16 @@ static NSString *const PACKAGE_SERIALIZATION_KEY_ENABLE_ON_DOWNLOAD = @"enableOn
 
         default : return @"Unknown";
     }
+}
+
+- (NSURL *)installFullURL
+{
+    return [NSURL fileURLWithPath:[[CCPackageHelper cachesFolder] stringByAppendingPathComponent:_installRelURL.path]];
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"name: %@, res: %@, os: %@, status: %@, remote url: %@, unzip url: %@, install url: %@",_name, _resolution, _os, [self statusToString], _remoteURL, _unzipURL, [self installFullURL]];
 }
 
 @end

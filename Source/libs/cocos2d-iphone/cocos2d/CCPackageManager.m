@@ -155,7 +155,7 @@
     [packageCocos2dEnabler enablePackages:packagesToEnable];
 }
 
-- (void)savePackages
+- (void)savePackagesForceWriteToDefaults:(BOOL)forceWrite
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *packagesToSave = [NSMutableArray arrayWithCapacity:_packages.count];
@@ -166,7 +166,16 @@
     }
 
     [userDefaults setObject:packagesToSave forKey:PACKAGE_STORAGE_USERDEFAULTS_KEY];
-    [userDefaults synchronize];
+
+    if (forceWrite)
+    {
+        [userDefaults synchronize];
+    }
+}
+
+- (void)savePackages
+{
+    [self savePackagesForceWriteToDefaults:YES];
 }
 
 - (void)setInstallRelPath:(NSString *)newInstallRelPath
@@ -244,7 +253,7 @@
         return nil;
     }
 
-    return [self downloadPackageWithName:name resolution:resolution remoteURL:remoteURL enableAfterDownload:enableAfterDownload];
+    return [self downloadPackageWithName:name resolution:resolution os:[CCPackageHelper currentOS] remoteURL:remoteURL enableAfterDownload:enableAfterDownload];
 }
 
 - (void)downloadPackage:(CCPackage *)package enableAfterDownload:(BOOL)enableAfterDownload
@@ -252,6 +261,7 @@
     NSAssert(package, @"package must not be nil");
     NSAssert(package.name, @"package.name must not be nil");
     NSAssert(package.resolution, @"package.resolution must not be nil");
+    NSAssert(package.os, @"package.os must not be nil");
     NSAssert(package.remoteURL, @"package.remoteURL must not be nil");
 
     if (![_packages containsObject:package])
@@ -266,15 +276,7 @@
     [_downloadManager enqueuePackageForDownload:package];
 }
 
-- (CCPackage *)downloadPackageWithName:(NSString *)name remoteURL:(NSURL *)remoteURL enableAfterDownload:(BOOL)enableAfterDownload
-{
-    return [self downloadPackageWithName:name
-                              resolution:[CCPackageHelper defaultResolution]
-                               remoteURL:remoteURL
-                     enableAfterDownload:enableAfterDownload];
-}
-
-- (CCPackage *)downloadPackageWithName:(NSString *)name resolution:(NSString *)resolution remoteURL:(NSURL *)remoteURL enableAfterDownload:(BOOL)enableAfterDownload
+- (CCPackage *)downloadPackageWithName:(NSString *)name resolution:(NSString *)resolution os:(NSString *)os remoteURL:(NSURL *)remoteURL enableAfterDownload:(BOOL)enableAfterDownload
 {
     CCPackage *aPackage = [self packageWithName:name resolution:resolution];
     if (aPackage)
@@ -282,7 +284,11 @@
         return aPackage;
     }
 
-    CCPackage *package = [[CCPackage alloc] initWithName:name resolution:resolution remoteURL:remoteURL];
+    CCPackage *package = [[CCPackage alloc] initWithName:name
+                                              resolution:resolution
+                                                      os:os
+                                               remoteURL:remoteURL];
+
     package.enableOnDownload = enableAfterDownload;
 
     [_packages addObject:package];
@@ -291,22 +297,32 @@
 
     [_downloadManager enqueuePackageForDownload:package];
 
+    [self savePackagesForceWriteToDefaults:NO];
+
     return package;
 }
 
 - (CCPackage *)packageWithName:(NSString *)name
 {
     NSString *resolution = [CCPackageHelper defaultResolution];
+    NSString *os = [CCPackageHelper currentOS];
 
-    return [self packageWithName:name resolution:resolution];
+    return [self packageWithName:name resolution:resolution os:os];
 }
 
 - (CCPackage *)packageWithName:(NSString *)name resolution:(NSString *)resolution
 {
+    NSString *os = [CCPackageHelper currentOS];
+    return [self packageWithName:name resolution:resolution os:os];
+}
+
+- (CCPackage *)packageWithName:(NSString *)name resolution:(NSString *)resolution os:(NSString *)os
+{
     for (CCPackage *aPackage in _packages)
     {
         if ([aPackage.name isEqualToString:name]
-            && [aPackage.resolution isEqualToString:resolution])
+            && [aPackage.resolution isEqualToString:resolution]
+            && [aPackage.os isEqualToString:os])
         {
             return aPackage;
         }
@@ -322,12 +338,16 @@
 {
     [_delegate packageDownloadFinished:package];
 
+    [self savePackagesForceWriteToDefaults:NO];
+
     [self unzipPackage:package];
 }
 
 - (void)downloadFailedOfPackage:(CCPackage *)package error:(NSError *)error
 {
     [_delegate packageDownloadFailed:package error:error];
+
+    [self savePackagesForceWriteToDefaults:NO];
 }
 
 - (void)downloadProgressOfPackage:(CCPackage *)package downloadedBytes:(NSUInteger)downloadedBytes totalBytes:(NSUInteger)totalBytes
@@ -356,6 +376,8 @@
             [_delegate packageUnzippingFinished:packageUnzipper.package];
         }
 
+        [self savePackagesForceWriteToDefaults:NO];
+
         if (![self installPackage:packageUnzipper.package])
         {
             return;
@@ -372,6 +394,8 @@
         [_unzipTasks removeObject:packageUnzipper];
 
         [_delegate packageUnzippingFailed:packageUnzipper.package error:error];
+
+        [self savePackagesForceWriteToDefaults:NO];
     }];
 }
 
@@ -476,6 +500,9 @@
     CCLOGINFO(@"[PACKAGE/INSTALL][INFO] Installation of package successful! Package enabled: %d", package.enableOnDownload);
 
     [_delegate packageInstallationFinished:package];
+
+    [self savePackagesForceWriteToDefaults:YES];
+
     return YES;
 }
 
@@ -602,6 +629,8 @@
     CCPackageCocos2dEnabler *packageCocos2dEnabler = [[CCPackageCocos2dEnabler alloc] init];
     [packageCocos2dEnabler disablePackages:@[package]];
 
+    [self savePackagesForceWriteToDefaults:YES];
+
     return YES;
 }
 
@@ -631,6 +660,8 @@
     CCPackageCocos2dEnabler *packageCocos2dEnabler = [[CCPackageCocos2dEnabler alloc] init];
     [packageCocos2dEnabler enablePackages:@[package]];
 
+    [self savePackagesForceWriteToDefaults:YES];
+
     return YES;
 }
 
@@ -646,6 +677,8 @@
     }
 
     [_packages addObject:package];
+
+    [self savePackagesForceWriteToDefaults:NO];
 }
 
 - (BOOL)deletePackage:(CCPackage *)package error:(NSError **)error
@@ -692,6 +725,8 @@
         package.status = CCPackageStatusDeleted;
 
         CCLOGINFO(@"[PACKAGE/INSTALL][INFO] Package deletion successful!");
+
+        [self savePackagesForceWriteToDefaults:YES];
     }
     else
     {
