@@ -9,9 +9,10 @@
 @interface CCPackageManager : NSObject <CCPackageDownloadManagerDelegate, CCPackageUnzipperDelegate>
 
 /**
- *  The path where all installed packages are stored. Default is /Library/Caches/Packages
+ *  The path where all installed packages are stored. This path is relative to the caches folder which location is depending
+ *  on the OS. Default is "Packages".
  */
-@property (nonatomic, copy) NSString *installedPackagesPath;
+@property (nonatomic, copy) NSString *installRelPath;
 
 /**
  *  URL used as base to locate packages. A package standard identifier is added to create a full URL.
@@ -172,7 +173,7 @@
  * Will disable the package first and delete it from disk. Temp download and unzip files will be removed as well.
  * A package that is being unzipped cannot be deleted. Try after the unzipping finished.
  * The status will become CCPackageStatusDeleted in case you still hold a reference to the object.
- * localDownloURL, unzipURL and installURL will be nil after a succesful deletion.
+ * localDownloURL, unzipURL and installRelURL will be nil after a succesful deletion.
  *
  * @param package The package to be deleted
  * @param error Error pointer with details about a failed operation

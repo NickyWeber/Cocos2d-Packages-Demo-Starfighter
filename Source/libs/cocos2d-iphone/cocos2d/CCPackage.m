@@ -68,7 +68,7 @@ static NSString *const PACKAGE_SERIALIZATION_KEY_ENABLE_ON_DOWNLOAD = @"enableOn
 
     if (dictionary[PACKAGE_SERIALIZATION_KEY_INSTALL_URL])
     {
-        package.installURL = [NSURL fileURLWithPath:dictionary[PACKAGE_SERIALIZATION_KEY_INSTALL_URL]];
+        package.installRelURL = [NSURL fileURLWithPath:dictionary[PACKAGE_SERIALIZATION_KEY_INSTALL_URL]];
     }
 
     if (dictionary[PACKAGE_SERIALIZATION_KEY_LOCAL_DOWNLOAD_URL])
@@ -106,9 +106,9 @@ static NSString *const PACKAGE_SERIALIZATION_KEY_ENABLE_ON_DOWNLOAD = @"enableOn
     dictionary[PACKAGE_SERIALIZATION_KEY_VERSION] = @(PACKAGE_SERIALIZATION_VERSION);
     dictionary[PACKAGE_SERIALIZATION_KEY_ENABLE_ON_DOWNLOAD] = @(_enableOnDownload);
 
-    if (_installURL)
+    if (_installRelURL)
     {
-        dictionary[PACKAGE_SERIALIZATION_KEY_INSTALL_URL] = [_installURL path];
+        dictionary[PACKAGE_SERIALIZATION_KEY_INSTALL_URL] = [_installRelURL path];
     }
 
     if (_localDownloadURL)

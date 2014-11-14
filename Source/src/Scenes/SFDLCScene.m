@@ -74,12 +74,14 @@ static NSString *PACKAGE_NAME_LEVELS = @"levels";
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
 
-    NSString *packagesInstallPath = [[CCPackageManager sharedManager] installedPackagesPath];
-    NSArray *packagesPaths = [fileManager contentsOfDirectoryAtPath:packagesInstallPath error:nil];
+    NSString *packagesInstallPath = [[CCPackageManager sharedManager] installRelPath];
+    NSString *fullPath = [[CCPackageHelper cachesFolder] stringByAppendingPathComponent:packagesInstallPath];
+
+    NSArray *packagesPaths = [fileManager contentsOfDirectoryAtPath:fullPath error:nil];
 
     for (NSString *folderName in packagesPaths)
     {
-        NSString *path = [packagesInstallPath stringByAppendingPathComponent:folderName];
+        NSString *path = [fullPath stringByAppendingPathComponent:folderName];
         NSError *error;
         if  (![fileManager removeItemAtPath:path error:&error])
         {
